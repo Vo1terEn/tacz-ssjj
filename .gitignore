@@ -1,0 +1,29 @@
+# Packaged downloads are published as Release assets.
+/release-assets/
+*.jar
+*.zip
+!/mods/*-source.zip
+!/tacz/*-source.zip
+*.7z
+*.rar
+
+# Git metadata, caches and local logs.
+.git/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.log
+/logs/
+.DS_Store
+Thumbs.db
+
+# Local work, archived versions and rollback copies.
+/work/
+/backups/
+/过去版本/
+*备份*/
+*回滚*/
+*.bak
+*.tmp
