@@ -1,0 +1,284 @@
+
+#[SSJJRPG]生死狙击冒险枪包：唯一全局配置。
+#修改后重启游戏或服务器；玩法以服务端设置为准，render仅影响本机显示。
+#阶段顺序：基础版(base) → 一阶(tier1) → 二阶(tier2)。true=开启，false=关闭。
+#比例0.05=5%；倍率1.0=100%；20tick=1秒；距离单位为格。
+#能量强度按combat.strength_damage_per_1000换算伤害加成。
+#一、裁决之炎：阶段伤害、炎黄帝冠、红莲技能与配件属性。
+[fire]
+	#【1. 阶段伤害】
+	#基础版：左键激光与帝冠自动攻击伤害倍率；0.5=基础伤害的50%。
+	#Range: 0.0 ~ 100.0
+	damage_base = 0.5
+	#一阶：左键激光与帝冠自动攻击伤害倍率；0.75=基础伤害的75%。
+	#Range: 0.0 ~ 100.0
+	damage_tier1 = 0.75
+	#二阶：左键激光与帝冠自动攻击伤害倍率；1.0=基础伤害的100%。
+	#Range: 0.0 ~ 100.0
+	damage_tier2 = 1.0
+	#【2. 炎黄帝冠：自动索敌与充能】
+	#全阶段帝冠自动攻击开关：true开启，false关闭。
+	crown_enabled = true
+	#基础版：未装炎黄帝冠枪托时的索敌半径（格），沿用坐标轴边界判定。
+	#Range: 0.0 ~ 512.0
+	crown_range_base = 10.0
+	#一阶：未装炎黄帝冠枪托时的索敌半径（格），沿用坐标轴边界判定。
+	#Range: 0.0 ~ 512.0
+	crown_range_tier1 = 16.0
+	#二阶：未装炎黄帝冠枪托时的索敌半径（格），沿用坐标轴边界判定。
+	#Range: 0.0 ~ 512.0
+	crown_range_tier2 = 24.0
+	#合法安装炎黄帝冠枪托后的索敌距离倍率；2.0=对应阶段距离的2倍。
+	#Range: 0.0 ~ 100.0
+	stock_range_multiplier = 2.0
+	#帝冠进入中档充能的百分比阈值；34表示34%。
+	#Range: 0.0 ~ 100.0
+	charge_mid_percent = 34.0
+	#帝冠进入高档充能的百分比阈值；67表示67%。
+	#Range: 0.0 ~ 100.0
+	charge_high_percent = 67.0
+	#【3. 红莲印记：标记与减伤】
+	#一阶、二阶的红莲印记技能开关：true开启，false关闭。
+	lotus_enabled = true
+	#一阶：来自自己红莲印记目标的伤害减免比例；0.05=5%。
+	#Range: 0.0 ~ 1.0
+	lotus_reduction_tier1 = 0.05
+	#二阶：来自自己红莲印记目标的伤害减免比例；0.1=10%。
+	#Range: 0.0 ~ 1.0
+	lotus_reduction_tier2 = 0.1
+	#合法安装红莲印记握把后的减伤增强倍率；2.0=减伤翻倍，最终不超过100%。
+	#Range: 0.0 ~ 100.0
+	grip_reduction_multiplier = 2.0
+	#红莲印记持续时间（tick）；100tick=5秒。
+	#Range: 1 ~ 1200
+	mark_duration_ticks = 100
+	#【4. 红莲爆破：技能伤害、冷却与眩晕】
+	#二阶红莲爆破技能开关：true开启，false关闭。
+	burst_enabled = true
+	#未装红莲爆破弹匣时，开启技能后的伤害倍率；1.5=150%。
+	#Range: 0.0 ~ 100.0
+	burst_multiplier = 1.5
+	#合法安装红莲爆破弹匣时，开启技能后的伤害倍率；2.0=200%。
+	#Range: 0.0 ~ 100.0
+	magazine_burst_multiplier = 2.0
+	#红莲爆破冷却时间（tick），从技能激活时开始计时；500tick=25秒。
+	#Range: 300 ~ 72000
+	burst_cooldown_ticks = 500
+	#红莲爆破首次眩晕时间（tick）；60tick=3秒。
+	#Range: 1 ~ 1200
+	burst_stun_ticks = 60
+	#爆破期间帝冠再次施加眩晕的时间（tick）；30tick=1.5秒。
+	#Range: 1 ~ 1200
+	burst_restun_ticks = 30
+	#眩晕结束后的眩晕免疫时间（tick）；20tick=1秒。
+	#Range: 1 ~ 1200
+	burst_immunity_ticks = 20
+	#【5. 专属枪托、握把：常驻属性】
+	#合法安装炎黄帝冠枪托、红莲印记握把并持枪时，每件增加的能量强度。
+	#能量强度参与通用伤害加成；红莲爆破弹匣不使用此常驻属性。
+	#Range: 0.0 ~ 1.0E12
+	accessory_strength = 800.0
+	#合法安装炎黄帝冠枪托、红莲印记握把并持枪时，每件增加的能量抗性。
+	#Range: 0.0 ~ 1.0E12
+	accessory_resistance = 250.0
+	#合法安装炎黄帝冠枪托、红莲印记握把并持枪时，每件增加的能量抗性穿透。
+	#Range: 0.0 ~ 1.0E12
+	accessory_penetration = 250.0
+
+#二、天罚之眼：天罚之力、诺法雷构造、王者之心与配件属性。
+[eye]
+	#【1. 天罚之力：自带效果与迅捷】
+	#全阶段自带的天罚之力技能开关，包含迅捷、残影与神之注视；true开启，false关闭。
+	passive_enabled = true
+	#未装天罚之力握把时的迅捷等级；1=迅捷I，0不授予迅捷。
+	#Range: 0 ~ 10
+	speed_level = 1
+	#合法安装天罚之力握把后的迅捷等级；2=迅捷II，0不授予迅捷。
+	#Range: 0 ~ 10
+	grip_speed_level = 2
+	#【2. 神之注视：分阶段增伤与标记】
+	#基础版：神之注视额外增伤比例；0.125=额外增加12.5%。
+	#Range: 0.0 ~ 100.0
+	gaze_bonus_base = 0.125
+	#一阶：神之注视额外增伤比例；0.1875=额外增加18.75%。
+	#Range: 0.0 ~ 100.0
+	gaze_bonus_tier1 = 0.1875
+	#二阶：神之注视额外增伤比例；0.25=额外增加25%。
+	#Range: 0.0 ~ 100.0
+	gaze_bonus_tier2 = 0.25
+	#合法安装天罚之力握把后，对神之注视额外增伤的增强倍率；2.0=额外增伤翻倍。
+	#Range: 0.0 ~ 100.0
+	grip_gaze_multiplier = 2.0
+	#神之注视标记持续时间（秒）。
+	#Range: 1 ~ 3600
+	gaze_mark_seconds = 10
+	#【3. 诺法雷构造：落雷与星云】
+	#安装诺法雷构造后的落雷基础伤害，再乘以下对应阶段的落雷倍率。
+	#Range: 0.0 ~ 1.0E9
+	lightning_damage = 10.0
+	#基础版：落雷伤害倍率；0.5=落雷基础伤害的50%。
+	#Range: 0.0 ~ 100.0
+	lightning_scale_base = 0.5
+	#一阶：落雷伤害倍率；0.75=落雷基础伤害的75%。
+	#Range: 0.0 ~ 100.0
+	lightning_scale_tier1 = 0.75
+	#二阶：落雷伤害倍率；1.0=落雷基础伤害的100%。
+	#Range: 0.0 ~ 100.0
+	lightning_scale_tier2 = 1.0
+	#诺法星云每次伤害脉冲的基础伤害。
+	#Range: 0.0 ~ 1.0E9
+	cloud_damage = 20.0
+	#诺法星云两次伤害脉冲之间的间隔（tick）；2tick=0.1秒。
+	#Range: 1 ~ 120
+	cloud_pulse_ticks = 2
+	#【4. 诺法电球：分阶段发射权限】
+	#基础版：安装诺法雷构造后是否允许发射电球；true允许，false禁止。
+	ball_base = false
+	#一阶：安装诺法雷构造后是否允许发射电球；true允许，false禁止。
+	ball_tier1 = false
+	#二阶：安装诺法雷构造后是否允许发射电球；true允许，false禁止。
+	ball_tier2 = true
+	#允许发射电球且安装诺法雷构造时，每累计多少发射击生成一个电球。
+	#Range: 1 ~ 100000
+	ball_interval_shots = 30
+	#【5. 王者之心：二阶技能与枪托增强】
+	#二阶自带的王者之心技能开关；true开启，false关闭。
+	#未安装王者之心枪托时，仍使用下方的基础持续时间与冷却。
+	king_enabled = true
+	#未装王者之心枪托：技能持续时间（秒）。
+	#Range: 1 ~ 3600
+	king_duration_seconds = 20
+	#未装王者之心枪托：技能结束后的冷却时间（秒）。
+	#Range: 1 ~ 3600
+	king_cooldown_seconds = 20
+	#合法安装王者之心枪托：技能持续时间（秒）。
+	#Range: 1 ~ 3600
+	stock_duration_seconds = 30
+	#合法安装王者之心枪托：技能结束后的冷却时间（秒）。
+	#Range: 1 ~ 3600
+	stock_cooldown_seconds = 10
+	#王者之心技能落雷增强的目标生命比例阈值；0.5=50%。
+	#目标生命比例高于此值时，应用下方的技能落雷倍率。
+	#Range: 0.0 ~ 1.0
+	king_health_threshold = 0.5
+	#目标满足生命阈值条件时的王者之心技能落雷倍率；2.0=2倍。
+	#Range: 0.0 ~ 100.0
+	king_lightning_multiplier = 2.0
+	#王者之心技能期间增加的能量强度；终极强化石使王者之心常驻时同样生效。
+	#Range: 0.0 ~ 1.0E12
+	king_energy_strength = 10000.0
+	#【6. 天罚之力、王者之心：常驻属性】
+	#合法安装天罚之力握把、王者之心枪托并持枪时，每件增加的能量强度。
+	#能量强度参与通用伤害加成。
+	#Range: 0.0 ~ 1.0E12
+	accessory_strength = 1000.0
+	#合法安装天罚之力握把、王者之心枪托并持枪时，每件增加的能量抗性。
+	#Range: 0.0 ~ 1.0E12
+	accessory_resistance = 300.0
+	#合法安装天罚之力握把、王者之心枪托并持枪时，每件增加的能量抗性穿透。
+	#Range: 0.0 ~ 1.0E12
+	accessory_penetration = 300.0
+
+#三、原生战斗与能量属性：阶段伤害倍率在基础伤害之上计算。
+[combat]
+	#【1. 裁决左键激光】
+	#裁决左键激光的基础伤害，再乘fire中对应阶段的伤害倍率。
+	#Range: 0.0 ~ 1.0E9
+	weapon_damage = 16.0
+	#裁决左键激光穿墙开关：true允许穿墙，false关闭。
+	weapon_through_walls = false
+	#【2. 帝冠自动攻击】
+	#裁决帝冠自动攻击的基础伤害，再乘fire中对应阶段的伤害倍率。
+	#Range: 0.0 ~ 1.0E9
+	crown_damage = 24.0
+	#帝冠穿墙索敌开关：true允许，false关闭。
+	crown_through_walls = true
+	#【3. 能量强度：通用伤害加成】
+	#每1000点总能量强度增加的伤害比例；0.01=1%。最终倍率为1+总能量强度/1000×此值。
+	#Range: 0.0 ~ 100.0
+	strength_damage_per_1000 = 0.01
+	#【4. 创造强化石：常驻属性与预留开关】
+	#合法安装创造强化石并持枪时增加的能量强度；按通用能量强度系数增加伤害。
+	#Range: 0.0 ~ 1.0E12
+	creative_stone_strength = 100000.0
+	#合法安装创造强化石并持枪时增加的能量抗性。
+	#Range: 0.0 ~ 1.0E12
+	creative_stone_resistance = 10000.0
+	#合法安装创造强化石并持枪时增加的能量抗性穿透。
+	#Range: 0.0 ~ 1.0E12
+	creative_stone_penetration = 10000.0
+	#创造强化石增强攻击预留开关：true开启，false关闭。具体增强攻击功能尚未实现，本选项当前不改变攻击行为。
+	creative_stone_enhanced_attack = true
+	#【5. 红莲爆破弹匣：技能期间额外属性】
+	#合法安装红莲爆破弹匣并开启技能后，额外增加的能量抗性。
+	#Range: 0.0 ~ 1.0E12
+	burst_resistance = 500.0
+	#合法安装红莲爆破弹匣并开启技能后，额外增加的能量抗性穿透。
+	#Range: 0.0 ~ 1.0E12
+	burst_penetration = 500.0
+
+#四、本机显示与性能：仅影响本客户端画面，不改变伤害、索敌或其他玩家设置。
+#以下显示开关与复用默认开启；true开启，false关闭。
+[render]
+	#【裁决之炎充能条是否显示】仅影响本机充能条显示；true显示，false隐藏，不改变实际充能。
+	fire_charge_bar = true
+	#【1. 裁决之炎显示开关】
+	#显示裁决之炎完整枪体；true显示，false隐藏。
+	fire_gun = true
+	#显示裁决默认和低阶的原生几何特效；true显示，false隐藏。
+	fire_native = true
+	#显示裁决皮肤的枪身表层特效；true显示，false隐藏。
+	fire_surface = true
+	#显示裁决独立自然流光；true显示，false隐藏。
+	fire_flow = true
+	#显示裁决弹体与世界命中特效；true显示，false隐藏。
+	fire_world = true
+	#【2. 天罚之眼显示开关】
+	#显示天罚之眼完整枪体；true显示，false隐藏。
+	eye_gun = true
+	#显示天罚各阶段的枪身与枪口特效；true显示，false隐藏。
+	eye_effects = true
+	#【3. 临时几何复用与缓存上限】
+	#临时几何复用开关：true复用以减少临时对象分配，false关闭复用以便对照排查。
+	reuse_geometry = true
+	#每线程、每层持枪排序中心缓存的条目上限。
+	#Range: 1 ~ 32
+	surface_cache_entries = 4
+	#每层持枪网格或临时缓冲允许保留的顶点上限。
+	#Range: 256 ~ 262144
+	max_cached_vertices = 65536
+	#每层世界特效复用池的条目上限。
+	#Range: 16 ~ 4096
+	world_pool_entries = 512
+	#每层世界特效复用池允许保留的顶点总上限，包含原始点与展开顶点。
+	#Range: 4096 ~ 2097152
+	world_max_vertices = 262144
+
+
+
+#五、寄生者：普通形态、炮狙形态与巨炮冲击波。
+#玩法参数以服务器配置为准；伤害为未安装专属枪口时的基础值。
+[parasite]
+	#普通形态近距离基础伤害；中、远距离保持原有衰减比例。
+	#Range: 0.0 ~ 1000000.0
+	normal_damage = 15.0
+	#炮狙形态基础伤害；合法安装专属枪口时再乘以下方枪口伤害倍率。
+	#Range: 0.0 ~ 1000000.0
+	cannon_damage = 210.0
+	#合法安装专属枪口时，普通形态与炮狙形态的伤害倍率；2.0=2倍。
+	#Range: 0.0 ~ 100.0
+	muzzle_damage_multiplier = 2.0
+	#炮狙形态射速，每分钟发数（RPM）；60=每秒1发。
+	#Range: 1 ~ 1200
+	cannon_rpm = 60
+	#贰阶炮狙巨炮冲击波最大射程（格）；中轴遇阻挡方块时提前截止。
+	#Range: 1.0 ~ 256.0
+	shockwave_range = 64.0
+	#未安装专属弹匣时，贰阶巨炮冲击波路径的作用半径（格）。
+	#Range: 0.1 ~ 16.0
+	shockwave_radius = 1.0
+	#合法安装专属弹匣时，贰阶巨炮冲击波路径的作用半径（格）。
+	#Range: 0.1 ~ 16.0
+	magazine_shockwave_radius = 3.0
+	#巨炮冲击波吸引开关；true吸引目标到中轴，false仅造成原有冲击波伤害。
+	attraction_enabled = true
