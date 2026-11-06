@@ -5,8 +5,8 @@
 本仓库公开当前交付相关的代码、配置和安装包，仅保留安装与修改所需内容。
 
 - [config/ssjjrpg.toml](config/ssjjrpg.toml)：全局配置模板。
-- [Java 源码与 ASM 补丁](mods/SSJJRPG-1.1.45-removesway1-java-source.zip)：按原制作工程区分基线、增量源码和字节码补丁，附来源及 SHA256 清单。
-- [枪包文本源码](tacz/SSJJRPG-1.1.45-removesway1-gunpack-source.zip)：当前正式枪包的 JSON、Lua、shader 与 mcmeta，保留原目录及原始字节，共 327 个文件。
+- [Java 源码与 ASM 补丁](https://github.com/Vo1terEn/tacz-ssjj/blob/main/mods/SSJJRPG-1.1.45-removesway1-java-source.zip)：按原制作工程区分基线、增量源码和字节码补丁，附来源及 SHA256 清单。
+- [枪包文本源码](https://github.com/Vo1terEn/tacz-ssjj/blob/main/tacz/SSJJRPG-1.1.45-removesway1-gunpack-source.zip)：当前正式枪包的 JSON、Lua、shader 与 mcmeta，保留原目录，共 327 个文件；少量溯源元数据中的本机路径已规范为相对路径。
 - [完整安装下载](https://github.com/Vo1terEn/tacz-ssjj/releases/tag/v1.1.45-removesway1)：精简为 `config/`、`mods/`、`tacz/`，不含工作目录、旧备份或历史核验材料。
 
 源码以压缩包保存，便于通过 GitHub 网页完整上传；解压后可查看和修改。Java 沿用原工程的增量编译、映射和 ASM 修改方式，当前未整理成可独立一键重建的 Gradle 工程。枪包文本源码需配合同版 Release 的图片、音频等资源使用。源码包内的 `source-manifest.json` 记录来源与校验值。
