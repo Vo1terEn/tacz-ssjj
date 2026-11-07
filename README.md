@@ -1,26 +1,20 @@
 # [SSJJRPG] 生死狙击冒险枪包
 
-当前版本：**1.1.45-removesway1**。运行环境：Minecraft **1.20.1**、Forge **47.4.28**、TaCZ **1.1.8**。
+当前公开版本：**1.1.46**。Minecraft **1.20.1** / Forge **47.4.28** / TaCZ **1.2.0**，另验证 **1.1.8-hotfix2**。
 
-本仓库公开当前交付相关的代码、配置和安装包，仅保留安装与修改所需内容。
+- [完整配对安装包与更新说明](https://github.com/Vo1terEn/tacz-ssjj/releases/tag/v1.1.46)
+- [Java增量源码、coremod与构建/QA工具](mods/SSJJRPG-1.1.46-java-source.zip)
+- [枪包JSON/Lua/shader源码分片](tacz/)：下载本版所有源码分片并解压到同一目录，按同版source-manifest核验。
+- [配置模板](config/ssjjrpg.toml)：已有自定义配置请保留。
 
-- [config/ssjjrpg.toml](config/ssjjrpg.toml)：全局配置模板。
-- [Java 源码与 ASM 补丁](https://github.com/Vo1terEn/tacz-ssjj/blob/main/mods/SSJJRPG-1.1.45-removesway1-java-source.zip)：按原制作工程区分基线、增量源码和字节码补丁，附来源及 SHA256 清单。
-- [枪包文本源码](https://github.com/Vo1terEn/tacz-ssjj/blob/main/tacz/SSJJRPG-1.1.45-removesway1-gunpack-source.zip)：当前正式枪包的 JSON、Lua、shader 与 mcmeta，保留原目录，共 327 个文件；少量溯源元数据中的本机路径已规范为相对路径。
-- [完整安装下载](https://github.com/Vo1terEn/tacz-ssjj/releases/tag/v1.1.45-removesway1)：精简为 `config/`、`mods/`、`tacz/`，不含工作目录、旧备份或历史核验材料。
+适配 TaCZ 1.2.0（Minecraft 1.20.1 / Forge 47.4.28），保留 1.1.8-hotfix2 路径。用户已实测上一加载修复候选在两版均能正常使用。
 
-源码以压缩包保存，便于通过 GitHub 网页完整上传；解压后可查看和修改。Java 沿用原工程的增量编译、映射和 ASM 修改方式，当前未整理成可独立一键重建的 Gradle 工程。枪包文本源码需配合同版 Release 的图片、音频等资源使用。源码包内的 `source-manifest.json` 记录来源与校验值。
+修复外置枪包版本上界及新版技能键入口，保留声音元数据兼容。针对裁决和黯水晶每次启动首次切换卡顿，将目标原生模型、动画、LOD 和去重主贴图准备移到资源加载完成阶段，不改变动画状态、武器数据、配置及其他枪包懒加载设置。初始资源加载与显存驻留可能增加。
 
-安装步骤：
+本版验证：两版真实模型/动画加载与PNG解码、18个显示/12张主贴图、预备后getter零重复资源读取；实际加载器、所有声明的TaCZ coremod目标及负对照、9次既有原生回归、558类的双版链接、555旧类公开签名、955共享资源、ZIP CRC/版本/SHA。公开副本只改版本元数据，其余class、脚本和玩法资源与已测候选逐字节一致。
 
-1. 退出游戏或停止服务器，备份原模组、枪包和配置。
-2. 将同一版本的模组 JAR 放入游戏实例的 `mods/`，将枪包 ZIP 放入 `tacz/`，成对更新并移走旧版文件。完整安装包需先解压，不要直接放进 `tacz/`。
-3. 首次安装可使用 `config/ssjjrpg.toml` 配置模板；已有该文件时保留原配置及自定义值，不要用模板覆盖。启动前确认已安装上述依赖。
+新性能修复尚无完整游戏帧时间、GPU上传、音频或联机实测；CPU冷/热观测不等同FPS或卡顿完全消失。Java是冻结完整二进制+可编辑增量+ASM制作链，无法仅靠公开增量独立重建全部历史类。QA源码公开，完整重跑还需要原基线、历史夹具、Minecraft/Forge依赖及映射。
 
-运行文件的 SHA256 见 [SHA256SUMS](SHA256SUMS)，安装包和源码包另附 `.sha256` 文件。
+安装：退出游戏/停止服务器并备份，解压安装包，将mods/与tacz/同名文件成对替换；避免同时留有多份旧SSJJRPG。TaCZ依赖需另装。此流程没有自动修改游戏实例。
 
-本版撤掉 1.1.44 新增的裁决之炎整体左右摆动，将涉及的 8 个动画、模型及 Lua 资源恢复为 1.1.43 原始内容。裁决充能条开关 `render.fire_charge_bar`、寄生者第一／第三人称独立冲击波及其他既有功能保留。
-
-交付核验已通过 ZIP 完整性、SHA256、双包资源一致性检查；已有专项离线测试通过 **1766 条断言**，发布流水线通过 **4 项测试场景**。本版没有新增完整 Minecraft 客户端画面、实战或联机测试，离线结果不等同于这些场景的验收。
-
-原项目代码沿用模组元数据声明的 [MIT 许可](LICENSE)。原始美术、音频、模型、动画及其他第三方素材保留原权利人的权利，不适用本仓库的代码许可。已有第三方代码及其声明继续遵循原许可。
+原代码沿用既有MIT及第三方声明。原始美术、模型、动画和音频保留原权利，不适用仓库代码许可。历史源码ZIP只对应同名历史Release，不用于重建本版。
