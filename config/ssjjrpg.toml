@@ -282,3 +282,102 @@
 	magazine_shockwave_radius = 3.0
 	#巨炮冲击波吸引开关；true吸引目标到中轴，false仅造成原有冲击波伤害。
 	attraction_enabled = true
+
+
+# 次元之星（基础版、一阶、二阶及其专属配件）
+# 修改后重启游戏或服务器。玩法参数以服务端为准，并通过现有配置通道同步到客户端。
+# 时间除 mark_seconds_* 外均为tick，20tick=1秒。弹丸数与弹容保留在枪械data JSON。
+[dimension]
+# 普通弹丸基础伤害（每丸，保留距离与其他加成比例）；范围 0～1000000
+pellet_damage = 3.0
+# 枪械近战基础伤害；范围 0～1000000
+melee_damage = 15.0
+# 普通模式射速（每分钟发数；技能期间使用施放间隔）；范围 1～1200
+rpm = 200
+# 普通模式基础散布倍率，保留各姿态差异；范围 0.01～4
+spread_multiplier = 1.0
+# 满能量高能持续时间，20tick=1秒；范围 1～72000
+active_ticks = 300
+# 高能结束后的能量回满时间；范围 1～72000
+recharge_ticks = 100
+# 高能连续施放间隔；范围 1～1200
+cast_interval_ticks = 6
+# 领域部署和结束引爆基础伤害；范围 0～1000000
+field_damage = 30.0
+# 领域内每次标记爆炸的额外伤害；范围 0～1000000
+field_bonus_damage = 30.0
+# 一阶领域基础半径（格）；范围 0.25～16
+field_radius_tier1 = 3.0
+# 二阶领域基础半径（格）；范围 0.25～16
+field_radius_tier2 = 5.0
+# 领域基础存在时间；范围 1～72000
+field_ticks = 60
+# 领域基础眩晕时间；范围 1～1200
+field_stun_ticks = 10
+# 领域施放最大距离（格）；范围 1～256
+cast_range = 64.0
+# 每玩家普通领域数量上限，分身额外领域不计入；范围 1～16
+max_fields = 3
+# 每个目标最多标记层数，原素材最多支持5层；范围 1～5
+mark_cap = 5
+# 标记引爆间隔；范围 1～1200
+mark_interval_ticks = 10
+# 每次有效标记爆炸回复最大生命的比例；范围 0～1
+mark_healing_fraction = 0.01
+# 基础版标记持续秒数；范围 1～120
+mark_seconds_base = 1
+# 一阶标记持续秒数；范围 1～120
+mark_seconds_tier1 = 2
+# 二阶标记持续秒数；范围 1～120
+mark_seconds_tier2 = 3
+# 瞬闪冷却时间；范围 1～72000
+dash_cooldown_ticks = 80
+# 瞬闪水平速度脉冲持续时间；范围 1～120
+dash_ticks = 5
+# 瞬闪水平速度，原生速度包范围内；范围 0.01～3.9
+dash_speed = 1.2
+# 瞬闪减伤与真实隐身持续时间；范围 1～1200
+protection_ticks = 20
+# 瞬闪期间减伤比例，0.99=减免99%；范围 0～1
+damage_reduction = 0.99
+# 站立分身保留时间；范围 1～72000
+decoy_ticks = 60
+# 超负荷降至最低伤害所需时间；范围 1～72000
+overload_ramp_ticks = 100
+# 换主手后超负荷伤害恢复时间；范围 1～72000
+overload_recovery_ticks = 60
+# 超负荷最低伤害比例，0.001=原伤害0.1%；范围 1e-06～1
+overload_min_damage = 0.001
+# 专属枪口安装后的每丸基础伤害；范围 0～1000000
+muzzle_pellet_damage = 8.0
+# 专属枪口在当前扩散基础上的倍率；范围 0.01～4
+muzzle_spread_multiplier = 0.5
+# 专属枪口标记持续时间倍率；范围 1～10
+muzzle_mark_duration_multiplier = 2
+# 专属握把领域半径倍率；范围 1～4
+grip_radius_multiplier = 2.0
+# 专属握把增加领域存在时间；范围 0～72000
+grip_extra_ticks = 20
+# 终极/融合/创造石增加眩晕时间；范围 0～1200
+ultimate_extra_stun_ticks = 10
+# 异能/融合/创造石对超负荷敌人伤害倍率；范围 1～100
+ability_damage_multiplier = 1.3
+
+
+# 四把武器普通配件额外加成（排除瞄准镜和激光槽）
+# 修改后重启游戏或服务器；服务端玩法配置同步到客户端。
+[attachment_bonus]
+# 裁决之炎每普通配件额外能量抗性；不计瞄准镜和激光槽；范围 0～1000000
+judgment_energy_resistance = 250.0
+# 寄生者每普通配件额外普通弹基础伤害；不计瞄准镜和激光槽；范围 0～1000000
+parasite_bullet_damage = 10.0
+# 寄生者每普通配件额外巨炮冲击波基础伤害；不计瞄准镜和激光槽；范围 0～1000000
+parasite_wave_damage = 70.0
+# 天罚之眼每普通配件额外普通弹、落雷与狂暴星云基础伤害；不计瞄准镜和激光槽；范围 0～1000000
+eye_damage = 0.0
+# 次元之星每普通配件额外能量抗性；不计瞄准镜和激光槽；范围 0～1000000
+dimension_energy_resistance = 300.0
+# 次元之星每普通配件额外能量抗性穿透；不计瞄准镜和激光槽；范围 0～1000000
+dimension_energy_penetration = 75.0
+# 次元之星每普通配件额外能量强度；不计瞄准镜和激光槽；范围 0～1000000
+dimension_energy_strength = 300.0
