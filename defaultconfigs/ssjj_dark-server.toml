@@ -1,0 +1,30 @@
+#黯水晶MC-PVE适配。原版模式规则未直接移植；下列数值除冷却参考外均为MC适配值。
+skillsEnabled = true
+#同时控制基础近战与技能对玩家的伤害；开启后仍遵守队伍与服务器PvP规则。
+allowPlayerDamage = false
+#Range: 0.0 ~ 0.9
+currentHealthCostRatio = 0.2
+#Range: 1 ~ 200
+chargeTicks = 60
+#Range: 1 ~ 2400
+activeTicks = 200
+#参考源CdTimePara=10000毫秒；从强化结束后开始计时。
+#Range: 1 ~ 24000
+cooldownTicks = 200
+#Range: 0.0 ~ 200.0
+dragonWaveDamage = 3.0
+#Range: 1.0 ~ 32.0
+dragonWaveRangeBlocks = 6.0
+#Range: 0.0 ~ 200.0
+releaseDamage = 12.0
+#Range: 1.0 ~ 16.0
+releaseRadiusBlocks = 4.0
+#Range: 0.0 ~ 2.0
+extraShieldMaxHealthRatio = 0.3
+#Range: 0.0 ~ 3.0
+maxMissingHealthDamageBonus = 0.5
+#Range: 0.0 ~ 0.8
+secondGradeMaxReduction = 0.2
+#Range: 0.0 ~ 1.0
+activeMovementSpeedBonus = 0.2
+
