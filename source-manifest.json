@@ -1,0 +1,86 @@
+{
+  "version": "1.1.47",
+  "source_delivery_version": "1.1.46-muzzlestun10",
+  "source_layout": "One source archive preserves mods/, tacz/, config/, defaultconfigs/ because the available authorized browser upload rejects directories.",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "339ea4c15e37de9a56c962bdc075dad50b92aa54776ec4d19d85521a135f3b7d",
+      "bytes": 424
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "514b7088e06ec8cde9a630ca350555863887df663d4bdeddf079f18f708ec4db",
+      "bytes": 1367
+    },
+    {
+      "path": "README.md",
+      "sha256": "dba4ca801b19982d68f0195d925875b0dc1ff648816d9727f320dea9a9287b22",
+      "bytes": 3667
+    },
+    {
+      "path": "SHA256SUMS",
+      "sha256": "ddf5586f5f28ee9759b129407c824d6609b8a0eabc2fbdaaf745c43f76010c91",
+      "bytes": 272
+    },
+    {
+      "path": "SSJJ_DARK_LICENSE.txt",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "bytes": 35149
+    },
+    {
+      "path": "THIRD_PARTY_LICENSES.md",
+      "sha256": "09aae699024782ed6ec1f35c700a71c811c26888f2c4e06424ea09b4aed58450",
+      "bytes": 887
+    },
+    {
+      "path": "config/ssjjrpg.toml",
+      "sha256": "f204642f9442109e3d93e5dc6839d46be8ba293f8afdd71824ca7f38773ed4db",
+      "bytes": 17587
+    },
+    {
+      "path": "defaultconfigs/ssjj_dark-server.toml",
+      "sha256": "1d1d1bbaa5c2c791924e318839be0a22eedc67fe470a0f77c02c3646b948c149",
+      "bytes": 891
+    },
+    {
+      "path": "mods/README.md",
+      "sha256": "abada7a55afd837c4588bc0dd4342187db0bf9bdf487d7ee468c860f13413926",
+      "bytes": 1207
+    },
+    {
+      "path": "mods/SSJJRPG-1.1.47-source.zip",
+      "sha256": "627de4efcb924b5e2ce2a890bb606214fc563438d7f0333a1ea6a1e87cac07a7",
+      "bytes": 5278390
+    },
+    {
+      "path": "mods/SSJJRPG-1.1.47-source.zip.sha256",
+      "sha256": "71c97a0fa8269f0828e7e0e4a48c856b2c9367ee69b68809bda6c12056d908fd",
+      "bytes": 92
+    },
+    {
+      "path": "runtime-manifest.json",
+      "sha256": "15ef69043355e14b278c31b5aac130c90fcbf045c54354832e98f766f689f08b",
+      "bytes": 14411
+    },
+    {
+      "path": "tacz/README.md",
+      "sha256": "13d827a0738bcb17609f1dc4bcf8f2e8c29e91e8fb031276bbd628b69f67b544",
+      "bytes": 973
+    }
+  ],
+  "source_archive": {
+    "path": "mods/SSJJRPG-1.1.47-source.zip",
+    "sha256": "627de4efcb924b5e2ce2a890bb606214fc563438d7f0333a1ea6a1e87cac07a7",
+    "members": 851,
+    "uncompressed_bytes": 37361993
+  },
+  "java_source_evidence": {
+    "class_names": 292,
+    "current_outer_bytes_matched": 46,
+    "known_pre_ASM_outer_bytes_matched": 6,
+    "name_only_snapshots": 240
+  },
+  "runtime_package_report": "runtime-manifest.json",
+  "build_boundary": "Curated authored snapshots + known ASM production chain, not a complete independently rebuildable source tree. No new full build or live gameplay test."
+}
