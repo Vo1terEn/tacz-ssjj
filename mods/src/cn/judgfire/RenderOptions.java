@@ -1,0 +1,2 @@
+package cn.judgfire;
+public final class RenderOptions {private RenderOptions(){} public static boolean enabled(String key){return cn.fusionarsenal.config.ArsenalConfig.bool(key);}public static int entries(){return cn.fusionarsenal.config.ArsenalConfig.integer("render.surface_cache_entries");}public static int vertices(){return cn.fusionarsenal.config.ArsenalConfig.integer("render.max_cached_vertices");}}

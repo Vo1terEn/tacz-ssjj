@@ -1,0 +1,1 @@
+{"type":"tacz:gun_smith_table_crafting","materials":[{"item":{"item":"eye_judgment_arsenal:judgment_flame_fragment"},"count":840},{"item":{"type":"forge:partial_nbt","item":"tacz:modern_kinetic_gun","nbt":{"GunId":"judgfire:judgment_flame_base"}},"count":1}],"result":{"type":"gun","id":"judgfire:judgment_flame_tier1","count":1,"ammo_count":0,"group":"ssjj_workbench:weapons"}}

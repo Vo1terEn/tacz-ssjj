@@ -1,37 +1,12 @@
 {
-  "version": "1.1.47",
-  "source_delivery_version": "1.1.46-muzzlestun10",
-  "source_layout": "One source archive preserves mods/, tacz/, config/, defaultconfigs/ because the available authorized browser upload rejects directories.",
+  "version": "1.1.48",
+  "source_delivery_version": "1.1.47-forge47416compat1",
+  "source_layout": "Browsable mods/ and tacz/ authored source snapshots plus config/ and defaultconfigs/.",
   "files": [
     {
       "path": ".gitignore",
       "sha256": "339ea4c15e37de9a56c962bdc075dad50b92aa54776ec4d19d85521a135f3b7d",
       "bytes": 424
-    },
-    {
-      "path": "LICENSE",
-      "sha256": "514b7088e06ec8cde9a630ca350555863887df663d4bdeddf079f18f708ec4db",
-      "bytes": 1367
-    },
-    {
-      "path": "README.md",
-      "sha256": "dba4ca801b19982d68f0195d925875b0dc1ff648816d9727f320dea9a9287b22",
-      "bytes": 3667
-    },
-    {
-      "path": "SHA256SUMS",
-      "sha256": "ddf5586f5f28ee9759b129407c824d6609b8a0eabc2fbdaaf745c43f76010c91",
-      "bytes": 272
-    },
-    {
-      "path": "SSJJ_DARK_LICENSE.txt",
-      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
-      "bytes": 35149
-    },
-    {
-      "path": "THIRD_PARTY_LICENSES.md",
-      "sha256": "09aae699024782ed6ec1f35c700a71c811c26888f2c4e06424ea09b4aed58450",
-      "bytes": 887
     },
     {
       "path": "config/ssjjrpg.toml",
@@ -44,43 +19,4305 @@
       "bytes": 891
     },
     {
+      "path": "LICENSE",
+      "sha256": "514b7088e06ec8cde9a630ca350555863887df663d4bdeddf079f18f708ec4db",
+      "bytes": 1367
+    },
+    {
+      "path": "mods/patches/code_slim_20261109/ParticleSamplerPatch.java",
+      "sha256": "01d8049438a03a122918e496bdcc3084aae52d4362c4337f398d9160abe670fb",
+      "bytes": 6552
+    },
+    {
+      "path": "mods/patches/eye_refund_20261106/PatchEyeHitRefund.java",
+      "sha256": "60c88a3a7aa28730420e6206a21cf1e27e8813e7a91d212419fcd47efc9763c5",
+      "bytes": 2567
+    },
+    {
+      "path": "mods/patches/fire_charge_display_20261106/PatchChargeDisplay.java",
+      "sha256": "8527f2e18bdc831b923a943d86f661070e0149ac2fafbc75504cccfba06d1981",
+      "bytes": 5643
+    },
+    {
+      "path": "mods/patches/identity_health_fix_20261109/EntityIdentityPatch.java",
+      "sha256": "9bb66e03134adf6af57fb6fbc3f2e12d93c95bbce78e7a17240c9bb5c054f68c",
+      "bytes": 4328
+    },
+    {
+      "path": "mods/patches/overload_damage_20261109/OverloadPatch.java",
+      "sha256": "6c72b1607c08f5c4e331cfee0cd564bcd38eeeef84c27e6aeb5ca9a8fba406be",
+      "bytes": 7434
+    },
+    {
+      "path": "mods/patches/parasite_dual_shockwave_20261106/tools/PatchDualShockwave.java",
+      "sha256": "cc2b3329df4429eac144c604a2f9f605e86e13754e7051174475c60ed552df02",
+      "bytes": 5647
+    },
+    {
+      "path": "mods/patches/parasite_markerfix_20261106/tools/PatchDestructionEnergy.java",
+      "sha256": "bf114d391c8a36e0151dc906e8a46e9e9773fbb91d88c45a8f56f5aecfa785fd",
+      "bytes": 7924
+    },
+    {
+      "path": "mods/patches/parasite_markerfix_20261106/tools/PatchParasiteAccessoryEnergy.java",
+      "sha256": "6e6a7a17f3b369069f05e37892f2cef9f66e97ec252249be2ab7f82bfa73748b",
+      "bytes": 5480
+    },
+    {
+      "path": "mods/patches/parasite_markerfix_20261106/tools/PatchParasiteBootstrap.java",
+      "sha256": "b87ad6fedc7583136bed80e702ecd288073742c19a4f606fb600c36bcc043cad",
+      "bytes": 5655
+    },
+    {
+      "path": "mods/patches/stun_state_20261109/StunCallsitePatch.java",
+      "sha256": "f46a741cdbe955b06c4bfb601d5a674fa4297a7ab3519e9bc036b3f752e0d2bd",
+      "bytes": 3934
+    },
+    {
+      "path": "mods/patches/tier_expansion/ammo16/PatchAmmo.java",
+      "sha256": "b5d56b84b91e72c3ed005a0a242632de33286b101f4c490e39a52e7af9cfa420",
+      "bytes": 2554
+    },
+    {
+      "path": "mods/patches/tier_expansion/body11/PatchBodies.java",
+      "sha256": "6700ab2755e392eef0efb4e6ba753b15acaf007a352dde33ed710d8e801b95f6",
+      "bytes": 4465
+    },
+    {
+      "path": "mods/patches/tier_expansion/config11/PatchGlobal.java",
+      "sha256": "9771079acec896595e912ca8ddbe7f4a54dbaafb7cebb9a9bc03251e898627ed",
+      "bytes": 4793
+    },
+    {
+      "path": "mods/patches/tier_expansion/config9/PatchConfig.java",
+      "sha256": "858a9f25f9425ae856cbf669150a367e307c95af12621b0162b1a016759459ca",
+      "bytes": 4576
+    },
+    {
+      "path": "mods/patches/tier_expansion/energy13/PatchEnergy.java",
+      "sha256": "7252d493aa855e57a12fc1547dd245e30de2cde234432d318d0a0cdee86ed022",
+      "bytes": 2276
+    },
+    {
+      "path": "mods/patches/tier_expansion/eye_combat6/PatchEyeCombat.java",
+      "sha256": "006ea951fad5aa204714a37b6528c19ad5b6584b954793f8f78ea0d9fff4e239",
+      "bytes": 5422
+    },
+    {
+      "path": "mods/patches/tier_expansion/eye_kill17/PatchSource.java",
+      "sha256": "43f216d4e645e650bacdc8a6e57c68052a279e1811a81d81d889876504e782b2",
+      "bytes": 1707
+    },
+    {
+      "path": "mods/patches/tier_expansion/eye_skill3/PatchSkillAction.java",
+      "sha256": "d35a74619076e0b609323ed8af9838ee62d45a4774a12ea62d4f05ad510d57f8",
+      "bytes": 2036
+    },
+    {
+      "path": "mods/patches/tier_expansion/fire_burst7/PatchFireBurst.java",
+      "sha256": "7a001656feb6a5fb1fcf69e7a17a1beb3baef12f9761fe782b135264c645d210",
+      "bytes": 3893
+    },
+    {
+      "path": "mods/patches/tier_expansion/fire_combat7/PatchFireCombat.java",
+      "sha256": "2d859e7604d5e26de64aa5e7607399f32d439b4ca6b5e48296080dd887969bd3",
+      "bytes": 3989
+    },
+    {
+      "path": "mods/patches/tier_expansion/fire_energy8/PatchFireEnergy.java",
+      "sha256": "2ccc7b4bc3859635f0e3fff363765ef9c4a83bddb2dbc376e6808faf355cb07f",
+      "bytes": 3304
+    },
+    {
+      "path": "mods/patches/tier_expansion/fire_surface3/PatchFireSurface.java",
+      "sha256": "1173f98b0dee80320f31df57d1614a0a50d793c7b504a297303bfea8e8a9f5c1",
+      "bytes": 3096
+    },
+    {
+      "path": "mods/patches/tier_expansion/perf9/PatchReuse.java",
+      "sha256": "1fe84ec10b573afbacd0ba7a0a16585588a10275368b1914518b6cdda19b7552",
+      "bytes": 5243
+    },
+    {
+      "path": "mods/patches/tier_expansion/runtime/PatchTiers.java",
+      "sha256": "64a9fa5527b0f6b4e967452385fea3f38a385b05eb9b93423237d7d555ff8bf9",
+      "bytes": 12056
+    },
+    {
+      "path": "mods/patches/tier_expansion/stone_runtime14/PatchStone.java",
+      "sha256": "bc4825005dc6cf4b37393229f116ad8bf4323a407d1d77a5d6e8c2ef8feb845d",
+      "bytes": 5455
+    },
+    {
+      "path": "mods/patches/tier_expansion/world11/PatchWorld.java",
+      "sha256": "ca2e49a90a8d316bc612d543daf18894ead1334a3dd6846195b993de21735e5e",
+      "bytes": 6265
+    },
+    {
+      "path": "mods/patches/weapon_attachment_skill_revision_20261108/AttachmentBonusPatch.java",
+      "sha256": "8b65b7a8b253ff7193affefcde4234f609fe985e5f58d3fea8730145d4b5d82a",
+      "bytes": 6069
+    },
+    {
+      "path": "mods/patches/weapon_attachment_skill_revision_20261108/build_attachment_bonuses.py",
+      "sha256": "656fc3c99ce174a1d66faabdcefa3fac731708731c694f804a0c874f694d3fcd",
+      "bytes": 926
+    },
+    {
+      "path": "mods/patches/weapon_attachment_skill_revision_20261108/build_dimension_config.py",
+      "sha256": "6dbef55bf33c9f5795d4b9da60130e940a8325df8a28d2ad30ea842ba0b10914",
+      "bytes": 6250
+    },
+    {
+      "path": "mods/patches/weapon_attachment_skill_revision_20261108/build_item_rendering.py",
+      "sha256": "8e209dc837824ac82fc97cd6ddc343d8b01cbe3c35006d797f99df46e4c9d475",
+      "bytes": 3502
+    },
+    {
+      "path": "mods/patches/weapon_attachment_skill_revision_20261108/FieldNetworkBootstrap.java",
+      "sha256": "5ab97fffdfb3b259229a36a03510b867c67fe84bc4823117212f87fedf498022",
+      "bytes": 12988
+    },
+    {
       "path": "mods/README.md",
-      "sha256": "abada7a55afd837c4588bc0dd4342187db0bf9bdf487d7ee468c860f13413926",
-      "bytes": 1207
+      "sha256": "3a4ef2bda84337a8f4394adfeba3a70a003136ed50233d9565ec73ec4d5b19f2",
+      "bytes": 1800
     },
     {
-      "path": "mods/SSJJRPG-1.1.47-source.zip",
-      "sha256": "627de4efcb924b5e2ce2a890bb606214fc563438d7f0333a1ea6a1e87cac07a7",
-      "bytes": 5278390
+      "path": "mods/resources/assets/eye_judgment_arsenal/models/item/judgment_flame_fragment.json",
+      "sha256": "38e23e63783611956a082dce5607658e3bda7b0e8737cd209931ac810165d498",
+      "bytes": 111
     },
     {
-      "path": "mods/SSJJRPG-1.1.47-source.zip.sha256",
-      "sha256": "71c97a0fa8269f0828e7e0e4a48c856b2c9367ee69b68809bda6c12056d908fd",
-      "bytes": 92
+      "path": "mods/resources/assets/eye_judgment_arsenal/models/item/punishment_eye_fragment.json",
+      "sha256": "87e280cf157afe96d25b12b0c4c43e44325691b9e1070d11f9cbe114092f36c3",
+      "bytes": 111
+    },
+    {
+      "path": "mods/resources/assets/eyeofpunishment/shaders/core/muzzle.fsh",
+      "sha256": "c6ca744ae855a9f408f69396fdf9b853a47ad68e35d0f4682c11a7a77ee213ec",
+      "bytes": 377
+    },
+    {
+      "path": "mods/resources/assets/eyeofpunishment/shaders/core/muzzle.vsh",
+      "sha256": "e757af7a7192a6a36d64ef34ebfab2a7c4cee9e6bf7c26cd6ebef85eb0a1b6f4",
+      "bytes": 276
+    },
+    {
+      "path": "mods/resources/assets/eyeofpunishment/shaders/core/muzzle_additive.json",
+      "sha256": "5b9850f6b4b8a5539e8e2f7c401fa3cb1a4079c0b0bf08c10f80adfd639f69fd",
+      "bytes": 565
+    },
+    {
+      "path": "mods/resources/assets/eyeofpunishment/shaders/core/muzzle_alpha.json",
+      "sha256": "fc33f2a8577d3d667e3a9182afda68268b6bfbfccb24c7d01d4cc42bda69200b",
+      "bytes": 574
+    },
+    {
+      "path": "mods/resources/assets/judgfire/shaders/core/flame_hdr.json",
+      "sha256": "be4bf7eb62f76aff4350c9c1aa624dea37e1fda10eb3a29d6422c14d794fec9c",
+      "bytes": 1233
+    },
+    {
+      "path": "mods/resources/assets/judgfire/shaders/core/flame_native.fsh",
+      "sha256": "e6f20ad3aa849fbd5206d6a9af18e7e0f1780c4edb99c5f4a71da1fd00f46303",
+      "bytes": 2974
+    },
+    {
+      "path": "mods/resources/assets/judgfire/shaders/core/flame_native.json",
+      "sha256": "be4bf7eb62f76aff4350c9c1aa624dea37e1fda10eb3a29d6422c14d794fec9c",
+      "bytes": 1233
+    },
+    {
+      "path": "mods/resources/assets/judgfire/shaders/core/flame_native.vsh",
+      "sha256": "b536accec94c13100f22016299b1651d4261c5859093fa0f7669a8b597dd8d29",
+      "bytes": 273
+    },
+    {
+      "path": "mods/resources/assets/judgfire/shaders/core/skin_world_hdr.json",
+      "sha256": "65f0eb75702052d1fd7f2128ee1cc334b3ff13d4f834c152a75d8631ba7e930a",
+      "bytes": 1742
+    },
+    {
+      "path": "mods/resources/assets/judgfire/shaders/core/skin_world_native.fsh",
+      "sha256": "34de692b04576c58aadbefe38e62ed164c22c8179ddf30dae091dc9f6932c86b",
+      "bytes": 4102
+    },
+    {
+      "path": "mods/resources/assets/judgfire/shaders/core/skin_world_native.json",
+      "sha256": "65f0eb75702052d1fd7f2128ee1cc334b3ff13d4f834c152a75d8631ba7e930a",
+      "bytes": 1742
+    },
+    {
+      "path": "mods/resources/assets/judgfire/shaders/core/skin_world_native.vsh",
+      "sha256": "2dacf099716f5464ce265f211177334f5e584f29da82b77786551c72ceb5b2ff",
+      "bytes": 415
+    },
+    {
+      "path": "mods/resources/assets/judgfire/shaders/core/world_native.fsh",
+      "sha256": "1431e81789b80e2976c2c7016ef760cedee1f74d9b87060231c7f1aa3dce6ad8",
+      "bytes": 4463
+    },
+    {
+      "path": "mods/resources/assets/judgfire/shaders/core/world_native.json",
+      "sha256": "e27e8d70b7fdbc5b2c090b03dcbce3d8f0c4a0a3ec34102d5a1d620d315a6e5d",
+      "bytes": 1738
+    },
+    {
+      "path": "mods/resources/assets/judgfire/shaders/core/world_native.vsh",
+      "sha256": "2dacf099716f5464ce265f211177334f5e584f29da82b77786551c72ceb5b2ff",
+      "bytes": 415
+    },
+    {
+      "path": "mods/resources/assets/ssjj_dark/models/item/darkcrystal_fragment.json",
+      "sha256": "9a588a0826da27addd73eb5e03933e51523164cc7e340d5f5172a46895d633c0",
+      "bytes": 87
+    },
+    {
+      "path": "mods/resources/assets/ssjj_dark/models/item/melee.json",
+      "sha256": "a4d3451e4c5cfc19aa20d6708c64f69190304ba52811a8cd7369f1d3e966dc27",
+      "bytes": 27
+    },
+    {
+      "path": "mods/resources/assets/ssjj_dark/shaders/core/blade_add.json",
+      "sha256": "c8a4ee5071cead9d882d60d18548aa08578e1373f5e20f08670c5ff4031a1b3b",
+      "bytes": 887
+    },
+    {
+      "path": "mods/resources/assets/ssjj_dark/shaders/core/blade_alpha.json",
+      "sha256": "acc79fde3036e26f75d5ee0c7ff910c4792799c76b95a3d89a0331876410842f",
+      "bytes": 894
+    },
+    {
+      "path": "mods/resources/assets/ssjj_dark/shaders/core/native_skill.fsh",
+      "sha256": "5e46a62b956ef5c03b08b892bcdeda90184879904729e692d471657b702e9b1c",
+      "bytes": 1011
+    },
+    {
+      "path": "mods/resources/assets/ssjj_dark/shaders/core/native_skill.json",
+      "sha256": "49bc9e56121b7d94f0dfd0e05ec2377895a64bd322c0fbfcda250568932aec7f",
+      "bytes": 1104
+    },
+    {
+      "path": "mods/resources/assets/ssjj_dark/shaders/core/native_skill.vsh",
+      "sha256": "bbb9ac6f08f6e57218ab453118868581e765e71ffd01e5946828f4032e62bea2",
+      "bytes": 206
+    },
+    {
+      "path": "mods/resources/assets/ssjj_dark/shaders/core/skill_dimming.fsh",
+      "sha256": "7da0318049937d01fcf2fe7bdeb37b89f7fa86546398eccb38e5aa721679cd86",
+      "bytes": 95
+    },
+    {
+      "path": "mods/resources/assets/ssjj_dark/shaders/core/skill_dimming.json",
+      "sha256": "084111cfa85289e9969ab0a122232e17e43d3c7627bb264c28eaefbd5dad9abb",
+      "bytes": 200
+    },
+    {
+      "path": "mods/resources/assets/ssjj_dark/shaders/core/skill_dimming.vsh",
+      "sha256": "7f9ad529b2144a10054ad2df745077c492a1386f3e5e689146009e1685ee7c75",
+      "bytes": 140
+    },
+    {
+      "path": "mods/resources/coremods/barrier_health.js",
+      "sha256": "4e2c908db85448a3015f64254b11d53766d3c49a8686eee07135cc2538d9a74a",
+      "bytes": 11421
+    },
+    {
+      "path": "mods/resources/coremods/combat_messages.js",
+      "sha256": "1cc508561c3a32fea5191cb92505c2c8c5b9d1fad9a1c34a500d09aa6de16103",
+      "bytes": 1346
+    },
+    {
+      "path": "mods/resources/coremods/cosmetic_skin.js",
+      "sha256": "bd72716e574fd9e972354f61bf292d240eb5eb005237846c258afe0109b4bca5",
+      "bytes": 1607
+    },
+    {
+      "path": "mods/resources/coremods/eye_refit_preview.js",
+      "sha256": "f878358b4e3cc8730aafc2c2d291e279e047c495503b980e8362a0cfbdf6c7d6",
+      "bytes": 2442
+    },
+    {
+      "path": "mods/resources/coremods/fantasy_barrier.js",
+      "sha256": "31780506e2df5c7b8a06000c53ad21b805d38c927bf1ba599b100762d874cb52",
+      "bytes": 4371
+    },
+    {
+      "path": "mods/resources/coremods/judgment_skill_key.js",
+      "sha256": "d8fc308d867b41af6baba2ba62118300e68925038c447f08d72b5b39232c8c82",
+      "bytes": 3763
+    },
+    {
+      "path": "mods/resources/coremods/native_mesh_render.js",
+      "sha256": "60ed455d66a9f4fd2ce4830d997f92f43d5853aa06137d48ffb5cb1b112a750c",
+      "bytes": 2960
+    },
+    {
+      "path": "mods/resources/coremods/no_aim.js",
+      "sha256": "bff9b5ad40f5aee887414b13fa63c032065d1b89820b5baf16f23a835bc8700d",
+      "bytes": 2034
+    },
+    {
+      "path": "mods/resources/coremods/no_full_reload.js",
+      "sha256": "c9bf926aad572b408a3d842a9173eda5308be3e7fd3e5220311d186a1ee331c1",
+      "bytes": 2001
+    },
+    {
+      "path": "mods/resources/coremods/parasite_cannon.js",
+      "sha256": "9ce615e2f7ebd79adc7f6e4105a1df53e4cde715f2a957d0eb23657e95aa68b3",
+      "bytes": 4312
+    },
+    {
+      "path": "mods/resources/coremods/parasite_description.js",
+      "sha256": "52a180333ba45d943db24f02ca163f73c132846b906bf9399e11cdd36477261f",
+      "bytes": 2473
+    },
+    {
+      "path": "mods/resources/coremods/weapon_asset_warmup.js",
+      "sha256": "82cdfa000cbcf3053c78520da3f799297834f0fab05fd1c6768b902b1f8d5ec9",
+      "bytes": 1124
+    },
+    {
+      "path": "mods/resources/data/eyeofpunishment/damage_type/nofa_cloud.json",
+      "sha256": "354ef2c7c57fd3b56c6efdfbc660af059b469b72d10c12941c6d673b94adefae",
+      "bytes": 72
+    },
+    {
+      "path": "mods/resources/data/eyeofpunishment/damage_type/nofa_lightning.json",
+      "sha256": "354ef2c7c57fd3b56c6efdfbc660af059b469b72d10c12941c6d673b94adefae",
+      "bytes": 72
+    },
+    {
+      "path": "mods/resources/data/judgfire/damage_type/emperor_crown.json",
+      "sha256": "6d36144a322186eabd678628654a3bcc52bd46cc3dcf471a6d665e625bb4e164",
+      "bytes": 74
+    },
+    {
+      "path": "mods/resources/data/minecraft/tags/damage_type/bypasses_cooldown.json",
+      "sha256": "9b0091a2bec27dd23a3e2f7aca4716a0c5f914cea177a00fca9a858bb6ec4610",
+      "bytes": 133
+    },
+    {
+      "path": "mods/resources/data/ssjj_dark/damage_type/blade.json",
+      "sha256": "87a37157180fbe450e60bafb33e47da0c6cedc3881c384b9a68d010a330dfee2",
+      "bytes": 85
+    },
+    {
+      "path": "mods/resources/data/ssjj_workbench/advancements/recipes/rongguang.json",
+      "sha256": "452c4b0c06a16c89f08a8e2da672dedebaeea9bac3278753fdcb9756d61a8f0a",
+      "bytes": 367
+    },
+    {
+      "path": "mods/resources/data/ssjj_workbench/recipes/rongguang.json",
+      "sha256": "bf6e94e29393cfbbebd6e576cbdc01d56a392343c106fa9d3ebf51b3e77c6bb7",
+      "bytes": 362
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/damage_type/destruction.json",
+      "sha256": "88036423c6196d96ae35d49a5b73c2a65913f3d3fc097ad8220d88bb62c6b764",
+      "bytes": 77
+    },
+    {
+      "path": "mods/resources/META-INF/coremods.json",
+      "sha256": "e7155d57f014b213ffdf6e3389f68fbba9633aec6352d3fc8f99009d477ce141",
+      "bytes": 906
+    },
+    {
+      "path": "mods/resources/META-INF/licenses/ssjj_dark/LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "bytes": 35149
+    },
+    {
+      "path": "mods/resources/META-INF/mods.toml",
+      "sha256": "479cb0e5d65f5a7cf8fab6b0e34ab9c309312423c2caf0d2166164bd3858894b",
+      "bytes": 1426
+    },
+    {
+      "path": "mods/resources/pack.mcmeta",
+      "sha256": "b1d8bb7448158d3efbae08f869cfa8f61a22524d9ae41908a30589e7df1ccdf2",
+      "bytes": 88
+    },
+    {
+      "path": "mods/source-manifest.json",
+      "sha256": "e41e5996940550c36dc455279a21d2f97eac24cbbb6e2be41be59177bf00c9fc",
+      "bytes": 355901
+    },
+    {
+      "path": "mods/src/cn/eyejudgment/FragmentItems.java",
+      "sha256": "4e2662b9408177b5baab656176ea25e16d0bd15b22981622de00a225d7831ea8",
+      "bytes": 1789
+    },
+    {
+      "path": "mods/src/cn/fusionarsenal/api/ModuleRegistry.java",
+      "sha256": "3bdcecdb9847e7df44bfff478b64b9a500371c1f807b5ae2585f523a9b6a9eb3",
+      "bytes": 3983
+    },
+    {
+      "path": "mods/src/cn/fusionarsenal/api/UltimateStoneRegistry.java",
+      "sha256": "7b2555a633120b8eda331188d5de7d0cd0deec2cae18db64d996daf27fffd1fd",
+      "bytes": 2549
+    },
+    {
+      "path": "mods/src/cn/fusionarsenal/api/WeaponModule.java",
+      "sha256": "fb905f951d3887c16dc8628c4091702ab94202d0450a2aaa87c14bb8fc9e07e0",
+      "bytes": 349
+    },
+    {
+      "path": "mods/src/cn/fusionarsenal/client/ClientConfigRegistration.java",
+      "sha256": "182839bc57002a13639f2cdbc229ce33f08e150ae494133baf5249f45872e3ab",
+      "bytes": 1052
+    },
+    {
+      "path": "mods/src/cn/fusionarsenal/client/ClothSettingsScreen.java",
+      "sha256": "b028cab3ce24b79cf4f60553a5be44b2dbe939fc959aacb7dbecffda6b029188",
+      "bytes": 7858
+    },
+    {
+      "path": "mods/src/cn/fusionarsenal/config/ArsenalConfig.java",
+      "sha256": "4b8ded73fafe015b8837f6df03605a2a73c1a1e1ff523b4631c898f61760c6a0",
+      "bytes": 25159
+    },
+    {
+      "path": "mods/src/cn/fusionarsenal/config/ClientConfigEditing.java",
+      "sha256": "8f66b1699deda049de014dc295d3a5c2f2bd0c339a71cad297d1a42ffb7daaf0",
+      "bytes": 1724
+    },
+    {
+      "path": "mods/src/cn/fusionarsenal/config/ConfigEditing.java",
+      "sha256": "9773bca32cd31ee3f536ce146bc9a96f06c4d12e47a94e76938f7dd265ff1a08",
+      "bytes": 872
+    },
+    {
+      "path": "mods/src/cn/fusionarsenal/config/ConfigPersistence.java",
+      "sha256": "9a1d1c92a9400229b0f8578ca164de9efba2ea7e785eae27c1b659c88013e67c",
+      "bytes": 5782
+    },
+    {
+      "path": "mods/src/cn/fusionarsenal/config/ConfigSync.java",
+      "sha256": "2c337cc517ebce73b19db473e1a344c8a98922a91f67763d7f768a2dce3b0697",
+      "bytes": 3644
+    },
+    {
+      "path": "mods/src/cn/fusionarsenal/config/ProgressionConfig.java",
+      "sha256": "51f63c6d05f9bbd2c7b8ff20916f29c7790977fd17e101519c7cbff8017ec2b1",
+      "bytes": 3460
+    },
+    {
+      "path": "mods/src/cn/fusionarsenal/CreativeStone.java",
+      "sha256": "3f40eae8239ffe33129f3488f58d0a1801cdcc50ccb10e531d9bfeb36464b0ac",
+      "bytes": 1537
+    },
+    {
+      "path": "mods/src/cn/fusionarsenal/EnergyUpgradeRules.java",
+      "sha256": "e4c00a92de7adeb8f6cab187e4ed944d7414aaf2653c3a3e8f18645cfbc0fc79",
+      "bytes": 777
+    },
+    {
+      "path": "mods/src/cn/fusionarsenal/EyeAccessoryEnergy.java",
+      "sha256": "5519d8da8730a94ff74e2d64edf9a3ad463db2d13bbd87bb351a7a3fc91a640e",
+      "bytes": 3780
+    },
+    {
+      "path": "mods/src/cn/fusionarsenal/FamilyGunIds.java",
+      "sha256": "fbe2ed935b7bec98e061c406db85628866a6fc764a3218f5a6ec0a897fa3bd72",
+      "bytes": 970
+    },
+    {
+      "path": "mods/src/cn/fusionarsenal/FusionArsenal.java",
+      "sha256": "ded614b44302706392bcaaf731dbd0eb5087cf29201a9f17da37b268b0ad5cb9",
+      "bytes": 780
+    },
+    {
+      "path": "mods/src/cn/fusionarsenal/GeneratedUpgradeCatalog.java",
+      "sha256": "701e6313b026f58b0f515a313f683e087d7945dffad203b43553955a02cf5c69",
+      "bytes": 664
+    },
+    {
+      "path": "mods/src/cn/fusionarsenal/modules/BuiltinModules.java",
+      "sha256": "26b8e99b0d0249669002fa179621693786daaf6cb2a8bf868567c052d15f6b3a",
+      "bytes": 433
+    },
+    {
+      "path": "mods/src/cn/fusionarsenal/modules/JudgmentModule.java",
+      "sha256": "2da8278d4d23c33424ea15f8dc8148badd5edddf6146c87078dd6450ee8d78df",
+      "bytes": 457
+    },
+    {
+      "path": "mods/src/cn/fusionarsenal/modules/PunishmentModule.java",
+      "sha256": "4d8eda74549a75e482ceb35f7b70e3608ac1e0d9cfb8630c55432120ca83eaf7",
+      "bytes": 459
+    },
+    {
+      "path": "mods/src/cn/fusionarsenal/TierWeaponDisplays.java",
+      "sha256": "0e6f5ebb87bfb0a042ba7008071e7a9820b2e704403f55e74bca38a434811962",
+      "bytes": 1540
+    },
+    {
+      "path": "mods/src/cn/fusionarsenal/UpgradeCatalog.java",
+      "sha256": "95fc724cf5ab1e7cfd32c9733667bbfd047e995fb202cfbcbdb76540c3054d64",
+      "bytes": 2537
+    },
+    {
+      "path": "mods/src/cn/fusionarsenal/UpgradeDefinition.java",
+      "sha256": "bbe11ad2cdb2fd41ca5eafc8d63c79e30038903a1bc437e7ff916470559550ca",
+      "bytes": 943
+    },
+    {
+      "path": "mods/src/cn/judgfire/AttachmentAppearance.java",
+      "sha256": "62b1d998eef4ab0504010c33168da062c936a7756ea3401d7d64af5cb42e6dcf",
+      "bytes": 5813
+    },
+    {
+      "path": "mods/src/cn/judgfire/AttackBonuses.java",
+      "sha256": "05e054e8cd37aec51ffacfebe7b84008b1e810b2fcfd5422627924c07d953e3c",
+      "bytes": 5870
+    },
+    {
+      "path": "mods/src/cn/judgfire/BarrierHealth.java",
+      "sha256": "222ae6bd49aa77104a6e8dd67673b55606bba68bb62331d2bd4d86ba52e995d5",
+      "bytes": 16915
+    },
+    {
+      "path": "mods/src/cn/judgfire/BarrierOffset.java",
+      "sha256": "39ca825eea44dfaf88d375291ca02c534222dbe45b118eef95461faa0b91c36b",
+      "bytes": 2346
+    },
+    {
+      "path": "mods/src/cn/judgfire/BarrierStorage.java",
+      "sha256": "d5ac302e0c816d41c4df1c3bd003b3915a40d211ad3c58d4779e7e71b9c7cef7",
+      "bytes": 1312
+    },
+    {
+      "path": "mods/src/cn/judgfire/BeamOrigin.java",
+      "sha256": "1cc9e7b87924ccba80af5f959d0a98963c2003e38ad4bd18aaef960616e38068",
+      "bytes": 742
+    },
+    {
+      "path": "mods/src/cn/judgfire/BodyEffectBinding.java",
+      "sha256": "e7f857dee7f59933897e3acb322eaf213194434e1a678529cd7e0c8d800ebae1",
+      "bytes": 3540
+    },
+    {
+      "path": "mods/src/cn/judgfire/BodyEffects.java",
+      "sha256": "fdd98c30afa5150e9531ce56549c39c7ac518a0281ff7c55c94aefd842288cbe",
+      "bytes": 9900
+    },
+    {
+      "path": "mods/src/cn/judgfire/BodyScratch.java",
+      "sha256": "f675622e8753d58bed3fb4570842f5bac44dcce97d99caa08cf40cbd0608afa6",
+      "bytes": 3193
+    },
+    {
+      "path": "mods/src/cn/judgfire/BurstAnimation.java",
+      "sha256": "abfbea97c7062406c8785ffa58a5b0e63826230dc4ca9604bd8a28da887a93ee",
+      "bytes": 1067
+    },
+    {
+      "path": "mods/src/cn/judgfire/BurstClient.java",
+      "sha256": "d1f0e5464379592048717037d40bbfa111076d7eb416398e5a9e90ceacae43d7",
+      "bytes": 10132
+    },
+    {
+      "path": "mods/src/cn/judgfire/BurstHud.java",
+      "sha256": "27c1cc101eb42fe0c009717222278957424efc6f6a671d8940d446a96fcb2255",
+      "bytes": 3486
+    },
+    {
+      "path": "mods/src/cn/judgfire/BurstHudState.java",
+      "sha256": "55906b5b9ec7505221e22eb1309a73fa4af77db427ae90f7528d205292c9cf66",
+      "bytes": 1568
+    },
+    {
+      "path": "mods/src/cn/judgfire/BurstRuntime.java",
+      "sha256": "7ec55ba71a059abafd9c2949f1e0f318ca33c4b4681eb48a8b5356accf5dda5f",
+      "bytes": 10030
+    },
+    {
+      "path": "mods/src/cn/judgfire/BurstStun.java",
+      "sha256": "0b3d8e705160c9dba2157e93c6762c79a1e2d2a15f6c5cdeab2565b6baef63f3",
+      "bytes": 1787
+    },
+    {
+      "path": "mods/src/cn/judgfire/BurstTiming.java",
+      "sha256": "6498ed3e9d24320a6af7ea76469ff11e91b6e1feeece327f6ed34edd53c0d0e1",
+      "bytes": 769
+    },
+    {
+      "path": "mods/src/cn/judgfire/ClientEffects.java",
+      "sha256": "1cda73da09e89d432c0a9a5b1e6f6c3443274a53c766eaf01b9be65228db24bd",
+      "bytes": 10205
+    },
+    {
+      "path": "mods/src/cn/judgfire/CombatConfig.java",
+      "sha256": "00901d31d4f37dbb5c90adbe4d6aff52a186165f6a885899f2e029e7c58ddc84",
+      "bytes": 1856
+    },
+    {
+      "path": "mods/src/cn/judgfire/CommitPermit.java",
+      "sha256": "979726b4c020fbcd47aab9a75dbb878e473e43adf45c96f257caa285e32408ae",
+      "bytes": 2008
+    },
+    {
+      "path": "mods/src/cn/judgfire/CrownAmmoReceipt.java",
+      "sha256": "ffc48cd5a86f0774dbb705223fa90e4dfb2e7eea8bbb101a13fce53a1e6e6c06",
+      "bytes": 368
+    },
+    {
+      "path": "mods/src/cn/judgfire/CrownAttack.java",
+      "sha256": "93e776cfbe7a282fef29e528131eff98842c9a5f13d63cbe4a6b9600cbd2209c",
+      "bytes": 2032
+    },
+    {
+      "path": "mods/src/cn/judgfire/CrownCharge.java",
+      "sha256": "08e89a143bc04934cf808a9a1f8c171004d44cb7d5f188cb0d411b1ca375805a",
+      "bytes": 2032
+    },
+    {
+      "path": "mods/src/cn/judgfire/CrownControl.java",
+      "sha256": "a5b2e343cd3df2b46f5d9cf83e6e516295d98a8756f185749561789d97917f14",
+      "bytes": 1464
+    },
+    {
+      "path": "mods/src/cn/judgfire/CrownEffects.java",
+      "sha256": "486b5253f3128c959ee426fc6171d48833c4d1d56d058bdf65160d1b771b6069",
+      "bytes": 7817
+    },
+    {
+      "path": "mods/src/cn/judgfire/CrownHoming.java",
+      "sha256": "c26c130c4a84c9ae8244103102c8f8718d525cdb1a1049bcb607e304cfeeddd3",
+      "bytes": 990
+    },
+    {
+      "path": "mods/src/cn/judgfire/CrownInput.java",
+      "sha256": "b4571c1819f5393990fc3708bda9f4ba48207923d7afdd076b1f87df7af31684",
+      "bytes": 1962
+    },
+    {
+      "path": "mods/src/cn/judgfire/CrownRangeBonus.java",
+      "sha256": "c7202d5aed12174246eb5ef3d3f4209b2cd9dface5c34caf0a91702119db07eb",
+      "bytes": 1246
+    },
+    {
+      "path": "mods/src/cn/judgfire/CrownScanReuse.java",
+      "sha256": "2902e3b734268eb324329359321c39cfabea6b4ebf06d23549eece7fb586a748",
+      "bytes": 1174
+    },
+    {
+      "path": "mods/src/cn/judgfire/CrownTargets.java",
+      "sha256": "96a7f0c611a5f15dd2e61cb287d7358b3c6b5f7f46cfa63e0da3b6c037b98bb3",
+      "bytes": 3329
+    },
+    {
+      "path": "mods/src/cn/judgfire/CustomParticleSchedule.java",
+      "sha256": "c7f6a4c0efdd146d3d647a4bfe2ff31632de1ca46f5a9bc2645cfce1aba8f0ad",
+      "bytes": 14547
+    },
+    {
+      "path": "mods/src/cn/judgfire/CustomParticleTransform.java",
+      "sha256": "c8eff6406fa4331dc97a411c1654a1569c51064f86d9531829347a227c63a875",
+      "bytes": 19976
+    },
+    {
+      "path": "mods/src/cn/judgfire/DefaultFlameEffects.java",
+      "sha256": "77de5c15ad6c881580f891d319b21b78e64f4cd1096dda6d19f49714177a85a5",
+      "bytes": 36878
+    },
+    {
+      "path": "mods/src/cn/judgfire/DefaultWorldFlames.java",
+      "sha256": "d79c350401187ba0bbacaa07f8fe3d8c3d3f66df04bd74efefe019ec68e06d88",
+      "bytes": 5599
+    },
+    {
+      "path": "mods/src/cn/judgfire/EffectPerformanceConfig.java",
+      "sha256": "e12545e60ae32c49d75fd9019ac645fa36320d6af4b0418cb915059e94273513",
+      "bytes": 1156
+    },
+    {
+      "path": "mods/src/cn/judgfire/EffectRenderReuse.java",
+      "sha256": "1c59693678b9190cf02fddcd331a434c879c6b2682b143c0c61b8ab55c6144aa",
+      "bytes": 4753
+    },
+    {
+      "path": "mods/src/cn/judgfire/EmperorCrown.java",
+      "sha256": "a229a104c425a97b4d827c7164e632fc26cc54c9615baf0d620684dbb82fb259",
+      "bytes": 10673
+    },
+    {
+      "path": "mods/src/cn/judgfire/EndpointBeamAim.java",
+      "sha256": "80b481d6f59195e6b63f1b75c33a2d46d928ac62adef36dd49968ff1b1d892dc",
+      "bytes": 1626
+    },
+    {
+      "path": "mods/src/cn/judgfire/EndpointLinePlacement.java",
+      "sha256": "f3196107ecb98bf0b3e32bca45a7dea2915a25bddf5a20271938035f43dc847b",
+      "bytes": 2976
+    },
+    {
+      "path": "mods/src/cn/judgfire/EndpointProjection.java",
+      "sha256": "cf95d9f6888078ace73472dc8e0f4604531c41fb6ed990ab699d9a00d89f857f",
+      "bytes": 3691
+    },
+    {
+      "path": "mods/src/cn/judgfire/EnergyAttributes.java",
+      "sha256": "cba4a9a2d2edfa5ce3ba4462b4fc2f8149f4a3c3d457ea754e3e5d840def7a23",
+      "bytes": 6399
+    },
+    {
+      "path": "mods/src/cn/judgfire/EnergyScaling.java",
+      "sha256": "e6b41ff8686329448b07f3d1f3c7f399db4cb0c21a6cc8223a1be5e3636d4173",
+      "bytes": 2041
+    },
+    {
+      "path": "mods/src/cn/judgfire/FireBurstEnergy.java",
+      "sha256": "aded2d4745cd717aa706e082b88b31839f4ad3cbdf8a3534a41196b08f30dfa8",
+      "bytes": 831
+    },
+    {
+      "path": "mods/src/cn/judgfire/FireBurstRules.java",
+      "sha256": "ca4a4b88ed9b788d16975424e6e6f1f798b9653d600f4b8204b6e13a2a689733",
+      "bytes": 2783
+    },
+    {
+      "path": "mods/src/cn/judgfire/FireCombatStages.java",
+      "sha256": "a66c555d6fb1b56fafbff24610004f2e44a65c2a8416eb0ea79f4e8debc68ef0",
+      "bytes": 2873
+    },
+    {
+      "path": "mods/src/cn/judgfire/FlameRenderType.java",
+      "sha256": "ef2e5e4f53a7a285115c3ef5b3b62b017e73f109b6d69d178870de29a4e00624",
+      "bytes": 6277
+    },
+    {
+      "path": "mods/src/cn/judgfire/FrozenVisuals.java",
+      "sha256": "8f50569d152b5aaff518daf7215196f250915b6664a95c3b0b9125cd14b98a36",
+      "bytes": 4253
+    },
+    {
+      "path": "mods/src/cn/judgfire/GunMeshRender.java",
+      "sha256": "4244dce4d55ca4d99596fc9dc1de1e7461e181a1ad764e163ef1fa8a291f608d",
+      "bytes": 2193
+    },
+    {
+      "path": "mods/src/cn/judgfire/JudgmentAmmo.java",
+      "sha256": "c5caf8a8a710bbb663d40d66b8513fc8506ffb38b171b330d6a0c3e877e8c86f",
+      "bytes": 6362
+    },
+    {
+      "path": "mods/src/cn/judgfire/JudgmentFlame.java",
+      "sha256": "1d65d2e5e3265c167756398535f5264bdf416d9830b56a72c135dea333e25078",
+      "bytes": 20718
+    },
+    {
+      "path": "mods/src/cn/judgfire/JudgmentSkillKey.java",
+      "sha256": "f46d6384f44d530aa0d3a135b16cf58035c314e0fabe311ad3dbe6993e3b4844",
+      "bytes": 612
+    },
+    {
+      "path": "mods/src/cn/judgfire/LaserAppearance.java",
+      "sha256": "9f08ca753a6419183a7d2b1c95aa11d3510cdc9699674fa254bdff4f90fa302c",
+      "bytes": 1996
+    },
+    {
+      "path": "mods/src/cn/judgfire/LaserAttachments.java",
+      "sha256": "51121ac25fe92e2b60052f086fd04512787686298808038387b92b80cdaca437",
+      "bytes": 642
+    },
+    {
+      "path": "mods/src/cn/judgfire/LaserCollision.java",
+      "sha256": "59fecbb4338d69a26c7757f4bdc4cf9ec16d87ae17c818ac51c3edac832e848b",
+      "bytes": 761
+    },
+    {
+      "path": "mods/src/cn/judgfire/LaserPulse.java",
+      "sha256": "b27e1245695389fcc86eb3f9713e74272f7f8341dd5719d272ad062104d65c99",
+      "bytes": 872
+    },
+    {
+      "path": "mods/src/cn/judgfire/LightningCurrentRing.java",
+      "sha256": "6450dd0f4ea8a4c88595edd5db5f141962ee866740ae8eaa00d61adfd76d0a8c",
+      "bytes": 3709
+    },
+    {
+      "path": "mods/src/cn/judgfire/LightningVisuals.java",
+      "sha256": "31affe88907f35ddbc66b8a9277618282b6b75a9141de600e7d8e142476af426",
+      "bytes": 4345
+    },
+    {
+      "path": "mods/src/cn/judgfire/LotusMarks.java",
+      "sha256": "ba47bb9332230b9114cd5f131fecee84fa8d099caa7df344dab92858ab416392",
+      "bytes": 1196
+    },
+    {
+      "path": "mods/src/cn/judgfire/MaterialBlendShader.java",
+      "sha256": "d9af0f3c09c78b23704832e47a9ca16ac7aafb4091dd51f1b7771a1d4728aaac",
+      "bytes": 1242
+    },
+    {
+      "path": "mods/src/cn/judgfire/MotionSkin.java",
+      "sha256": "3c12ff6a9f01abcc63c8a83e7fed448ed9e780ce8a17f1ae74e85bda6a51bca7",
+      "bytes": 6526
+    },
+    {
+      "path": "mods/src/cn/judgfire/NativeEmitterClock.java",
+      "sha256": "436b3af9d4d3e3553c7074ef6b78f98667e29ef1ea0587f004a4a46bcb626502",
+      "bytes": 2590
+    },
+    {
+      "path": "mods/src/cn/judgfire/NativeParticleShape.java",
+      "sha256": "cc8b8ba8e65aaa02be622a3d3b9a5eeafc6007b5467cf18508f344d792b65023",
+      "bytes": 2994
+    },
+    {
+      "path": "mods/src/cn/judgfire/NativeSkinAbsorb.java",
+      "sha256": "c6ef6bd376e7fb15fda0fbb3304612cf2ce3eff0ea1eb1a4d76e805c335ddf5c",
+      "bytes": 8332
+    },
+    {
+      "path": "mods/src/cn/judgfire/NativeSkinBodyBridge.java",
+      "sha256": "32791e3f5ab23c57f9c7de5eea9f0ce65984e0e31d99e272d6178ce9febe68b9",
+      "bytes": 2357
+    },
+    {
+      "path": "mods/src/cn/judgfire/NativeSkinFlow.java",
+      "sha256": "2638b13622ea84a6de758360dd55d0652bfeca5f5fa2565bcff1e5813696657c",
+      "bytes": 2776
+    },
+    {
+      "path": "mods/src/cn/judgfire/NativeTextureSheet.java",
+      "sha256": "ae50f9c36a85c247c6652af041403b21048f09de5a7e5a8eae622a9ad4f06c0a",
+      "bytes": 1354
+    },
+    {
+      "path": "mods/src/cn/judgfire/NativeWorldFlames.java",
+      "sha256": "f6682a0cd304f00d1f2e3a8e286c37e8d34ae8763b75954986af1929ee3fa1fc",
+      "bytes": 34267
+    },
+    {
+      "path": "mods/src/cn/judgfire/OriginalMotion.java",
+      "sha256": "e537948ced39925205869dc080ca55d650391cad1bc8ba46120f79ac911a9faa",
+      "bytes": 8197
+    },
+    {
+      "path": "mods/src/cn/judgfire/QinglongBulletRenderer.java",
+      "sha256": "01ca7e59517a59625d46eab17d4d360b891b97fa33e6acb34028f6705ea53db9",
+      "bytes": 2982
+    },
+    {
+      "path": "mods/src/cn/judgfire/QinglongVisuals.java",
+      "sha256": "1660c4edcc39a473ddd751f79f978c5e91a6ed8f5511df9d80514707e53ea616",
+      "bytes": 3111
+    },
+    {
+      "path": "mods/src/cn/judgfire/RedLotus.java",
+      "sha256": "4192afb22d0f23622265eedba2deac14b79923bf30cd5be8eeec5857143d7fc1",
+      "bytes": 6966
+    },
+    {
+      "path": "mods/src/cn/judgfire/ReloadViewCalibration.java",
+      "sha256": "ce1ee52e7fde0ce381fed6a8acdf8be86a75603fa705f91d7a17df6331fa87e2",
+      "bytes": 1729
+    },
+    {
+      "path": "mods/src/cn/judgfire/RenderOptions.java",
+      "sha256": "573381fe6a3ab812d15e34f566c29f02a4d93a271856dce4167eb34f34657262",
+      "bytes": 410
+    },
+    {
+      "path": "mods/src/cn/judgfire/RenderPoseGuard.java",
+      "sha256": "765999db39e45836870e43419f52628332e8e17c1a71e906da1ac695c59ff5bc",
+      "bytes": 2032
+    },
+    {
+      "path": "mods/src/cn/judgfire/ScopeOverlay.java",
+      "sha256": "d15755f1275c1b29b9740353843c5b329cc99c43496d7782047ba01376ae02af",
+      "bytes": 2704
+    },
+    {
+      "path": "mods/src/cn/judgfire/SkinBodyEffects.java",
+      "sha256": "67c7e3dae6f284765353856408fac983098d92968dd2265a9a11e3c40ab62dde",
+      "bytes": 25402
+    },
+    {
+      "path": "mods/src/cn/judgfire/SkinEndpointLines.java",
+      "sha256": "d881ef9d547315821acdb05961fd979042bdb1578741505640b17cc86dcde37d",
+      "bytes": 8256
+    },
+    {
+      "path": "mods/src/cn/judgfire/SkinHud.java",
+      "sha256": "a86ef2bb020493ec3344640eb2ce5bea43aeb17d307764f2e440a0916d40cefb",
+      "bytes": 1426
+    },
+    {
+      "path": "mods/src/cn/judgfire/SkinMouthEffects.java",
+      "sha256": "a4d096a41ec6081dce9741df697d11bcf105ea0df739d4dc5e1624c3c9e56679",
+      "bytes": 5342
+    },
+    {
+      "path": "mods/src/cn/judgfire/SkinWorldFlames.java",
+      "sha256": "fb8ec49c767ac86e0812699c4b551fc46a90f223f782a56020173b188e3ca7c7",
+      "bytes": 32342
+    },
+    {
+      "path": "mods/src/cn/judgfire/SkinWorldRenderType.java",
+      "sha256": "537ad2c4808d2c51f8fab68e2b5d3295b829580b228d9a757ebfc912b9cbf7e8",
+      "bytes": 7947
+    },
+    {
+      "path": "mods/src/cn/judgfire/StrengthAttributes.java",
+      "sha256": "22dc6d3a706be6b263c9eca25682038af58fae37740c132ee541cab2454f8266",
+      "bytes": 1757
+    },
+    {
+      "path": "mods/src/cn/judgfire/StunInput.java",
+      "sha256": "ad6d03c2dfadcececc87af1f07ab6b419bea0fcde2a297edb7d62ee8d5c72873",
+      "bytes": 1380
+    },
+    {
+      "path": "mods/src/cn/judgfire/StunNetwork.java",
+      "sha256": "884a605423d207eee5c88e4f0f144efc62b1b5d1284beb73170e452e98f89b46",
+      "bytes": 2423
+    },
+    {
+      "path": "mods/src/cn/judgfire/StunState.java",
+      "sha256": "2cbfb208d6efca38ae15728dba557d0c6f851bd7160faf2e25ac5887d0928454",
+      "bytes": 5905
+    },
+    {
+      "path": "mods/src/cn/judgfire/TierFireMotion.java",
+      "sha256": "c1c987557db1a4bd3e2068eb21539a70b79d46f2ab7128a2d26383a3fde9f1ec",
+      "bytes": 1951
+    },
+    {
+      "path": "mods/src/cn/judgfire/TierFireSurface.java",
+      "sha256": "40d332d6c30a36be6ef19b5cc7e7cff72d4dfd8968da17a24f64df35661a00f1",
+      "bytes": 2276
+    },
+    {
+      "path": "mods/src/cn/judgfire/UltimateCrownSupport.java",
+      "sha256": "44cc03a5c7585821f0bb0a783dee4ae76ca21000be1ba746afe26064d8a57326",
+      "bytes": 508
+    },
+    {
+      "path": "mods/src/cn/judgfire/WeaponDamage.java",
+      "sha256": "09da3b98acb81f767436e5ec9b21d5110b871ebdccefc70b914849d537cb3c96",
+      "bytes": 6297
+    },
+    {
+      "path": "mods/src/cn/judgfire/WeaponSkins.java",
+      "sha256": "417a99ba99c1909847124b137a015e4208e22f82261a49d02969e25fc4062b60",
+      "bytes": 3768
+    },
+    {
+      "path": "mods/src/cn/judgfire/WorldFlameRenderType.java",
+      "sha256": "71546a92263a3278431085b30dcbba6704b689f3e85d4d19f1ef1bc22765bc07",
+      "bytes": 4958
+    },
+    {
+      "path": "mods/src/cn/judgfire/WorldMeshReuse.java",
+      "sha256": "7cefb86eb3ee7f7aad8310e8f96817117f6efddf7d23879abed4efb607839a3d",
+      "bytes": 7676
+    },
+    {
+      "path": "mods/src/cn/judgfire/WorldScenePlan.java",
+      "sha256": "487b3aea3db81d4feeda2f9e0dd999bce0c69f4fc8a224bc4dd94ecd72bff27c",
+      "bytes": 1081
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/AimRules.java",
+      "sha256": "db556f64ffaa1f4a67909e871d157ffdf910f2246cce4168ee60de38958069db",
+      "bytes": 776
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/AmmoRefundRules.java",
+      "sha256": "6929c956bf2bb744f320beaf380858b01564f4914d09748375f62bba168286c8",
+      "bytes": 357
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/CloudRangeProfiles.java",
+      "sha256": "b45d64eea74001406bce8486ece1e24cbb8adbc287ccb023566b0dda59bf62c6",
+      "bytes": 7153
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/CloudRanges.java",
+      "sha256": "da23ee24a798b0db5e066ddb60f667dbe0d0c23b5ea2d3b001feca59da957829",
+      "bytes": 5359
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/CloudScene.java",
+      "sha256": "c04b0e7cb36b5a896c97dd6325565edef1c0d059b2bf7bb2dfae62742c5f4aae",
+      "bytes": 4714
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/EffectScratch.java",
+      "sha256": "b915b804a7b78cdc9dfff43ee732f71c238e0ff4932a65de7744df41d6e42ea9",
+      "bytes": 1467
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/EyeBodyRender.java",
+      "sha256": "51de43658c9f94c21b8c5a9fe028af62239227bf30ed9d3782eb9fc567232682",
+      "bytes": 2192
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/EyeCombatRules.java",
+      "sha256": "fbf867b42cc07ec73736d00309d8d86058d83ca0f1380ef119c5a4e30c2bb355",
+      "bytes": 5334
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/EyeCrosshair.java",
+      "sha256": "758d5fefef1088456bf211c14db9db4d5bd96668feeb1d15db71946eeb67f679",
+      "bytes": 3530
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/EyeForeAftRecoil.java",
+      "sha256": "8db2e68fda9f920ee746c6e7311add77ea23c0d0bccb83caca953afb9ce3d4c7",
+      "bytes": 2144
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/EyeHitRefund.java",
+      "sha256": "e2c0783d401f99df111696fc9afb7a9554e382ed615a4dbad1a5df43d8c9f7a0",
+      "bytes": 4719
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/EyeRefitPreview.java",
+      "sha256": "44a975473e863614ac50454a1ca9f1f7ac5373cdf9b04c68d37380e8e000a330",
+      "bytes": 2821
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/EyeSkillDamage.java",
+      "sha256": "015810d728f65bf77790e19193020083c2d99aad73be160abdf1a2d9658b2ae8",
+      "bytes": 3378
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/GazeGeometry.java",
+      "sha256": "3b461dbc2ea197ed9d0538ec2ecd4d0781762c1ab2485413f1b186f83204b9e5",
+      "bytes": 1429
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/GazeLedger.java",
+      "sha256": "95c34f9a6af05be5d2fdb46772b88eefdedb3953a0072007045628727d3333ba",
+      "bytes": 672
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/GazeMarks.java",
+      "sha256": "f2edd396fdb810f573531529f460d92167021eb84e98108bb55d524f3cb4f513",
+      "bytes": 3178
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/GazeNetwork.java",
+      "sha256": "5e55852c279d3511369a89e99c1485d3a19fa4b370f1f92160ab0222474de6cf",
+      "bytes": 1764
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/GazeVisuals.java",
+      "sha256": "fd99535c3013b5e405adbc655624ab1861ff99c9cf830b22b1aeb0b450c641f8",
+      "bytes": 3118
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/GripRequirement.java",
+      "sha256": "a6c7e0880dc12c113134b563bb6d0174ea1ea9cda7914193ea4a791c9445f655",
+      "bytes": 583
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/KingHeartEnergy.java",
+      "sha256": "78c9aea387a35ca334d4eacada6d017218009c3b294f4816e2297ce5d9d02363",
+      "bytes": 1856
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/KingHeartPower.java",
+      "sha256": "e7fdbc694ff1bb5e099e07cc4ad23f437abe6c92ce0b94122bc6eab655ef3032",
+      "bytes": 924
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/KingHeartRules.java",
+      "sha256": "a68a73a4e884bbd5911090d2ae9191e015e070d32ac36532b95a33e571bf22be",
+      "bytes": 972
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/MuzzleGeometry.java",
+      "sha256": "7f52b5344b4b81551e108806421dc7f0ac3e3670ecdc28a07ca9c3b8f25dcd00",
+      "bytes": 3249
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/MuzzleParticles.java",
+      "sha256": "6d52ce076f91d01b4e3da273f16a257a6c67cd9ee86bc3ba887af5c9aa3b82c4",
+      "bytes": 31081
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/MuzzleRefund.java",
+      "sha256": "7ed16afb6e504768fdb960b580a94e032ad265e33476fcfd31ff8f4bed8529c1",
+      "bytes": 1469
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/MuzzleRenderTypes.java",
+      "sha256": "a9d2e5c849813429672f8af61c0d9aa26a3d9288f064e6dbf31e3cad568a6d1d",
+      "bytes": 1709
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/MuzzleShaders.java",
+      "sha256": "d6f189df7c900c4ec1e2b80c307923f2c6279a055323354eb67f18500bbeb1ef",
+      "bytes": 1123
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/MuzzleVisuals.java",
+      "sha256": "5262f6e2a8f028937f2d579091455dfced354201d5e52c0f863bcab34d45aaef",
+      "bytes": 2168
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/NofaGeometry.java",
+      "sha256": "858fa0e0e9919023a659c15f7ff4173549dfb8488316fd1104cd9077502c4d19",
+      "bytes": 1273
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/NofaNetwork.java",
+      "sha256": "79950d7a6e05a67164782319e0b759e12d7cf16986129ed93fd18c080e5c6373",
+      "bytes": 4842
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/NofaPower.java",
+      "sha256": "e22fff378441115d856c7d4b09a44183bc7d596f8eb67c36a5258cd7a6b54f7f",
+      "bytes": 9858
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/NofaRules.java",
+      "sha256": "fdd50d18826f40b32474d3a14758215015ebffe0c91f57d02c117822bded786a",
+      "bytes": 2587
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/NofaScene.java",
+      "sha256": "b0cd86be07d85dbace4b77a48f7b2e14348d6768bcdf30418850318eaec89e84",
+      "bytes": 1476
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/NofaTierPolicy.java",
+      "sha256": "35859f2d753bae8bc8442c2e5120104dded32c127d62946cee5979935609a1d2",
+      "bytes": 498
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/NofaTuning.java",
+      "sha256": "fe22a4f97c63e2c361a999ba241a9a09875856be68f7b0e3c71c15dcc55d1c30",
+      "bytes": 220
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/NofaVisuals.java",
+      "sha256": "dd3d4f33577bdb757f0e86de6c9e0a394f4c8ee6b10537db86a9ad1fd9e16693",
+      "bytes": 4795
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/PassivePower.java",
+      "sha256": "d5cb688d7e36d0af592141f7e4676ca2a0d963c1e1b7536f35be69892c738747",
+      "bytes": 5667
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/PassiveRules.java",
+      "sha256": "72b2dbf6fe998a3da6eb3d068d335cdc3a9e22362453560eb970087a85879472",
+      "bytes": 613
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/PhantomNetwork.java",
+      "sha256": "eb9e2a7448818a51dcae49e787cf9a1b076692ae1f5cfb85a65edde06db9b86f",
+      "bytes": 1783
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/PhantomVisibility.java",
+      "sha256": "e0c29cc9058ac572babbcd821b8f8dbe81ddc1dfce5d8dcfa9af77f031231e64",
+      "bytes": 395
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/PhantomVisuals.java",
+      "sha256": "603189ee74786415cf8033e7a14cb2cd9ae76a43f98c06691dc8fb0cd5386e70",
+      "bytes": 5837
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/ReloadEvents.java",
+      "sha256": "4553b35241a8c67464747ed088334ef30d793b53d2856cbd7c9f035215e9416c",
+      "bytes": 705
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/ReloadRules.java",
+      "sha256": "3dd4b5d2e364b1823f395a7c49fd2b2c664b47e7732e8a3a82a265f37027553c",
+      "bytes": 1673
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/ScopeVisuals.java",
+      "sha256": "de54f6f765b556c5e9be38744e6c792ac73abea48e7d4da85b5d108733d6a5fc",
+      "bytes": 783
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/SkillActionClient.java",
+      "sha256": "cf8ca150b0333e6c0af36b2bc3a53fd9ee056ba6dd9bdc83643fdc924e5d5904",
+      "bytes": 5162
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/SkillActionClock.java",
+      "sha256": "8e81a157e09471b7c9a957ec6cc3ef065fe495cac1e2a4febe3e80ff8ab38497",
+      "bytes": 1098
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/SkillEligibility.java",
+      "sha256": "3fd6f15679b3bcc4544f60e3dc3fee811af19d8d213c35ce9c769573f6b9957a",
+      "bytes": 1054
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/SkillInput.java",
+      "sha256": "0bca9a130e5d078805c5199b202e281bde038dafaa3c77e9b73b64cc304e8448",
+      "bytes": 1330
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/SkillTimer.java",
+      "sha256": "d1609acd01404c427da6e9865b50ba826fadab8af67a808b81120b93b91be1f0",
+      "bytes": 7768
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/SkillVisualClock.java",
+      "sha256": "277c04428871e98675eac70155d490256610344a548df98db9c843b9560429e5",
+      "bytes": 1208
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/SkillVisualState.java",
+      "sha256": "4c24ad45055594ce17f14836581699b2e2503779b098642f4daebae52ddaa2b1",
+      "bytes": 2872
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/SkinFireState.java",
+      "sha256": "216cb6efe78566bac94dd0938f89a5f35b601524d010a4071b16f03fe951d465",
+      "bytes": 2636
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/SkinRules.java",
+      "sha256": "c7f438a51d659d4135eee296ec1ad1e03a3535142aef140157d37111bad83446",
+      "bytes": 1131
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/SkinVisuals.java",
+      "sha256": "333df532d6a1e396d80e8ba1648c2cc411c4413e3bc372f601756f3101ff68dd",
+      "bytes": 6820
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/SkinWorldVisuals.java",
+      "sha256": "71989501a4c9a1c0fb218c7726798c88d349b000d9d13279b803cb1d82c9552a",
+      "bytes": 5327
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/StockRequirement.java",
+      "sha256": "76d80e732ede6f38f2247a9583abb6b764a000cfd2d7785d9d649088f8632fd1",
+      "bytes": 740
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/StrikeRenderTypes.java",
+      "sha256": "0039940d70084b97741d400dfe45b39b8c942b7eadaaf36247ca7dd8dcacdd58",
+      "bytes": 1073
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/TierEyeEffects.java",
+      "sha256": "83ad6977c5c5372f766e0ba49068b244bc645f580567077a8ec4068b5cd5ad8f",
+      "bytes": 7674
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/TierEyeVisuals.java",
+      "sha256": "16b6594c55d1e30dcc4c2c68652f88028afc28662b6ab2d95b1337574a640084",
+      "bytes": 2482
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/TimerHud.java",
+      "sha256": "4c2379bc12068b41993f10c7d0d80c67bf7c15dd054aa212f4b0409727708b01",
+      "bytes": 2194
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/TimerHudModel.java",
+      "sha256": "e1c4299c99df3d37d195d579383c2f7cad06facd0f830e9835e91983f92aee48",
+      "bytes": 3161
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/TimerRules.java",
+      "sha256": "b8bfa3b532059453ab7b1e13357e33634f06b31cd1ece831b52ebd57b940c718",
+      "bytes": 1613
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/UltimateRequirement.java",
+      "sha256": "99116f53e4d76b16036aaed613467d89d4ae25c5832037d505e8638cad626083",
+      "bytes": 862
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/UltimateRules.java",
+      "sha256": "0e47d1e4e2c196cd50ca4659de88dc8ade9d0d7312aad9012f1c2938700dfed4",
+      "bytes": 1551
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/WeaponIdentity.java",
+      "sha256": "5543fae2b8d7753c2f2f4a3db4c692b8ce8e0d4013c3263aaf90f3832266106f",
+      "bytes": 278
+    },
+    {
+      "path": "mods/src/cn/punishmenteye/WeaponVisuals.java",
+      "sha256": "321c5341557080a83ca97ba3588f1d3e9243715672715e81573e81c01596c080",
+      "bytes": 9293
+    },
+    {
+      "path": "mods/src/cn/ssjjcompat/AttachmentBonusConfig.java",
+      "sha256": "0769c10c9e4a1a3b0931d46f64cdcc9853bca6004560aaa917b5b259a21e233b",
+      "bytes": 1615
+    },
+    {
+      "path": "mods/src/cn/ssjjcompat/AttachmentBonusRuntime.java",
+      "sha256": "7d80be37004157dce27fea26f33ac2fcc6e0c227fed6a8a94132fe556e08788f",
+      "bytes": 6679
+    },
+    {
+      "path": "mods/src/cn/ssjjcompat/client/ParticleFrames.java",
+      "sha256": "fe03fec20c77859d3a07b1d677dc2168781b70ce96485b420a0f22a71b76becf",
+      "bytes": 873
+    },
+    {
+      "path": "mods/src/cn/ssjjcompat/CombatMessages.java",
+      "sha256": "c68b567f4c87588bf5c5a0578120ab1a84582f48a6e03a0ff0ec390d3de448c1",
+      "bytes": 2089
+    },
+    {
+      "path": "mods/src/cn/ssjjcompat/DescriptionLines.java",
+      "sha256": "1cb0475ea6be47768a3550dd2e1a96164e9875c6cd8444b7741dfbf7234b10d1",
+      "bytes": 983
+    },
+    {
+      "path": "mods/src/cn/ssjjcompat/ItemPresentationCompat.java",
+      "sha256": "0e42c00f0fa152174ddd92a5a2e0f533da068078ba9b66add7fc53c7be5aa265",
+      "bytes": 10685
+    },
+    {
+      "path": "mods/src/cn/ssjjcompat/NativeMeshRenderCompat.java",
+      "sha256": "1b46c562ab9ea74a51e8717d02616fd97c30720c3cdc079c1ce71e53750b8fa9",
+      "bytes": 1128
+    },
+    {
+      "path": "mods/src/cn/ssjjcompat/PreviewGeometry.java",
+      "sha256": "9e680869c5f96c19c3507712151c335fead272293aefe38c327ef0fc8b07eaac",
+      "bytes": 3670
+    },
+    {
+      "path": "mods/src/cn/ssjjcompat/SkillInputCompat.java",
+      "sha256": "41b01ec36677a5bc1174375ea43e619db8b9934118ca1852dc5971cf5f572c2d",
+      "bytes": 1046
+    },
+    {
+      "path": "mods/src/cn/ssjjcompat/TaCZSounds.java",
+      "sha256": "fb9b5d77f4c0299ff7da4e76720b0adf034a35bd141e3dbd3ff0b56c3ee5d217",
+      "bytes": 2013
+    },
+    {
+      "path": "mods/src/cn/ssjjcompat/WeaponAssetWarmup.java",
+      "sha256": "2038b4d356566ae4b779de94e1fb885841868b4ffeb12863b54cecab1e10c93f",
+      "bytes": 2103
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/client/DimensionActivationEffects.java",
+      "sha256": "27fc95e9a76d5fa1ba63e664f5e4979bf1c9c60cf51a21a6af60a7723f50125b",
+      "bytes": 10530
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/client/DimensionActivationGeometry.java",
+      "sha256": "ffad6a2af5f237d51c3f913752d00e0834fe53d8991031f6ace7fb1b61408222",
+      "bytes": 6354
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/client/DimensionAttachmentRenderer.java",
+      "sha256": "d7c8d17b9623fe9816c3039c3c14301c2a5922ebf841692f0fa01657fc976a09",
+      "bytes": 3777
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/client/DimensionCloakRender.java",
+      "sha256": "ae42493e09faf6437f596c72e9a4925245ad70bdb655aa48d2bb8981d2da32e0",
+      "bytes": 3047
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/client/DimensionDecoyClient.java",
+      "sha256": "3547265afbbc4485f798b475dcaf7de93efefe03257d0f2ce2338accab32ceea",
+      "bytes": 12403
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/client/DimensionDecoyGeometry.java",
+      "sha256": "35b5a2fd6969062960b2c5149529bcd56eb4450b04861730d5e39ee3a5e62c62",
+      "bytes": 6302
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/client/DimensionDecoyHud.java",
+      "sha256": "356ea6d392ba20a79bdcddf83c833e3c839584691d9a169447549935bdd94277",
+      "bytes": 514
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/client/DimensionEffectRenderType.java",
+      "sha256": "4d6cdcedc2e002eb10f23fd6c91aa91b838d929fea1de267d0e80679bfabcfec",
+      "bytes": 2214
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/client/DimensionFieldClient.java",
+      "sha256": "0403424eb21812f4106c3ca2d6d64b927aef2f82c23bc222a8d0741bc34829a9",
+      "bytes": 8130
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/client/DimensionFieldEffects.java",
+      "sha256": "2188c3ea4566f5d0b6367031f9b7b4724ad57d2f972b5f479af3d03a4bf97745",
+      "bytes": 8628
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/client/DimensionFieldGeometry.java",
+      "sha256": "cc390b89007004236515a2b844d8d9722900d1d77c9bcbf6269be4af718a47d0",
+      "bytes": 7718
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/client/DimensionFieldHud.java",
+      "sha256": "ed607476fcbcaa22cda16912de3dedd9d54ef0efa7da4011827b2643f4704092",
+      "bytes": 2948
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/client/DimensionFieldInputRules.java",
+      "sha256": "b860bff0fac83148a80742b34b28df922ad11153cb231fb5cdececbb0fe15503",
+      "bytes": 563
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/client/DimensionMarkEffects.java",
+      "sha256": "5b97f0e8b8d9083934c182fc4d8764aa802c57888d4b46a4c40d095e6e6e9808",
+      "bytes": 10184
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/client/DimensionMarkGeometry.java",
+      "sha256": "f4be0a2cfed7cf9341936e21b40712b82faddbe22ff29084077962a9c1b7bd86",
+      "bytes": 5268
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/client/DimensionMarkRenderType.java",
+      "sha256": "1f9c7f39fc8fb931f804ce8a2341612b1f3ff6d27f1d64821be41f0fb92015a9",
+      "bytes": 1646
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/client/DimensionMeshRenderer.java",
+      "sha256": "d3d860965e52c90a67d4b297377542634d6ec6bfa48d8201fcb8db65b07ccd10",
+      "bytes": 14511
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/client/DimensionNativeHands.java",
+      "sha256": "72d30f5f2b34b7654096c6ee5b3fb9c5b71bebac27f82bd9f9cb9d30190c88ec",
+      "bytes": 5796
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/client/DimensionParticleEffects.java",
+      "sha256": "a95d7b1fa4b55e218ef95dcffe0a0b65ab3aa54fcf82c1cb722a019e5c90b675",
+      "bytes": 5591
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/client/DimensionParticles.java",
+      "sha256": "f40d81bfe556e23f07fd086166a8a779e3c79411f186334ae609511d7b67e910",
+      "bytes": 8954
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/client/DimensionScopeAttachmentRenderer.java",
+      "sha256": "5f4740393e1714b01b293981dbc8c41b2e14e591963c18468657a2bbe60b9c6b",
+      "bytes": 1718
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/client/DimensionSkinAnimation.java",
+      "sha256": "286674ab106bee63531c28d90d95526ecf3005f60f31149a425d68460947a762",
+      "bytes": 3215
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/DimensionAttachments.java",
+      "sha256": "3657fd82846cdcc72b63f97a96f0c27eca376d07aec5cb1a4dd56fee169e4ba7",
+      "bytes": 7011
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/DimensionConfig.java",
+      "sha256": "6ffd0c6490b577ac7bd10cdd9704cccff670d29eaebdfe3e2fa7120bfdf24b1b",
+      "bytes": 5244
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/DimensionDecoy.java",
+      "sha256": "bfc77b08b37c2154865e0e09752cfc70d0a8cc70a202913c37264a870e93e4c6",
+      "bytes": 10685
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/DimensionDecoyNetwork.java",
+      "sha256": "023e559181de9b9c3a68f680b8dad4877808b67acf82bf32a94dc1c09991efc4",
+      "bytes": 6312
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/DimensionDecoyRules.java",
+      "sha256": "6ca04aae0e2d0e973f179f34d060be557832bb0395464ce6093abe088a590009",
+      "bytes": 2048
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/DimensionField.java",
+      "sha256": "103986ec0d9c44b5545c1a0dc6a297823b16f4f1aff554cd90dae974f06d885f",
+      "bytes": 19741
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/DimensionFieldNetwork.java",
+      "sha256": "bfe45d16f42201185df1f3ea5d61c3f64cb82b3e998eaaf88fd9317517cde7d0",
+      "bytes": 7909
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/DimensionFieldRules.java",
+      "sha256": "7add17350b6cfc19a55c6b405fefd123254c0a63bdea26d296e1e2f8e21aa6fa",
+      "bytes": 5347
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/DimensionFieldSounds.java",
+      "sha256": "417e1467d019b4abe2cbd172444b43be82c35734d6f2416baaa47e9b2a480e36",
+      "bytes": 1664
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/DimensionFragments.java",
+      "sha256": "f79e333528c29ee0ca552a48a4d542a8d98ddfe591e042d7a52a7cdd2cc2b8b0",
+      "bytes": 1528
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/DimensionMarkNetwork.java",
+      "sha256": "75c5cc605052e975b97a666f4e57f2a13cc1cc3627be6dffdd0351b42c3a5ddc",
+      "bytes": 5927
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/DimensionMarkRules.java",
+      "sha256": "63677b13879d705bd294c3bfe74b53365372b787996bd67f9f6e8ad3eda1bbec",
+      "bytes": 2919
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/DimensionMarks.java",
+      "sha256": "d48d42e88740493484fe9213e73992a9c2a4fc55925084a521d6b1c96d48850d",
+      "bytes": 11206
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/DimensionMeleeInput.java",
+      "sha256": "57162f7785a9902b2c2da0a896ccef183e0c6370c602928b5228269f855c6a82",
+      "bytes": 3202
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/DimensionNativeStats.java",
+      "sha256": "8a450b85db15c9c2495de2e462e0b8e94b631ffde0ff20d47a89d3dddd276058",
+      "bytes": 3196
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/DimensionOverload.java",
+      "sha256": "a0d646295daddc0c6a08ce48d14a4cb317871a7b7fa83f935994f2f03e40a53b",
+      "bytes": 7179
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/DimensionReloadProtection.java",
+      "sha256": "e25a40a10a793614352c107e7fd1f6aaac6ad65818973079a8a7b254cd8a03f8",
+      "bytes": 1438
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/DimensionScopes.java",
+      "sha256": "9524e9e52c95f9ac366363a76ac406802f8535df9496aa6cf0fa51e4b7d89a64",
+      "bytes": 3150
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/DimensionStoneCompat.java",
+      "sha256": "8cae88b88963c3c9b0ee4fd39f5ea6b4f14371b4ae2103ed388f9940fadbd5dd",
+      "bytes": 1258
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/DimensionVisualScope.java",
+      "sha256": "bb1cbe4ef295d03c19f4ad87bca47d2fc286d065292b80fe3ed90beac4d98999",
+      "bytes": 2499
+    },
+    {
+      "path": "mods/src/cn/ssjjdimension/OverloadDamage.java",
+      "sha256": "b1b89f7ad1af98cc6842e5bf4e8da40ed6d31d78955f5c8264879771ab613ca9",
+      "bytes": 5523
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/EffectGeometry.java",
+      "sha256": "973da57fc0f9833ea8f6456509d3ba49d78cfacaa62ef66b9cc34a10115b341b",
+      "bytes": 14408
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/EffectRenderType.java",
+      "sha256": "06a44c608d2528e45a0352c835b289e6fe5a253b00efe83a943610f495025414",
+      "bytes": 3014
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/FullMagazineReload.java",
+      "sha256": "a0f63a57f9524f811e5295b159d203b36e78e31aba22f061b05bb02c98127bd2",
+      "bytes": 1198
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/NativeHandView.java",
+      "sha256": "8320388824aa7b0a666c32c0fcb248810d6759306286aacfa02150261aa55673",
+      "bytes": 6084
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/ParasiteAccessoryEnergy.java",
+      "sha256": "b1bb20aa409e776c62a97727b293473335f24984650b005596e9971ceeefebd1",
+      "bytes": 1740
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/ParasiteAttachments.java",
+      "sha256": "13b0ca4808e2a49f58b2f77b1393ed7dcd4457045705e39c11e2b0c789f366b0",
+      "bytes": 1535
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/ParasiteCannon.java",
+      "sha256": "4f347bdf24d2009bce1f5eacfa167e30f3df1850c30a0305cfd282af79df99a5",
+      "bytes": 10112
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/ParasiteCannonClient.java",
+      "sha256": "b34c7e0e47406bbed2520fb66c5b15eddab7afcdbecfc99a835c270931d687c4",
+      "bytes": 5665
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/ParasiteCannonHud.java",
+      "sha256": "d33953097410e67e02c1cd4be8f924f75a3f679ec2f9902a27e5bb0c2d99f979",
+      "bytes": 868
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/ParasiteDestruction.java",
+      "sha256": "d701ea0c3b2fb30196ffdf0ab6b48eef1085849b599d9920b2fbd72a1ff51bc5",
+      "bytes": 6803
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/ParasiteDestructionClient.java",
+      "sha256": "671ba49dd9b16f74d11e2c78b5be701bcb532adbcac2bad62ea2ae7abfe5f4be",
+      "bytes": 7596
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/ParasiteDestructionDamage.java",
+      "sha256": "72ae129623ea1d1f87fe3019d4e4b0870ae3871d359deaeb1e31cd0089266a76",
+      "bytes": 2473
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/ParasiteDestructionRules.java",
+      "sha256": "8d5cdfa05edae4934621fea27065bcbb4c6bf6d5ff323abdb305da492dcf080d",
+      "bytes": 2489
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/ParasiteDestructionTargets.java",
+      "sha256": "2af8a809cc9a0df77b1f1fd96de7aa0bc002a1460c1926a6dfb075e8abef39ef",
+      "bytes": 1628
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/ParasiteDummyDamage.java",
+      "sha256": "42cd9d06faaf487f498e378d8a97c621b6b6a47f904f11cdd00323564130e882",
+      "bytes": 3751
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/ParasiteEffectProfiles.java",
+      "sha256": "c69ba58b0fd1c89d85c2e504667912a9feb349325724d5c3a4f6219a3d90b5a6",
+      "bytes": 1478
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/ParasiteEffectsClient.java",
+      "sha256": "e4213c5d9c9ab464a08b05c30c083eb190c9bde97b8649d7ba3ac326d85674b4",
+      "bytes": 12454
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/ParasiteEffectsNetwork.java",
+      "sha256": "135f70cdf438a12a765a33fee9e262eba2bf91e7aafd69a9d880e81921f6c127",
+      "bytes": 9485
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/ParasiteFireModes.java",
+      "sha256": "5a57409388e91c83cefcd0138e9eca05c4e66cb4dec581218718d1f42c81462d",
+      "bytes": 1823
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/ParasiteFirstPersonShockwave.java",
+      "sha256": "4d5951eabeb913107169e56994e7566fef1a1cb76e42728ebb2435f06756f6f1",
+      "bytes": 14144
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/ParasiteFragment.java",
+      "sha256": "541c49bb9aed26564780aae4408e05c1c4c5f42e47544a76fdb657ec8e503ef8",
+      "bytes": 1173
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/ParasiteNetworkBootstrap.java",
+      "sha256": "1ad8bd5863603e2b7919680a55360159e22517bd554e482f00da8d9b51bd0b9e",
+      "bytes": 539
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/ParasiteScopes.java",
+      "sha256": "d41d3e05781111a3a064ae9828d813f1a58de5bc500bdff90790c7584414412b",
+      "bytes": 2598
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/ParasiteShockwave.java",
+      "sha256": "365c72f066e11607940a9f5062dbb5c92aa784c2d2509e7108efb802b1a501a2",
+      "bytes": 12567
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/ParasiteShockwaveClient.java",
+      "sha256": "0f380529653db50163d897a009dcc8ddc31e35957cc8ce50a013c07f56d81f2b",
+      "bytes": 12946
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/ParasiteShockwaveRules.java",
+      "sha256": "01c34eb9501f70067d1acb01e2ac7743932bcd78be5c3b2cd4f96d08382e06b7",
+      "bytes": 5055
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/ParasiteUltimate.java",
+      "sha256": "ebee90029732398d442b3ebc6ddaca913c2833d83dc6cfdff8297cf09aac50e7",
+      "bytes": 1514
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/ParasiteVisceral.java",
+      "sha256": "18b19853235013a8f840280eb3d61419b88dc6eef2218195f01d9c99bd085107",
+      "bytes": 6283
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/ParasiteVisceralRules.java",
+      "sha256": "6e308596fd746ad278211d0c28db4ed51f9d445547bd8f32f4ab2d96d324581c",
+      "bytes": 904
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/ScopeAttachmentRenderer.java",
+      "sha256": "0c49f2c37a38b980b5c07a1c66d647cf02e99e655450ebac350db974bf586cb9",
+      "bytes": 1652
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/ScopeOverlay.java",
+      "sha256": "9d84f0ded232f00228f45a52fa0c3cd9e86915f7e2b552f949b393e2772c296c",
+      "bytes": 2794
+    },
+    {
+      "path": "mods/src/cn/ssjjparasite2/client/SourceMeshRenderer.java",
+      "sha256": "8452b35509c06a5410defb5e838d50ff01943c992345486d5b1f25871fe64759",
+      "bytes": 9860
+    },
+    {
+      "path": "mods/src/ssjj/dark/api/DarkBladeAttackEvent.java",
+      "sha256": "d82a61569d2df11029d9b63275645e194914ffdbf1a1fd80d0dae7fdfea73143",
+      "bytes": 2668
+    },
+    {
+      "path": "mods/src/ssjj/dark/DarkAvatarRenderer.java",
+      "sha256": "a4629c49542bd73e40753ed6665ae7e3a01049b5c8d9f7b49198cb306cc57010",
+      "bytes": 10646
+    },
+    {
+      "path": "mods/src/ssjj/dark/DarkBladeEffects.java",
+      "sha256": "4a927b2c12dd576b5e7b21411e1d16cb4ddc0e4507e38215c556fe7c0ec097ca",
+      "bytes": 20482
+    },
+    {
+      "path": "mods/src/ssjj/dark/DarkBladePass.java",
+      "sha256": "c36cdedf709921ce20f72bcb2890edc9ba3c786f05532d087134a0fc75be8df0",
+      "bytes": 5178
+    },
+    {
+      "path": "mods/src/ssjj/dark/DarkCameraGeometry.java",
+      "sha256": "9204346712555062d02b4cda9f939d5c6652db3c9407d03887cc6b3869daf893",
+      "bytes": 962
+    },
+    {
+      "path": "mods/src/ssjj/dark/DarkClient.java",
+      "sha256": "b120d105c6b3992ce5f392cbb75a69418457634a42c57f8d870b878c8fed5b8e",
+      "bytes": 18926
+    },
+    {
+      "path": "mods/src/ssjj/dark/DarkClientBootstrap.java",
+      "sha256": "0a00cefee293753ede0adff32adcef685a46b2c184526ed617358f52c1dcbbd9",
+      "bytes": 782
+    },
+    {
+      "path": "mods/src/ssjj/dark/DarkClientState.java",
+      "sha256": "2d8c3cdc7bb458045f2a5269ee995f37f478cc34e80d9f43fba79fed2a1e1076",
+      "bytes": 695
+    },
+    {
+      "path": "mods/src/ssjj/dark/DarkCombat.java",
+      "sha256": "6102366fe3a58f38ea817f82c23f54080ef7302667fb5ef83dc2ddc43fb5df2f",
+      "bytes": 11016
+    },
+    {
+      "path": "mods/src/ssjj/dark/DarkCraftingItems.java",
+      "sha256": "d467a4f8b3b62a8efe28559d48bded20e759429740b83f7bde9c48deb6dc4a16",
+      "bytes": 1532
+    },
+    {
+      "path": "mods/src/ssjj/dark/DarkCrystalMod.java",
+      "sha256": "d3e83c82e0d95c17233b58d83ec56c0eb16b8400e074b513650d9c0061a269e1",
+      "bytes": 1276
+    },
+    {
+      "path": "mods/src/ssjj/dark/DarkGunEvents.java",
+      "sha256": "b6815e1e50ec3268d62bf880e23f6e1d9941993ecaf332c314dc902416f56e7f",
+      "bytes": 1398
+    },
+    {
+      "path": "mods/src/ssjj/dark/DarkHeldInput.java",
+      "sha256": "73944197af32298c28c4f49e06e26c1b9f637af5ce793371bf3ea7c7c451c360",
+      "bytes": 1471
+    },
+    {
+      "path": "mods/src/ssjj/dark/DarkInspect.java",
+      "sha256": "07306eee63ee30ae8bd21dbac5977f5f0df2a13ad39a12a07cb616745f11e53a",
+      "bytes": 2072
+    },
+    {
+      "path": "mods/src/ssjj/dark/DarkMeleeItem.java",
+      "sha256": "c3d86e3eaa1684b11177620d80a318d243fa357cf1144829621d1b43b914d746",
+      "bytes": 5240
+    },
+    {
+      "path": "mods/src/ssjj/dark/DarkMeleeRules.java",
+      "sha256": "5a366c8c9988924004daa65218da700ef0871d57760a7864479ac28849da4669",
+      "bytes": 4176
+    },
+    {
+      "path": "mods/src/ssjj/dark/DarkNativeHands.java",
+      "sha256": "d4ff6fb5408f9bfdd915fe957a5e408b1bd98739dcf2356a2c9aaf66d28be90a",
+      "bytes": 3924
+    },
+    {
+      "path": "mods/src/ssjj/dark/DarkNetwork.java",
+      "sha256": "0aa5b721c5dd0bfa2291b16d4fa386607a22fdd0bbb76ef206feb27a3336852c",
+      "bytes": 3446
+    },
+    {
+      "path": "mods/src/ssjj/dark/DarkParticleMeshes.java",
+      "sha256": "2adb610d693178426dff8cd238c823c4c3527e1c24236dd5313ac5e09b7aa482",
+      "bytes": 3106
+    },
+    {
+      "path": "mods/src/ssjj/dark/DarkPerformanceReload.java",
+      "sha256": "2d516441bdbfdb0884ca36b12528716dda70274106620652ed1bbdf73b257e78",
+      "bytes": 2083
+    },
+    {
+      "path": "mods/src/ssjj/dark/DarkPresentation.java",
+      "sha256": "2f16de6f6182c61d89e67080e234fc7642a56d8df89826dddbb6dc441b7c8af3",
+      "bytes": 17246
+    },
+    {
+      "path": "mods/src/ssjj/dark/DarkRuntimeAssets.java",
+      "sha256": "955feb7b2a37551bd07db9bf225ea91da2664a32ecb5fab9b1042da5fdbcf235",
+      "bytes": 9327
+    },
+    {
+      "path": "mods/src/ssjj/dark/DarkSettings.java",
+      "sha256": "0bc79f962f259f9fc0c12eae93df933941a3e9b66e69f00cd102c766bdb4ce47",
+      "bytes": 2561
+    },
+    {
+      "path": "mods/src/ssjj/dark/DarkSkills.java",
+      "sha256": "5e2b35fbab869e3c8bdae64d5a3736621e047239527f94c32c35271c59f35439",
+      "bytes": 16074
+    },
+    {
+      "path": "mods/src/ssjj/dark/DarkSkins.java",
+      "sha256": "b48cf8b2eb1f7bbf1d0086b39b64f1226cb05f6c1679772a716def701343dc5d",
+      "bytes": 3321
+    },
+    {
+      "path": "mods/src/ssjj/dark/DarkVisualState.java",
+      "sha256": "36a069735af2c5c3d946e0a594bf50909264fbfbc247c25776afa0aeb1107bf0",
+      "bytes": 1228
+    },
+    {
+      "path": "mods/tools/FreshRemap.java",
+      "sha256": "81786693649e615b99f3ad91ef0b6e4a95600c6d7d079367b469708dbed26702",
+      "bytes": 10291
+    },
+    {
+      "path": "mods/tools/FreshRuntimeLinks.java",
+      "sha256": "765c283bf4511e3655aa8d764aef78f9df44e18b6dc9c1ea87c0f6faf36c374f",
+      "bytes": 10017
+    },
+    {
+      "path": "mods/tools/resource-generation/README.md",
+      "sha256": "ba62e05eff2fc0c9462e9d9e25239d8bb5d7c7dbfb7f7488d849dd39c7f32acf",
+      "bytes": 1728
+    },
+    {
+      "path": "mods/tools/resource-generation/source-manifest.json",
+      "sha256": "f94d27290c1363ee2f56448a241e417d3e6cc43c74683ee21b85edc2d6b617c8",
+      "bytes": 30696
+    },
+    {
+      "path": "mods/tools/resource-generation/work/darkcrystal_body_rebuild_20261107/scripts/build_skin_resources.py",
+      "sha256": "ecb48582390abc012c62f37f2bbd8083867fe6d109414ad8aff35589da95ab7a",
+      "bytes": 16896
+    },
+    {
+      "path": "mods/tools/resource-generation/work/darkcrystal_body_rebuild_20261107/scripts/rebuild_body.py",
+      "sha256": "c4cabed6982eac4d199597f5d67f389722795a0f5137e6c75ae1b320f401a021",
+      "bytes": 3029
+    },
+    {
+      "path": "mods/tools/resource-generation/work/darkcrystal_fx_balance_20261107/scripts/atlas_baker.py",
+      "sha256": "bfeb66585d4c89ce62df7154d786e3a26321b8421ec9b6b612a37a5f3d8a9032",
+      "bytes": 12053
+    },
+    {
+      "path": "mods/tools/resource-generation/work/darkcrystal_fx_balance_20261107/scripts/balance_fx.py",
+      "sha256": "56d1cdc82f9b408623948740108d31ea76d3ed50622f72a683e4a80cf35dfee4",
+      "bytes": 2526
+    },
+    {
+      "path": "mods/tools/resource-generation/work/darkcrystal_fx_balance_20261107/scripts/build_blade_effects.py",
+      "sha256": "52a29cf2d7dbe86cb7fc176768db2a9040534ad9aa067378d8c7205753dc1745",
+      "bytes": 20688
+    },
+    {
+      "path": "mods/tools/resource-generation/work/dimension_skin_fix_20261107/scripts/build_particles.py",
+      "sha256": "dffdd215d9e113961d8d1b14a2de35e9f502b52fea674ab1d689222ea9044c09",
+      "bytes": 10883
+    },
+    {
+      "path": "mods/tools/resource-generation/work/dimension_skin_fix_20261107/scripts/build_resources.py",
+      "sha256": "b3207fd02b4c444ec9ad86cb0bc649edf61e78641010ff7a545f5526112936df",
+      "bytes": 8193
+    },
+    {
+      "path": "mods/tools/resource-generation/work/dimension_skin_fix_20261107/scripts/import_effects.py",
+      "sha256": "dbd3c06212bc4513669c28a3acd3eed80abefbe7efc9744d539b049845781e1d",
+      "bytes": 6951
+    },
+    {
+      "path": "mods/tools/resource-generation/work/dimension_skin_fix_20261107/scripts/import_family.py",
+      "sha256": "d2f2548ff5793d1041191c4a33834ab097c09f27c4d1280d1ee2d9f2cfef91c6",
+      "bytes": 6356
+    },
+    {
+      "path": "mods/tools/resource-generation/work/dimension_skin_fix_20261107/scripts/source_import.py",
+      "sha256": "a5787756f66b9b55d3b9485046fa788ececbf34e63c7c95aa42c90acc4d75a68",
+      "bytes": 22717
+    },
+    {
+      "path": "mods/tools/resource-generation/work/parasite_family_20261105/scripts/import_family_effects.py",
+      "sha256": "16906881b16e399bc7822155cb1bb0ca943906837848817d64bae1fb3848931d",
+      "bytes": 11578
+    },
+    {
+      "path": "mods/tools/resource-generation/work/parasite_family_20261105/scripts/prepare_assets.py",
+      "sha256": "27a8ebe80f7827c81608e7373c7973f9eb1c0d9412cd02ec35a75897cbb67e9f",
+      "bytes": 3553
+    },
+    {
+      "path": "mods/tools/resource-generation/work/parasite_family_20261105/scripts/source_catalog.py",
+      "sha256": "bd30d2bc05aec2023a739eec36884bfa961308c0ee86b64c8c03ebd86546add6",
+      "bytes": 1734
+    },
+    {
+      "path": "mods/tools/resource-generation/work/parasite_video_match_20261104/scripts/build_animation.py",
+      "sha256": "3dd2d60ff890b99b84d08cd3af958be1aaf4ad42710c0a2dd382cdce18008053",
+      "bytes": 17618
+    },
+    {
+      "path": "mods/tools/resource-generation/work/parasite_video_match_20261104/scripts/import_gun_source.py",
+      "sha256": "f5d04f35f962d8ca6f86418c7f174e2059238c8e5ddac63a942fdd7c41bd9604",
+      "bytes": 29099
+    },
+    {
+      "path": "mods/tools/resource-generation/work/parasite_video_match_20261104/scripts/import_hand_source.py",
+      "sha256": "5c92b8ffdae5bfc54bd4476cbe22d1adc0a3d4afedd0352619021bd54550882f",
+      "bytes": 22416
+    },
+    {
+      "path": "mods/tools/resource-generation/work/parasite_video_match_20261104/scripts/source_animation.py",
+      "sha256": "554d94b7f9996a0c085366c77a780ad385672b30672563aa0a09b1d15073d301",
+      "bytes": 4487
+    },
+    {
+      "path": "mods/tools/resource-generation/work/weapon_attachment_skill_revision_20261108/build_activation.py",
+      "sha256": "591bba568b977eb8f6caac11f9ebb497d055eff531f10163146f8ff7efbcf2e4",
+      "bytes": 12266
+    },
+    {
+      "path": "mods/tools/resource-generation/work/weapon_attachment_skill_revision_20261108/build_attachment_assets.py",
+      "sha256": "3aacc9797a9be82cfa0e58b823f54273dec8c117ef565e65b1cfb30b7c268f98",
+      "bytes": 13766
+    },
+    {
+      "path": "mods/tools/resource-generation/work/weapon_attachment_skill_revision_20261108/build_attachment_descriptions.py",
+      "sha256": "fa64e0651cebd8ad243715d97316d24ed417bf92f0b20d7b4ce34179e5dd571a",
+      "bytes": 4962
+    },
+    {
+      "path": "mods/tools/resource-generation/work/weapon_attachment_skill_revision_20261108/build_decoy_assets.py",
+      "sha256": "29013d28be7ebe12907d973ecbaf1c8f94db36fa2e9c00b9d62be1811e5a54f5",
+      "bytes": 2777
+    },
+    {
+      "path": "mods/tools/resource-generation/work/weapon_attachment_skill_revision_20261108/build_decoy_effect.py",
+      "sha256": "8709df5f5185c3e97adf37f6975661c97bfeea1114af13a645ea1a9a71a8958f",
+      "bytes": 8935
+    },
+    {
+      "path": "mods/tools/resource-generation/work/weapon_attachment_skill_revision_20261108/build_effects.py",
+      "sha256": "ed9905b4b475de5c384b3812e27c192e48e791e58772c2653f0b77b338de66c1",
+      "bytes": 28813
+    },
+    {
+      "path": "mods/tools/resource-generation/work/weapon_attachment_skill_revision_20261108/build_item_presentation_assets.py",
+      "sha256": "c342f451b143e6d5dc2fb7407761723f23be754345d8eef0abe39d8a3ee33c47",
+      "bytes": 10712
+    },
+    {
+      "path": "mods/tools/resource-generation/work/weapon_attachment_skill_revision_20261108/build_mark_skins.py",
+      "sha256": "ebd7345696363e258b8f4f47b923f749bbc25aa74bee2bbd34c32d59dcac3b5c",
+      "bytes": 15374
+    },
+    {
+      "path": "mods/tools/resource-generation/天罚之眼/制作接续/工程/scripts/export_editable.py",
+      "sha256": "375a918fc09b46e7ba7d5e680d3124b752209b21c53691ab0fd95b638b926dbe",
+      "bytes": 2887
+    },
+    {
+      "path": "mods/tools/resource-generation/天罚之眼/制作接续/工程/scripts/prepare_muzzle.py",
+      "sha256": "9b01bedff3567f90a8966d99398a27a6dfe2a9d1f8d87fbcd4af31432dc390d2",
+      "bytes": 2805
+    },
+    {
+      "path": "mods/tools/resource-generation/天罚之眼/制作接续/工程/scripts/prepare_skins.py",
+      "sha256": "b6a217f1fb5f9eaebda287215270a100e393663633d897f6ce09bfb476d282bb",
+      "bytes": 20124
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/asset_audit/export_native_body.py",
+      "sha256": "cb0d712237a01e454451934ba5d760cdbf24cdc36f0a958315d613a8739edcac",
+      "bytes": 12935
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/asset_audit/export_skin_sources.py",
+      "sha256": "3529e9b18f08fc52b0b4694c336086178d18062130b33b714a65550ae411a27e",
+      "bytes": 17639
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/asset_audit/skin_sources/build_body_candidates.py",
+      "sha256": "270871722c32a922183403836e054929715e34be0b9ac647b81646d82ff57e88",
+      "bytes": 15344
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/asset_audit/skin_sources/build_endpoint_line_candidates.py",
+      "sha256": "1122837ef1ff336654c60faceaab5758e7681fad48392be0beb436e4eadc8c5b",
+      "bytes": 7175
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/asset_audit/skin_sources/build_mouth_candidates.py",
+      "sha256": "c2443a98113ade82843ab29aee976e6a9a7f4e9768d3086b4b8668d8b30c5632",
+      "bytes": 7965
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/asset_audit/skin_sources/prepare_endpoint_line_resources.py",
+      "sha256": "3f85477d56bd31e9ab9402468e43d98fe7a2610efd26d0e341ffa8968379bab0",
+      "bytes": 1671
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/original_effect_overrides.py",
+      "sha256": "df0aa28a9fbbfffe7838f2952278107c2775e64a956f8e7eddf18dfdfcc33397",
+      "bytes": 789
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/prepare_skin_body_resources.py",
+      "sha256": "fb4b38cdd01b19f281856db3d34f99f53ddd89b842d3c22790791807f16880f4",
+      "bytes": 2330
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/refine_native_body_parameters.py",
+      "sha256": "33ff73a9c63ce7767b24752ce0bfa2d99ecc791d4698aa4cf9ce29a6009a817e",
+      "bytes": 2895
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/runtime_audit/build_default_world.py",
+      "sha256": "bcdf878e549f52e87db3eced52418f459eef8ce14856c1884be0179c90b52fea",
+      "bytes": 5064
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/runtime_audit/export_absorb_body.py",
+      "sha256": "1c1d7cf15389a9320825763abadecb7500bbf87a60b5e1a71121b9299cdd0c8e",
+      "bytes": 8987
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/runtime_audit/export_native_world.py",
+      "sha256": "a9fb53bd841b70dfa59896b44f1ad54a9fc461157d987ac1f8aca04dc7d8af6e",
+      "bytes": 17559
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/runtime_audit/export_skin_world.py",
+      "sha256": "f28fc11a609fe6a4f649ce5ff1a532e4fced78d5e5ad298cd8e19ff122762a13",
+      "bytes": 18039
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/runtime_audit/export_world_resources.py",
+      "sha256": "ec02e1e68349921269cadf9e91e4e4357641a53c7ee5035a511cb377cccb8327",
+      "bytes": 2486
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/skin_effect_overrides.py",
+      "sha256": "a17b14f50166a2b7c5f0cb6c9a336c1e1044a5eb209a914dac97b718e4bf8599",
+      "bytes": 1930
+    },
+    {
+      "path": "mods/tools/RuntimeRemap.java",
+      "sha256": "b7e87efe28102b23b1d08d84126b4ff383b19db952e069e187d5ef284007b823",
+      "bytes": 5168
+    },
+    {
+      "path": "README.md",
+      "sha256": "cd8dbcf3e0c6f3659fcdac2f6b055abdc631f8eede47504447a800a427f4a142",
+      "bytes": 3334
     },
     {
       "path": "runtime-manifest.json",
-      "sha256": "15ef69043355e14b278c31b5aac130c90fcbf045c54354832e98f766f689f08b",
-      "bytes": 14411
+      "sha256": "35a4b5eaeb90387dc082d742a599bb904d9fe3b14cb3a0914f3c4950c77fa1cb",
+      "bytes": 11277
+    },
+    {
+      "path": "SHA256SUMS",
+      "sha256": "451f2dce59a29110762e0378bcc0a58b6cefc52240464c328a88f9ce418e81bd",
+      "bytes": 272
+    },
+    {
+      "path": "SSJJ_DARK_LICENSE.txt",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "bytes": 35149
+    },
+    {
+      "path": "tacz/assets/eye_judgment_arsenal/config/screen.json",
+      "sha256": "ab3ade1de2febf7bf253de781e3116caf1fe9ef14bd4d02bc8ff64d39d9c756f",
+      "bytes": 35542
+    },
+    {
+      "path": "tacz/assets/eye_judgment_arsenal/lang/en_us.json",
+      "sha256": "36604c02ab49f375b80f23add54f0b77f68c68652051b7bddea9e1acd60e80e1",
+      "bytes": 953
+    },
+    {
+      "path": "tacz/assets/eye_judgment_arsenal/lang/zh_cn.json",
+      "sha256": "2034317d88c4a74bdb17e5027f3a9529566be87c5fba5e254c672ac01a55412e",
+      "bytes": 921
+    },
+    {
+      "path": "tacz/assets/eye_judgment_arsenal/models/item/dimension_star_fragment.json",
+      "sha256": "88584ab3b12ea8e50ea26a751b98a80d27000f2b0670d34eaea9780822f44d79",
+      "bytes": 111
+    },
+    {
+      "path": "tacz/assets/eye_judgment_arsenal/models/item/parasite_fragment.json",
+      "sha256": "15c975b9f5fc6fde96a28e689f669558d1d4f746613fe0a45282665a1581c755",
+      "bytes": 105
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/animations/notdistinguish.animation.json",
+      "sha256": "978f9567de8c012f4a0fd5a75e18682fff4760cc968ab216516b46261813c6d5",
+      "bytes": 198233
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/display/ammo/punishment_core_battery_display.json",
+      "sha256": "2db075798176a71ac564899885e9f2621cf721f63f84689e6be8df6fdd223395",
+      "bytes": 297
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/display/attachments/king_heart_display.json",
+      "sha256": "caec98e1432f459abbbf7dff0369984b8e1d4875e8dee776506455807394361b",
+      "bytes": 279
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/display/attachments/nofa_thunder_display.json",
+      "sha256": "7250b62e991e5f302db0fad2dbdf08a9064bc16381a4558a81c1d09db467eff6",
+      "bytes": 289
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/display/attachments/punishment_power_display.json",
+      "sha256": "f51ffc530d2d6ca7f11a7fae73188f3139dae8a0a770a87cd57b33bef8b55426",
+      "bytes": 297
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/display/attachments/skin_anime_display.json",
+      "sha256": "d0ab179dcdbb0a1209c8dab7d57df20ac39e274c642db61dc1cb2e6ccdb7d061",
+      "bytes": 288
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/display/attachments/skin_fire_display.json",
+      "sha256": "9ca65981a446585f97dcdb33b245b11e4d7de8892b3206cb569e13ea33c34f03",
+      "bytes": 286
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/display/attachments/skin_sakura_display.json",
+      "sha256": "b2427ce33e325472fae3ce60c3d5041c336659bd4500907c4bad5e7e2e059db3",
+      "bytes": 290
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/display/attachments/skin_timetravel_display.json",
+      "sha256": "caadf4570e2884c96e1a7556762aa309a06cc16193b244950db8a3bc3e4c71cd",
+      "bytes": 298
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/display/attachments/ultimate_stone_display.json",
+      "sha256": "6dc0462e44e483dd297b5377f5004e58a367482c877a1c66a174c71fbd920908",
+      "bytes": 291
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/display/guns/notdistinguish_anime_display.json",
+      "sha256": "c6b03f602a4eca0a73fb075f8fb675d8a79611b2d37608aeb5231962038b1863",
+      "bytes": 721
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/display/guns/notdistinguish_base_display.json",
+      "sha256": "6875dc65f5585bcd56e03bb63b741107d873b24c9f8187acba90fbdce792279c",
+      "bytes": 717
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/display/guns/notdistinguish_display.json",
+      "sha256": "14febbbf41bd201fde965589402d537aa2465d08f9b53b589a7842237acebb46",
+      "bytes": 769
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/display/guns/notdistinguish_fire_display.json",
+      "sha256": "c34b8547e58970e82d4e78d7291b1fc323e7318ef9fb7bcfa00f1c632e735e7c",
+      "bytes": 717
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/display/guns/notdistinguish_sakura_display.json",
+      "sha256": "2585e30caeb8847fadfb7c84151c37b11d2c1f39fbcfdbda66422a557dff2815",
+      "bytes": 725
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/display/guns/notdistinguish_tier1_display.json",
+      "sha256": "a18167711c5968395ace5ddb307b086fe96ce55a0c2e514f8cb712e452fa8ab4",
+      "bytes": 721
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/display/guns/notdistinguish_timetravel_display.json",
+      "sha256": "bbba3320eff156f1e775a9d6c30d36f91f5d1925a63fb462f131bad73b3c7e13",
+      "bytes": 741
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/geo_models/ammo/punishment_core_battery.json",
+      "sha256": "e56c285b30736d397e8c92575f1ded6795a78960026b309adb36b054d29d55d4",
+      "bytes": 1103
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/geo_models/attachment/king_heart_geo.json",
+      "sha256": "46b5b02f0394a607615bcf6a6b30e65783190ec5aa775f7f128f2970593d244b",
+      "bytes": 271
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/geo_models/attachment/nofa_thunder_geo.json",
+      "sha256": "2693d7fc11a2ec18354d8f4f06ee048f42b8b2a2195ae6a33f596f8d0d243315",
+      "bytes": 276
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/geo_models/attachment/punishment_power_geo.json",
+      "sha256": "2693d7fc11a2ec18354d8f4f06ee048f42b8b2a2195ae6a33f596f8d0d243315",
+      "bytes": 276
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/geo_models/attachment/skin_anime_geo.json",
+      "sha256": "51a2d5b55512d590a27eb9fa35911d692d202141b9e0f7b0fe323254e31cc6a1",
+      "bytes": 271
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/geo_models/attachment/skin_fire_geo.json",
+      "sha256": "c739debc65526f2c6d1f632b3c18d53eebfed5e451d3d277cf8d55584b0f4cd1",
+      "bytes": 270
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/geo_models/attachment/skin_sakura_geo.json",
+      "sha256": "3f6f0860294e9d71ea9b4f6e82bb389f7b371b8bb8fc51155ab2e74e79281700",
+      "bytes": 272
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/geo_models/attachment/skin_timetravel_geo.json",
+      "sha256": "09a0e3948766a3b1adea8b51dd9823a2387890e383bb3d82e0a484efec990349",
+      "bytes": 276
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/geo_models/attachment/ultimate_stone_geo.json",
+      "sha256": "82f17e3d61280be11c84518d1add0e58771bdb4b0948f292f5e28d3e54f8b20e",
+      "bytes": 275
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/geo_models/gun/notdistinguish_anime_geo.json",
+      "sha256": "ccdb6a79d175cb86dd3e055cf3e368b51f4ec94c23d74949374841cef1603269",
+      "bytes": 2669
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/geo_models/gun/notdistinguish_base_geo.json",
+      "sha256": "c15984d4a43869d72c02821d24bb6488b335ff61b0671e4abaa4cd25dbc75e12",
+      "bytes": 2645
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/geo_models/gun/notdistinguish_fire_geo.json",
+      "sha256": "48074cfa015f2d891a43a6a20b9bfa3c06cb4e812a92d2dda7a4f87482f8d8df",
+      "bytes": 2668
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/geo_models/gun/notdistinguish_geo.json",
+      "sha256": "f090c7f7f7f402861849b0d73e8397b91fab38c64c89b15549084633015fc4c0",
+      "bytes": 2640
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/geo_models/gun/notdistinguish_sakura_geo.json",
+      "sha256": "d0afdc2fa203cb290d7bbd156287e66bc14e6f20bb3fb9d660bc837c78d5b57e",
+      "bytes": 2670
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/geo_models/gun/notdistinguish_tier1_geo.json",
+      "sha256": "f71431d14083151ff2576a099d6a3f02b74fe54738091dbc82494b9b9d3937d1",
+      "bytes": 2646
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/geo_models/gun/notdistinguish_timetravel_geo.json",
+      "sha256": "b1883159817865d26c0c58bbdc5a14c38e865a3201ac5c2a00c51448a2fe41d2",
+      "bytes": 2674
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/gunpack_info.json",
+      "sha256": "3e38e29c1cc2b009a6223a825aeaa20e93c9154ff13b2e99b4600499b427f4eb",
+      "bytes": 201
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/lang/en_us.json",
+      "sha256": "fdd65841f703751fcfe2ab56c53706f0d2da7a50300ccc76611923324ae6ccf6",
+      "bytes": 3400
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/lang/zh_cn.json",
+      "sha256": "3bb3fcb48bd517e60c3cfd5b367098316f19fd375f800a309b779f8fbee4fc55",
+      "bytes": 3305
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/rig/skins.json",
+      "sha256": "ef8db91b14998a6a7b088fb767477e47e2ec9f288db3b0b88d1a7e76b6622d36",
+      "bytes": 16924
+    },
+    {
+      "path": "tacz/assets/eyeofpunishment/scripts/eye_muzzle_state_machine.lua",
+      "sha256": "818cbfb3055add7f585e9967a24b73610ad7ff3cc98c5d33f63198540c812729",
+      "bytes": 4533
+    },
+    {
+      "path": "tacz/assets/judgfire/animations/judgment_flame.animation.json",
+      "sha256": "3a8d95b2c31d146f9bbe815d57e2b863d9759bbe374130035c21e3e5e7476c3c",
+      "bytes": 282137
+    },
+    {
+      "path": "tacz/assets/judgfire/display/ammo/fire_dragon_flame_display.json",
+      "sha256": "4f8bcec1c559712ba8d21bfb91317bbc77e4238f7711a278c77086d0b0b058da",
+      "bytes": 330
+    },
+    {
+      "path": "tacz/assets/judgfire/display/attachments/default_scope_display.json",
+      "sha256": "e05ad396981f1597e0a001d3c2f58ea2dc16b1ef91523760149a4b47fd4c227e",
+      "bytes": 240
+    },
+    {
+      "path": "tacz/assets/judgfire/display/attachments/dragon_breath_muzzle_display.json",
+      "sha256": "b92ba6edfaa24cb1bfd0297eba3f7544142dc1e81626f7ca7ecb8e9a532230e9",
+      "bytes": 192
+    },
+    {
+      "path": "tacz/assets/judgfire/display/attachments/emperor_crown_stock_display.json",
+      "sha256": "f8877a8831f3e40e39eb910edebed1f031c7cfe1bcb4dea64ba05bc12fc766d3",
+      "bytes": 171
+    },
+    {
+      "path": "tacz/assets/judgfire/display/attachments/flame_crown_scope_display.json",
+      "sha256": "2795179393e05dbf3dc48492697163900342e184d91bc8c70b666c4f9c8f406c",
+      "bytes": 236
+    },
+    {
+      "path": "tacz/assets/judgfire/display/attachments/frozen_scope_display.json",
+      "sha256": "ee7121d67cf28e29701bc51dec05ad81759b8298648d0a1668aa8be30f4059e7",
+      "bytes": 225
+    },
+    {
+      "path": "tacz/assets/judgfire/display/attachments/integrated_scope_display.json",
+      "sha256": "ead636682a5a11350480fb09d1e52f7e206cea0b7d4bfa9d2971260ef19e492b",
+      "bytes": 235
+    },
+    {
+      "path": "tacz/assets/judgfire/display/attachments/lightning_scope_display.json",
+      "sha256": "da6a48a3ada26a99dcce0cb58b550b610c10126de5f4196e7cd7401d20b1d03c",
+      "bytes": 234
+    },
+    {
+      "path": "tacz/assets/judgfire/display/attachments/qinglong_scope_display.json",
+      "sha256": "719a5508e2e6408909d96d6b5a84241535370ba6a33c1ad2e771909150975b04",
+      "bytes": 231
+    },
+    {
+      "path": "tacz/assets/judgfire/display/attachments/red_lotus_burst_mag_display.json",
+      "sha256": "8d11b7ce6a6a80e520e7271f300a01122c307723ec245af8454f63c2efd3d2ab",
+      "bytes": 171
+    },
+    {
+      "path": "tacz/assets/judgfire/display/attachments/red_lotus_grip_display.json",
+      "sha256": "b2e3135311ce4e52e1d01586a0affc5a0530270a40d170261651d03604895416",
+      "bytes": 180
+    },
+    {
+      "path": "tacz/assets/judgfire/display/attachments/ultimate_upgrade_stone_display.json",
+      "sha256": "5087608c35dee5c8da3982a1eea52c4e3f50afa829cca87cde48760c7b9f0f23",
+      "bytes": 192
+    },
+    {
+      "path": "tacz/assets/judgfire/display/guns/judgment_flame_base_display.json",
+      "sha256": "9d9734d7678c0b122da238b51f16da265750751692ae5957799d7c03e5646264",
+      "bytes": 1030
+    },
+    {
+      "path": "tacz/assets/judgfire/display/guns/judgment_flame_display.json",
+      "sha256": "62abc3da6f3b16091a5d6afa9bf1dbc15e659b1c4985d0915cef3d3f019afaa7",
+      "bytes": 982
+    },
+    {
+      "path": "tacz/assets/judgfire/display/guns/judgment_flame_frozen_display.json",
+      "sha256": "3ac74ed03f93e14b7877c9d094cd2f387b9198d7c07f51fb3acc3bbed5c7475d",
+      "bytes": 999
+    },
+    {
+      "path": "tacz/assets/judgfire/display/guns/judgment_flame_lightning_display.json",
+      "sha256": "6c1f4fb2449757682b934995c897439de38f9289638eb91e24899c143f78a6cd",
+      "bytes": 1011
+    },
+    {
+      "path": "tacz/assets/judgfire/display/guns/judgment_flame_qinglong_display.json",
+      "sha256": "8c1d220749d23ed08dae027e262100ecb85b1783bebd7fc703d490ab542c1c99",
+      "bytes": 1007
+    },
+    {
+      "path": "tacz/assets/judgfire/display/guns/judgment_flame_tier1_display.json",
+      "sha256": "94bc624d91cc6b7a0b62cb6feec2b18faa4c8d1cc4deca7ec11dba97ba4831c9",
+      "bytes": 1034
+    },
+    {
+      "path": "tacz/assets/judgfire/geo_models/ammo/fire_dragon_flame.json",
+      "sha256": "8b90c109e529c6f096d259979e80b872875ac41bc16965106e5615401f0f0ad2",
+      "bytes": 5608
+    },
+    {
+      "path": "tacz/assets/judgfire/geo_models/attachment/default_scope_geo.json",
+      "sha256": "dbf2763bbcd325659805b9e36507378d8c3d1d1fe8762b06d4b30e38728649c5",
+      "bytes": 525
+    },
+    {
+      "path": "tacz/assets/judgfire/geo_models/attachment/dragon_breath_muzzle_geo.json",
+      "sha256": "94fecd8d1fd39e5b053fc753ba1a32c2072fa3b1cd05d50c8be1e8f8b588565f",
+      "bytes": 84884
+    },
+    {
+      "path": "tacz/assets/judgfire/geo_models/attachment/emperor_crown_stock_geo.json",
+      "sha256": "5407fb4826182d0a3638994518ee8669d3dcd60518609c2db6b9239dc10f5c6f",
+      "bytes": 51466
+    },
+    {
+      "path": "tacz/assets/judgfire/geo_models/attachment/flame_crown_scope_geo.json",
+      "sha256": "b57d54f46e83c1555968c494e3fdcecbc2aae19c39cba701ff61203db969949a",
+      "bytes": 113509
+    },
+    {
+      "path": "tacz/assets/judgfire/geo_models/attachment/frozen_scope_geo.json",
+      "sha256": "a5133f21622f2e7c55ca7780fa122c4489ebcd0b91d9de471bf5f8c99017aa25",
+      "bytes": 524
+    },
+    {
+      "path": "tacz/assets/judgfire/geo_models/attachment/integrated_scope_geo.json",
+      "sha256": "9f52af090060c21bbac7d729a6f7dc962ee9c769cfc3103aa1545c68884c2330",
+      "bytes": 389
+    },
+    {
+      "path": "tacz/assets/judgfire/geo_models/attachment/lightning_scope_geo.json",
+      "sha256": "7973c499649647f8e6c9f363a231884c786fa08b6d2547635e062c432b82efe5",
+      "bytes": 527
+    },
+    {
+      "path": "tacz/assets/judgfire/geo_models/attachment/qinglong_scope_geo.json",
+      "sha256": "67fa02d1c621d80c1437ecb9ed3502935df187c71cc406972df84d8f7efe0956",
+      "bytes": 526
+    },
+    {
+      "path": "tacz/assets/judgfire/geo_models/attachment/red_lotus_burst_mag_geo.json",
+      "sha256": "c09893999a7891ac874941a2f58a2cb30018828913bd05587b9e3ebb35442a24",
+      "bytes": 43954
+    },
+    {
+      "path": "tacz/assets/judgfire/geo_models/attachment/red_lotus_grip_geo.json",
+      "sha256": "5ee93f88759d45c4624a89556c102d7346c92e74b4e1c1c098270c907d281c55",
+      "bytes": 110296
+    },
+    {
+      "path": "tacz/assets/judgfire/geo_models/attachment/ultimate_upgrade_stone_geo.json",
+      "sha256": "09479de2c7e051d266c6cba1e4bf33f4f0b4859c1e0ccc1facfc6ddff5f81bdc",
+      "bytes": 479
+    },
+    {
+      "path": "tacz/assets/judgfire/geo_models/gun/judgment_flame_base_geo.json",
+      "sha256": "2b8db65544aa4b1fa739189c0f380a1a5fb6216b078b66b058a05e6661969cac",
+      "bytes": 3503
+    },
+    {
+      "path": "tacz/assets/judgfire/geo_models/gun/judgment_flame_frozen_geo.json",
+      "sha256": "874046b527d0b5ea7417529cee3a7d26f8f3d6bad9ab28ffaa4eabd351bc3525",
+      "bytes": 3489
+    },
+    {
+      "path": "tacz/assets/judgfire/geo_models/gun/judgment_flame_geo.json",
+      "sha256": "d9516f0f80ef519b280cc83498428f9aa9a611595fb7f291d6ceed05f1cf5919",
+      "bytes": 762777
+    },
+    {
+      "path": "tacz/assets/judgfire/geo_models/gun/judgment_flame_lightning_geo.json",
+      "sha256": "af614e9e0282db6ffb29d275b72469e0887111d1a249a7551ce10a68276b42fe",
+      "bytes": 3495
+    },
+    {
+      "path": "tacz/assets/judgfire/geo_models/gun/judgment_flame_qinglong_geo.json",
+      "sha256": "e3f4b6b292dde24e9b090f3fe15e38b56a23e0a6c63e1db5dab1cdf2334781d8",
+      "bytes": 3493
+    },
+    {
+      "path": "tacz/assets/judgfire/geo_models/gun/judgment_flame_tier1_geo.json",
+      "sha256": "e97e6ce2d7d0716bf35a1b33419e1758091f96b5c38ee60f762ed92458360192",
+      "bytes": 3504
+    },
+    {
+      "path": "tacz/assets/judgfire/geo_models/gun/lod/judgment_flame_lod.json",
+      "sha256": "8914aa589a25f0867f65a5fee2578b049ca603679aab78c9b71b76f00760a1e3",
+      "bytes": 37428
+    },
+    {
+      "path": "tacz/assets/judgfire/gunpack_info.json",
+      "sha256": "a1935146538714c945e068934ca5598aa61009fa0fc8bb1647e1a983600a27fa",
+      "bytes": 136
+    },
+    {
+      "path": "tacz/assets/judgfire/lang/en_us.json",
+      "sha256": "124c1620c2f9d1aadd90b3211f71b7ac20da2cb28713627d1145c6ba6ffbf5ac",
+      "bytes": 3376
+    },
+    {
+      "path": "tacz/assets/judgfire/lang/zh_cn.json",
+      "sha256": "81a1acb23dc3662058dd298e17f94634ccd9af68a4001b55fb3ba80114ab721a",
+      "bytes": 3261
+    },
+    {
+      "path": "tacz/assets/judgfire/scripts/judgment_flame_state_machine.lua",
+      "sha256": "b511784dac29f402f3f5e1fe8cdbd3ba687a9147d7c11529e4a8313921356d00",
+      "bytes": 1624
+    },
+    {
+      "path": "tacz/assets/judgfire/textures/fx/e009_body_flame.png.mcmeta",
+      "sha256": "29edee3b70026e961ed71119a6acc973de9edd76a5a67f6edcc615b7e17280f8",
+      "bytes": 63
+    },
+    {
+      "path": "tacz/assets/judgfire/textures/fx/e009_embers.png.mcmeta",
+      "sha256": "29edee3b70026e961ed71119a6acc973de9edd76a5a67f6edcc615b7e17280f8",
+      "bytes": 63
+    },
+    {
+      "path": "tacz/assets/judgfire/textures/fx/e009_flow.png.mcmeta",
+      "sha256": "29edee3b70026e961ed71119a6acc973de9edd76a5a67f6edcc615b7e17280f8",
+      "bytes": 63
+    },
+    {
+      "path": "tacz/assets/judgfire/textures/fx/e009_glow.png.mcmeta",
+      "sha256": "29edee3b70026e961ed71119a6acc973de9edd76a5a67f6edcc615b7e17280f8",
+      "bytes": 63
+    },
+    {
+      "path": "tacz/assets/judgfire/textures/fx/e009_wing_base.png.mcmeta",
+      "sha256": "29edee3b70026e961ed71119a6acc973de9edd76a5a67f6edcc615b7e17280f8",
+      "bytes": 63
+    },
+    {
+      "path": "tacz/assets/judgfire/textures/fx/e009_wing_fire.png.mcmeta",
+      "sha256": "29edee3b70026e961ed71119a6acc973de9edd76a5a67f6edcc615b7e17280f8",
+      "bytes": 63
+    },
+    {
+      "path": "tacz/assets/judgfire/textures/fx/e009_wing_red.png.mcmeta",
+      "sha256": "29edee3b70026e961ed71119a6acc973de9edd76a5a67f6edcc615b7e17280f8",
+      "bytes": 63
+    },
+    {
+      "path": "tacz/assets/judgfire/textures/fx/e026_t210_laser_core.png.mcmeta",
+      "sha256": "29edee3b70026e961ed71119a6acc973de9edd76a5a67f6edcc615b7e17280f8",
+      "bytes": 63
+    },
+    {
+      "path": "tacz/assets/judgfire/textures/fx/e026_t210_laser_outer.png.mcmeta",
+      "sha256": "29edee3b70026e961ed71119a6acc973de9edd76a5a67f6edcc615b7e17280f8",
+      "bytes": 63
+    },
+    {
+      "path": "tacz/assets/judgfire_runtime/lang/en_us.json",
+      "sha256": "0297a5b5f9efda863ec22680ed3751b68b80484553ae9a95bb62de5455b7a9a4",
+      "bytes": 1938
+    },
+    {
+      "path": "tacz/assets/judgfire_runtime/lang/zh_cn.json",
+      "sha256": "abc9703e9011fa413d75e400109a323a18401cd900a883ccbc16414b3b9ee596",
+      "bytes": 1873
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/animations/gun/darkdiamond.animation.json",
+      "sha256": "51c61ff156e9c35bc1bebae9e7cc69b86cc06465976bee44cd0b798374bfca82",
+      "bytes": 930504
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/animations/gun/darkdiamond1.animation.json",
+      "sha256": "51c61ff156e9c35bc1bebae9e7cc69b86cc06465976bee44cd0b798374bfca82",
+      "bytes": 930504
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/animations/gun/darkdiamond2.animation.json",
+      "sha256": "51c61ff156e9c35bc1bebae9e7cc69b86cc06465976bee44cd0b798374bfca82",
+      "bytes": 930504
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/display/attachments/skin_mix_display.json",
+      "sha256": "b9d7d678b46cf697002cf79114bb985b4240d29afeb115a7ada4ba6d1beca30f",
+      "bytes": 305
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/display/attachments/skin_nightguardian_display.json",
+      "sha256": "9333884810810149f50f524ce398ecedf088ff3fde0f4b5fcc52f572277dfa20",
+      "bytes": 315
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/display/attachments/skin_pure_display.json",
+      "sha256": "eefe5586d2c6a796b218edf8221d3e4a8faa592625bfaccfedd3973af6a894da",
+      "bytes": 306
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/display/guns/darkdiamond1_display.json",
+      "sha256": "90bef14fa6ac4f17d3825842c5f1a5c88b6e467aecbb63a07c98759518a2e199",
+      "bytes": 623
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/display/guns/darkdiamond1_mix_display.json",
+      "sha256": "161c163aedab5dd7a6afef20b3f1227a15bf3f206721d02dabb87f2c81daa946",
+      "bytes": 631
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/display/guns/darkdiamond1_nightguardian_display.json",
+      "sha256": "87536eb9b1aec48263241de2695e3af26d57baeca1124563809ca7317d2057eb",
+      "bytes": 671
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/display/guns/darkdiamond1_pure_display.json",
+      "sha256": "5d631e03e4e976bf6fc6fc653f15acac3944f2f05ded075cff051fbfb1752844",
+      "bytes": 635
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/display/guns/darkdiamond2_display.json",
+      "sha256": "8a5e6ec6a8c8c8dab3345679cc13f05a9100567590013b16074ba0132b78b883",
+      "bytes": 670
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/display/guns/darkdiamond2_mix_display.json",
+      "sha256": "2342e954e66e7a816fc393d7055570fa4b79a3b4c297b8d36fab6f4aeb236297",
+      "bytes": 678
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/display/guns/darkdiamond2_nightguardian_display.json",
+      "sha256": "365636d77cb9e5f4177351419c3e1410aeca877f488853843edd95acb7246f7a",
+      "bytes": 718
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/display/guns/darkdiamond2_pure_display.json",
+      "sha256": "d21d9d2f6c9d04be691b6f20fe99b30cd721656dae0e50da46abe7344b649500",
+      "bytes": 682
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/display/guns/darkdiamond_display.json",
+      "sha256": "5b0ffbe2445eaec4eaf73cce7d9c5d33df845469d7e9277d96364d282ccbc57e",
+      "bytes": 615
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/display/guns/darkdiamond_mix_display.json",
+      "sha256": "e0df53e1f6534d5f060287f99301eb3f72d07b67a519dbf399396682c701d426",
+      "bytes": 624
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/display/guns/darkdiamond_nightguardian_display.json",
+      "sha256": "29f8a53453f7318b96e85877c8aabc8de3433a904fe61c12aa5af097c034d7db",
+      "bytes": 664
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/display/guns/darkdiamond_pure_display.json",
+      "sha256": "59ed10354c6c9d549fa4e5b9415d2b58f43391837b7f5aefaa7ea4e90dca53bd",
+      "bytes": 628
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/geo_models/attachment/cosmetic_scope_geo.json",
+      "sha256": "1583e8909826f11c68d918d87601f77a3c0e43db4e57ec737ecd35304d981184",
+      "bytes": 284
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/geo_models/gun/darkdiamond1_geo.json",
+      "sha256": "8045ed49b3a6a18630f12acc3e06b04d82c14f3eae5939bee61d39497ac2eccf",
+      "bytes": 262643
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/geo_models/gun/darkdiamond1_mix_geo.json",
+      "sha256": "cf2e3626b05a3fedbdc72e31da76ee0245b825a6f4f00bd1f25250fef6768c82",
+      "bytes": 264695
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/geo_models/gun/darkdiamond1_nightguardian_geo.json",
+      "sha256": "cf2e3626b05a3fedbdc72e31da76ee0245b825a6f4f00bd1f25250fef6768c82",
+      "bytes": 264695
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/geo_models/gun/darkdiamond1_pure_geo.json",
+      "sha256": "cf2e3626b05a3fedbdc72e31da76ee0245b825a6f4f00bd1f25250fef6768c82",
+      "bytes": 264695
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/geo_models/gun/darkdiamond2_geo.json",
+      "sha256": "ef8471a6ed48fe92106918a2ee09e4d11c81f10fe982b28d097f606f5a0fe52f",
+      "bytes": 262643
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/geo_models/gun/darkdiamond2_mix_geo.json",
+      "sha256": "1045acf2421e1a7b71c9c67e5be6d3f850630a0c8b3d01e0b036175cfcf5b997",
+      "bytes": 264695
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/geo_models/gun/darkdiamond2_nightguardian_geo.json",
+      "sha256": "1045acf2421e1a7b71c9c67e5be6d3f850630a0c8b3d01e0b036175cfcf5b997",
+      "bytes": 264695
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/geo_models/gun/darkdiamond2_pure_geo.json",
+      "sha256": "1045acf2421e1a7b71c9c67e5be6d3f850630a0c8b3d01e0b036175cfcf5b997",
+      "bytes": 264695
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/geo_models/gun/darkdiamond_geo.json",
+      "sha256": "7a974a4681fb9e89bdb74de285982647b202923aac552269a82a551822f3a4d0",
+      "bytes": 262642
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/geo_models/gun/darkdiamond_mix_geo.json",
+      "sha256": "a61eca48256ba76830dddc28b555c060dd4ca3a64627bc49a9713bbab4f9c64b",
+      "bytes": 264694
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/geo_models/gun/darkdiamond_nightguardian_geo.json",
+      "sha256": "a61eca48256ba76830dddc28b555c060dd4ca3a64627bc49a9713bbab4f9c64b",
+      "bytes": 264694
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/geo_models/gun/darkdiamond_pure_geo.json",
+      "sha256": "a61eca48256ba76830dddc28b555c060dd4ca3a64627bc49a9713bbab4f9c64b",
+      "bytes": 264694
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/gunpack_info.json",
+      "sha256": "1f5402c9c7a982e958d1b31bc2e7df01128fb24241be9642c3c4b7339d32c2c3",
+      "bytes": 277
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/lang/en_us.json",
+      "sha256": "c726cf96eaf37653c3cb3e61c3eed79fde755511aa51f9ec6c2495f749ddfcbe",
+      "bytes": 2045
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/lang/zh_cn.json",
+      "sha256": "d2a32a918e3fe42d40fced390d6c8eb3b68c32c6a63d815fd60a1f4d64a9a036",
+      "bytes": 1973
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/scripts/dark_pistol_state_machine.lua",
+      "sha256": "31563065e8f038f67ef6f0469a13795f5958af7f77e899dd52d205eceef70c30",
+      "bytes": 1222
+    },
+    {
+      "path": "tacz/assets/ssjj_dark/sounds.json",
+      "sha256": "ed8aeab81708cbbaba725f99d4e6bbbed1ea64afc9cbd84b0ba903e8fed7edfe",
+      "bytes": 717
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/animations/dimension_star2.animation.json",
+      "sha256": "2a9dd1d71808263c1a1a72527c830cc220f93bbdb5ea7b9499af169084a93b46",
+      "bytes": 2909708
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/display/ammo/astral_shell_display.json",
+      "sha256": "b7a5cbf3b7959b0c2eb4ca759df7d8fb37fcba83eac5fce4e49d8a321860fbc2",
+      "bytes": 316
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/display/attachments/ability_upgrade_stone_display.json",
+      "sha256": "4919ea5d14d28ae355a4fa8b096878b3f1f895e59e0b7ddb956daa66bf7afd3d",
+      "bytes": 228
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/display/attachments/dimension_grip_display.json",
+      "sha256": "4a9636751db0a65eeb6382e7a8d342b0740e5da842f50065de94c8f8c875a9fe",
+      "bytes": 210
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/display/attachments/dimension_muzzle_display.json",
+      "sha256": "913068dc4599fd2326eee35487ee912da24ccdad12289489c77b799b7167af37",
+      "bytes": 214
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/display/attachments/dimension_stock_display.json",
+      "sha256": "9c7fe2d854c5ed8f20447185564485ec1ddc1c6a7a021e4a5f480192c5638ff9",
+      "bytes": 212
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/display/attachments/frozen_scope_display.json",
+      "sha256": "62a7a8d2bd1c42c7629e4a901f44658b62c7b599109034fa7e101a3afd9b3d8f",
+      "bytes": 242
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/display/attachments/fusion_upgrade_stone_display.json",
+      "sha256": "f9027b201fa8f07a2e85bce926326c4ef2b77127f04400791b086bdd1906b9de",
+      "bytes": 226
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/display/attachments/neon_scope_display.json",
+      "sha256": "e9036511161df655a32554f9f7d9354a05363509f649a2e7ea0d2b85daf8002b",
+      "bytes": 236
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/display/attachments/royal_scope_display.json",
+      "sha256": "69af4066dfe7b6b021fe29fffd0370538c3c5ca9046681c64351c1495a043fbe",
+      "bytes": 239
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/display/attachments/ultimate_upgrade_stone_display.json",
+      "sha256": "f11fd110e3d8c6c26bebfb2fa589310056d5002f5876f2a5942e6a85c9f1d122",
+      "bytes": 230
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/display/guns/dimension_star1_display.json",
+      "sha256": "c014b26fe3f8d38fd4a141e8cd761544580ee029a14a2793616d2aa420a2edbd",
+      "bytes": 906
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/display/guns/dimension_star1_frozen_display.json",
+      "sha256": "8fedb8890f2a26da81c0ffa6b0cd46e766c38a4a9584ea0ab4e1395a477621fb",
+      "bytes": 941
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/display/guns/dimension_star1_neon_display.json",
+      "sha256": "30be8f4c934828e749f7dbdc0ff5ddd5763982b47d091b6a140d783ed0354785",
+      "bytes": 931
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/display/guns/dimension_star1_royal_display.json",
+      "sha256": "4d1bb360297982b72da7c15bf1797e840347e4289d83b9c182695d570f14f25b",
+      "bytes": 936
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/display/guns/dimension_star2_display.json",
+      "sha256": "f379c38d0f04deda0102a3d984ffbd70dc0a9424df6ef030298229e713dea339",
+      "bytes": 906
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/display/guns/dimension_star2_frozen_display.json",
+      "sha256": "f61a82c1d01fe624e20d0627a587c09a23a9e799c9fcada30d74f608d0c84ef4",
+      "bytes": 941
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/display/guns/dimension_star2_neon_display.json",
+      "sha256": "46dfef2a443e39f52f15a941ef3629b94efef748608721b182224f42d7a254c1",
+      "bytes": 931
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/display/guns/dimension_star2_royal_display.json",
+      "sha256": "9099f383537c374f08f9c39110597934fe0ff3f38ee0550ce4401ba2b53a2e8f",
+      "bytes": 936
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/display/guns/dimension_star_display.json",
+      "sha256": "94be4c31e680c9351ffd1a10a84528f066902647be22613b12da73c365533558",
+      "bytes": 901
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/display/guns/dimension_star_frozen_display.json",
+      "sha256": "22db4142225bd7008c76a8285c740891984a33c2da7e16c4f07a9b566771ec4e",
+      "bytes": 936
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/display/guns/dimension_star_neon_display.json",
+      "sha256": "575badb96f65d444fe18be4f5c7f5de48ab3a11e359895bec399f279dd8d35b0",
+      "bytes": 926
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/display/guns/dimension_star_royal_display.json",
+      "sha256": "ab3f83a301186dd2108764ec17acdf4c87484120e6d0b85b8b93c925b5ef0e60",
+      "bytes": 931
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/geo_models/attachment/dimension_grip_geo.json",
+      "sha256": "16d809a815322c9759f2b12c75272f060a597fafb49d2cf17062bacef9a8021f",
+      "bytes": 331
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/geo_models/attachment/dimension_muzzle_geo.json",
+      "sha256": "9334a2f2b0080033f2e43675fd7f9342c29ee2bf51a94ab4c408cb060a2d130b",
+      "bytes": 333
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/geo_models/attachment/dimension_stock_geo.json",
+      "sha256": "b557ae3557b2d04d77eb8e432f6ae54c319304bd041d2cd9081faeb253dbf813",
+      "bytes": 332
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/geo_models/attachment/dimension_stone_empty_geo.json",
+      "sha256": "2b8fe5d99cdb06319cf9a4f9f71b866dfb33ca2d0e136ec7aba070786a9513c7",
+      "bytes": 280
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/geo_models/attachment/frozen_scope_geo.json",
+      "sha256": "c0d394df47997ef93366f8a593fbb2ac2bec58868abec5c12326ad21d210b708",
+      "bytes": 530
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/geo_models/attachment/neon_scope_geo.json",
+      "sha256": "1ee9173f90917384e51012d2b0fb51ba00b988fa3a1aa376433f7cd4ff8bdd3e",
+      "bytes": 528
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/geo_models/attachment/royal_scope_geo.json",
+      "sha256": "0ea716a66ee19b14ce9c296a63eddfed2c2b7995c1d39f0812617e59143b29aa",
+      "bytes": 529
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/geo_models/gun/dimension_star1_frozen_geo.json",
+      "sha256": "60952068903c78b59d037577e86d6b1f7cd95478ca7cf69a3d331a3fa49aa8d3",
+      "bytes": 2251
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/geo_models/gun/dimension_star1_geo.json",
+      "sha256": "83ce7819618409f7b540a3db923b073c1c13b3090a426cf1d1992994055a11f3",
+      "bytes": 2244
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/geo_models/gun/dimension_star1_neon_geo.json",
+      "sha256": "d08016acf52a89afaa04debca6e153f28d9df0fa558c46deb6db6a88fa9a8c29",
+      "bytes": 2249
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/geo_models/gun/dimension_star1_royal_geo.json",
+      "sha256": "c9cf0758d62ce57fb608f77c2fafcae8e02cd024018e19860f5a2403d7381352",
+      "bytes": 2250
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/geo_models/gun/dimension_star2_frozen_geo.json",
+      "sha256": "c7087b6484041cff1e04743cee73204a7f467d5a98c7125da7d641457c6f6422",
+      "bytes": 2251
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/geo_models/gun/dimension_star2_geo.json",
+      "sha256": "552e5eee2538452f1b8dd1248f1710a58d18380808e89bf8ecb34529ba4a51a2",
+      "bytes": 2244
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/geo_models/gun/dimension_star2_neon_geo.json",
+      "sha256": "2421c35dcc9df780e41859d6abb2a29b303487b154530e52bcfaaa08f19ba634",
+      "bytes": 2249
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/geo_models/gun/dimension_star2_royal_geo.json",
+      "sha256": "f6b4b4743d11879942f73b7254f60b74945e2f7cd1625df1e2cab69fa1022a55",
+      "bytes": 2250
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/geo_models/gun/dimension_star_frozen_geo.json",
+      "sha256": "de4391e71211caf37307b503d4009a3da5fcaaa78e7b40713d2a3c305a0c6e55",
+      "bytes": 2250
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/geo_models/gun/dimension_star_geo.json",
+      "sha256": "b756a59e6f1e8059662b583b4ebd62a236ebcc1aea8fff82331ad60450fa708b",
+      "bytes": 2243
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/geo_models/gun/dimension_star_neon_geo.json",
+      "sha256": "d1b91c7bf6f37852d5291b6aead5f4c9c69fe60bfdfc80a5ed95ed957789e56d",
+      "bytes": 2248
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/geo_models/gun/dimension_star_royal_geo.json",
+      "sha256": "c64adadeb314a89542a801d8e56f9e6de8cf86702ff405d52328625f25d5bc26",
+      "bytes": 2249
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/gunpack_info.json",
+      "sha256": "b44431a325ebe1b102d1528d72d27432d1df9eae9b65263a08fd283941aa7503",
+      "bytes": 190
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/lang/en_us.json",
+      "sha256": "ab4587fc40f49a208d588cc6b12d1d4199517e34888de3496d60561352c4d9e8",
+      "bytes": 4625
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/lang/zh_cn.json",
+      "sha256": "599863c7f4ce96db84d4d06927527b829b6cfcca12680f29761a0a32801b32b0",
+      "bytes": 2890
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/scripts/dimension_star2_state_machine.lua",
+      "sha256": "aed35ada98a41e153e93e44c1a3184522b55ab64c044395de71b63c242310be4",
+      "bytes": 2665
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/shaders/core/dimension_effect.fsh",
+      "sha256": "47925bf022cf60f156f7f490df26b6688fb965bbd3850031b6a34125e82192e0",
+      "bytes": 419
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/shaders/core/dimension_effect.json",
+      "sha256": "5bc34e7c926553be0a7fe42e635797ab88bf69e47b5a7deaf76b41824eac18f9",
+      "bytes": 856
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/shaders/core/dimension_effect.vsh",
+      "sha256": "639e36a1d2082b209f2e55ad65f9cd3e400d42e51291c3876fa5082fbb2ec9b4",
+      "bytes": 486
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/shaders/core/dimension_effect_alpha.json",
+      "sha256": "998475ab93aaa3086fc1078d492457da1bfbf3eaaf2f7516e3d0023e12a4e857",
+      "bytes": 865
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/sounds.json",
+      "sha256": "d1c5ecb82472ed915283fd399da8f92fe3ad6e09ab113bfc4175b96545b99371",
+      "bytes": 367
+    },
+    {
+      "path": "tacz/assets/ssjj_dimension/view_calibration.json",
+      "sha256": "4878f042e9d243d6ae887924c2a5d000ba80f1739a633cefb0268cc2d8cc0fee",
+      "bytes": 2362
+    },
+    {
+      "path": "tacz/assets/ssjj_workbench/display/blocks/rongguang.json",
+      "sha256": "48825ec443d1e8ac607cd6cf594ccade5a1ef376fcfdc8df11d0d568f3b7aefe",
+      "bytes": 602
+    },
+    {
+      "path": "tacz/assets/ssjj_workbench/geo_models/block/rongguang.json",
+      "sha256": "c484167a73020f60e487d234561144fd77b5b67f568bcb3adedc07fd57604934",
+      "bytes": 99393
+    },
+    {
+      "path": "tacz/assets/ssjj_workbench/gunpack_info.json",
+      "sha256": "0b4fc3d9a1c4ff3285c9a198d100aa3d9073e0a9d9933f1e746967c0a08ddd6f",
+      "bytes": 202
+    },
+    {
+      "path": "tacz/assets/ssjj_workbench/lang/en_us.json",
+      "sha256": "05f301d7f3dd5d1446ed5f79ed8d2629b9da8c35521832c4355ed5af00625c46",
+      "bytes": 1256
+    },
+    {
+      "path": "tacz/assets/ssjj_workbench/lang/zh_cn.json",
+      "sha256": "41db8282a2b51888d9c310187018534b9875db89ab3945cdf51f2a5774e7e5f9",
+      "bytes": 1215
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/animations/parasitic_sniper2.animation.json",
+      "sha256": "25e5b0b70549641fdc28041767f4d05c1ef4d03d519fd20c85dd9fa793401224",
+      "bytes": 2675412
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/display/ammo/parasite_round_display.json",
+      "sha256": "8dc6af3e47672eb48b62cb8aaad3e9481b0fc201be99c18261687f49b34d8bb3",
+      "bytes": 278
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/display/attachments/destruction_stock_display.json",
+      "sha256": "18f44b4bc444e0500e4cfc67052a80affb30fe49d23e4defd91c8e9d2dcec94d",
+      "bytes": 218
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/display/attachments/frost_scope_display.json",
+      "sha256": "bd8fa11d5845d017110d66a8c5640a2e7534bc1b9f9a5245c7e9527bf8243f0c",
+      "bytes": 233
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/display/attachments/parasite_muzzle_display.json",
+      "sha256": "b7a6281a03b8fe0c42dd9932fa87afe64faf53e44faf1d029e17ff383a7ff7b3",
+      "bytes": 214
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/display/attachments/ship_scope_display.json",
+      "sha256": "705a09cea59dca74f04ef2f4c06bfc399a0c1e0625ba9952b019221c0df27b2d",
+      "bytes": 230
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/display/attachments/shockwave_magazine_display.json",
+      "sha256": "c57e9bfc2d06720960cb43fc7818292aaff149f597ad0773fff2cd1bb1d2387a",
+      "bytes": 220
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/display/attachments/ultimate_upgrade_stone_display.json",
+      "sha256": "87453f0496c53fa000eeb9d0becb508a171953b55a78207b1adf27559671e7c5",
+      "bytes": 228
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/display/guns/parasitic_sniper1_display.json",
+      "sha256": "4040fe2c10a5a83e9377bf505af433f48fd3e2d727cbf308548f547769773a4c",
+      "bytes": 767
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/display/guns/parasitic_sniper1_frost_display.json",
+      "sha256": "b6960b43e1c5998812c096e71ecb2c32c445d70a7dbaae5bb806f15374cc4bff",
+      "bytes": 785
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/display/guns/parasitic_sniper1_ship_display.json",
+      "sha256": "f6e9b802d3962e9fa937c05af3a4800519bf646bda8010a08199e679979357c8",
+      "bytes": 782
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/display/guns/parasitic_sniper2_display.json",
+      "sha256": "e5e49c9f71e31b160ebc3fb4fb940d64d13495c4bfe4012fc9e9a90d7a1fcaa7",
+      "bytes": 767
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/display/guns/parasitic_sniper2_frost_display.json",
+      "sha256": "b6960b43e1c5998812c096e71ecb2c32c445d70a7dbaae5bb806f15374cc4bff",
+      "bytes": 785
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/display/guns/parasitic_sniper2_ship_display.json",
+      "sha256": "f6e9b802d3962e9fa937c05af3a4800519bf646bda8010a08199e679979357c8",
+      "bytes": 782
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/display/guns/parasitic_sniper_display.json",
+      "sha256": "bb2ab6f43963a1786266b6c7468c603a250a58a96217c173fe4a024b55d79a5f",
+      "bytes": 763
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/display/guns/parasitic_sniper_frost_display.json",
+      "sha256": "b6960b43e1c5998812c096e71ecb2c32c445d70a7dbaae5bb806f15374cc4bff",
+      "bytes": 785
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/display/guns/parasitic_sniper_ship_display.json",
+      "sha256": "f6e9b802d3962e9fa937c05af3a4800519bf646bda8010a08199e679979357c8",
+      "bytes": 782
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/geo_models/attachment/frost_scope_geo.json",
+      "sha256": "bc7c70df3d37004eda5887503f7afb3f0a973701d86a7ed92f10f5d3a2dff1eb",
+      "bytes": 535
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/geo_models/attachment/parasite_upgrade_empty_geo.json",
+      "sha256": "88125efb94e3973a541e22fbca6dfcb974a3ddb7966e2fc418da8e4adb2ecdf5",
+      "bytes": 281
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/geo_models/attachment/ship_scope_geo.json",
+      "sha256": "9b2d2ded6c22a3c238b02dcda7c76b09030b284d250aef508b1a6f7c9bbcb354",
+      "bytes": 534
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/geo_models/gun/parasitic_sniper1_geo.json",
+      "sha256": "abc19eebf5ff6a906d51452b992a7d80a23cadb321acc3b9dfec64ae8935db13",
+      "bytes": 1988
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/geo_models/gun/parasitic_sniper2_frost_geo.json",
+      "sha256": "3b789b7141dd943481a5bf36486fd665b790729d9d79fabd77bf43ef16d4bcf9",
+      "bytes": 1985
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/geo_models/gun/parasitic_sniper2_geo.json",
+      "sha256": "cbb0c3f0f44306fcef08f32403899a8b83decbeb02b1e527806c5fa7aa66748a",
+      "bytes": 1988
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/geo_models/gun/parasitic_sniper2_ship_geo.json",
+      "sha256": "9d7482eb46115449f179f6d21c6902272809fdfeed07597e1f558e923ace8793",
+      "bytes": 1984
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/geo_models/gun/parasitic_sniper_geo.json",
+      "sha256": "a6666273f2ae54d9c5d208179514c07f9aad86f89fff99d64b51af3a77bc2ea4",
+      "bytes": 1987
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/gunpack_info.json",
+      "sha256": "4607c44cb63e060650f8ed7bb98f30c1da811f7fba9ba817702051b2b169c828",
+      "bytes": 199
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/lang/en_us.json",
+      "sha256": "e13bb8357cd73cb4cc23d5bfa25e5b685785257feba1e34ea1d56ab47e14e9b3",
+      "bytes": 3227
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/lang/zh_cn.json",
+      "sha256": "7f04608a54bfc05bdfaaad2f6ca81b76b1f14192db233635da52a78236e89fa6",
+      "bytes": 3896
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/scripts/parasitic_sniper2_state_machine.lua",
+      "sha256": "8d0acaa146d26000d202a40daaf8b25cdd8b6b3bc5f70bfb5a15dc39b6a47570",
+      "bytes": 2057
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/shaders/core/parasite_effect.fsh",
+      "sha256": "2ddbb8d72f375415b6d597b11d7e99a5fb9978e92a4d6e396c2880cb53b6cfa8",
+      "bytes": 399
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/shaders/core/parasite_effect.json",
+      "sha256": "7d50aa6e280ecf6229ff13b707ff5ee0a58f723d545d1fc44899c1035d8e7ce6",
+      "bytes": 852
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/shaders/core/parasite_effect.vsh",
+      "sha256": "e50fd000bdfdad817ee3c5837c06de413de36203c341818ace0b98b8a596292c",
+      "bytes": 462
+    },
+    {
+      "path": "tacz/assets/ssjjparasite2/view_calibration.json",
+      "sha256": "97424ec457cf98477643ca8ae0fc8d668977add5f44140b07f1f7374616c164a",
+      "bytes": 325
+    },
+    {
+      "path": "tacz/assets/ssjjrpg/display/attachments/creative_upgrade_stone_display.json",
+      "sha256": "2b44e3ba01e957c939666f73e9a73197c43c501a9df612ad16cbc6151f98d3dc",
+      "bytes": 76
+    },
+    {
+      "path": "tacz/assets/ssjjrpg/geo_models/attachment/creative_upgrade_stone_geo.json",
+      "sha256": "e4e375ab34bc05fd2f9ea1b6c1db05bc0dbf7ce6aaa44742614f32c2977f8642",
+      "bytes": 479
+    },
+    {
+      "path": "tacz/assets/ssjjrpg/gunpack_info.json",
+      "sha256": "0b4fc3d9a1c4ff3285c9a198d100aa3d9073e0a9d9933f1e746967c0a08ddd6f",
+      "bytes": 202
+    },
+    {
+      "path": "tacz/assets/ssjjrpg/item_presentation.json",
+      "sha256": "b158e28b988a9df01859cbf7ad4465b0f211127ce92caf7252a9d1754667abbb",
+      "bytes": 111438
+    },
+    {
+      "path": "tacz/assets/ssjjrpg/lang/en_us.json",
+      "sha256": "091834f5a0b77bc7adc09e22b21dda75b0b3e14a5881e4c0e6af1f7e456011cc",
+      "bytes": 886
+    },
+    {
+      "path": "tacz/assets/ssjjrpg/lang/zh_cn.json",
+      "sha256": "f077b919d77aae0c1394da15056d1a772dd18aa4b8aa45d614f461b7074cf45b",
+      "bytes": 877
+    },
+    {
+      "path": "tacz/coremods/attachment_bonuses.js",
+      "sha256": "dddd71e673181feeeed2dae8f0a22272ff2092720eb5cc6ff305bafc7a9fd8d5",
+      "bytes": 1374
+    },
+    {
+      "path": "tacz/coremods/dimension_cloak.js",
+      "sha256": "c8f4c1337f888edac80b4ca1fcd4e77483190dacfc9e4fdcd3fccef85ed64d2a",
+      "bytes": 2656
+    },
+    {
+      "path": "tacz/coremods/dimension_config.js",
+      "sha256": "8bdab84c783b5b2c7e03e35933c7f89b1474ce780aa42ad7c69d6085ea344f18",
+      "bytes": 1433
+    },
+    {
+      "path": "tacz/coremods/item_presentation.js",
+      "sha256": "e9693096b5edbf69e41913db4fe93cd2c0a8ea9a131971cf7a064ed7ad41d744",
+      "bytes": 3622
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/data/attachments/king_heart_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/data/attachments/nofa_thunder_data.json",
+      "sha256": "387cf9610649df5036b4a654768e7b2a83ab285cdfc719ecbf4b4604e89bb678",
+      "bytes": 71
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/data/attachments/punishment_power_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/data/attachments/skin_anime_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/data/attachments/skin_fire_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/data/attachments/skin_sakura_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/data/attachments/skin_timetravel_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/data/attachments/ultimate_stone_data.json",
+      "sha256": "deac7245f3d1609839c5524d4896fc00f918eb15727c3b92f11681eec704d4ea",
+      "bytes": 38
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/data/guns/notdistinguish_base_data.json",
+      "sha256": "5a4e89694f96eb0e32e266da9ba737efde15ff8b0b3cd8a03edea6f605638fe1",
+      "bytes": 1090
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/data/guns/notdistinguish_data.json",
+      "sha256": "e2d3cac523e44f22193c27277420dcc2acdb419c90e0e2fac58f2aee0722d231",
+      "bytes": 1211
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/data/guns/notdistinguish_tier1_data.json",
+      "sha256": "e3d95d3f79dfa1a433b92302e9f1cbccbf65c5f1a7ad5c6e16444145953debeb",
+      "bytes": 1097
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/index/ammo/punishment_core_battery.json",
+      "sha256": "efff12623dfc17cb5c1a4c739f9948c92c1aee593e2328fb393cf382556f642e",
+      "bytes": 207
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/index/attachments/king_heart.json",
+      "sha256": "5c68db2bdc5c1abf53479cba677602a7f84aead09d7bf543078a2fd6797636d0",
+      "bytes": 220
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/index/attachments/nofa_thunder.json",
+      "sha256": "814be1dc884fe389ae763eace081b9311c8f6e41a289a4282ade21992f3961f3",
+      "bytes": 229
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/index/attachments/punishment_power.json",
+      "sha256": "49a8081f4290dde451765ffbd9f9e0964afe5e156d53f40ff85e16497b9a1a20",
+      "bytes": 243
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/index/attachments/skin_anime.json",
+      "sha256": "83c1d808673fffe58bde7093d37100610be413a4914e42cb83efb11431bc1d96",
+      "bytes": 220
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/index/attachments/skin_fire.json",
+      "sha256": "8f111f5a6b83a4294fb1c91602c5cf9daf78ea1611ae48496004dd011a014c11",
+      "bytes": 216
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/index/attachments/skin_sakura.json",
+      "sha256": "28d85600c3989d600b7e905522da2f9a60d2f7cf1df96862dfc7079e2c004be9",
+      "bytes": 224
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/index/attachments/skin_timetravel.json",
+      "sha256": "4aeb39073a5824c91ec6a2620a2fbb06d522b97efc321750a367cf89ed561079",
+      "bytes": 240
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/index/attachments/ultimate_stone.json",
+      "sha256": "aa4a1795513335127719d8c4c8401346200c451c57935af4d058d533a44089e0",
+      "bytes": 236
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/index/guns/notdistinguish.json",
+      "sha256": "899b8fd3392f020311d0d3a396a1491812a1c5eab22b302213b1d7a35677be60",
+      "bytes": 220
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/index/guns/notdistinguish_base.json",
+      "sha256": "cf86b03803299c2310bea3c2ea2e5d2cace9f5f51bf8a0bf401709b6c813a816",
+      "bytes": 241
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/index/guns/notdistinguish_tier1.json",
+      "sha256": "72d94c43325b89317acbc0510eaa1d120c2efded7d315e318eb3f568581b67c4",
+      "bytes": 244
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/recipes/king_heart.json",
+      "sha256": "7277b1f08b9e1798ce10dd6454f25219c466ca9217766e5ea2132bccb58333a7",
+      "bytes": 237
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/recipes/nofa_thunder.json",
+      "sha256": "a8831f8a026b450917b0b5ca23bfefa5fa1c72f47d195b6e61c90220f3f96844",
+      "bytes": 240
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/recipes/notdistinguish.json",
+      "sha256": "ee7293e76b407faff7e08b18900b66306fa0a231cc7ef910167b6a50b7a8f88d",
+      "bytes": 387
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/recipes/notdistinguish_base.json",
+      "sha256": "994c3c28cafe582d6e7432da42dd82516eacb34e47c06001e4838f7183bd4b0b",
+      "bytes": 256
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/recipes/notdistinguish_tier1.json",
+      "sha256": "455adbbe27ef1afd2d64301b761f0d6661198b5f73ade82e82c1546f04453cc9",
+      "bytes": 392
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/recipes/punishment_core_battery.json",
+      "sha256": "f42e4fdedf0cd86ee48077acd0d1b46b6c8a65950e2da94b43d5fad082a7aaef",
+      "bytes": 371
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/recipes/punishment_eye_fragment.json",
+      "sha256": "1052ed2d2789f09ddf16f3e08c2ce029fcc940068e1e7e49ca80821c2b66962a",
+      "bytes": 294
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/recipes/punishment_power.json",
+      "sha256": "42e7917b1ec3cea86e9c768ac3a5816b47e13dd84f8b6398aeade3297349cbe1",
+      "bytes": 242
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/recipes/skin_anime.json",
+      "sha256": "7fd8561035411963939c71523e85baf7f78b390874a8e8b3de72b2122b08f421",
+      "bytes": 237
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/recipes/skin_fire.json",
+      "sha256": "fb03d25b8a3f23fc4407c3340d8b08aebe4fd88c8c9f3341bf8d720602fb3002",
+      "bytes": 236
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/recipes/skin_sakura.json",
+      "sha256": "4e5510d0c140d04b792cfb3f294eb0755fcb5f50c21f3b2b273d538de63141b2",
+      "bytes": 238
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/recipes/skin_timetravel.json",
+      "sha256": "405da73104f20780ee7fa0f444aae25e9775a85100d834118ead644bcdcf8962",
+      "bytes": 242
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/recipes/ultimate_stone.json",
+      "sha256": "5d9076a77dcd0c14a475c26e1e5248c26db6d73fb9873e3a4905fa61aa69faf8",
+      "bytes": 376
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/tacz_tags/attachments/allow_attachments/notdistinguish.json",
+      "sha256": "855ba24a9dd41cc1efe4e28c2b20b1dde8569b17905fdd472f19c5fb9832094c",
+      "bytes": 283
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/tacz_tags/attachments/allow_attachments/notdistinguish_base.json",
+      "sha256": "40bab0956b2d49461dcb099c5f8edee41aff29c9222bde51bedadccd7b7d0b3f",
+      "bytes": 153
+    },
+    {
+      "path": "tacz/data/eyeofpunishment/tacz_tags/attachments/allow_attachments/notdistinguish_tier1.json",
+      "sha256": "66fdeac70d93da6b0b9b61a7e629c120353c93e1a291c45cc7a15bcbd09c10c1",
+      "bytes": 188
+    },
+    {
+      "path": "tacz/data/judgfire/data/attachments/default_scope_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/judgfire/data/attachments/dragon_breath_muzzle_data.json",
+      "sha256": "54824d6379b0e3d751231476481aa674a1b25021b3c58f2573f23bda031b7ac7",
+      "bytes": 73
+    },
+    {
+      "path": "tacz/data/judgfire/data/attachments/emperor_crown_stock_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/judgfire/data/attachments/flame_crown_scope_data.json",
+      "sha256": "764489b6b716e14bd78d6730975de3a25de89b5d8b87fd56a9b34220ca54c2e1",
+      "bytes": 29
+    },
+    {
+      "path": "tacz/data/judgfire/data/attachments/frozen_scope_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/judgfire/data/attachments/integrated_scope_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/judgfire/data/attachments/lightning_scope_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/judgfire/data/attachments/qinglong_scope_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/judgfire/data/attachments/red_lotus_burst_mag_data.json",
+      "sha256": "28cd9c3abc0b110ab36459b28499e429f5e0bbafb1def68962275a2539738e91",
+      "bytes": 35
+    },
+    {
+      "path": "tacz/data/judgfire/data/attachments/red_lotus_grip_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/judgfire/data/attachments/ultimate_upgrade_stone_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/judgfire/data/guns/judgment_flame_base_data.json",
+      "sha256": "10b63ef10dcc96e71a20a3400840ffe060a8e0d47a392306ace557f31a38c2dc",
+      "bytes": 1267
+    },
+    {
+      "path": "tacz/data/judgfire/data/guns/judgment_flame_data.json",
+      "sha256": "a3500b0591cab75a1c03b332639d543066c6595196e2510d4be74cd0a8883073",
+      "bytes": 1388
+    },
+    {
+      "path": "tacz/data/judgfire/data/guns/judgment_flame_tier1_data.json",
+      "sha256": "deea7fee7de1c716c1b412736841d704bd10c04792d1d295b20b039f93ea2bbf",
+      "bytes": 1282
+    },
+    {
+      "path": "tacz/data/judgfire/index/ammo/fire_dragon_flame.json",
+      "sha256": "2cf7f90cfe6ea5ee2d6c16201952b23252da78ede05fe28db5d7f9c2ff9e7623",
+      "bytes": 169
+    },
+    {
+      "path": "tacz/data/judgfire/index/attachments/default_scope.json",
+      "sha256": "546a1f96c167501bf9ce9200d200921f113f21b08b7f0d5290f38cb0bc8d51e0",
+      "bytes": 204
+    },
+    {
+      "path": "tacz/data/judgfire/index/attachments/dragon_breath_muzzle.json",
+      "sha256": "a2b24adbf25c493eabf098fa948c80e77dd4f207d15337b4b51966c51a7607ee",
+      "bytes": 235
+    },
+    {
+      "path": "tacz/data/judgfire/index/attachments/emperor_crown_stock.json",
+      "sha256": "645e2d42a90e6c3b7fd2a5db249a3f4fd00be13b621da2d8a7aa6efa26584f2c",
+      "bytes": 230
+    },
+    {
+      "path": "tacz/data/judgfire/index/attachments/flame_crown_scope.json",
+      "sha256": "50dbeba597579cf9d3811c1d99703ccb9cfbe36d41bd0439d4b926cab5e2f61e",
+      "bytes": 221
+    },
+    {
+      "path": "tacz/data/judgfire/index/attachments/frozen_scope.json",
+      "sha256": "921c58adec33c5152d521694018f3489bb527308bca1b2be4e6ac82596443079",
+      "bytes": 201
+    },
+    {
+      "path": "tacz/data/judgfire/index/attachments/integrated_scope.json",
+      "sha256": "f1af189f621223ee379271e6d151c9a9b2ca6148079a7a614f914a621894c897",
+      "bytes": 216
+    },
+    {
+      "path": "tacz/data/judgfire/index/attachments/lightning_scope.json",
+      "sha256": "03e23d3f505653d348c1d27895df57d9a726fb5f128743777ca3b419a3e7ba65",
+      "bytes": 213
+    },
+    {
+      "path": "tacz/data/judgfire/index/attachments/qinglong_scope.json",
+      "sha256": "049f8d94561b69872e35ff9dcd478897fd315db688239abd50044316433d802a",
+      "bytes": 209
+    },
+    {
+      "path": "tacz/data/judgfire/index/attachments/red_lotus_burst_mag.json",
+      "sha256": "10e41160d6cab400d9a93961e28dc296386b8b1867cfb62816073d06208c830b",
+      "bytes": 237
+    },
+    {
+      "path": "tacz/data/judgfire/index/attachments/red_lotus_grip.json",
+      "sha256": "3dd13aa76d5c9db38f5c5ea7d705669b9324d157dca4dcf942dd180f25ee46b7",
+      "bytes": 209
+    },
+    {
+      "path": "tacz/data/judgfire/index/attachments/ultimate_upgrade_stone.json",
+      "sha256": "e86f95102f46738b428d8224e821bdf778b1161b9ce66ad9ec4cafa4b1803eb5",
+      "bytes": 242
+    },
+    {
+      "path": "tacz/data/judgfire/index/guns/judgment_flame.json",
+      "sha256": "79d89a91446579eba575cf867d15fc7c164e907be7413b6dc5a7404079cc3fc7",
+      "bytes": 196
+    },
+    {
+      "path": "tacz/data/judgfire/index/guns/judgment_flame_base.json",
+      "sha256": "d2e2379ee5be957828bb52e50d907d9395e852994fba0d913e3be66a4432db3f",
+      "bytes": 215
+    },
+    {
+      "path": "tacz/data/judgfire/index/guns/judgment_flame_tier1.json",
+      "sha256": "9a0b7c720c08fa6312beef31d1e3656dedb186a3b77dd4d0558920e10d993c32",
+      "bytes": 219
+    },
+    {
+      "path": "tacz/data/judgfire/recipes/default_scope.json",
+      "sha256": "ca858d73726121848032c4a7f057dd3ef1e13076bbfcc80ad601eec6f819e736",
+      "bytes": 233
+    },
+    {
+      "path": "tacz/data/judgfire/recipes/dragon_breath_muzzle.json",
+      "sha256": "eb8c4220cb14d46ef21d13bae2ea8b7f18ffc84c2feae700948cc85539aae295",
+      "bytes": 241
+    },
+    {
+      "path": "tacz/data/judgfire/recipes/emperor_crown_stock.json",
+      "sha256": "ff8729874abbf1cc254d2c8da4b0e55c07aa53a6b839e6d72707c2b9e9fe8a3f",
+      "bytes": 239
+    },
+    {
+      "path": "tacz/data/judgfire/recipes/fire_dragon_flame_ammo.json",
+      "sha256": "7694e0fd7e2904349d9d41f9390e9dfaaaffa7cf22fe4d14e61d35f901453657",
+      "bytes": 362
+    },
+    {
+      "path": "tacz/data/judgfire/recipes/frozen_scope.json",
+      "sha256": "0833639346effd1fa0c9522ebbb843943d7b08bfa78048c622ebdb099350c3f5",
+      "bytes": 232
+    },
+    {
+      "path": "tacz/data/judgfire/recipes/judgment_flame_base.json",
+      "sha256": "9ffc56e9d316ae87bbc3a6910bfee5816748a7957b36b024fd1805c6c71883d5",
+      "bytes": 249
+    },
+    {
+      "path": "tacz/data/judgfire/recipes/judgment_flame_fragment.json",
+      "sha256": "96ee807fde937e64a864d93e8b2851bba4732612887e160cf6e5441420ec1745",
+      "bytes": 294
+    },
+    {
+      "path": "tacz/data/judgfire/recipes/judgment_flame_tier1.json",
+      "sha256": "034c169a66476fc0dac270d8828c66e29659fe05bdccdc6ed3bb9e079da71b60",
+      "bytes": 378
+    },
+    {
+      "path": "tacz/data/judgfire/recipes/judgment_flame_weapon.json",
+      "sha256": "beb2ed88545b1df3ffd543a773bb6216e30c05b415cae33ac16b9ad2779de4c2",
+      "bytes": 373
+    },
+    {
+      "path": "tacz/data/judgfire/recipes/lightning_scope.json",
+      "sha256": "383e4919c6e882b94205c350debadd01c2d2f610dd1359dbe7bb0258bcbcec46",
+      "bytes": 235
+    },
+    {
+      "path": "tacz/data/judgfire/recipes/pixel_crown_scope.json",
+      "sha256": "ee9e81719af91965eb6f0c0d21990f8675815c064e764b57c7e797028d9b7511",
+      "bytes": 237
+    },
+    {
+      "path": "tacz/data/judgfire/recipes/qinglong_scope.json",
+      "sha256": "a05dda28d0ff2da632972a8d7cae212841082791f19956a58e007507a0074ce9",
+      "bytes": 234
+    },
+    {
+      "path": "tacz/data/judgfire/recipes/red_lotus_burst_mag.json",
+      "sha256": "9365771a7648a73f72b1c035087197055918d0477b62d04c32af4fc861904b0c",
+      "bytes": 246
+    },
+    {
+      "path": "tacz/data/judgfire/recipes/red_lotus_grip.json",
+      "sha256": "5cbc0af03f020266b7675f08bd2568e695c6789e0431d6224b9a1e78fd55d467",
+      "bytes": 233
+    },
+    {
+      "path": "tacz/data/judgfire/recipes/ultimate_upgrade_stone.json",
+      "sha256": "76ae12222447e451687c550b00c1442d7f6575e0bbd564acc3678373c65d95b1",
+      "bytes": 272
+    },
+    {
+      "path": "tacz/data/judgfire/scripts/judgment_flame_logic.lua",
+      "sha256": "0fff37cc6342f0de6a966b8efac7eaf8cc3c7ddf3f68278c8119d99473e7c680",
+      "bytes": 1542
+    },
+    {
+      "path": "tacz/data/judgfire/tacz_tags/attachments/allow_attachments/judgment_flame.json",
+      "sha256": "c8ddc6653a7a41483546f124383f8b1ba16af00a88e22bccef87ee65818e0c03",
+      "bytes": 319
+    },
+    {
+      "path": "tacz/data/judgfire/tacz_tags/attachments/allow_attachments/judgment_flame_base.json",
+      "sha256": "76a17a2acdfd07a95ad02e3133d50f9f9cd9a6e94cb3ae534a5a05fced08439c",
+      "bytes": 164
+    },
+    {
+      "path": "tacz/data/judgfire/tacz_tags/attachments/allow_attachments/judgment_flame_tier1.json",
+      "sha256": "b57397819539da7b34bb0870ae02e56e768f30b705301fe5a3ed457d092f437f",
+      "bytes": 221
+    },
+    {
+      "path": "tacz/data/ssjj_dark/data/attachments/skin_mix_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/ssjj_dark/data/attachments/skin_nightguardian_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/ssjj_dark/data/attachments/skin_pure_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/ssjj_dark/data/guns/darkdiamond1_data.json",
+      "sha256": "0df53c5c6968ec9766b1a7c6c8f75b728d3f8c97fd97843a0384da602474ea38",
+      "bytes": 1361
+    },
+    {
+      "path": "tacz/data/ssjj_dark/data/guns/darkdiamond2_data.json",
+      "sha256": "94d4862e81511c1c04d1f5d04497922df611f35dbe332bdd193a5850a332d3fe",
+      "bytes": 1361
+    },
+    {
+      "path": "tacz/data/ssjj_dark/data/guns/darkdiamond_data.json",
+      "sha256": "15c930660d3d68b150070c20f2d945f03a1b2d5fd9846548eeaec3d677564486",
+      "bytes": 1361
+    },
+    {
+      "path": "tacz/data/ssjj_dark/index/attachments/skin_mix.json",
+      "sha256": "9013ec101e28627fa2bdf8b5bae7bdaa1b0581e645a1461958d26c68f863953c",
+      "bytes": 192
+    },
+    {
+      "path": "tacz/data/ssjj_dark/index/attachments/skin_nightguardian.json",
+      "sha256": "826ee4f1c5221889cb3ef6d5f76dd14e5a61b3d2520f7b8ecc8b19cce953d5d4",
+      "bytes": 232
+    },
+    {
+      "path": "tacz/data/ssjj_dark/index/attachments/skin_pure.json",
+      "sha256": "ee9e40b6c7d5b07bdd5fb9da48df34eed834f381b0d41c665f363c7ee217a554",
+      "bytes": 196
+    },
+    {
+      "path": "tacz/data/ssjj_dark/index/guns/darkdiamond.json",
+      "sha256": "2b863be7f3aee41f432f25f371ca1a46d9d044dcd2ae492eda6156d4c46c19a5",
+      "bytes": 191
+    },
+    {
+      "path": "tacz/data/ssjj_dark/index/guns/darkdiamond1.json",
+      "sha256": "af4c69c1b6767da53655337934d75f8ab33a620b773d4b0da200c6c9446866dc",
+      "bytes": 195
+    },
+    {
+      "path": "tacz/data/ssjj_dark/index/guns/darkdiamond2.json",
+      "sha256": "0bb5740fe63e29aee2d90a6f6c4888ca09965af300c110e00133bafe475c52df",
+      "bytes": 195
+    },
+    {
+      "path": "tacz/data/ssjj_dark/recipes/attachments/skin_mix.json",
+      "sha256": "d1413f23b8a84762b7cd7ca85f067d2b5489e30f3e4e61129bdde476c5f2956d",
+      "bytes": 215
+    },
+    {
+      "path": "tacz/data/ssjj_dark/recipes/attachments/skin_nightguardian.json",
+      "sha256": "d895605ac5af6b4a5094b5dc88fac46ff38702925e9ef2847d576b57661af3a0",
+      "bytes": 225
+    },
+    {
+      "path": "tacz/data/ssjj_dark/recipes/attachments/skin_pure.json",
+      "sha256": "b1dd96bcb387dc3cdd359c2d92baab1b9c542fa419670575f20910065b1a82d3",
+      "bytes": 216
+    },
+    {
+      "path": "tacz/data/ssjj_dark/recipes/darkcrystal_fragment.json",
+      "sha256": "58331bbc451d2330fc91344403bb7ed2437248e8e99a84d42c5908fb0b557ae5",
+      "bytes": 280
+    },
+    {
+      "path": "tacz/data/ssjj_dark/recipes/guns/darkdiamond.json",
+      "sha256": "b5c3a5dcc6a600e7e0cb19de68230403e39bc3422884bbae7cd9ada309607c7a",
+      "bytes": 203
+    },
+    {
+      "path": "tacz/data/ssjj_dark/recipes/guns/darkdiamond1.json",
+      "sha256": "3e3c38d4018d4926453f3e8ed192d9f6d30e1f86007dc79ba4961a8d58bae9ae",
+      "bytes": 325
+    },
+    {
+      "path": "tacz/data/ssjj_dark/recipes/guns/darkdiamond2.json",
+      "sha256": "de9034288b72f211ab137c7c85a4ef2673cbadab4514afc3ed4e3dcd07a54e6d",
+      "bytes": 326
+    },
+    {
+      "path": "tacz/data/ssjj_dark/scripts/dark_pistol_logic.lua",
+      "sha256": "23aadefd7a997690964a39eaf16d17132527f3bdf6bed5e4cb0eb820b37edfce",
+      "bytes": 195
+    },
+    {
+      "path": "tacz/data/ssjj_dark/tacz_tags/attachments/allow_attachments/darkdiamond.json",
+      "sha256": "d14db762ad4fcdf5b33693d7a03f544287e33d3aa0475457bdc9f0491867389d",
+      "bytes": 75
+    },
+    {
+      "path": "tacz/data/ssjj_dark/tacz_tags/attachments/allow_attachments/darkdiamond1.json",
+      "sha256": "d14db762ad4fcdf5b33693d7a03f544287e33d3aa0475457bdc9f0491867389d",
+      "bytes": 75
+    },
+    {
+      "path": "tacz/data/ssjj_dark/tacz_tags/attachments/allow_attachments/darkdiamond2.json",
+      "sha256": "d14db762ad4fcdf5b33693d7a03f544287e33d3aa0475457bdc9f0491867389d",
+      "bytes": 75
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/data/attachments/ability_upgrade_stone_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/data/attachments/dimension_grip_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/data/attachments/dimension_muzzle_data.json",
+      "sha256": "15f0586617d80817d40f9a868cc52902d3cdca09783183a2866b12b64676d1a8",
+      "bytes": 197
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/data/attachments/dimension_stock_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/data/attachments/frozen_scope_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/data/attachments/fusion_upgrade_stone_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/data/attachments/neon_scope_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/data/attachments/royal_scope_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/data/attachments/ultimate_upgrade_stone_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/data/guns/dimension_star1_data.json",
+      "sha256": "3f267b1f76043fa7e81ac504c996c551bd6fececda9c8ac3b4a965fbcb0d8b6b",
+      "bytes": 1358
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/data/guns/dimension_star2_data.json",
+      "sha256": "00d2e1d1558b86a946d9671628c22f049d56122f64829f42ae136996d555b5db",
+      "bytes": 1374
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/data/guns/dimension_star_data.json",
+      "sha256": "1a4f8f1c9e3744500e9f312b5691104cd3cdd7a8af68bb684bf21310861440bd",
+      "bytes": 1351
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/index/ammo/astral_shell.json",
+      "sha256": "8e76f4d20f2388ababbfea8d290e07491b2bbedd2151266ac3d8cd8c20615fc8",
+      "bytes": 173
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/index/attachments/ability_upgrade_stone.json",
+      "sha256": "646ff9338b978fecf0f0de51f0669fa9dcdfd3030cc8eaa2f4b724be59984169",
+      "bytes": 262
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/index/attachments/dimension_grip.json",
+      "sha256": "81bbfb881ee34eedfcc8ae7dc86fdef4b15a03a5ed0e93454b1a64c596234b83",
+      "bytes": 233
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/index/attachments/dimension_muzzle.json",
+      "sha256": "29d7e2b1ee6ddf3f9f1b10a43a1000722a6d3e70a734eeed665886606150ce30",
+      "bytes": 243
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/index/attachments/dimension_stock.json",
+      "sha256": "c62abbaa582ebdd6ff9584e735d25e83e7c5a4b63d5910738ae7f92e49f6a304",
+      "bytes": 238
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/index/attachments/frozen_scope.json",
+      "sha256": "17ed2b9a57f76eee8e6a4c57bb188e1129bb05969c65d114babbd0e6df50a969",
+      "bytes": 226
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/index/attachments/fusion_upgrade_stone.json",
+      "sha256": "d79b8dfdba44fdb3e283eaf34a8012eb3b704b077373a2df6ea3c7d7505bd6af",
+      "bytes": 258
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/index/attachments/neon_scope.json",
+      "sha256": "96ded19adabd953e1cf8140cdc1bb8d1cc293ccece988184fb6b5fed58ff5d3f",
+      "bytes": 218
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/index/attachments/royal_scope.json",
+      "sha256": "e2817f6b308e45fb988aa25de4e8ef3f32bbb239e51509b83266f599b1c193a2",
+      "bytes": 222
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/index/attachments/ultimate_upgrade_stone.json",
+      "sha256": "0cd42cc3efe481a4bd92c9ff8e1d2cff16e5769540a8cc61373cef961e4353e8",
+      "bytes": 266
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/index/guns/dimension_star.json",
+      "sha256": "ac7af2118b65de9d5ec77ff411a1d0023fca32e2abcfcbbf47573190f493bcd6",
+      "bytes": 222
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/index/guns/dimension_star1.json",
+      "sha256": "cc15552d21f3c6ed04ae66101ab7917c4b1da4a26e0e4d7f4c3708caddf4f31e",
+      "bytes": 226
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/index/guns/dimension_star2.json",
+      "sha256": "232f19634413f283ab9a8b7774a14528e50492792c6fca1ce4f5ac9d51ffe722",
+      "bytes": 226
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/recipes/ammo/astral_shell.json",
+      "sha256": "3f9695df214deb835d6991bc2288517cb2a99c06204b466a755557d2de0bb21a",
+      "bytes": 311
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/recipes/attachment/ability_upgrade_stone.json",
+      "sha256": "e8db3f2bcaf53771363fe2dcca2e8f2ccf450d5ec11c23b03fd989acc60b4671",
+      "bytes": 277
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/recipes/attachment/dimension_grip.json",
+      "sha256": "673d2a2fbb5bf89add31a194c37a6103b7b23cc2ea9ac5197855c0b3d7640d5a",
+      "bytes": 239
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/recipes/attachment/dimension_muzzle.json",
+      "sha256": "cfa363775f1fce94d30106d1792b16a55c0d3cc942032b1a22258f1397d4552a",
+      "bytes": 243
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/recipes/attachment/dimension_stock.json",
+      "sha256": "7a02c30b1fd507a42225df0b39ac0603ce75208e499feddd4173964e27b542d0",
+      "bytes": 241
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/recipes/attachment/frozen_scope.json",
+      "sha256": "98f40ffd541f545a09837bf1ee5092f19586eb2e50af0216d55cda90e4fb2c46",
+      "bytes": 238
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/recipes/attachment/fusion_upgrade_stone.json",
+      "sha256": "a78fc923d8ebf1924584f54393d47495e8e9546ab32bbc0a4a3bedc471615f06",
+      "bytes": 492
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/recipes/attachment/neon_scope.json",
+      "sha256": "aadb37b11b0a4fac3143345c5755083971bce65194e470432e1aa6a6086dac96",
+      "bytes": 236
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/recipes/attachment/royal_scope.json",
+      "sha256": "3669476fa6149659abd650df8df8ac3ba8be8974588805ce63edbc55c861516d",
+      "bytes": 237
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/recipes/attachment/ultimate_upgrade_stone.json",
+      "sha256": "f3293477d0c90ebeaff96c7b90adf35e674052dcf5d0369e8f0a0f12b365bfd7",
+      "bytes": 278
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/recipes/dimension_star_fragment.json",
+      "sha256": "ca8e80eef50c3806b6d21242df84f92e40d366a302469dd75506c9a3f59dedcb",
+      "bytes": 294
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/recipes/gun/dimension_star.json",
+      "sha256": "6d87cdc866e5c8cf9178b50f0b756a03b64802e23c768e007d456562709eba31",
+      "bytes": 235
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/recipes/gun/dimension_star1.json",
+      "sha256": "8ebf2ad6718ba496d1ec4010f05a0c37e4a275ed5fe5e4f69d3bd45e5c100439",
+      "bytes": 365
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/recipes/gun/dimension_star2.json",
+      "sha256": "141a3d8cf2d7d55b6aa36503132d41c171858311b9c75c217d9e649517f152ae",
+      "bytes": 366
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/tacz_tags/attachments/allow_attachments/dimension_star.json",
+      "sha256": "ae3811e27f79b373e2b1d4d84688dd0fbef65ae0078f19442ed3b8c454144e41",
+      "bytes": 122
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/tacz_tags/attachments/allow_attachments/dimension_star1.json",
+      "sha256": "681e1f5db50d126b8434d8d4ffa0f0e722c6a28161e43a3329c0d7e647984c13",
+      "bytes": 154
+    },
+    {
+      "path": "tacz/data/ssjj_dimension/tacz_tags/attachments/allow_attachments/dimension_star2.json",
+      "sha256": "28e1326f394011eb157d757281a863b53adca8ab2305cb29ae8243ea5536bb04",
+      "bytes": 337
+    },
+    {
+      "path": "tacz/data/ssjj_workbench/data/blocks/rongguang.json",
+      "sha256": "4776193ad9184e08dda2042797678799f08c0e2ad3c9d546e1f70b4ac14c68d6",
+      "bytes": 1404
+    },
+    {
+      "path": "tacz/data/ssjj_workbench/index/blocks/rongguang.json",
+      "sha256": "5d83141bc6a8572636538b91034ee4a962dbfa63501b067b279da610dbda7fd0",
+      "bytes": 198
+    },
+    {
+      "path": "tacz/data/ssjj_workbench/recipe_filters/rongguang.json",
+      "sha256": "732b04dc49d09f1cea8829431ebeb25963c8cca1d2b8bb5055e88851d967842f",
+      "bytes": 103
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/data/attachments/destruction_stock_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/data/attachments/frost_scope_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/data/attachments/parasite_muzzle_data.json",
+      "sha256": "f79a94eb2c1a390cdf54809e06237edb5b06dcefd4ad56be9e40c1428ca02bde",
+      "bytes": 97
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/data/attachments/ship_scope_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/data/attachments/shockwave_magazine_data.json",
+      "sha256": "28cd9c3abc0b110ab36459b28499e429f5e0bbafb1def68962275a2539738e91",
+      "bytes": 35
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/data/attachments/ultimate_upgrade_stone_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/data/guns/parasitic_sniper1_data.json",
+      "sha256": "3533982ac67ea16ed41f771135158f5ef324b6fa2bdee07b0e36e5510f8312e8",
+      "bytes": 1116
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/data/guns/parasitic_sniper2_data.json",
+      "sha256": "9cbb0cb2a5887b1dce416c01d5512df3ba4d1e7fadee02eb0e9dca624b9568d6",
+      "bytes": 1222
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/data/guns/parasitic_sniper_data.json",
+      "sha256": "03e4b0760a1afac685be6a032ffa8c64952d4bc5d46639bba51b286afdd8ec49",
+      "bytes": 1109
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/index/ammo/parasite_round.json",
+      "sha256": "36efe4fe3011c32e82787e60f0d3518f8c5331aa686b6a3ac84b663a3b249a8f",
+      "bytes": 176
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/index/attachments/destruction_stock.json",
+      "sha256": "2cfc16289b090001b3d432349e5397692f212fc609974c8ef635f411a7fe91ff",
+      "bytes": 242
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/index/attachments/frost_scope.json",
+      "sha256": "03c806fe7db4091545dc83a41f08d66df9fa5dee50864ff8309af3df716eac94",
+      "bytes": 218
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/index/attachments/parasite_muzzle.json",
+      "sha256": "3757e2e45e46e9a5803855f53dfc0ddedec29c7512fb586e884a48d52b4dfa75",
+      "bytes": 235
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/index/attachments/ship_scope.json",
+      "sha256": "2b6d75750b1fb13a644e1bfbd8336853c467d39eded770a7a8d691055f165285",
+      "bytes": 214
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/index/attachments/shockwave_magazine.json",
+      "sha256": "bcd8507a80040bb4b8b9f0a63b6c784a60cfe17c5e9ba7cf789ed55aa03c01a4",
+      "bytes": 253
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/index/attachments/ultimate_upgrade_stone.json",
+      "sha256": "8cd21923c90a0eb717b9d3d7f1e08e234d39ab055d98c2b4bed0e09efb3bed01",
+      "bytes": 262
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/index/guns/parasitic_sniper.json",
+      "sha256": "1078e2c63f1b6fb8b879370d1db40b3d4ea5c95cfe2ff4cea913276997554bfc",
+      "bytes": 224
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/index/guns/parasitic_sniper1.json",
+      "sha256": "4364dfecc831966799a5e58add18e0c6df56cda599270e17251e430f8e126639",
+      "bytes": 228
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/index/guns/parasitic_sniper2.json",
+      "sha256": "5a32c4affbdc445bd7bf05c986851de34ba634cfb182116bb2948529dcc797e5",
+      "bytes": 229
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/recipes/ammo/parasite_round.json",
+      "sha256": "e5a99bb5caccf0470f639b8cd19e2826133d89807060a03a10985e51f9bdbb0a",
+      "bytes": 310
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/recipes/attachment/destruction_stock.json",
+      "sha256": "b2426466b3f307e332db8ba2885d3bcf647c646163634ad0fdf811417ae2bbb7",
+      "bytes": 236
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/recipes/attachment/frost_scope.json",
+      "sha256": "8b38882cd506b2fea4b67df02d045ee2017e4ab7b30c19c8eef341a6a82239e8",
+      "bytes": 230
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/recipes/attachment/parasite_muzzle.json",
+      "sha256": "14abcc61a8ab34c326d7dbab2c126ca4f01e1f4a2f6a6b60172d9573f4b39e4e",
+      "bytes": 235
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/recipes/attachment/ship_scope.json",
+      "sha256": "87098c7bf570d778bfd75d4e42215adea0b04742e6c201bd93f766f85a9dbba1",
+      "bytes": 229
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/recipes/attachment/shockwave_magazine.json",
+      "sha256": "68d0d8ad65ac51db3b2e4451b7f05c94baa880c5db7c9f98d4683d6d361019c3",
+      "bytes": 244
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/recipes/attachment/ultimate_upgrade_stone.json",
+      "sha256": "1f9555c5ac7d7aabfe248d7dbb7ce242bda1e190364cc97e333ad5219e6674dd",
+      "bytes": 277
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/recipes/gun/parasitic_sniper.json",
+      "sha256": "278b5b66544bef76f93158016b3600f9084aaa3586ea7c0690ae92f059cee6b3",
+      "bytes": 245
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/recipes/gun/parasitic_sniper1.json",
+      "sha256": "f5ac0ae8738d4ee271fad883c1fe3d35691ca3fec612d7df31ffda45d7dc40b9",
+      "bytes": 376
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/recipes/gun/parasitic_sniper2.json",
+      "sha256": "dd723241c568655b6986fdc684f33ac087b4f050e62b7eb7deae5bdadf2aa42d",
+      "bytes": 377
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/recipes/parasite_fragment.json",
+      "sha256": "bd72ee4cd4c4b67160bfe0fa7aa68b7d62889a1aca3235675e1d1d590d2090e9",
+      "bytes": 288
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/tacz_tags/attachments/allow_attachments/parasitic_sniper.json",
+      "sha256": "e8adaf66f9bcdbfa9e37da4a5ce9f69793b3ebf67230e33b75ff86ffb706cebb",
+      "bytes": 157
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/tacz_tags/attachments/allow_attachments/parasitic_sniper1.json",
+      "sha256": "e8adaf66f9bcdbfa9e37da4a5ce9f69793b3ebf67230e33b75ff86ffb706cebb",
+      "bytes": 157
+    },
+    {
+      "path": "tacz/data/ssjjparasite2/tacz_tags/attachments/allow_attachments/parasitic_sniper2.json",
+      "sha256": "e3c375f6c7f26ecf61e88c8867e52538e3db26b1ce676c31ed0ee463bdbedaad",
+      "bytes": 229
+    },
+    {
+      "path": "tacz/data/ssjjrpg/data/attachments/creative_upgrade_stone_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "tacz/data/ssjjrpg/index/attachments/creative_upgrade_stone.json",
+      "sha256": "20366c7b98fcd85b99eeee01f73866d7aa8c8f8ce4efb9716a13f0d578644042",
+      "bytes": 238
+    },
+    {
+      "path": "tacz/data/tacz/recipe_filters/default.json",
+      "sha256": "0d3de85faa3f08210229a24d77b3839184179f511ec287ed805b90f2a638e3f7",
+      "bytes": 88
+    },
+    {
+      "path": "tacz/gunpack.meta.json",
+      "sha256": "91706687858e5e2116444c93f542140ebc15aa58b1e186510821193399c8742a",
+      "bytes": 184
     },
     {
       "path": "tacz/README.md",
-      "sha256": "13d827a0738bcb17609f1dc4bcf8f2e8c29e91e8fb031276bbd628b69f67b544",
-      "bytes": 973
+      "sha256": "a5ada3a7b936c7f2479d78cf3344a3ad67f8ca7e15a1a4211c1c69fa82979400",
+      "bytes": 936
+    },
+    {
+      "path": "tacz/source-manifest.json",
+      "sha256": "b02a43551f298722ae9208f67d6edde14faaabf466160275439df88c19b5b7cc",
+      "bytes": 204815
+    },
+    {
+      "path": "THIRD_PARTY_LICENSES.md",
+      "sha256": "09aae699024782ed6ec1f35c700a71c811c26888f2c4e06424ea09b4aed58450",
+      "bytes": 887
     }
   ],
-  "source_archive": {
-    "path": "mods/SSJJRPG-1.1.47-source.zip",
-    "sha256": "627de4efcb924b5e2ce2a890bb606214fc563438d7f0333a1ea6a1e87cac07a7",
-    "members": 851,
-    "uncompressed_bytes": 37361993
-  },
   "java_source_evidence": {
-    "class_names": 292,
-    "current_outer_bytes_matched": 46,
-    "known_pre_ASM_outer_bytes_matched": 6,
-    "name_only_snapshots": 240
+    "current_top_level_classes": 294,
+    "authored_source_name_coverage": 294,
+    "source_evidence_counts": {
+      "class_name_only_unverified_methods": 240,
+      "recorded_emitted_outer_class_matches_current": 45,
+      "recorded_emitted_outer_class_precedes_known_ASM": 9
+    }
   },
   "runtime_package_report": "runtime-manifest.json",
-  "build_boundary": "Curated authored snapshots + known ASM production chain, not a complete independently rebuildable source tree. No new full build or live gameplay test."
+  "build_boundary": "Authored historical snapshots + incremental sources + known ASM chain; not a complete independently rebuildable project. No full rebuild or live gameplay test."
 }

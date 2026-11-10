@@ -1,0 +1,1 @@
+{"type":"tacz:gun_smith_table_crafting","materials":[{"item":{"item":"minecraft:copper_ingot"},"count":6},{"item":{"item":"minecraft:gunpowder"},"count":3},{"item":{"item":"minecraft:blaze_powder"},"count":2},{"item":{"item":"minecraft:magma_cream"},"count":1}],"result":{"type":"ammo","id":"judgfire:fire_dragon_flame","count":30,"group":"ssjj_workbench:ammo"}}

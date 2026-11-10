@@ -1,0 +1,1 @@
+{"model":"judgfire:ammo/fire_dragon_flame","texture":"judgfire:ammo/uv/fire_dragon_flame","slot":"judgfire:ammo/slot/fire_dragon_flame","tracer_color":"#FF8828","shell":{"model":"tacz:shell/30_06_shell","texture":"tacz:shell/30_06_shell"},"transform":{"scale":{"thirdperson":[0.5,0.5,0.5],"ground":[0.5,0.5,0.5],"fixed":[1,1,1]}}}

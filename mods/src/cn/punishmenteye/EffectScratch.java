@@ -1,0 +1,7 @@
+package cn.punishmenteye;
+import java.util.*;import org.joml.Vector3f;
+final class EffectScratch {static final int[] ORDER={0,2,1,1};private static final class Pool{Vector3f[] vertices;}private static final class State{int depth;final ArrayList<Pool> pools=new ArrayList<>();}private static final ThreadLocal<State> LOCAL=ThreadLocal.withInitial(State::new);private EffectScratch(){}
+ static void begin(){State s=LOCAL.get();s.depth++;if(s.depth<=8){while(s.pools.size()<s.depth)s.pools.add(new Pool());Pool p=s.pools.get(s.depth-1);if(p.vertices!=null&&p.vertices.length>cn.judgfire.RenderOptions.vertices())p.vertices=null;}}static void end(){State s=LOCAL.get();if(s.depth<=0)throw new IllegalStateException("unbalanced Eye effect");s.depth--;}static void clear(){LOCAL.remove();}
+ /** Every particle is fully submitted before the next request; one capacity buffer avoids mesh-size LRU thrashing. */
+ static Vector3f[] vertices(int n){State s=LOCAL.get();Vector3f[] out=null;if(s.depth>0&&s.depth<=8&&n<=cn.judgfire.RenderOptions.vertices()&&cn.judgfire.RenderOptions.enabled("render.reuse_geometry")){Pool p=s.pools.get(s.depth-1);out=p.vertices;if(out==null||out.length<n){int capacity=Math.min(cn.judgfire.RenderOptions.vertices(),Math.max(n,out==null?0:out.length*2));out=new Vector3f[capacity];for(int i=0;i<capacity;i++)out[i]=new Vector3f();p.vertices=out;}}if(out==null){out=new Vector3f[n];for(int i=0;i<n;i++)out[i]=new Vector3f();}return out;}
+}

@@ -1,0 +1,1 @@
+{"blend":{"func":"add","srcrgb":"srcalpha","dstrgb":"1-srcalpha"},"vertex":"ssjj_dark:skill_dimming","fragment":"ssjj_dark:skill_dimming","attributes":["Position","Color"],"samplers":[],"uniforms":[]}

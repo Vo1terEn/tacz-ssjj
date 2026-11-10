@@ -1,0 +1,1 @@
+{"parent":"minecraft:recipes/root","criteria":{"has_iron":{"trigger":"minecraft:inventory_changed","conditions":{"items":[{"items":["minecraft:iron_ingot"]}]}},"has_the_recipe":{"trigger":"minecraft:recipe_unlocked","conditions":{"recipe":"ssjj_workbench:rongguang"}}},"requirements":[["has_iron","has_the_recipe"]],"rewards":{"recipes":["ssjj_workbench:rongguang"]}}

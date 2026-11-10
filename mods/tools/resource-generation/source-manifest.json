@@ -1,0 +1,463 @@
+{
+  "format": 1,
+  "version": "1.1.48",
+  "files": [
+    {
+      "path": "mods/tools/resource-generation/work/weapon_attachment_skill_revision_20261108/build_attachment_assets.py",
+      "workspace_source": "work/weapon_attachment_skill_revision_20261108/build_attachment_assets.py",
+      "original_sha256": "3aacc9797a9be82cfa0e58b823f54273dec8c117ef565e65b1cfb30b7c268f98",
+      "public_sha256": "3aacc9797a9be82cfa0e58b823f54273dec8c117ef565e65b1cfb30b7c268f98",
+      "bytes": 13766,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/work/weapon_attachment_skill_revision_20261108/build_attachment_descriptions.py",
+      "workspace_source": "work/weapon_attachment_skill_revision_20261108/build_attachment_descriptions.py",
+      "original_sha256": "fa64e0651cebd8ad243715d97316d24ed417bf92f0b20d7b4ce34179e5dd571a",
+      "public_sha256": "fa64e0651cebd8ad243715d97316d24ed417bf92f0b20d7b4ce34179e5dd571a",
+      "bytes": 4962,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/work/weapon_attachment_skill_revision_20261108/build_decoy_assets.py",
+      "workspace_source": "work/weapon_attachment_skill_revision_20261108/build_decoy_assets.py",
+      "original_sha256": "c08cd28ecc0d63d105b4d958ec6f6f8467a6941b397ad14d67efc99b6c402208",
+      "public_sha256": "29013d28be7ebe12907d973ecbaf1c8f94db36fa2e9c00b9d62be1811e5a54f5",
+      "bytes": 2777,
+      "normalization": [
+        {
+          "line": 20,
+          "environment": "SSJJ_FONT_YAHEI",
+          "change": "Local absolute path literal replaced with an environment option and portable fallback."
+        }
+      ],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/work/weapon_attachment_skill_revision_20261108/build_decoy_effect.py",
+      "workspace_source": "work/weapon_attachment_skill_revision_20261108/build_decoy_effect.py",
+      "original_sha256": "8709df5f5185c3e97adf37f6975661c97bfeea1114af13a645ea1a9a71a8958f",
+      "public_sha256": "8709df5f5185c3e97adf37f6975661c97bfeea1114af13a645ea1a9a71a8958f",
+      "bytes": 8935,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/work/weapon_attachment_skill_revision_20261108/build_item_presentation_assets.py",
+      "workspace_source": "work/weapon_attachment_skill_revision_20261108/build_item_presentation_assets.py",
+      "original_sha256": "6737101aeb726b2c009aae8de327e06fb34ff0a82d1554683315c302e1bbf31b",
+      "public_sha256": "c342f451b143e6d5dc2fb7407761723f23be754345d8eef0abe39d8a3ee33c47",
+      "bytes": 10712,
+      "normalization": [
+        {
+          "line": 110,
+          "environment": "SSJJ_FONT_ARIAL",
+          "change": "Local absolute path literal replaced with an environment option and portable fallback."
+        }
+      ],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/work/weapon_attachment_skill_revision_20261108/build_activation.py",
+      "workspace_source": "work/weapon_attachment_skill_revision_20261108/build_activation.py",
+      "original_sha256": "591bba568b977eb8f6caac11f9ebb497d055eff531f10163146f8ff7efbcf2e4",
+      "public_sha256": "591bba568b977eb8f6caac11f9ebb497d055eff531f10163146f8ff7efbcf2e4",
+      "bytes": 12266,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/work/weapon_attachment_skill_revision_20261108/build_effects.py",
+      "workspace_source": "work/weapon_attachment_skill_revision_20261108/build_effects.py",
+      "original_sha256": "e5f129e80f74515b76d8eae8b4d494d2615b1276f27de181105e773e883a3a48",
+      "public_sha256": "ed9905b4b475de5c384b3812e27c192e48e791e58772c2653f0b77b338de66c1",
+      "bytes": 28813,
+      "normalization": [
+        {
+          "line": 159,
+          "environment": "SSJJ_FONT_YAHEI",
+          "change": "Local absolute path literal replaced with an environment option and portable fallback."
+        },
+        {
+          "line": 163,
+          "environment": "SSJJ_FONT_YAHEI",
+          "change": "Local absolute path literal replaced with an environment option and portable fallback."
+        },
+        {
+          "line": 209,
+          "environment": "SSJJ_FONT_YAHEI",
+          "change": "Local absolute path literal replaced with an environment option and portable fallback."
+        }
+      ],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/work/weapon_attachment_skill_revision_20261108/build_mark_skins.py",
+      "workspace_source": "work/weapon_attachment_skill_revision_20261108/build_mark_skins.py",
+      "original_sha256": "ebd7345696363e258b8f4f47b923f749bbc25aa74bee2bbd34c32d59dcac3b5c",
+      "public_sha256": "ebd7345696363e258b8f4f47b923f749bbc25aa74bee2bbd34c32d59dcac3b5c",
+      "bytes": 15374,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/work/dimension_skin_fix_20261107/scripts/source_import.py",
+      "workspace_source": "work/dimension_skin_fix_20261107/scripts/source_import.py",
+      "original_sha256": "a5787756f66b9b55d3b9485046fa788ececbf34e63c7c95aa42c90acc4d75a68",
+      "public_sha256": "a5787756f66b9b55d3b9485046fa788ececbf34e63c7c95aa42c90acc4d75a68",
+      "bytes": 22717,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/work/dimension_skin_fix_20261107/scripts/import_family.py",
+      "workspace_source": "work/dimension_skin_fix_20261107/scripts/import_family.py",
+      "original_sha256": "d2f2548ff5793d1041191c4a33834ab097c09f27c4d1280d1ee2d9f2cfef91c6",
+      "public_sha256": "d2f2548ff5793d1041191c4a33834ab097c09f27c4d1280d1ee2d9f2cfef91c6",
+      "bytes": 6356,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/work/dimension_skin_fix_20261107/scripts/import_effects.py",
+      "workspace_source": "work/dimension_skin_fix_20261107/scripts/import_effects.py",
+      "original_sha256": "dbd3c06212bc4513669c28a3acd3eed80abefbe7efc9744d539b049845781e1d",
+      "public_sha256": "dbd3c06212bc4513669c28a3acd3eed80abefbe7efc9744d539b049845781e1d",
+      "bytes": 6951,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/work/dimension_skin_fix_20261107/scripts/build_particles.py",
+      "workspace_source": "work/dimension_skin_fix_20261107/scripts/build_particles.py",
+      "original_sha256": "dffdd215d9e113961d8d1b14a2de35e9f502b52fea674ab1d689222ea9044c09",
+      "public_sha256": "dffdd215d9e113961d8d1b14a2de35e9f502b52fea674ab1d689222ea9044c09",
+      "bytes": 10883,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/work/dimension_skin_fix_20261107/scripts/build_resources.py",
+      "workspace_source": "work/dimension_skin_fix_20261107/scripts/build_resources.py",
+      "original_sha256": "4caccc4102f3355e8145b004f77e542249333b3eba881f74bf961a250a6a5cbe",
+      "public_sha256": "b3207fd02b4c444ec9ad86cb0bc649edf61e78641010ff7a545f5526112936df",
+      "bytes": 8193,
+      "normalization": [
+        {
+          "line": 15,
+          "environment": "SSJJ_FONT_YAHEI",
+          "change": "Local absolute path literal replaced with an environment option and portable fallback."
+        }
+      ],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/work/parasite_family_20261105/scripts/import_family_effects.py",
+      "workspace_source": "work/parasite_family_20261105/scripts/import_family_effects.py",
+      "original_sha256": "16906881b16e399bc7822155cb1bb0ca943906837848817d64bae1fb3848931d",
+      "public_sha256": "16906881b16e399bc7822155cb1bb0ca943906837848817d64bae1fb3848931d",
+      "bytes": 11578,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/work/parasite_family_20261105/scripts/source_catalog.py",
+      "workspace_source": "work/parasite_family_20261105/scripts/source_catalog.py",
+      "original_sha256": "bd30d2bc05aec2023a739eec36884bfa961308c0ee86b64c8c03ebd86546add6",
+      "public_sha256": "bd30d2bc05aec2023a739eec36884bfa961308c0ee86b64c8c03ebd86546add6",
+      "bytes": 1734,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/work/parasite_family_20261105/scripts/prepare_assets.py",
+      "workspace_source": "work/parasite_family_20261105/scripts/prepare_assets.py",
+      "original_sha256": "1139afa6834a63d266a8a3cee549890d3387bd52e75d0991d02ed83f360da4d6",
+      "public_sha256": "27a8ebe80f7827c81608e7373c7973f9eb1c0d9412cd02ec35a75897cbb67e9f",
+      "bytes": 3553,
+      "normalization": [
+        {
+          "line": 6,
+          "environment": "SSJJ_MODS_DIR",
+          "change": "Local absolute path literal replaced with an environment option and portable fallback."
+        }
+      ],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/work/parasite_video_match_20261104/scripts/import_gun_source.py",
+      "workspace_source": "work/parasite_video_match_20261104/scripts/import_gun_source.py",
+      "original_sha256": "f5d04f35f962d8ca6f86418c7f174e2059238c8e5ddac63a942fdd7c41bd9604",
+      "public_sha256": "f5d04f35f962d8ca6f86418c7f174e2059238c8e5ddac63a942fdd7c41bd9604",
+      "bytes": 29099,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/work/parasite_video_match_20261104/scripts/source_animation.py",
+      "workspace_source": "work/parasite_video_match_20261104/scripts/source_animation.py",
+      "original_sha256": "554d94b7f9996a0c085366c77a780ad385672b30672563aa0a09b1d15073d301",
+      "public_sha256": "554d94b7f9996a0c085366c77a780ad385672b30672563aa0a09b1d15073d301",
+      "bytes": 4487,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/work/parasite_video_match_20261104/scripts/import_hand_source.py",
+      "workspace_source": "work/parasite_video_match_20261104/scripts/import_hand_source.py",
+      "original_sha256": "5c92b8ffdae5bfc54bd4476cbe22d1adc0a3d4afedd0352619021bd54550882f",
+      "public_sha256": "5c92b8ffdae5bfc54bd4476cbe22d1adc0a3d4afedd0352619021bd54550882f",
+      "bytes": 22416,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/work/parasite_video_match_20261104/scripts/build_animation.py",
+      "workspace_source": "work/parasite_video_match_20261104/scripts/build_animation.py",
+      "original_sha256": "3dd2d60ff890b99b84d08cd3af958be1aaf4ad42710c0a2dd382cdce18008053",
+      "public_sha256": "3dd2d60ff890b99b84d08cd3af958be1aaf4ad42710c0a2dd382cdce18008053",
+      "bytes": 17618,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/work/darkcrystal_fx_balance_20261107/scripts/build_blade_effects.py",
+      "workspace_source": "work/darkcrystal_fx_balance_20261107/scripts/build_blade_effects.py",
+      "original_sha256": "52a29cf2d7dbe86cb7fc176768db2a9040534ad9aa067378d8c7205753dc1745",
+      "public_sha256": "52a29cf2d7dbe86cb7fc176768db2a9040534ad9aa067378d8c7205753dc1745",
+      "bytes": 20688,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/work/darkcrystal_fx_balance_20261107/scripts/atlas_baker.py",
+      "workspace_source": "work/darkcrystal_fx_balance_20261107/scripts/atlas_baker.py",
+      "original_sha256": "bfeb66585d4c89ce62df7154d786e3a26321b8421ec9b6b612a37a5f3d8a9032",
+      "public_sha256": "bfeb66585d4c89ce62df7154d786e3a26321b8421ec9b6b612a37a5f3d8a9032",
+      "bytes": 12053,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/work/darkcrystal_fx_balance_20261107/scripts/balance_fx.py",
+      "workspace_source": "work/darkcrystal_fx_balance_20261107/scripts/balance_fx.py",
+      "original_sha256": "56d1cdc82f9b408623948740108d31ea76d3ed50622f72a683e4a80cf35dfee4",
+      "public_sha256": "56d1cdc82f9b408623948740108d31ea76d3ed50622f72a683e4a80cf35dfee4",
+      "bytes": 2526,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/work/darkcrystal_body_rebuild_20261107/scripts/rebuild_body.py",
+      "workspace_source": "work/darkcrystal_body_rebuild_20261107/scripts/rebuild_body.py",
+      "original_sha256": "c4cabed6982eac4d199597f5d67f389722795a0f5137e6c75ae1b320f401a021",
+      "public_sha256": "c4cabed6982eac4d199597f5d67f389722795a0f5137e6c75ae1b320f401a021",
+      "bytes": 3029,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/work/darkcrystal_body_rebuild_20261107/scripts/build_skin_resources.py",
+      "workspace_source": "work/darkcrystal_body_rebuild_20261107/scripts/build_skin_resources.py",
+      "original_sha256": "59ddef96e82a74cdbf2254f407d9c190917a2beed6448eda949104183176dc22",
+      "public_sha256": "ecb48582390abc012c62f37f2bbd8083867fe6d109414ad8aff35589da95ab7a",
+      "bytes": 16896,
+      "normalization": [
+        {
+          "line": 58,
+          "environment": "SSJJ_FONT_YAHEI",
+          "change": "Local absolute path literal replaced with an environment option and portable fallback."
+        },
+        {
+          "line": 59,
+          "environment": "SSJJ_FONT_YAHEI",
+          "change": "Local absolute path literal replaced with an environment option and portable fallback."
+        }
+      ],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/original_effect_overrides.py",
+      "workspace_source": "裁决修改/_reload_work/effects5/original_effect_overrides.py",
+      "original_sha256": "df0aa28a9fbbfffe7838f2952278107c2775e64a956f8e7eddf18dfdfcc33397",
+      "public_sha256": "df0aa28a9fbbfffe7838f2952278107c2775e64a956f8e7eddf18dfdfcc33397",
+      "bytes": 789,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/skin_effect_overrides.py",
+      "workspace_source": "裁决修改/_reload_work/effects5/skin_effect_overrides.py",
+      "original_sha256": "a17b14f50166a2b7c5f0cb6c9a336c1e1044a5eb209a914dac97b718e4bf8599",
+      "public_sha256": "a17b14f50166a2b7c5f0cb6c9a336c1e1044a5eb209a914dac97b718e4bf8599",
+      "bytes": 1930,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/prepare_skin_body_resources.py",
+      "workspace_source": "裁决修改/_reload_work/effects5/prepare_skin_body_resources.py",
+      "original_sha256": "fb4b38cdd01b19f281856db3d34f99f53ddd89b842d3c22790791807f16880f4",
+      "public_sha256": "fb4b38cdd01b19f281856db3d34f99f53ddd89b842d3c22790791807f16880f4",
+      "bytes": 2330,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/refine_native_body_parameters.py",
+      "workspace_source": "裁决修改/_reload_work/effects5/refine_native_body_parameters.py",
+      "original_sha256": "33ff73a9c63ce7767b24752ce0bfa2d99ecc791d4698aa4cf9ce29a6009a817e",
+      "public_sha256": "33ff73a9c63ce7767b24752ce0bfa2d99ecc791d4698aa4cf9ce29a6009a817e",
+      "bytes": 2895,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/runtime_audit/export_native_world.py",
+      "workspace_source": "裁决修改/_reload_work/effects5/runtime_audit/export_native_world.py",
+      "original_sha256": "a9fb53bd841b70dfa59896b44f1ad54a9fc461157d987ac1f8aca04dc7d8af6e",
+      "public_sha256": "a9fb53bd841b70dfa59896b44f1ad54a9fc461157d987ac1f8aca04dc7d8af6e",
+      "bytes": 17559,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/runtime_audit/export_absorb_body.py",
+      "workspace_source": "裁决修改/_reload_work/effects5/runtime_audit/export_absorb_body.py",
+      "original_sha256": "1c1d7cf15389a9320825763abadecb7500bbf87a60b5e1a71121b9299cdd0c8e",
+      "public_sha256": "1c1d7cf15389a9320825763abadecb7500bbf87a60b5e1a71121b9299cdd0c8e",
+      "bytes": 8987,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/runtime_audit/export_skin_world.py",
+      "workspace_source": "裁决修改/_reload_work/effects5/runtime_audit/export_skin_world.py",
+      "original_sha256": "f28fc11a609fe6a4f649ce5ff1a532e4fced78d5e5ad298cd8e19ff122762a13",
+      "public_sha256": "f28fc11a609fe6a4f649ce5ff1a532e4fced78d5e5ad298cd8e19ff122762a13",
+      "bytes": 18039,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/runtime_audit/export_world_resources.py",
+      "workspace_source": "裁决修改/_reload_work/effects5/runtime_audit/export_world_resources.py",
+      "original_sha256": "ec02e1e68349921269cadf9e91e4e4357641a53c7ee5035a511cb377cccb8327",
+      "public_sha256": "ec02e1e68349921269cadf9e91e4e4357641a53c7ee5035a511cb377cccb8327",
+      "bytes": 2486,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/runtime_audit/build_default_world.py",
+      "workspace_source": "裁决修改/_reload_work/effects5/runtime_audit/build_default_world.py",
+      "original_sha256": "41ff9ca7d1a4f08cb434941f4e6cf3a4350c54bafd5bdde7458d59513c5961ff",
+      "public_sha256": "bcdf878e549f52e87db3eced52418f459eef8ce14856c1884be0179c90b52fea",
+      "bytes": 5064,
+      "normalization": [
+        {
+          "line": 4,
+          "environment": "SSJJ_ADDON_BUILD",
+          "change": "Local absolute path literal replaced with an environment option and portable fallback."
+        },
+        {
+          "line": 5,
+          "environment": "SSJJ_LIBRARIES",
+          "change": "Local absolute path literal replaced with an environment option and portable fallback."
+        }
+      ],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/asset_audit/export_native_body.py",
+      "workspace_source": "裁决修改/_reload_work/effects5/asset_audit/export_native_body.py",
+      "original_sha256": "cb0d712237a01e454451934ba5d760cdbf24cdc36f0a958315d613a8739edcac",
+      "public_sha256": "cb0d712237a01e454451934ba5d760cdbf24cdc36f0a958315d613a8739edcac",
+      "bytes": 12935,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/asset_audit/export_skin_sources.py",
+      "workspace_source": "裁决修改/_reload_work/effects5/asset_audit/export_skin_sources.py",
+      "original_sha256": "3529e9b18f08fc52b0b4694c336086178d18062130b33b714a65550ae411a27e",
+      "public_sha256": "3529e9b18f08fc52b0b4694c336086178d18062130b33b714a65550ae411a27e",
+      "bytes": 17639,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/asset_audit/skin_sources/build_body_candidates.py",
+      "workspace_source": "裁决修改/_reload_work/effects5/asset_audit/skin_sources/build_body_candidates.py",
+      "original_sha256": "270871722c32a922183403836e054929715e34be0b9ac647b81646d82ff57e88",
+      "public_sha256": "270871722c32a922183403836e054929715e34be0b9ac647b81646d82ff57e88",
+      "bytes": 15344,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/asset_audit/skin_sources/build_mouth_candidates.py",
+      "workspace_source": "裁决修改/_reload_work/effects5/asset_audit/skin_sources/build_mouth_candidates.py",
+      "original_sha256": "c2443a98113ade82843ab29aee976e6a9a7f4e9768d3086b4b8668d8b30c5632",
+      "public_sha256": "c2443a98113ade82843ab29aee976e6a9a7f4e9768d3086b4b8668d8b30c5632",
+      "bytes": 7965,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/asset_audit/skin_sources/build_endpoint_line_candidates.py",
+      "workspace_source": "裁决修改/_reload_work/effects5/asset_audit/skin_sources/build_endpoint_line_candidates.py",
+      "original_sha256": "1122837ef1ff336654c60faceaab5758e7681fad48392be0beb436e4eadc8c5b",
+      "public_sha256": "1122837ef1ff336654c60faceaab5758e7681fad48392be0beb436e4eadc8c5b",
+      "bytes": 7175,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/裁决修改/_reload_work/effects5/asset_audit/skin_sources/prepare_endpoint_line_resources.py",
+      "workspace_source": "裁决修改/_reload_work/effects5/asset_audit/skin_sources/prepare_endpoint_line_resources.py",
+      "original_sha256": "3f85477d56bd31e9ab9402468e43d98fe7a2610efd26d0e341ffa8968379bab0",
+      "public_sha256": "3f85477d56bd31e9ab9402468e43d98fe7a2610efd26d0e341ffa8968379bab0",
+      "bytes": 1671,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/天罚之眼/制作接续/工程/scripts/prepare_muzzle.py",
+      "workspace_source": "天罚之眼/制作接续/工程/scripts/prepare_muzzle.py",
+      "original_sha256": "9b01bedff3567f90a8966d99398a27a6dfe2a9d1f8d87fbcd4af31432dc390d2",
+      "public_sha256": "9b01bedff3567f90a8966d99398a27a6dfe2a9d1f8d87fbcd4af31432dc390d2",
+      "bytes": 2805,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/天罚之眼/制作接续/工程/scripts/prepare_skins.py",
+      "workspace_source": "天罚之眼/制作接续/工程/scripts/prepare_skins.py",
+      "original_sha256": "b6a217f1fb5f9eaebda287215270a100e393663633d897f6ce09bfb476d282bb",
+      "public_sha256": "b6a217f1fb5f9eaebda287215270a100e393663633d897f6ce09bfb476d282bb",
+      "bytes": 20124,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    },
+    {
+      "path": "mods/tools/resource-generation/天罚之眼/制作接续/工程/scripts/export_editable.py",
+      "workspace_source": "天罚之眼/制作接续/工程/scripts/export_editable.py",
+      "original_sha256": "375a918fc09b46e7ba7d5e680d3124b752209b21c53691ab0fd95b638b926dbe",
+      "public_sha256": "375a918fc09b46e7ba7d5e680d3124b752209b21c53691ab0fd95b638b926dbe",
+      "bytes": 2887,
+      "normalization": [],
+      "role": "Authored resource conversion/assembly tool from the production resource creation chain; requires its documented original external inputs and companion workspace layout."
+    }
+  ],
+  "scope": "Selected authored resource generators; no extracted art, native binaries, generated samples, tests, logs, or rollback materials.",
+  "normalization": "Only listed local absolute path literals become explicit environment options. All source and public SHA256 values are listed separately; imports, conversion algorithms and resource values are preserved.",
+  "not_standalone": true,
+  "external_inputs": [
+    "Original game asset exports for each weapon, Unity JSON/meshes/ANM/GLB and source textures/audio as referenced in the scripts.",
+    "Original companion workspace layout and matching baseline mod/gunpack where referenced.",
+    "Python plus relevant numpy/scipy/Pillow/UnityPy dependencies; original named Minecraft/TaCZ/mapping tools for scripts that invoke Java tooling."
+  ]
+}

@@ -1,0 +1,1 @@
+{"type":"minecraft:crafting_shaped","category":"misc","pattern":["IGI","CDC","ITI"],"key":{"I":{"item":"minecraft:iron_ingot"},"G":{"item":"minecraft:glass"},"C":{"item":"minecraft:copper_ingot"},"D":{"item":"minecraft:diamond"},"T":{"item":"minecraft:crafting_table"}},"result":{"item":"tacz:workbench_a","count":1,"nbt":{"BlockId":"ssjj_workbench:rongguang"}}}

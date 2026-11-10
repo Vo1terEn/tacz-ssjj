@@ -1,0 +1,1 @@
+{"type":"tacz:gun_smith_table_crafting","materials":[{"item":{"item":"minecraft:netherite_scrap"},"count":2},{"item":{"item":"minecraft:diamond"},"count":1}],"result":{"type":"custom","group":"ssjj_workbench:fragments","item":{"item":"eye_judgment_arsenal:parasite_fragment","count":60}}}

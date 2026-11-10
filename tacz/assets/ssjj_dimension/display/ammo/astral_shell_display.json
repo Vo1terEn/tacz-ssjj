@@ -1,0 +1,1 @@
+{"model":"tacz:ammo/12g","texture":"ssjj_dimension:ammo/uv/astral_shell","slot":"ssjj_dimension:ammo/slot/astral_shell","shell":{"model":"tacz:shell/12g_shell","texture":"tacz:shell/12g_shell"},"tracer_color":"#B590FF","transform":{"scale":{"thirdperson":[0.6,0.6,0.6],"ground":[0.6,0.6,0.6],"fixed":[1.2,1.2,1.2]}}}

@@ -1,0 +1,1 @@
+{"type":"tacz:gun_smith_table_crafting","materials":[{"item":{"item":"minecraft:iron_ingot"},"count":1},{"item":{"item":"minecraft:gunpowder"},"count":1},{"item":{"item":"minecraft:amethyst_shard"},"count":1}],"result":{"type":"ammo","id":"ssjj_dimension:astral_shell","count":30,"group":"ssjj_workbench:ammo"}}

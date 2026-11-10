@@ -1,26 +1,28 @@
 {
   "passed": true,
-  "version": "1.1.47",
-  "tag": "v1.1.47",
-  "source_version": "1.1.46-muzzlestun10",
+  "version": "1.1.48",
+  "tag": "v1.1.48",
+  "source_version": "1.1.47-forge47416compat1",
   "package_method": "verified existing runtime payload repack; no full recompilation",
   "live_game_test": false,
   "instance_modified": false,
   "mod": {
     "source": {
-      "artifact": "mod:1.1.46-muzzlestun10",
-      "sha256": "c3356f205a30fc966fedd2a303570a671b34fa3f2665d6888a05d45cc154e6e7"
+      "artifact": "mod:1.1.47-forge47416compat1",
+      "sha256": "c6dc5d1b027b15c1192bb39fbc98621ba0d890f8d10259f01ae7a434d7964849"
     },
-    "artifact": "SSJJRPG-1.1.47.jar",
-    "bytes": 124667043,
-    "sha256": "445d357ad1cc2b5507743b6aaaa8e8eb571e12159211053889e82d06f7c9b3a7",
+    "artifact": "SSJJRPG-1.1.48.jar",
+    "bytes": 118178971,
+    "sha256": "0c4a45f2b7e281071062bfbeee8b14ceecb8dd8dc98d883cf0cc3c05d1cbe4f0",
     "counts": {
-      "files": 2194,
-      "classes": 661,
+      "files": 2196,
+      "classes": 663,
       "scripts": 36,
       "json": 393,
       "metadata": 9,
-      "provenance_files": 8
+      "provenance_files": 0,
+      "documentation": 0,
+      "utf8_text_members_scanned": 442
     },
     "changes": [
       {
@@ -28,9 +30,9 @@
         "fields": [
           "Implementation-Version"
         ],
-        "original_sha256": "84bf7d8433e66426e68ab172314e875190a21630dadd2bd46666e82021c5b6ce",
-        "published_sha256": "b9d81b4388dda85dc4e2b61f735510c681b4d991cdc0d7852b7dfdbbdcff7e8f",
-        "original_bytes": 67,
+        "original_sha256": "64826535679803ea3438a71ff12fabbf8b7714586951193472cba906e55ca7e1",
+        "published_sha256": "d65e1707cb3d46e6fe4b7ad563a5124d6d8e9ba676aa1023750be7af96204948",
+        "original_bytes": 72,
         "published_bytes": 54
       },
       {
@@ -39,9 +41,9 @@
           "mods[0].version",
           "mods[1].version"
         ],
-        "original_sha256": "e2138bcf63135c8079c542e4e0daddf3333cd7cde4d1b12365ed49236adf48e9",
-        "published_sha256": "cc67cc865274e8094a63468ae5a013bb116bb9686ab7ab5548f4f0f451c6d915",
-        "original_bytes": 1452,
+        "original_sha256": "66ca15f40c2f6eb7a4ad0e7f3215171d6b1dd67c9c99ee5498f7197be921e51f",
+        "published_sha256": "479cb0e5d65f5a7cf8fab6b0e34ab9c309312423c2caf0d2166164bd3858894b",
+        "original_bytes": 1462,
         "published_bytes": 1426
       },
       {
@@ -49,312 +51,207 @@
         "fields": [
           "version"
         ],
-        "original_sha256": "80a14c225524afc88b885e6a2102162500760132540deb842d4f354ca48c0bb6",
-        "published_sha256": "0f2be3e80d0d4dc943570751eedd75b791839b666d238d26c3bed62fdd4a2d27",
-        "original_bytes": 248,
-        "published_bytes": 235
-      },
-      {
-        "member": "assets/eyeofpunishment/rig/muzzle_cavity.json",
-        "fields": [
-          "provenance:emitters[0].samplingEvidence.assembly",
-          "provenance:emitters[1].samplingEvidence.assembly",
-          "provenance:emitters[2].samplingEvidence.assembly",
-          "provenance:emitters[3].samplingEvidence.assembly"
-        ],
-        "original_sha256": "b60ee95c9d7de41916b34700f806736471b631dc2c86db614ca29618879661a2",
-        "published_sha256": "d068c3a54db663d335ef90222987ed249a43da3fa7c07840b0ef8afad5c42d3d",
-        "original_bytes": 145208,
-        "published_bytes": 145064
-      },
-      {
-        "member": "assets/judgfire/fx/skins/frozen_absorb.json",
-        "fields": [
-          "provenance:proof.sourceFile"
-        ],
-        "original_sha256": "fffe61807da2177f6fba7d0dd6660aee17760337f0d616cb8c709f0ffa0d234d",
-        "published_sha256": "78590b3a9c326c0a3af4c04362d06111134ebb06239a7b8d6173e6b1e383814c",
-        "original_bytes": 418557,
-        "published_bytes": 418503
-      },
-      {
-        "member": "assets/judgfire/fx/skins/frozen_body.json",
-        "fields": [
-          "provenance:validation.currentRigFile"
-        ],
-        "original_sha256": "e2f69a620f4b60c90fdcd2e57936bc303ce69f7333e3dee5fe234b2739b0d672",
-        "published_sha256": "3f79295aae726ecc68ec0d084efc1fecadaa5504754257e2d320bd07e0b42dc3",
-        "original_bytes": 488500,
-        "published_bytes": 488439
-      },
-      {
-        "member": "assets/judgfire/fx/skins/lightning_absorb.json",
-        "fields": [
-          "provenance:proof.sourceFile"
-        ],
-        "original_sha256": "c9c1b360dc74073d2b371b182d1bf83d64216b9e0a14592309469cfa0d63ab47",
-        "published_sha256": "99a12e37b498158c510dcd8648ddd94c4dc6ae3d5d4198e5ee67918c40a667f4",
-        "original_bytes": 145193,
-        "published_bytes": 145139
-      },
-      {
-        "member": "assets/judgfire/fx/skins/lightning_body.json",
-        "fields": [
-          "provenance:validation.currentRigFile"
-        ],
-        "original_sha256": "a7813c348dc45319642ff6c610de39b8379a946ecae24048b5d71bea1410718f",
-        "published_sha256": "f19a01bd57bc7701739eccf668e3663b0ba6a4bcf04ee6175eaf99caa2f81bd5",
-        "original_bytes": 1835372,
-        "published_bytes": 1835311
-      },
-      {
-        "member": "assets/judgfire/fx/skins/qinglong_absorb.json",
-        "fields": [
-          "provenance:proof.sourceFile"
-        ],
-        "original_sha256": "b66af101815ba96ac7ead066e1ead4b24401f929b96aca4135aa659998925669",
-        "published_sha256": "84b82d2d1506655b1789afe4c8e884f3acbb7bf9469cf17e45118dbad674a066",
-        "original_bytes": 419094,
-        "published_bytes": 419040
-      },
-      {
-        "member": "assets/judgfire/fx/skins/qinglong_body.json",
-        "fields": [
-          "provenance:validation.currentRigFile"
-        ],
-        "original_sha256": "082af968828c600bdd4130fe2fb8534978c2103bb59792081586a23cc4642e4b",
-        "published_sha256": "35fb4ea184156353e8757bdb2eb939619c719f06d865a3ea2081c9fb659bd0c1",
-        "original_bytes": 493949,
-        "published_bytes": 493888
-      },
-      {
-        "member": "assets/judgfire/fx/world_native.json",
-        "fields": [
-          "provenance:effects.E016.groups[0].restored_mesh_source",
-          "provenance:effects.E029.groups[0].restored_mesh_source"
-        ],
-        "original_sha256": "9af3b4518615591705af074ed07b3f68c2bc52ac35e8eb6c9e96a78adace020f",
-        "published_sha256": "a5006a857c6ca6eb9ebce602ae6c44159a7cb0a83fd2209155219b6d860bd19e",
-        "original_bytes": 1462552,
-        "published_bytes": 1462422
+        "original_sha256": "e343ca91ad1fc7e0335da88397aea875b565b7ffaad6f607a07baadea97f766a",
+        "published_sha256": "3e38e29c1cc2b009a6223a825aeaa20e93c9154ff13b2e99b4600499b427f4eb",
+        "original_bytes": 219,
+        "published_bytes": 201
       },
       {
         "member": "assets/judgfire/gunpack_info.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "9c43961d1f0bea68f6115bb0d1307aaf840e314259e5a0f8b3f655cb3abef2ac",
-        "published_sha256": "66108b4c434c1665be296fdf98569c466e6e058ea867924d48b501491754687c",
-        "original_bytes": 179,
-        "published_bytes": 166
+        "original_sha256": "1dde4ec53138fc1aed45750f566214bc4044594ee9e4beea0c509706ea0e66bb",
+        "published_sha256": "a1935146538714c945e068934ca5598aa61009fa0fc8bb1647e1a983600a27fa",
+        "original_bytes": 154,
+        "published_bytes": 136
       },
       {
         "member": "assets/ssjj_dark/gunpack_info.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "9dc7d6d80a873b455ba7b00ad321cbb9f70cb3c94d2ae046781a3ecb877c641d",
-        "published_sha256": "7389a9103f2432d74495695ad31aeb08292938c2b717b1eda34fe8d0c15cb742",
-        "original_bytes": 324,
-        "published_bytes": 311
+        "original_sha256": "c6881b47cbfe7aab5b2e0c5832966939ce9016e857c7f3cdcb3d35f4e8201e9a",
+        "published_sha256": "1f5402c9c7a982e958d1b31bc2e7df01128fb24241be9642c3c4b7339d32c2c3",
+        "original_bytes": 295,
+        "published_bytes": 277
       },
       {
         "member": "assets/ssjj_dimension/gunpack_info.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "db9dd44581b0bbd4d2193d5094c3773226061ffd8782fdf7223e3a538f2518ca",
-        "published_sha256": "c20b3233408dacf609332ad03edef484c54e9d22b2dbef4838bb73f0d7893e61",
-        "original_bytes": 237,
-        "published_bytes": 224
+        "original_sha256": "a0d1f9309764f071772e72584c7b2b11cffb0a2218d7b0e86b2501763b53d3c5",
+        "published_sha256": "b44431a325ebe1b102d1528d72d27432d1df9eae9b65263a08fd283941aa7503",
+        "original_bytes": 208,
+        "published_bytes": 190
       },
       {
         "member": "assets/ssjj_workbench/gunpack_info.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "251c5c969e3d37681a96214f2bd9183fb0ea79831badb20bf9b46fc4d19e08fd",
-        "published_sha256": "e3ee87b4431e6b0e0f2be8d5de1dd09374604085c7a30fef1617754d37ec2d05",
-        "original_bytes": 249,
-        "published_bytes": 236
+        "original_sha256": "1599c34d5cad26d0727f1abb29fb3332405825b73545d3e5df346e527eeb373f",
+        "published_sha256": "0b4fc3d9a1c4ff3285c9a198d100aa3d9073e0a9d9933f1e746967c0a08ddd6f",
+        "original_bytes": 220,
+        "published_bytes": 202
       },
       {
         "member": "assets/ssjjparasite2/gunpack_info.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "cd441ae59425a224c5e5b59f93970bab7e7bb9fafb37c2baab0426d011bf2931",
-        "published_sha256": "f5a8e1f3f0563931215ae15ae764a3e0797a34934f4df6a2647b004474ee3458",
-        "original_bytes": 246,
-        "published_bytes": 233
+        "original_sha256": "b5dc1ab453a8b7e787badd5d926ce08d81c9f9d18e10bc23a14e4316b789aa40",
+        "published_sha256": "4607c44cb63e060650f8ed7bb98f30c1da811f7fba9ba817702051b2b169c828",
+        "original_bytes": 217,
+        "published_bytes": 199
       },
       {
         "member": "assets/ssjjrpg/gunpack_info.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "251c5c969e3d37681a96214f2bd9183fb0ea79831badb20bf9b46fc4d19e08fd",
-        "published_sha256": "e3ee87b4431e6b0e0f2be8d5de1dd09374604085c7a30fef1617754d37ec2d05",
-        "original_bytes": 249,
-        "published_bytes": 236
+        "original_sha256": "1599c34d5cad26d0727f1abb29fb3332405825b73545d3e5df346e527eeb373f",
+        "published_sha256": "0b4fc3d9a1c4ff3285c9a198d100aa3d9073e0a9d9933f1e746967c0a08ddd6f",
+        "original_bytes": 220,
+        "published_bytes": 202
       }
     ],
-    "member_digest_list_sha256": "217f4fe0f622c0ab3589bfe1682e3c81cce5e8b11d6823289f9991e660ec8924",
+    "member_digest_list_sha256": "8ff69716ddc9023b616fe7e705f773c99ba372bcd1cad72f7e4cc214cc8ebf8d",
     "exact_allowlist_difference_only": true,
     "crc_and_readback": true,
     "source_delivery_unchanged": true
   },
   "gunpack": {
     "source": {
-      "artifact": "gunpack:1.1.46-muzzlestun10",
-      "sha256": "43e4bbfe906a08110da532bb50cf45f588ad094b8f939fb9f8c6d3c848b624dd"
+      "artifact": "gunpack:1.1.47-forge47416compat1",
+      "sha256": "44e95e6484d72ba9e2a523d4816efe93f55d89e3b4869b946204e4737ddd0d1c"
     },
-    "artifact": "SSJJRPG-1.1.47-gunpack.zip",
-    "bytes": 151207047,
-    "sha256": "3beebac634e2a1da10564893d2acb00bba52781fae5da99317c0ba7eca4aa339",
+    "artifact": "SSJJRPG-1.1.48-gunpack.zip",
+    "bytes": 142326939,
+    "sha256": "060f36812d9a6f3f798d56d0283a567c0d9b808e2f77bb357df5c6b09ed05d8d",
     "counts": {
       "files": 1508,
       "classes": 0,
       "scripts": 15,
       "json": 571,
       "metadata": 8,
-      "provenance_files": 4
+      "provenance_files": 0,
+      "documentation": 2,
+      "utf8_text_members_scanned": 597
     },
     "changes": [
+      {
+        "member": "README.md",
+        "fields": [
+          "document:full_text_public_installation_and_validation_scope"
+        ],
+        "original_sha256": "db87150463503563a4536f816d8a4ad35010a0fe636f62bbe86e61b9e8a7baa4",
+        "published_sha256": "c1cccccd5af74df5fe7bab156765b95fdf81149ff7d47205484ca845b6cfbfd7",
+        "original_bytes": 8335,
+        "published_bytes": 1507
+      },
+      {
+        "member": "README_zh_CN.md",
+        "fields": [
+          "document:full_text_public_installation_and_validation_scope"
+        ],
+        "original_sha256": "db87150463503563a4536f816d8a4ad35010a0fe636f62bbe86e61b9e8a7baa4",
+        "published_sha256": "c1cccccd5af74df5fe7bab156765b95fdf81149ff7d47205484ca845b6cfbfd7",
+        "original_bytes": 8335,
+        "published_bytes": 1507
+      },
       {
         "member": "assets/eyeofpunishment/gunpack_info.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "80a14c225524afc88b885e6a2102162500760132540deb842d4f354ca48c0bb6",
-        "published_sha256": "0f2be3e80d0d4dc943570751eedd75b791839b666d238d26c3bed62fdd4a2d27",
-        "original_bytes": 248,
-        "published_bytes": 235
-      },
-      {
-        "member": "assets/eyeofpunishment/rig/muzzle_cavity.json",
-        "fields": [
-          "provenance:emitters[0].samplingEvidence.assembly",
-          "provenance:emitters[1].samplingEvidence.assembly",
-          "provenance:emitters[2].samplingEvidence.assembly",
-          "provenance:emitters[3].samplingEvidence.assembly"
-        ],
-        "original_sha256": "b60ee95c9d7de41916b34700f806736471b631dc2c86db614ca29618879661a2",
-        "published_sha256": "d068c3a54db663d335ef90222987ed249a43da3fa7c07840b0ef8afad5c42d3d",
-        "original_bytes": 145208,
-        "published_bytes": 145064
-      },
-      {
-        "member": "assets/judgfire/fx/skins/frozen_absorb.json",
-        "fields": [
-          "provenance:proof.sourceFile"
-        ],
-        "original_sha256": "fffe61807da2177f6fba7d0dd6660aee17760337f0d616cb8c709f0ffa0d234d",
-        "published_sha256": "78590b3a9c326c0a3af4c04362d06111134ebb06239a7b8d6173e6b1e383814c",
-        "original_bytes": 418557,
-        "published_bytes": 418503
-      },
-      {
-        "member": "assets/judgfire/fx/skins/lightning_absorb.json",
-        "fields": [
-          "provenance:proof.sourceFile"
-        ],
-        "original_sha256": "c9c1b360dc74073d2b371b182d1bf83d64216b9e0a14592309469cfa0d63ab47",
-        "published_sha256": "99a12e37b498158c510dcd8648ddd94c4dc6ae3d5d4198e5ee67918c40a667f4",
-        "original_bytes": 145193,
-        "published_bytes": 145139
-      },
-      {
-        "member": "assets/judgfire/fx/skins/qinglong_absorb.json",
-        "fields": [
-          "provenance:proof.sourceFile"
-        ],
-        "original_sha256": "b66af101815ba96ac7ead066e1ead4b24401f929b96aca4135aa659998925669",
-        "published_sha256": "84b82d2d1506655b1789afe4c8e884f3acbb7bf9469cf17e45118dbad674a066",
-        "original_bytes": 419094,
-        "published_bytes": 419040
+        "original_sha256": "e343ca91ad1fc7e0335da88397aea875b565b7ffaad6f607a07baadea97f766a",
+        "published_sha256": "3e38e29c1cc2b009a6223a825aeaa20e93c9154ff13b2e99b4600499b427f4eb",
+        "original_bytes": 219,
+        "published_bytes": 201
       },
       {
         "member": "assets/judgfire/gunpack_info.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "9c43961d1f0bea68f6115bb0d1307aaf840e314259e5a0f8b3f655cb3abef2ac",
-        "published_sha256": "66108b4c434c1665be296fdf98569c466e6e058ea867924d48b501491754687c",
-        "original_bytes": 179,
-        "published_bytes": 166
+        "original_sha256": "1dde4ec53138fc1aed45750f566214bc4044594ee9e4beea0c509706ea0e66bb",
+        "published_sha256": "a1935146538714c945e068934ca5598aa61009fa0fc8bb1647e1a983600a27fa",
+        "original_bytes": 154,
+        "published_bytes": 136
       },
       {
         "member": "assets/ssjj_dark/gunpack_info.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "9dc7d6d80a873b455ba7b00ad321cbb9f70cb3c94d2ae046781a3ecb877c641d",
-        "published_sha256": "7389a9103f2432d74495695ad31aeb08292938c2b717b1eda34fe8d0c15cb742",
-        "original_bytes": 324,
-        "published_bytes": 311
+        "original_sha256": "c6881b47cbfe7aab5b2e0c5832966939ce9016e857c7f3cdcb3d35f4e8201e9a",
+        "published_sha256": "1f5402c9c7a982e958d1b31bc2e7df01128fb24241be9642c3c4b7339d32c2c3",
+        "original_bytes": 295,
+        "published_bytes": 277
       },
       {
         "member": "assets/ssjj_dimension/gunpack_info.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "db9dd44581b0bbd4d2193d5094c3773226061ffd8782fdf7223e3a538f2518ca",
-        "published_sha256": "c20b3233408dacf609332ad03edef484c54e9d22b2dbef4838bb73f0d7893e61",
-        "original_bytes": 237,
-        "published_bytes": 224
+        "original_sha256": "a0d1f9309764f071772e72584c7b2b11cffb0a2218d7b0e86b2501763b53d3c5",
+        "published_sha256": "b44431a325ebe1b102d1528d72d27432d1df9eae9b65263a08fd283941aa7503",
+        "original_bytes": 208,
+        "published_bytes": 190
       },
       {
         "member": "assets/ssjj_workbench/gunpack_info.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "251c5c969e3d37681a96214f2bd9183fb0ea79831badb20bf9b46fc4d19e08fd",
-        "published_sha256": "e3ee87b4431e6b0e0f2be8d5de1dd09374604085c7a30fef1617754d37ec2d05",
-        "original_bytes": 249,
-        "published_bytes": 236
+        "original_sha256": "1599c34d5cad26d0727f1abb29fb3332405825b73545d3e5df346e527eeb373f",
+        "published_sha256": "0b4fc3d9a1c4ff3285c9a198d100aa3d9073e0a9d9933f1e746967c0a08ddd6f",
+        "original_bytes": 220,
+        "published_bytes": 202
       },
       {
         "member": "assets/ssjjparasite2/gunpack_info.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "cd441ae59425a224c5e5b59f93970bab7e7bb9fafb37c2baab0426d011bf2931",
-        "published_sha256": "f5a8e1f3f0563931215ae15ae764a3e0797a34934f4df6a2647b004474ee3458",
-        "original_bytes": 246,
-        "published_bytes": 233
+        "original_sha256": "b5dc1ab453a8b7e787badd5d926ce08d81c9f9d18e10bc23a14e4316b789aa40",
+        "published_sha256": "4607c44cb63e060650f8ed7bb98f30c1da811f7fba9ba817702051b2b169c828",
+        "original_bytes": 217,
+        "published_bytes": 199
       },
       {
         "member": "assets/ssjjrpg/gunpack_info.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "251c5c969e3d37681a96214f2bd9183fb0ea79831badb20bf9b46fc4d19e08fd",
-        "published_sha256": "e3ee87b4431e6b0e0f2be8d5de1dd09374604085c7a30fef1617754d37ec2d05",
-        "original_bytes": 249,
-        "published_bytes": 236
+        "original_sha256": "1599c34d5cad26d0727f1abb29fb3332405825b73545d3e5df346e527eeb373f",
+        "published_sha256": "0b4fc3d9a1c4ff3285c9a198d100aa3d9073e0a9d9933f1e746967c0a08ddd6f",
+        "original_bytes": 220,
+        "published_bytes": 202
       },
       {
         "member": "gunpack.meta.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "cb009a2f451e6a199064ff5e95a3a6eac9f1ec7ab6b685d43f5d57f7850693b1",
-        "published_sha256": "579eff337041a1d645141d93b2a711404c0a146d702dca7f5c1ff5b0620958cd",
-        "original_bytes": 228,
-        "published_bytes": 215
+        "original_sha256": "0ffd1c11069fedb5a9b19186c3fb2812c0cdead4f63e9476ffaa4f62e52ff771",
+        "published_sha256": "91706687858e5e2116444c93f542140ebc15aa58b1e186510821193399c8742a",
+        "original_bytes": 202,
+        "published_bytes": 184
       }
     ],
-    "member_digest_list_sha256": "2f9c9fc6bee502976ff0319d6deeb0166f5f3aad97b85e8dc049e5fdea48025c",
+    "member_digest_list_sha256": "522a6fa4c1385385681ffac05e5518c8ff8eea6a2cbcb62141767ae63045ccff",
     "exact_allowlist_difference_only": true,
     "crc_and_readback": true,
     "source_delivery_unchanged": true
   },
   "shared_entries_identical": 1188,
   "installer": {
-    "artifact": "SSJJRPG-1.1.47-MC1.20.1.zip",
-    "bytes": 273125234,
-    "sha256": "dffa31bc8ed1916a95db4fd2a9a1e234dab6bfdc521dc2abbc822f070de9ea80",
+    "artifact": "SSJJRPG-1.1.48-MC1.20.1.zip",
+    "bytes": 258277983,
+    "sha256": "50661733dc67c193b613085f65ea0b959d1bc9699149758ed743c1e08b1b0eb6",
     "members": [
       "LICENSE",
       "README.md",
@@ -363,13 +260,39 @@
       "config/ssjjrpg.toml",
       "defaultconfigs/ssjj_dark-server.toml",
       "licenses/ssjj_dark-GPL-3.0.txt",
-      "mods/SSJJRPG-1.1.47.jar",
-      "tacz/SSJJRPG-1.1.47-gunpack.zip"
+      "mods/SSJJRPG-1.1.48.jar",
+      "tacz/SSJJRPG-1.1.48-gunpack.zip",
+      "安装说明.txt"
     ],
     "crc_and_member_readback": true
   },
   "normalizer_sha256": "ebc5e135fe6812ef51296476bd97c665dafa0b9d7e0e8ba2881f2c8735aa91a6",
   "all_class_and_script_payloads_inherit_verified_source_bytes": true,
   "public_path_normalization_is_provenance_only": true,
-  "source_delivery_unchanged": true
+  "source_delivery_unchanged": true,
+  "mod_versions": {
+    "eye_judgment_arsenal": "1.1.48",
+    "ssjj_dark": "1.1.48"
+  },
+  "forge_version_range": "[47.4.16,48)",
+  "unchanged_runtime_code": {
+    "classes": {
+      "count": 663,
+      "source_and_public_member_digest_list_sha256": "9837c80485439ee5b4ea6deb6ca98d68da32aaa2c937543f13a66a40f1b85f95",
+      "all_member_bytes_unchanged": true
+    },
+    "coremods": {
+      "count": 16,
+      "source_and_public_member_digest_list_sha256": "d6c75e404d09e00dbe9c28b681e55e455bd970cc308e4826865d57c49f693906",
+      "all_member_bytes_unchanged": true
+    },
+    "coremods_json_sha256": "e7155d57f014b213ffdf6e3389f68fbba9633aec6352d3fc8f99009d477ce141"
+  },
+  "packaging_script_sha256": "a6140a25463c325ee630f7eeefe1be95bf981bc44d9068240900dc0e61215195",
+  "absolute_path_scan": "All UTF-8-decodable runtime members and installer text inspected for local absolute paths and obsolete affirmative automatic-installation claims; all JSON additionally parsed and recursively checked. Exactly two obsolete gunpack README documents replaced through the explicit document allowlist.",
+  "build_boundary": "Existing verified local runtime payload metadata repack. No full historical compilation, Minecraft launch, GPU/rendering or multiplayer test during public packaging.",
+  "installer_documentation_refresh": [
+    "README.md",
+    "安装说明.txt"
+  ]
 }
