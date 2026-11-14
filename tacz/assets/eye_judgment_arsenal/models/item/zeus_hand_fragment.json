@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "eye_judgment_arsenal:item/zeus_hand_fragment"
+  }
+}

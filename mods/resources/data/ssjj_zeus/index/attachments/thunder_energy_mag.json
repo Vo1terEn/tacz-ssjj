@@ -1,0 +1,8 @@
+{
+  "name": "attachment.ssjj_zeus.thunder_energy_mag.name",
+  "tooltip": "attachment.ssjj_zeus.thunder_energy_mag.desc",
+  "display": "ssjj_zeus:thunder_energy_mag_display",
+  "data": "ssjj_zeus:thunder_energy_mag_data",
+  "type": "extended_mag",
+  "sort": 152
+}

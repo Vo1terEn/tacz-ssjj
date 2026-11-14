@@ -181,6 +181,10 @@
 
 #三、原生战斗与能量属性：阶段伤害倍率在基础伤害之上计算。
 [combat]
+	#能量穿透超过目标抗性时是否额外增伤；默认关闭。仍可抵消抗性，保留抗性减伤。
+	penetration_damage_bonus = false
+	#是否开启能量抗性穿透无视减伤；预留配置，当前暂不生效
+	penetration_ignore_damage_reduction = true
 	#【1. 裁决左键激光】
 	#裁决左键激光的基础伤害，再乘fire中对应阶段的伤害倍率。
 	#Range: 0.0 ~ 1.0E9
@@ -381,3 +385,132 @@ dimension_energy_resistance = 300.0
 dimension_energy_penetration = 75.0
 # 次元之星每普通配件额外能量强度；不计瞄准镜和激光槽；范围 0～1000000
 dimension_energy_strength = 300.0
+
+#宙斯之手：玩法以服务端为准，修改后重启游戏或服务器。20tick=1秒；距离单位为格。
+[zeus]
+	#一阶与二阶雷核爆裂开关；关闭时恢复原生弹丸
+	thunder_enabled = true
+	#雷球速度，格/tick；20TPS时默认30格/秒，预判同源读取
+	#允许范围：0.1 ～ 8
+	orb_speed = 1.5
+	#雷球最长飞行时间，20tick=1秒
+	#允许范围：1 ～ 1200
+	orb_lifetime_ticks = 60
+	#雷球扫掠碰撞半径（格）
+	#允许范围：0 ～ 2
+	orb_contact_radius = 0.15
+	#一阶及二阶玩家与幻影雷球的额外伤害倍率
+	#允许范围：0 ～ 100
+	orb_damage_multiplier = 1.0
+	#未安装枪口时爆炸长宽高（格），非半径
+	#允许范围：0.1 ～ 16
+	blast_size = 1.0
+	#专属枪口雷霆爆裂技能增强开关
+	muzzle_enabled = true
+	#专属枪口增强爆炸长宽高（格），非半径
+	#允许范围：0.1 ～ 16
+	muzzle_blast_size = 1.5
+	#专属枪口增强雷球伤害倍率
+	#允许范围：0 ～ 100
+	muzzle_damage_multiplier = 1.5
+	#专属枪口命中有效目标返弹开关，玩家与幻影共用
+	refund_enabled = true
+	#每个有效爆炸目标返还原开火枪械的子弹数，不超过弹容量
+	#允许范围：0 ～ 100
+	refund_per_target = 1
+	#二阶雷霆能量充能与闪电链开关
+	energy_enabled = true
+	#一颗成功命中雷球的充能百分数；多目标仍只累计一次
+	#允许范围：1 ～ 100
+	energy_per_orb = 25
+	#专属弹匣雷霆能量增强开关
+	magazine_enabled = true
+	#安装专属弹匣后每颗雷球充能百分数
+	#允许范围：1 ～ 100
+	magazine_energy_per_orb = 50
+	#普通闪电链伤害占触发雷球伤害的比例
+	#允许范围：0 ～ 10
+	chain_damage_fraction = 0.3
+	#专属弹匣闪电链伤害比例
+	#允许范围：0 ～ 10
+	magazine_chain_damage_fraction = 0.5
+	#普通闪电链击中自身后可额外传导的目标数量
+	#允许范围：0 ～ 16
+	chain_hops = 1
+	#专属弹匣闪电链可额外传导的目标数量；同一条链不重复命中
+	#允许范围：0 ～ 16
+	magazine_chain_hops = 2
+	#每次闪电链传导距离（格），不穿墙
+	#允许范围：0.1 ～ 64
+	chain_range = 3.0
+	#二阶闪电链施加非药水感电开关
+	shock_enabled = true
+	#感电持续时间，重复施加刷新，20tick=1秒
+	#允许范围：1 ～ 72000
+	shock_ticks = 100
+	#感电期间宙斯之手额外增伤比例，0.15=15%
+	#允许范围：0 ～ 10
+	shock_damage_bonus = 0.15
+	#专属握把感电增强开关
+	grip_enabled = true
+	#安装专属握把后感电额外增伤比例
+	#允许范围：0 ～ 10
+	grip_shock_damage_bonus = 0.3
+	#闪电链击中已经感电目标时恢复宙斯降临进度开关
+	shock_recovery_enabled = true
+	#每次有效链命中已感电目标恢复的自然充能周期比例；默认40秒的20%=8秒
+	#允许范围：0 ～ 1
+	shock_recovery_fraction = 0.2
+	#二阶宙斯降临召唤技能开关，关闭会清除现有幻影
+	advent_enabled = true
+	#二阶右键集火标记与指令开关
+	focus_enabled = true
+	#专属枪托宙斯降临增强开关
+	stock_enabled = true
+	#基础幻影持续时间，20tick=1秒
+	#允许范围：1 ～ 72000
+	phantom_lifetime_ticks = 400
+	#安装专属枪托后幻影持续时间
+	#允许范围：1 ～ 72000
+	stock_phantom_lifetime_ticks = 500
+	#每恢复一次召唤次数所需在线时间，20tick=1秒
+	#允许范围：1 ～ 72000
+	summon_recharge_ticks = 800
+	#基础最多储存召唤次数
+	#允许范围：1 ～ 32
+	summon_capacity = 4
+	#专属枪托最多储存召唤次数
+	#允许范围：1 ～ 32
+	stock_summon_capacity = 6
+	#基础最多同时存在幻影数
+	#允许范围：1 ～ 16
+	phantom_limit = 3
+	#专属枪托最多同时存在幻影数
+	#允许范围：1 ～ 16
+	stock_phantom_limit = 5
+	#成功召唤最短间隔；不得短于原素材完整动画37tick，客户端仍等待真实动画结束
+	#允许范围：37 ～ 72000
+	summon_interval_ticks = 37
+	#幻影自动索敌和集火攻击距离（格）
+	#允许范围：1 ～ 128
+	phantom_range = 64.0
+	#玩家右键集火标记最大距离（格）
+	#允许范围：1 ～ 128
+	focus_range = 64.0
+	#幻影按速度、可用导航路径与跳跃落地趋势预判；关闭则瞄准当前位置
+	prediction_enabled = true
+	#幻影攻击累计并释放原召唤枪械的雷霆能量
+	phantom_energy_enabled = true
+	#幻影有效命中为原召唤枪械返弹；仍需安装增强枪口
+	phantom_refund_enabled = true
+	#达到同时存在上限后再次召唤是否替换最早幻影；关闭则不消耗次数、不召唤
+	replace_oldest_phantom = true
+	#每件非瞄准镜宙斯之手专属配件增加的能量抗性
+	#允许范围：0 ～ 1e+06
+	attachment_energy_resistance = 250.0
+	#每件非瞄准镜宙斯之手专属配件增加的能量抗性穿透
+	#允许范围：0 ～ 1e+06
+	attachment_energy_penetration = 250.0
+	#每件非瞄准镜宙斯之手专属配件增加的能量强度
+	#允许范围：0 ～ 1e+06
+	attachment_energy_strength = 250.0

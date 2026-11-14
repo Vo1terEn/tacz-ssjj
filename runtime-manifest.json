@@ -1,28 +1,28 @@
 {
   "passed": true,
-  "version": "1.1.48",
-  "tag": "v1.1.48",
-  "source_version": "1.1.47-forge47416compat1",
+  "version": "1.1.49",
+  "tag": "v1.1.49",
+  "source_version": "1.1.47-skintail1",
   "package_method": "verified existing runtime payload repack; no full recompilation",
   "live_game_test": false,
   "instance_modified": false,
   "mod": {
     "source": {
-      "artifact": "mod:1.1.47-forge47416compat1",
-      "sha256": "c6dc5d1b027b15c1192bb39fbc98621ba0d890f8d10259f01ae7a434d7964849"
+      "artifact": "mod:1.1.47-skintail1",
+      "sha256": "5e1fe4142ca99886b8994406541be3dc74732fb3d18008084dece5fdd4ddef9e"
     },
-    "artifact": "SSJJRPG-1.1.48.jar",
-    "bytes": 118178971,
-    "sha256": "0c4a45f2b7e281071062bfbeee8b14ceecb8dd8dc98d883cf0cc3c05d1cbe4f0",
+    "artifact": "SSJJRPG-1.1.49.jar",
+    "bytes": 139255787,
+    "sha256": "fa3f3e62592871c8fe595b83a7f6db8ec3bc9710e501f4e232f40ae81f3f8246",
     "counts": {
-      "files": 2196,
-      "classes": 663,
-      "scripts": 36,
-      "json": 393,
-      "metadata": 9,
+      "files": 2510,
+      "classes": 747,
+      "scripts": 38,
+      "json": 495,
+      "metadata": 10,
       "provenance_files": 0,
       "documentation": 0,
-      "utf8_text_members_scanned": 442
+      "utf8_text_members_scanned": 546
     },
     "changes": [
       {
@@ -30,115 +30,124 @@
         "fields": [
           "Implementation-Version"
         ],
-        "original_sha256": "64826535679803ea3438a71ff12fabbf8b7714586951193472cba906e55ca7e1",
-        "published_sha256": "d65e1707cb3d46e6fe4b7ad563a5124d6d8e9ba676aa1023750be7af96204948",
-        "original_bytes": 72,
-        "published_bytes": 54
+        "original_sha256": "2806be9ecb6cb31f3aacab673c163221cc640de3601a3ca0f7be399be5ab950b",
+        "published_sha256": "415281a592cca2314755f2e9b97e4fd8cdb0dc0b02e1cd014f21ced5ab324e75",
+        "original_bytes": 109,
+        "published_bytes": 99
       },
       {
         "member": "META-INF/mods.toml",
         "fields": [
-          "mods[0].version",
-          "mods[1].version"
+          "mods[0].version"
         ],
-        "original_sha256": "66ca15f40c2f6eb7a4ad0e7f3215171d6b1dd67c9c99ee5498f7197be921e51f",
-        "published_sha256": "479cb0e5d65f5a7cf8fab6b0e34ab9c309312423c2caf0d2166164bd3858894b",
-        "original_bytes": 1462,
-        "published_bytes": 1426
+        "original_sha256": "800269ce290ad9372e19c9688811dc79f10cc934523cc14f7a33e55ac9647ad7",
+        "published_sha256": "95a4cd485cf655a0f13144d624a7531b712ec0e5518ffee042a2f1c03b022c30",
+        "original_bytes": 826,
+        "published_bytes": 816
       },
       {
         "member": "assets/eyeofpunishment/gunpack_info.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "e343ca91ad1fc7e0335da88397aea875b565b7ffaad6f607a07baadea97f766a",
-        "published_sha256": "3e38e29c1cc2b009a6223a825aeaa20e93c9154ff13b2e99b4600499b427f4eb",
-        "original_bytes": 219,
-        "published_bytes": 201
+        "original_sha256": "1e69f987c619c5c710b44c855fb4640ba9f99a0a36acbe825beed881525785c0",
+        "published_sha256": "1d05c367e13777e7188a5a23d65ddb2b6d59811d19eb20f63ca33a1b6abda927",
+        "original_bytes": 245,
+        "published_bytes": 235
       },
       {
         "member": "assets/judgfire/gunpack_info.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "1dde4ec53138fc1aed45750f566214bc4044594ee9e4beea0c509706ea0e66bb",
-        "published_sha256": "a1935146538714c945e068934ca5598aa61009fa0fc8bb1647e1a983600a27fa",
-        "original_bytes": 154,
-        "published_bytes": 136
+        "original_sha256": "813900a261269f35e7726b5cedb86ad1c216660676dfb557327f1201f87f44e9",
+        "published_sha256": "01d58633be01f6b54aaef8cd179f9a8bd5e7abe99b0ffa5923ed5604eaca93fb",
+        "original_bytes": 176,
+        "published_bytes": 166
       },
       {
         "member": "assets/ssjj_dark/gunpack_info.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "c6881b47cbfe7aab5b2e0c5832966939ce9016e857c7f3cdcb3d35f4e8201e9a",
-        "published_sha256": "1f5402c9c7a982e958d1b31bc2e7df01128fb24241be9642c3c4b7339d32c2c3",
-        "original_bytes": 295,
-        "published_bytes": 277
+        "original_sha256": "136e2d6d179de57adefd300d5fb9db1f58921ce5d82f19911842efb23dd4caa6",
+        "published_sha256": "729e92692d4d1711f25a1d97a37e923335877fcca321928f5e3f2a20b754e343",
+        "original_bytes": 343,
+        "published_bytes": 333
       },
       {
         "member": "assets/ssjj_dimension/gunpack_info.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "a0d1f9309764f071772e72584c7b2b11cffb0a2218d7b0e86b2501763b53d3c5",
-        "published_sha256": "b44431a325ebe1b102d1528d72d27432d1df9eae9b65263a08fd283941aa7503",
-        "original_bytes": 208,
-        "published_bytes": 190
+        "original_sha256": "a4c202fdda4af800fe4d565af5d0501a943fa1be19ed79437eaef9c4410cd66d",
+        "published_sha256": "63bff959e0f10ac618b7701441c266a10c486e87c089672da0f1a4db578cf3bc",
+        "original_bytes": 234,
+        "published_bytes": 224
       },
       {
         "member": "assets/ssjj_workbench/gunpack_info.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "1599c34d5cad26d0727f1abb29fb3332405825b73545d3e5df346e527eeb373f",
-        "published_sha256": "0b4fc3d9a1c4ff3285c9a198d100aa3d9073e0a9d9933f1e746967c0a08ddd6f",
-        "original_bytes": 220,
-        "published_bytes": 202
+        "original_sha256": "c0cd7e749d2f00d678ff2f2512cc917f5d22c8b617b14fa610aede36381627c2",
+        "published_sha256": "c9599efbb73cc6409d0f1a4c15c465700804c1aca18d21caa1b371d5f4cb1953",
+        "original_bytes": 246,
+        "published_bytes": 236
+      },
+      {
+        "member": "assets/ssjj_zeus/gunpack_info.json",
+        "fields": [
+          "version"
+        ],
+        "original_sha256": "444361b47c465e304f072156fac3432369a1b7e0e2ac013a7e163831666b5585",
+        "published_sha256": "e5112057079715bb1b90d32cb1cd49148fb354388920e300b280ea79387b9544",
+        "original_bytes": 229,
+        "published_bytes": 219
       },
       {
         "member": "assets/ssjjparasite2/gunpack_info.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "b5dc1ab453a8b7e787badd5d926ce08d81c9f9d18e10bc23a14e4316b789aa40",
-        "published_sha256": "4607c44cb63e060650f8ed7bb98f30c1da811f7fba9ba817702051b2b169c828",
-        "original_bytes": 217,
-        "published_bytes": 199
+        "original_sha256": "04ea66a6c0a265855fcee593205ac43d9ecea77f705c026f110956a8c8a6f764",
+        "published_sha256": "eef69ebca7f64301bd90c0c037410068ef7e15c4dd383fee2238edac99b9c1cb",
+        "original_bytes": 243,
+        "published_bytes": 233
       },
       {
         "member": "assets/ssjjrpg/gunpack_info.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "1599c34d5cad26d0727f1abb29fb3332405825b73545d3e5df346e527eeb373f",
-        "published_sha256": "0b4fc3d9a1c4ff3285c9a198d100aa3d9073e0a9d9933f1e746967c0a08ddd6f",
-        "original_bytes": 220,
-        "published_bytes": 202
+        "original_sha256": "c0cd7e749d2f00d678ff2f2512cc917f5d22c8b617b14fa610aede36381627c2",
+        "published_sha256": "c9599efbb73cc6409d0f1a4c15c465700804c1aca18d21caa1b371d5f4cb1953",
+        "original_bytes": 246,
+        "published_bytes": 236
       }
     ],
-    "member_digest_list_sha256": "8ff69716ddc9023b616fe7e705f773c99ba372bcd1cad72f7e4cc214cc8ebf8d",
+    "member_digest_list_sha256": "f6f3115d0dd7ecd81c2f7645f143859ef318a85fbb3799f02a162a7914e26cb5",
     "exact_allowlist_difference_only": true,
     "crc_and_readback": true,
     "source_delivery_unchanged": true
   },
   "gunpack": {
     "source": {
-      "artifact": "gunpack:1.1.47-forge47416compat1",
-      "sha256": "44e95e6484d72ba9e2a523d4816efe93f55d89e3b4869b946204e4737ddd0d1c"
+      "artifact": "gunpack:1.1.47-skintail1",
+      "sha256": "00f23f26b25590b2a399e192f00c1c04a3743b1e784d84ec034e76747536f870"
     },
-    "artifact": "SSJJRPG-1.1.48-gunpack.zip",
-    "bytes": 142326939,
-    "sha256": "060f36812d9a6f3f798d56d0283a567c0d9b808e2f77bb357df5c6b09ed05d8d",
+    "artifact": "SSJJRPG-1.1.49-gunpack.zip",
+    "bytes": 163226576,
+    "sha256": "8d41390738e9bd97827363450ebe1cc4cad3b48bc5425e0d6d1a7360276f5a2c",
     "counts": {
-      "files": 1508,
+      "files": 1735,
       "classes": 0,
-      "scripts": 15,
-      "json": 571,
-      "metadata": 8,
+      "scripts": 16,
+      "json": 671,
+      "metadata": 9,
       "provenance_files": 0,
       "documentation": 2,
-      "utf8_text_members_scanned": 597
+      "utf8_text_members_scanned": 698
     },
     "changes": [
       {
@@ -147,9 +156,9 @@
           "document:full_text_public_installation_and_validation_scope"
         ],
         "original_sha256": "db87150463503563a4536f816d8a4ad35010a0fe636f62bbe86e61b9e8a7baa4",
-        "published_sha256": "c1cccccd5af74df5fe7bab156765b95fdf81149ff7d47205484ca845b6cfbfd7",
+        "published_sha256": "189ce3c3329da36c3737b5df654d6d4094a0612eaa33a6609d796167777c8f31",
         "original_bytes": 8335,
-        "published_bytes": 1507
+        "published_bytes": 2777
       },
       {
         "member": "README_zh_CN.md",
@@ -157,101 +166,111 @@
           "document:full_text_public_installation_and_validation_scope"
         ],
         "original_sha256": "db87150463503563a4536f816d8a4ad35010a0fe636f62bbe86e61b9e8a7baa4",
-        "published_sha256": "c1cccccd5af74df5fe7bab156765b95fdf81149ff7d47205484ca845b6cfbfd7",
+        "published_sha256": "189ce3c3329da36c3737b5df654d6d4094a0612eaa33a6609d796167777c8f31",
         "original_bytes": 8335,
-        "published_bytes": 1507
+        "published_bytes": 2777
       },
       {
         "member": "assets/eyeofpunishment/gunpack_info.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "e343ca91ad1fc7e0335da88397aea875b565b7ffaad6f607a07baadea97f766a",
-        "published_sha256": "3e38e29c1cc2b009a6223a825aeaa20e93c9154ff13b2e99b4600499b427f4eb",
-        "original_bytes": 219,
-        "published_bytes": 201
+        "original_sha256": "1e69f987c619c5c710b44c855fb4640ba9f99a0a36acbe825beed881525785c0",
+        "published_sha256": "1d05c367e13777e7188a5a23d65ddb2b6d59811d19eb20f63ca33a1b6abda927",
+        "original_bytes": 245,
+        "published_bytes": 235
       },
       {
         "member": "assets/judgfire/gunpack_info.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "1dde4ec53138fc1aed45750f566214bc4044594ee9e4beea0c509706ea0e66bb",
-        "published_sha256": "a1935146538714c945e068934ca5598aa61009fa0fc8bb1647e1a983600a27fa",
-        "original_bytes": 154,
-        "published_bytes": 136
+        "original_sha256": "813900a261269f35e7726b5cedb86ad1c216660676dfb557327f1201f87f44e9",
+        "published_sha256": "01d58633be01f6b54aaef8cd179f9a8bd5e7abe99b0ffa5923ed5604eaca93fb",
+        "original_bytes": 176,
+        "published_bytes": 166
       },
       {
         "member": "assets/ssjj_dark/gunpack_info.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "c6881b47cbfe7aab5b2e0c5832966939ce9016e857c7f3cdcb3d35f4e8201e9a",
-        "published_sha256": "1f5402c9c7a982e958d1b31bc2e7df01128fb24241be9642c3c4b7339d32c2c3",
-        "original_bytes": 295,
-        "published_bytes": 277
+        "original_sha256": "136e2d6d179de57adefd300d5fb9db1f58921ce5d82f19911842efb23dd4caa6",
+        "published_sha256": "729e92692d4d1711f25a1d97a37e923335877fcca321928f5e3f2a20b754e343",
+        "original_bytes": 343,
+        "published_bytes": 333
       },
       {
         "member": "assets/ssjj_dimension/gunpack_info.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "a0d1f9309764f071772e72584c7b2b11cffb0a2218d7b0e86b2501763b53d3c5",
-        "published_sha256": "b44431a325ebe1b102d1528d72d27432d1df9eae9b65263a08fd283941aa7503",
-        "original_bytes": 208,
-        "published_bytes": 190
+        "original_sha256": "a4c202fdda4af800fe4d565af5d0501a943fa1be19ed79437eaef9c4410cd66d",
+        "published_sha256": "63bff959e0f10ac618b7701441c266a10c486e87c089672da0f1a4db578cf3bc",
+        "original_bytes": 234,
+        "published_bytes": 224
       },
       {
         "member": "assets/ssjj_workbench/gunpack_info.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "1599c34d5cad26d0727f1abb29fb3332405825b73545d3e5df346e527eeb373f",
-        "published_sha256": "0b4fc3d9a1c4ff3285c9a198d100aa3d9073e0a9d9933f1e746967c0a08ddd6f",
-        "original_bytes": 220,
-        "published_bytes": 202
+        "original_sha256": "c0cd7e749d2f00d678ff2f2512cc917f5d22c8b617b14fa610aede36381627c2",
+        "published_sha256": "c9599efbb73cc6409d0f1a4c15c465700804c1aca18d21caa1b371d5f4cb1953",
+        "original_bytes": 246,
+        "published_bytes": 236
+      },
+      {
+        "member": "assets/ssjj_zeus/gunpack_info.json",
+        "fields": [
+          "version"
+        ],
+        "original_sha256": "444361b47c465e304f072156fac3432369a1b7e0e2ac013a7e163831666b5585",
+        "published_sha256": "e5112057079715bb1b90d32cb1cd49148fb354388920e300b280ea79387b9544",
+        "original_bytes": 229,
+        "published_bytes": 219
       },
       {
         "member": "assets/ssjjparasite2/gunpack_info.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "b5dc1ab453a8b7e787badd5d926ce08d81c9f9d18e10bc23a14e4316b789aa40",
-        "published_sha256": "4607c44cb63e060650f8ed7bb98f30c1da811f7fba9ba817702051b2b169c828",
-        "original_bytes": 217,
-        "published_bytes": 199
+        "original_sha256": "04ea66a6c0a265855fcee593205ac43d9ecea77f705c026f110956a8c8a6f764",
+        "published_sha256": "eef69ebca7f64301bd90c0c037410068ef7e15c4dd383fee2238edac99b9c1cb",
+        "original_bytes": 243,
+        "published_bytes": 233
       },
       {
         "member": "assets/ssjjrpg/gunpack_info.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "1599c34d5cad26d0727f1abb29fb3332405825b73545d3e5df346e527eeb373f",
-        "published_sha256": "0b4fc3d9a1c4ff3285c9a198d100aa3d9073e0a9d9933f1e746967c0a08ddd6f",
-        "original_bytes": 220,
-        "published_bytes": 202
+        "original_sha256": "c0cd7e749d2f00d678ff2f2512cc917f5d22c8b617b14fa610aede36381627c2",
+        "published_sha256": "c9599efbb73cc6409d0f1a4c15c465700804c1aca18d21caa1b371d5f4cb1953",
+        "original_bytes": 246,
+        "published_bytes": 236
       },
       {
         "member": "gunpack.meta.json",
         "fields": [
           "version"
         ],
-        "original_sha256": "0ffd1c11069fedb5a9b19186c3fb2812c0cdead4f63e9476ffaa4f62e52ff771",
-        "published_sha256": "91706687858e5e2116444c93f542140ebc15aa58b1e186510821193399c8742a",
-        "original_bytes": 202,
-        "published_bytes": 184
+        "original_sha256": "18c0c592f17ba9330bcd031a50c652dc8a8b21d6c60c5c610005c97d57a84c82",
+        "published_sha256": "15075eccfc6f8dfc57fec5a574d4b8d98b46858e39a355c0c0ce073ff59c06d3",
+        "original_bytes": 217,
+        "published_bytes": 207
       }
     ],
-    "member_digest_list_sha256": "522a6fa4c1385385681ffac05e5518c8ff8eea6a2cbcb62141767ae63045ccff",
+    "member_digest_list_sha256": "9f926bc89cdd559ba8ca8722de502e352b98aaf5d7da67d56d85b3579a434743",
     "exact_allowlist_difference_only": true,
     "crc_and_readback": true,
     "source_delivery_unchanged": true
   },
-  "shared_entries_identical": 1188,
+  "shared_entries_identical": 1416,
   "installer": {
-    "artifact": "SSJJRPG-1.1.48-MC1.20.1.zip",
-    "bytes": 258277983,
-    "sha256": "50661733dc67c193b613085f65ea0b959d1bc9699149758ed743c1e08b1b0eb6",
+    "artifact": "SSJJRPG-1.1.49-MC1.20.1.zip",
+    "bytes": 299604699,
+    "sha256": "0ecbec3aa1341f6e5ef689300c2ab2dbbeac5b24404295fb087d4af41c92ed91",
     "members": [
       "LICENSE",
       "README.md",
@@ -260,8 +279,8 @@
       "config/ssjjrpg.toml",
       "defaultconfigs/ssjj_dark-server.toml",
       "licenses/ssjj_dark-GPL-3.0.txt",
-      "mods/SSJJRPG-1.1.48.jar",
-      "tacz/SSJJRPG-1.1.48-gunpack.zip",
+      "mods/SSJJRPG-1.1.49.jar",
+      "tacz/SSJJRPG-1.1.49-gunpack.zip",
       "安装说明.txt"
     ],
     "crc_and_member_readback": true
@@ -271,28 +290,23 @@
   "public_path_normalization_is_provenance_only": true,
   "source_delivery_unchanged": true,
   "mod_versions": {
-    "eye_judgment_arsenal": "1.1.48",
-    "ssjj_dark": "1.1.48"
+    "eye_judgment_arsenal": "1.1.49"
   },
-  "forge_version_range": "[47.4.16,48)",
+  "forge_version_range": "[47.0.0,48)",
   "unchanged_runtime_code": {
     "classes": {
-      "count": 663,
-      "source_and_public_member_digest_list_sha256": "9837c80485439ee5b4ea6deb6ca98d68da32aaa2c937543f13a66a40f1b85f95",
+      "count": 747,
+      "source_and_public_member_digest_list_sha256": "d5449336ac0d76b2782f33c0702deca7e70bc5e7713b20afaf6f310ed0309228",
       "all_member_bytes_unchanged": true
     },
     "coremods": {
-      "count": 16,
-      "source_and_public_member_digest_list_sha256": "d6c75e404d09e00dbe9c28b681e55e455bd970cc308e4826865d57c49f693906",
+      "count": 17,
+      "source_and_public_member_digest_list_sha256": "3e5d509e53a036fd7eac7429681c3b629c16d17998896f5ce9deada5e3f03c2e",
       "all_member_bytes_unchanged": true
     },
-    "coremods_json_sha256": "e7155d57f014b213ffdf6e3389f68fbba9633aec6352d3fc8f99009d477ce141"
+    "coremods_json_sha256": "a1335e976e781649b480b93a2b0463749e5d6169af1deb9cafb13229cf496390"
   },
-  "packaging_script_sha256": "a6140a25463c325ee630f7eeefe1be95bf981bc44d9068240900dc0e61215195",
+  "packaging_script_sha256": "0a1fbfaff962b1b22d979bfab356fb7e23ab3ba77723c4c84c404bdcc90eda0f",
   "absolute_path_scan": "All UTF-8-decodable runtime members and installer text inspected for local absolute paths and obsolete affirmative automatic-installation claims; all JSON additionally parsed and recursively checked. Exactly two obsolete gunpack README documents replaced through the explicit document allowlist.",
-  "build_boundary": "Existing verified local runtime payload metadata repack. No full historical compilation, Minecraft launch, GPU/rendering or multiplayer test during public packaging.",
-  "installer_documentation_refresh": [
-    "README.md",
-    "安装说明.txt"
-  ]
+  "build_boundary": "Existing verified local runtime payload metadata repack. No full historical compilation, Minecraft launch, GPU/rendering or multiplayer test during public packaging."
 }

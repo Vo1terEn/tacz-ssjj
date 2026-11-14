@@ -1,0 +1,35 @@
+{
+  "type": "tacz:gun_smith_table_crafting",
+  "materials": [
+    {
+      "item": {
+        "item": "minecraft:copper_ingot"
+      },
+      "count": 8
+    },
+    {
+      "item": {
+        "item": "minecraft:redstone"
+      },
+      "count": 12
+    },
+    {
+      "item": {
+        "item": "minecraft:amethyst_shard"
+      },
+      "count": 4
+    },
+    {
+      "item": {
+        "item": "minecraft:diamond"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "type": "attachment",
+    "id": "ssjj_zeus:thunder_energy_mag",
+    "count": 1,
+    "group": "ssjj_workbench:extended_mag"
+  }
+}

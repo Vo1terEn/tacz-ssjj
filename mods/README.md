@@ -1,11 +1,9 @@
-# Java 源码与已知 ASM 制作链
+# Java 源码与制作链
 
-公开版本：**1.1.48**。`src/` 保留包路径，每个当前顶层类对应一份作者快照；`patches/` 保留实际应用过的 ASM 修改源码；`resources/` 对应当前 coremod、数据和元数据；`tools/` 是映射、链接检查和资源生成工具源码。
+公开版本 **1.1.49**，当前747份class、326个顶层类均有同名作者源码快照。`src/` 按包路径浏览；`patches/` 保留已知ASM步骤；`resources/` 是本次Release中的核心脚本、数据及独有文本资源；`tools/` 包含历史工具与本轮整理的最新宙斯资源生成脚本。
 
-当前有 **294 个顶层类名**，全部有作者源码快照。源码并非全部当前方法体的独立重建，不能直接对全部 `src/` 执行 javac 来重现发行包。来源、原始/公开 SHA、当前 class 校验值以及源码证据范围见 [source-manifest.json](source-manifest.json)。外部类字节匹配也不代表所有内部类都可等价重建。
+这是历史作者快照与实际增量制作来源，尚未恢复完整全量构建。逐文件来源、原始/公开SHA与当前运行class族校验见[source-manifest.json](source-manifest.json)。类名覆盖或运行class校验不等于方法体全部可重建；后续ASM也可能修改未重编译的作者快照。WeaponVisuals 的皮肤尾节点修复必须结合 `patches/skin_tail_20261115/PatchTail.java` 和 `src/cn/ssjjcompat/SkinTailOrder.java` 阅读。
 
-本版纳入 `ParticleFrames` 与 `ParticleSamplerPatch` 的采样复用、`OverloadDamage` 与 `OverloadPatch` 的完整伤害倍率，以及保留原 `List.subList` 注入位置的寄生者全文显示修复。`DimensionParticles`、`DimensionFieldGeometry`、`DimensionMarkGeometry`、`DimensionOverload`、`WeaponDamage` 的作者快照需结合对应后续 ASM 阅读，不能把其中旧方法当作当前二进制行为。
+本轮新增模块生命周期、属性归属、渲染/Puffish兼容、宙斯之手功能与配置、皮肤末尾节点修复来源。`tools/zeus-production/` 按脚本名取最新交付快照，保留不同用途生成步骤；不是可直接运行的一键脚本集。脚本中的私有路径改成相对工作区、`dependencies/minecraft` 与 `source-assets/external` 输入别名，外部映射、原素材、基线成品、Forge/TaCZ库不随源码提供，需按原制作链配置。安装、回滚、历史QA与私人日志不入库。
 
-Forge 最低版本为 47.4.16，Minecraft 为 1.20.1。代码离线核验覆盖 TaCZ 1.2.0 与 1.1.8-hotfix2；神化诸神黄昏 8 / GunsmithLib 7 的组合要求 TaCZ 1.2.0。映射、Minecraft/Forge/TaCZ 库、原始制作环境、基线成品与外部美术素材不随源码分发。已知增量 Java/ASM 是真实制作来源，但尚未恢复完整一键构建链。
-
-原创 arsenal 代码沿用 MIT；原 `ssjj_dark` 资产和技能代码沿用 GPL-3.0，其许可证保留于 `resources/META-INF/licenses/ssjj_dark/LICENSE`。第三方模型、动画、纹理和音频保留原权利，文本 JSON 形式不改变素材许可。完整安装资源在同版 Release。
+原创代码MIT；原ssjj_dark代码与资产GPL-3.0，原许可保留于resources/META-INF/licenses。模型、动画、纹理和音频保留原权利。完整运行包见同版Release。

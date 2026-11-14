@@ -1,0 +1,8 @@
+{
+  "name": "attachment.ssjj_zeus.galaxy_scope.name",
+  "display": "ssjj_zeus:galaxy_scope_display",
+  "data": "ssjj_zeus:galaxy_scope_data",
+  "type": "scope",
+  "sort": 159,
+  "tooltip": "attachment.ssjj_zeus.galaxy_scope.desc"
+}

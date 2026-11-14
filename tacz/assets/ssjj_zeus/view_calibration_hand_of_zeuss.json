@@ -1,0 +1,125 @@
+{
+  "status": "SOURCE_SCREENSHOT_RIGID_BODY_PERSPECTIVE_FIT",
+  "source_to_native_rotation": [
+    [
+      0.0,
+      0.0,
+      1.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      -1.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "source_origin_blocks": [
+    0.25048349641944156,
+    1.3958931449258745,
+    -0.007282552507697231
+  ],
+  "idle_eye_source_blocks": [
+    -0.33840709686279297,
+    1.660977020263672,
+    -0.2760952949523926
+  ],
+  "idle_eye_native_blocks": [
+    -0.2253931855038237,
+    0.19138918374689773,
+    0.5400354399897319
+  ],
+  "source_units_to_blocks": 0.01,
+  "left_slim_x": -0.03125,
+  "right_slim_x": 0.0,
+  "arm_transverse_scale": 0.49858946492243716,
+  "refit_eye_native_blocks": [
+    -1.67107985104635,
+    0.0023900869977948047,
+    0.15344890877922138
+  ],
+  "refit_rotation_degrees": [
+    0,
+    85,
+    180
+  ],
+  "fixed_center_native_blocks": [
+    0.022451135709617057,
+    0.0023900869977948047,
+    0.005284146108202742
+  ],
+  "fixed_rotation_degrees": [
+    0,
+    85,
+    180
+  ],
+  "fitted_vertical_fov_degrees": 46.85953210698013,
+  "reference_exact": false,
+  "refit": "Source body bounds centered upright side view; yaw85 avoids Euler singularity; live visual QA required",
+  "fixed": "Source body bounds centered upright workbench side view; live visual QA required",
+  "source_idle_eye_native_blocks": [
+    -0.2688127424446954,
+    0.26508387533779754,
+    0.5888905932822346
+  ],
+  "idle_view_rotation_degrees": [
+    0.006259766684909966,
+    0.244624086880349,
+    179.0618989876354
+  ],
+  "expected_complete_matrix_on_native_emitted": [
+    [
+      0.9998568531643123,
+      -0.016372070644980745,
+      0.004269482774608025,
+      0.25074679237827774
+    ],
+    [
+      0.016372686161896962,
+      0.9998659526215171,
+      -0.00010925254307323431,
+      -1.6874131653263558
+    ],
+    [
+      -0.004267121771281271,
+      0.00017913980545968477,
+      0.9999908797487703,
+      -0.5412952900291408
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "reference_image_sha256": "7ab63b7188309a45e9b64fe663cb215df44f2021bc145e73c5e672e703d1de54",
+  "fit_boundary": "Rigid-body texture/shape fit to the supplied source screenshot. Lighting, particles, source character fingers and UI excluded; native block hands checked separately.",
+  "source_screenshot_fit": {
+    "feature_points": 47,
+    "rms_pixels_1920x1080": 1.4521052253171645,
+    "maximum_pixels": 4.606079074952583
+  },
+  "grip_adjustment": {
+    "status": "FINITE_NATIVE_PALM_TRS_ADAPTATION",
+    "static_proposal": "evidence/grip_static_natural_proposal.json",
+    "static_proposal_sha256": "10a29043dd479f5545eed1fc0c790ca14d2e2db018703efe3ba916dcbf585122",
+    "semantic_targets": {
+      "right": "Actual black rear pistol grip middle/lower area, rootless Z .17-.195 and Y -.075--.03; finite final4skinpixel palm/sleeve side contact.",
+      "left": "Fore-end underside support, rootless Z -.21--.07; finite final4skinpixel palm/sleeve support."
+    },
+    "native_arm_and_sleeve": "Actual TaCZ1.2 callback-compatible vanilla default/slim PlayerModel geometry; native skin callback retained. Right transverse scales .35/.4 adapt native cube width to source palm while preserving arm length scale.",
+    "animation_strategy": "Finite palm contact follows the black grip. During inspect the right forearm aims toward the original per-frame source elbow. X is the outward grip normal projected perpendicular to forearm Y, so default/slim share the same inner-X palm face; a fixed local palm witness and continuous support-plane correction avoid roll/corner branch jumps. Small outward axis adaptation and complete sleeve clearance are constrained independently from source human-hand roll. Entry/recovery blend to the lower-grip natural static pose; inspect_empty shares identical targets. Other attached stages follow the corrected holder pose. Source deliberate right reload and left inspect/draw releases retain source displacement/orientation deltas and continuous phase blending. Only existing hand TRS channels rebaked at120Hz; release sleeve boxes have2mm world clearance inflation; actual240Hz checks interpolate keys.",
+    "existing_interfaces_only": true,
+    "new_hooks": false,
+    "camera_preserved": true,
+    "all_gun_tracks_sound_events_clip_metadata_preserved": true,
+    "slim_callback_config_patch": {
+      "right_slim_x": 0
+    },
+    "proposal": "evidence/grip_hand_tracks.json"
+  }
+}

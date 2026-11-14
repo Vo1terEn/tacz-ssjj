@@ -1,0 +1,1 @@
+{"type":"tacz:gun_smith_table_crafting","materials":[{"item":{"item":"minecraft:iron_ingot"},"count":1},{"item":{"item":"minecraft:gunpowder"},"count":1},{"item":{"item":"minecraft:rotten_flesh"},"count":1}],"result":{"type":"ammo","id":"ssjjparasite2:parasite_round","count":30,"group":"ssjj_workbench:ammo"}}

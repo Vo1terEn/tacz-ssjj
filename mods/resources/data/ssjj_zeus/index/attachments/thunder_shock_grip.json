@@ -1,0 +1,8 @@
+{
+  "name": "attachment.ssjj_zeus.thunder_shock_grip.name",
+  "tooltip": "attachment.ssjj_zeus.thunder_shock_grip.desc",
+  "display": "ssjj_zeus:thunder_shock_grip_display",
+  "data": "ssjj_zeus:thunder_shock_grip_data",
+  "type": "grip",
+  "sort": 154
+}

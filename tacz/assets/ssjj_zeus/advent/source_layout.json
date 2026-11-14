@@ -1,0 +1,32 @@
+{
+  "frame": [
+    210,
+    90
+  ],
+  "progress": [
+    76,
+    62,
+    125,
+    7
+  ],
+  "charge_icons": {
+    "first": [
+      76,
+      4
+    ],
+    "size": [
+      22,
+      22
+    ],
+    "spacing": 22
+  },
+  "key_overlay": {
+    "source_E_x": 96,
+    "source_E_y": 41,
+    "width": 8,
+    "height": 13,
+    "replacement": "ZeusAdventKeys.skillKeyLabel()"
+  },
+  "original_layout": "宙斯、聚能/宙斯之手/完整源素材/武器/宙斯之手•贰__hand_of_zeuss2/hand_of_zeuss2/EmbeddedData/ui_layout__-7821233567621275104.bytes",
+  "original_atlas": "宙斯、聚能/宙斯之手/完整源素材/武器/宙斯之手•贰__hand_of_zeuss2/hand_of_zeuss2/EmbeddedData/uitextureconfig__4434772791238262260.bytes"
+}

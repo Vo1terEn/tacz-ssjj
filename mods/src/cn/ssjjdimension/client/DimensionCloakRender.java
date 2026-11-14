@@ -49,11 +49,22 @@ public final class DimensionCloakRender {
    if(old.blend())RenderSystem.enableBlend();else RenderSystem.disableBlend();
   }
  };
- static void transparentDraw(Runnable draw,Graphics graphics){
-  if(!active()){draw.run();return;}
+ /** Start a draw scope without replacing Minecraft's upload call (a Mixin target). */
+ public static Object beginDraw(){return beginDraw(GPU);}
+ static Object beginDraw(Graphics graphics){
+  if(!active())return null;
   var old=graphics.snapshot();
-  try{graphics.translucent(ALPHA,old);draw.run();}
-  finally{graphics.restore(old);}
+  try{graphics.translucent(ALPHA,old);return old;}
+  catch(RuntimeException|Error failure){graphics.restore(old);throw failure;}
+ }
+ /** The token also records inactive scopes, so nested draws cannot leak state. */
+ public static void endDraw(Object token){endDraw(token,GPU);}
+ static void endDraw(Object token,Graphics graphics){
+  if(token!=null)graphics.restore((State)token);
+ }
+ static void transparentDraw(Runnable draw,Graphics graphics){
+  var token=beginDraw(graphics);
+  try{draw.run();}finally{endDraw(token,graphics);}
  }
  /** Called after RenderType.setupRenderState, so opaque cutout types also actually blend. */
  public static void draw(BufferBuilder.RenderedBuffer buffer){

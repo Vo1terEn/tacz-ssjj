@@ -47,7 +47,11 @@ public final class DimensionParticleEffects {
         LogUtils.getLogger().info("DIMENSION_FAMILY particle profiles loaded: {}",fresh.size());
     }
     public static void defer(BedrockAnimatedModel model,String bone,PoseStack pose) {
-        var selected=bindings.getOrDefault(model,profiles.get("dimension_star2"));if(selected==null || !selected.bone.equals(bone))return;
+        defer(model,bone,pose,bindings.getOrDefault(model,profiles.get("dimension_star2")));
+    }
+    /** Reuse the existing queue/render path with data captured for this gun and draw. */
+    public static void defer(BedrockAnimatedModel model,String bone,PoseStack pose,DimensionParticles.Data selected) {
+        if(selected==null || !selected.bone.equals(bone))return;
         Matrix4f captured=new Matrix4f(pose.last().pose());Matrix3f normal=new Matrix3f(pose.last().normal());
         float clock=(System.nanoTime()-START)/1e9f;
         model.delegateRender((unused,consumer,context,light,overlay)->{

@@ -1,7 +1,16 @@
 {
-  "version": "1.1.48",
-  "source_delivery_version": "1.1.47-forge47416compat1",
-  "source_layout": "Browsable mods/ and tacz/ authored source snapshots plus config/ and defaultconfigs/.",
+  "version": "1.1.49",
+  "source_delivery_version": "1.1.47-skintail1",
+  "build_boundary": "Authored historical snapshots plus incremental Java/ASM sources; no full independently reproducible Gradle build. Current runtime checksums do not prove current source method equivalence.",
+  "java_source_evidence": {
+    "current_top_level_classes": 326,
+    "authored_source_name_coverage": 326,
+    "runtime_classes": 747,
+    "source_evidence_counts": {
+      "inherited_v1.1.48_source_and_runtime_family_unchanged": 259,
+      "authored_snapshot_with_current_class_checksums_not_full_rebuild_proof": 67
+    }
+  },
   "files": [
     {
       "path": ".gitignore",
@@ -10,8 +19,8 @@
     },
     {
       "path": "config/ssjjrpg.toml",
-      "sha256": "f204642f9442109e3d93e5dc6839d46be8ba293f8afdd71824ca7f38773ed4db",
-      "bytes": 17587
+      "sha256": "072738c06b4d7cd55dbf1c5bfb579e12d567b2e2359f8792e9592a678f7488d1",
+      "bytes": 23032
     },
     {
       "path": "defaultconfigs/ssjj_dark-server.toml",
@@ -22,6 +31,11 @@
       "path": "LICENSE",
       "sha256": "514b7088e06ec8cde9a630ca350555863887df663d4bdeddf079f18f708ec4db",
       "bytes": 1367
+    },
+    {
+      "path": "mods/patches/attribute_render_compat_20261114/PatchAttributeOwnerGuard.java",
+      "sha256": "d56f9214b3bc84efd53571063fd68b7df5a025c2e6ba750058bfcdc6da22a258",
+      "bytes": 5003
     },
     {
       "path": "mods/patches/code_slim_20261109/ParticleSamplerPatch.java",
@@ -67,6 +81,16 @@
       "path": "mods/patches/parasite_markerfix_20261106/tools/PatchParasiteBootstrap.java",
       "sha256": "b87ad6fedc7583136bed80e702ecd288073742c19a4f606fb600c36bcc043cad",
       "bytes": 5655
+    },
+    {
+      "path": "mods/patches/render_unify_20261114/RenderDisplayTransform.java",
+      "sha256": "2d09c7dd1c607aca34e3c2b7173f9729aec023d6fa314bcba9cd7da3253817ff",
+      "bytes": 9803
+    },
+    {
+      "path": "mods/patches/skin_tail_20261115/PatchTail.java",
+      "sha256": "5fed01b8e074e9cc79b8f9495ad5478e4ef88215e230a2e7c6e67a9920c50bdc",
+      "bytes": 1086
     },
     {
       "path": "mods/patches/stun_state_20261109/StunCallsitePatch.java",
@@ -154,6 +178,16 @@
       "bytes": 6265
     },
     {
+      "path": "mods/patches/unified_compat_20261113/SharedAPITransform.java",
+      "sha256": "328608a007d9f035d32acdd21324afb8381a690bc15f4c51b09743a4e73736d8",
+      "bytes": 8968
+    },
+    {
+      "path": "mods/patches/unified_compat_20261113/UnifyDarkLifecycle.java",
+      "sha256": "d2a1a44efb75a8fb99caf0a3d9678a2f2cfbabb44a0b715c1adb221bb65853f5",
+      "bytes": 5104
+    },
+    {
       "path": "mods/patches/weapon_attachment_skill_revision_20261108/AttachmentBonusPatch.java",
       "sha256": "8b65b7a8b253ff7193affefcde4234f609fe985e5f58d3fea8730145d4b5d82a",
       "bytes": 6069
@@ -179,9 +213,34 @@
       "bytes": 12988
     },
     {
+      "path": "mods/patches/zeus_hand2_20261113/FreshRemap.java",
+      "sha256": "81786693649e615b99f3ad91ef0b6e4a95600c6d7d079367b469708dbed26702",
+      "bytes": 10291
+    },
+    {
+      "path": "mods/patches/zeus_hand2_20261113/FreshRuntimeLinks.java",
+      "sha256": "765c283bf4511e3655aa8d764aef78f9df44e18b6dc9c1ea87c0f6faf36c374f",
+      "bytes": 10017
+    },
+    {
+      "path": "mods/patches/zeus_settings_20261115/AdventBootstrap.java",
+      "sha256": "30a1133faad6f74da5b9248c5a9832559047e08ba7edf9e4b8ab4f1ddfc7f3ea",
+      "bytes": 3236
+    },
+    {
+      "path": "mods/patches/zeus_settings_20261115/ZeusConfigPatches.java",
+      "sha256": "85a00fd4d657db3bdb9f9a7a9dbd1bce23aee9492bd7837fb8e1bf947ed1a90f",
+      "bytes": 7154
+    },
+    {
+      "path": "mods/patches/zeus_thunder_20261114/PatchThunderBootstrap.java",
+      "sha256": "18d4fa30c9b992e8efc7624608e2b946b51fa4f155b891a94ad6eea20f53c90b",
+      "bytes": 1424
+    },
+    {
       "path": "mods/README.md",
-      "sha256": "3a4ef2bda84337a8f4394adfeba3a70a003136ed50233d9565ec73ec4d5b19f2",
-      "bytes": 1800
+      "sha256": "6fbdbce6dfe6cbab755a119d6a4934596057792c2a0e0503b6e4f260316c2cba",
+      "bytes": 1549
     },
     {
       "path": "mods/resources/assets/eye_judgment_arsenal/models/item/judgment_flame_fragment.json",
@@ -319,9 +378,19 @@
       "bytes": 140
     },
     {
+      "path": "mods/resources/coremods/attachment_bonuses.js",
+      "sha256": "dddd71e673181feeeed2dae8f0a22272ff2092720eb5cc6ff305bafc7a9fd8d5",
+      "bytes": 1374
+    },
+    {
       "path": "mods/resources/coremods/barrier_health.js",
       "sha256": "4e2c908db85448a3015f64254b11d53766d3c49a8686eee07135cc2538d9a74a",
       "bytes": 11421
+    },
+    {
+      "path": "mods/resources/coremods/client_api_mount.js",
+      "sha256": "56b1c934a96dc113d19aca53730f19854627415f182eee2f3e57e02dfbcd9439",
+      "bytes": 2027
     },
     {
       "path": "mods/resources/coremods/combat_messages.js",
@@ -334,6 +403,16 @@
       "bytes": 1607
     },
     {
+      "path": "mods/resources/coremods/dimension_cloak.js",
+      "sha256": "76a10b455466535ac9f5ebf58497ac7e2a9633ce1c8e51fb01ffd0368ef84817",
+      "bytes": 6224
+    },
+    {
+      "path": "mods/resources/coremods/dimension_config.js",
+      "sha256": "8bdab84c783b5b2c7e03e35933c7f89b1474ce780aa42ad7c69d6085ea344f18",
+      "bytes": 1433
+    },
+    {
       "path": "mods/resources/coremods/eye_refit_preview.js",
       "sha256": "f878358b4e3cc8730aafc2c2d291e279e047c495503b980e8362a0cfbdf6c7d6",
       "bytes": 2442
@@ -342,6 +421,11 @@
       "path": "mods/resources/coremods/fantasy_barrier.js",
       "sha256": "31780506e2df5c7b8a06000c53ad21b805d38c927bf1ba599b100762d874cb52",
       "bytes": 4371
+    },
+    {
+      "path": "mods/resources/coremods/item_presentation.js",
+      "sha256": "e9693096b5edbf69e41913db4fe93cd2c0a8ea9a131971cf7a064ed7ad41d744",
+      "bytes": 3622
     },
     {
       "path": "mods/resources/coremods/judgment_skill_key.js",
@@ -404,9 +488,134 @@
       "bytes": 85
     },
     {
+      "path": "mods/resources/data/ssjj_dimension/data/attachments/ability_upgrade_stone_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "mods/resources/data/ssjj_dimension/data/attachments/dimension_grip_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "mods/resources/data/ssjj_dimension/data/attachments/dimension_muzzle_data.json",
+      "sha256": "15f0586617d80817d40f9a868cc52902d3cdca09783183a2866b12b64676d1a8",
+      "bytes": 197
+    },
+    {
+      "path": "mods/resources/data/ssjj_dimension/data/attachments/dimension_stock_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "mods/resources/data/ssjj_dimension/data/attachments/fusion_upgrade_stone_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "mods/resources/data/ssjj_dimension/data/attachments/ultimate_upgrade_stone_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "mods/resources/data/ssjj_dimension/data/guns/dimension_star1_data.json",
+      "sha256": "3f267b1f76043fa7e81ac504c996c551bd6fececda9c8ac3b4a965fbcb0d8b6b",
+      "bytes": 1358
+    },
+    {
+      "path": "mods/resources/data/ssjj_dimension/data/guns/dimension_star2_data.json",
+      "sha256": "00d2e1d1558b86a946d9671628c22f049d56122f64829f42ae136996d555b5db",
+      "bytes": 1374
+    },
+    {
+      "path": "mods/resources/data/ssjj_dimension/data/guns/dimension_star_data.json",
+      "sha256": "1a4f8f1c9e3744500e9f312b5691104cd3cdd7a8af68bb684bf21310861440bd",
+      "bytes": 1351
+    },
+    {
+      "path": "mods/resources/data/ssjj_dimension/index/attachments/ability_upgrade_stone.json",
+      "sha256": "646ff9338b978fecf0f0de51f0669fa9dcdfd3030cc8eaa2f4b724be59984169",
+      "bytes": 262
+    },
+    {
+      "path": "mods/resources/data/ssjj_dimension/index/attachments/dimension_grip.json",
+      "sha256": "81bbfb881ee34eedfcc8ae7dc86fdef4b15a03a5ed0e93454b1a64c596234b83",
+      "bytes": 233
+    },
+    {
+      "path": "mods/resources/data/ssjj_dimension/index/attachments/dimension_muzzle.json",
+      "sha256": "29d7e2b1ee6ddf3f9f1b10a43a1000722a6d3e70a734eeed665886606150ce30",
+      "bytes": 243
+    },
+    {
+      "path": "mods/resources/data/ssjj_dimension/index/attachments/dimension_stock.json",
+      "sha256": "c62abbaa582ebdd6ff9584e735d25e83e7c5a4b63d5910738ae7f92e49f6a304",
+      "bytes": 238
+    },
+    {
+      "path": "mods/resources/data/ssjj_dimension/index/attachments/fusion_upgrade_stone.json",
+      "sha256": "d79b8dfdba44fdb3e283eaf34a8012eb3b704b077373a2df6ea3c7d7505bd6af",
+      "bytes": 258
+    },
+    {
+      "path": "mods/resources/data/ssjj_dimension/index/attachments/ultimate_upgrade_stone.json",
+      "sha256": "0cd42cc3efe481a4bd92c9ff8e1d2cff16e5769540a8cc61373cef961e4353e8",
+      "bytes": 266
+    },
+    {
+      "path": "mods/resources/data/ssjj_dimension/recipes/attachment/ability_upgrade_stone.json",
+      "sha256": "e8db3f2bcaf53771363fe2dcca2e8f2ccf450d5ec11c23b03fd989acc60b4671",
+      "bytes": 277
+    },
+    {
+      "path": "mods/resources/data/ssjj_dimension/recipes/attachment/dimension_grip.json",
+      "sha256": "673d2a2fbb5bf89add31a194c37a6103b7b23cc2ea9ac5197855c0b3d7640d5a",
+      "bytes": 239
+    },
+    {
+      "path": "mods/resources/data/ssjj_dimension/recipes/attachment/dimension_muzzle.json",
+      "sha256": "cfa363775f1fce94d30106d1792b16a55c0d3cc942032b1a22258f1397d4552a",
+      "bytes": 243
+    },
+    {
+      "path": "mods/resources/data/ssjj_dimension/recipes/attachment/dimension_stock.json",
+      "sha256": "7a02c30b1fd507a42225df0b39ac0603ce75208e499feddd4173964e27b542d0",
+      "bytes": 241
+    },
+    {
+      "path": "mods/resources/data/ssjj_dimension/recipes/attachment/fusion_upgrade_stone.json",
+      "sha256": "a78fc923d8ebf1924584f54393d47495e8e9546ab32bbc0a4a3bedc471615f06",
+      "bytes": 492
+    },
+    {
+      "path": "mods/resources/data/ssjj_dimension/recipes/attachment/ultimate_upgrade_stone.json",
+      "sha256": "f3293477d0c90ebeaff96c7b90adf35e674052dcf5d0369e8f0a0f12b365bfd7",
+      "bytes": 278
+    },
+    {
+      "path": "mods/resources/data/ssjj_dimension/tacz_tags/attachments/allow_attachments/dimension_star.json",
+      "sha256": "ae3811e27f79b373e2b1d4d84688dd0fbef65ae0078f19442ed3b8c454144e41",
+      "bytes": 122
+    },
+    {
+      "path": "mods/resources/data/ssjj_dimension/tacz_tags/attachments/allow_attachments/dimension_star1.json",
+      "sha256": "681e1f5db50d126b8434d8d4ffa0f0e722c6a28161e43a3329c0d7e647984c13",
+      "bytes": 154
+    },
+    {
+      "path": "mods/resources/data/ssjj_dimension/tacz_tags/attachments/allow_attachments/dimension_star2.json",
+      "sha256": "28e1326f394011eb157d757281a863b53adca8ab2305cb29ae8243ea5536bb04",
+      "bytes": 337
+    },
+    {
       "path": "mods/resources/data/ssjj_workbench/advancements/recipes/rongguang.json",
       "sha256": "452c4b0c06a16c89f08a8e2da672dedebaeea9bac3278753fdcb9756d61a8f0a",
       "bytes": 367
+    },
+    {
+      "path": "mods/resources/data/ssjj_workbench/recipe_filters/rongguang.json",
+      "sha256": "51844674e5f7ca8db51d4bd9b713b369c8fe38ec7f9fb53e4afb490cc2d1c229",
+      "bytes": 143
     },
     {
       "path": "mods/resources/data/ssjj_workbench/recipes/rongguang.json",
@@ -414,14 +623,344 @@
       "bytes": 362
     },
     {
+      "path": "mods/resources/data/ssjj_zeus/data/attachments/galaxy_scope_data.json",
+      "sha256": "7c7eda71b414e3fde44886e507417b5ef9225f23408f3a7ceaedd36867e7dbc4",
+      "bytes": 21
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/data/attachments/lava_scope_data.json",
+      "sha256": "7c7eda71b414e3fde44886e507417b5ef9225f23408f3a7ceaedd36867e7dbc4",
+      "bytes": 21
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/data/attachments/thunder_advent_stock_data.json",
+      "sha256": "7c7eda71b414e3fde44886e507417b5ef9225f23408f3a7ceaedd36867e7dbc4",
+      "bytes": 21
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/data/attachments/thunder_burst_data.json",
+      "sha256": "7c7eda71b414e3fde44886e507417b5ef9225f23408f3a7ceaedd36867e7dbc4",
+      "bytes": 21
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/data/attachments/thunder_energy_mag_data.json",
+      "sha256": "8bb06813cf2e6074bcd871336cb72d05e9592485a40f9465fef9b33907158f0a",
+      "bytes": 49
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/data/attachments/thunder_shock_grip_data.json",
+      "sha256": "7c7eda71b414e3fde44886e507417b5ef9225f23408f3a7ceaedd36867e7dbc4",
+      "bytes": 21
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/data/guns/hand_of_zeuss1_data.json",
+      "sha256": "b06a0d360938fc3a56a142693290030b3c8559393588ecb4b5b4f41393578694",
+      "bytes": 2295
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/data/guns/hand_of_zeuss2_data.json",
+      "sha256": "3cc468916d2c233ba486cde3a94c554e9bfc0eeb099daf5ca86db024b23331a5",
+      "bytes": 2343
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/data/guns/hand_of_zeuss_data.json",
+      "sha256": "08933464b4472a4b79151240a78f97f685ef4e22a7bb10041b57420735e43584",
+      "bytes": 2295
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/index/ammo/zeus_thunder.json",
+      "sha256": "ee40a7e5092da699087917d9293b823c048b73289c685a56f3ec2f2868e30b5e",
+      "bytes": 187
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/index/attachments/galaxy_scope.json",
+      "sha256": "f1b08b482955e41607a006d775c95c76e962fd834d0877adb3bc4c4a15d35f73",
+      "bytes": 240
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/index/attachments/lava_scope.json",
+      "sha256": "d483f4f34e49e089626ddb950e192c8179f967c4353bfd3d114e76db31028b7a",
+      "bytes": 232
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/index/attachments/thunder_advent_stock.json",
+      "sha256": "0f1bd57f59cfa4becd6dadcd0ee24091d897c231462e89e0252b59b08fb59786",
+      "bytes": 272
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/index/attachments/thunder_burst.json",
+      "sha256": "9f8a7ea50aba3f1cc71dd08a35ff915eb00d532ac7240f8eeac605f8c3c83c26",
+      "bytes": 245
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/index/attachments/thunder_energy_mag.json",
+      "sha256": "b0466c65b2e5a3e6f3ff0d4fb4515f59d225271f33bd87bc6a51a98351658c73",
+      "bytes": 271
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/index/attachments/thunder_shock_grip.json",
+      "sha256": "40e1fbf58f8b508ce402e93b199a8ae58b045a6cc7903e3e0280f794bff26326",
+      "bytes": 263
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/index/guns/hand_of_zeuss.json",
+      "sha256": "e26a8f38bcc9dd099ba013c3a11b976d857597a531bfa0696e35fbfcfa51b781",
+      "bytes": 232
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/index/guns/hand_of_zeuss1.json",
+      "sha256": "5457ef832efe7dd684076df39ca83f0cc84c6cdd4f1fd7ddd1e226149a8d9df1",
+      "bytes": 236
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/recipes/ammo/zeus_thunder.json",
+      "sha256": "651e9ce2117dde2da0b76ba901a595edcf93142ab927e92780346c3af47228c1",
+      "bytes": 509
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/recipes/attachment/galaxy_scope.json",
+      "sha256": "ab8b359e56b5e74e205095d6ad47eabe6862e49823fda14326372bef98df0a2e",
+      "bytes": 332
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/recipes/attachment/lava_scope.json",
+      "sha256": "f3bd7bb5ba225e7ac6ea27b0fd5308d3defd400b007e3e8d0f0b72c0faed5f2b",
+      "bytes": 330
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/recipes/attachment/thunder_advent_stock.json",
+      "sha256": "96bf3beb0437462b086937ef916e345b09b7c00ebed12d359b7ce806e79c39c7",
+      "bytes": 623
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/recipes/attachment/thunder_burst.json",
+      "sha256": "103357f31ba06d911c0d60cfb7709c2f3d9cd9111b56251f46cfb64fdf569a13",
+      "bytes": 614
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/recipes/attachment/thunder_energy_mag.json",
+      "sha256": "d0b0fcdb6f1d899be77e484e40449be0580cf5a9eb01925242589474caadedcb",
+      "bytes": 626
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/recipes/attachment/thunder_shock_grip.json",
+      "sha256": "c146cf8fcdf78c3acce5675cf24e13475f76ea46281914b98267199005b840b5",
+      "bytes": 620
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/recipes/gun/hand_of_zeuss.json",
+      "sha256": "9d49518cb5849f2fab46b73ba632d869d9d3c6c50d5a73c4f62d64b22d9d02aa",
+      "bytes": 350
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/recipes/gun/hand_of_zeuss1.json",
+      "sha256": "3d812f2cf5dd7c86178c5e645f815a092a4d1cb803243a0157a6b47d8589eb3f",
+      "bytes": 568
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/recipes/gun/hand_of_zeuss2.json",
+      "sha256": "29bf7df27884eaaae298780f83b34c9100efce1715ed730f2b6b040c59843057",
+      "bytes": 569
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/recipes/zeus_hand_fragment.json",
+      "sha256": "195a1832a7df1930acffb386462a52d8786117e6d60cbd308b8833123f05da0b",
+      "bytes": 459
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/tacz_tags/attachments/allow_attachments/hand_of_zeuss.json",
+      "sha256": "413bd1f40c0b5eef6da274800c29b79b85fb436d560bd05e2577e30589767d9d",
+      "bytes": 61
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/tacz_tags/attachments/allow_attachments/hand_of_zeuss1.json",
+      "sha256": "f199e73a0af00e5682355ac8489e93e32c95fb875f0c43525b0be13fc412af51",
+      "bytes": 91
+    },
+    {
+      "path": "mods/resources/data/ssjj_zeus/tacz_tags/attachments/allow_attachments/hand_of_zeuss2.json",
+      "sha256": "da7634906104feae0535c3db7ef08175b22be869b7f53499c733c187d6eed4a8",
+      "bytes": 198
+    },
+    {
       "path": "mods/resources/data/ssjjparasite2/damage_type/destruction.json",
       "sha256": "88036423c6196d96ae35d49a5b73c2a65913f3d3fc097ad8220d88bb62c6b764",
       "bytes": 77
     },
     {
+      "path": "mods/resources/data/ssjjparasite2/data/attachments/destruction_stock_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/data/attachments/frost_scope_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/data/attachments/parasite_muzzle_data.json",
+      "sha256": "f79a94eb2c1a390cdf54809e06237edb5b06dcefd4ad56be9e40c1428ca02bde",
+      "bytes": 97
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/data/attachments/ship_scope_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/data/attachments/shockwave_magazine_data.json",
+      "sha256": "28cd9c3abc0b110ab36459b28499e429f5e0bbafb1def68962275a2539738e91",
+      "bytes": 35
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/data/attachments/ultimate_upgrade_stone_data.json",
+      "sha256": "2c4ebc1bf61460fd44fcaec1db6544ab5bd8bc40454458a51af51d0b8ddc3c2b",
+      "bytes": 12
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/data/guns/parasitic_sniper1_data.json",
+      "sha256": "3533982ac67ea16ed41f771135158f5ef324b6fa2bdee07b0e36e5510f8312e8",
+      "bytes": 1116
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/data/guns/parasitic_sniper2_data.json",
+      "sha256": "9cbb0cb2a5887b1dce416c01d5512df3ba4d1e7fadee02eb0e9dca624b9568d6",
+      "bytes": 1222
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/data/guns/parasitic_sniper_data.json",
+      "sha256": "03e4b0760a1afac685be6a032ffa8c64952d4bc5d46639bba51b286afdd8ec49",
+      "bytes": 1109
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/index/ammo/parasite_round.json",
+      "sha256": "36efe4fe3011c32e82787e60f0d3518f8c5331aa686b6a3ac84b663a3b249a8f",
+      "bytes": 176
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/index/attachments/destruction_stock.json",
+      "sha256": "2cfc16289b090001b3d432349e5397692f212fc609974c8ef635f411a7fe91ff",
+      "bytes": 242
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/index/attachments/frost_scope.json",
+      "sha256": "03c806fe7db4091545dc83a41f08d66df9fa5dee50864ff8309af3df716eac94",
+      "bytes": 218
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/index/attachments/parasite_muzzle.json",
+      "sha256": "3757e2e45e46e9a5803855f53dfc0ddedec29c7512fb586e884a48d52b4dfa75",
+      "bytes": 235
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/index/attachments/ship_scope.json",
+      "sha256": "2b6d75750b1fb13a644e1bfbd8336853c467d39eded770a7a8d691055f165285",
+      "bytes": 214
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/index/attachments/shockwave_magazine.json",
+      "sha256": "bcd8507a80040bb4b8b9f0a63b6c784a60cfe17c5e9ba7cf789ed55aa03c01a4",
+      "bytes": 253
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/index/attachments/ultimate_upgrade_stone.json",
+      "sha256": "8cd21923c90a0eb717b9d3d7f1e08e234d39ab055d98c2b4bed0e09efb3bed01",
+      "bytes": 262
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/index/guns/parasitic_sniper.json",
+      "sha256": "1078e2c63f1b6fb8b879370d1db40b3d4ea5c95cfe2ff4cea913276997554bfc",
+      "bytes": 224
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/index/guns/parasitic_sniper1.json",
+      "sha256": "4364dfecc831966799a5e58add18e0c6df56cda599270e17251e430f8e126639",
+      "bytes": 228
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/index/guns/parasitic_sniper2.json",
+      "sha256": "5a32c4affbdc445bd7bf05c986851de34ba634cfb182116bb2948529dcc797e5",
+      "bytes": 229
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/recipes/ammo/parasite_round.json",
+      "sha256": "e5a99bb5caccf0470f639b8cd19e2826133d89807060a03a10985e51f9bdbb0a",
+      "bytes": 310
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/recipes/attachment/destruction_stock.json",
+      "sha256": "b2426466b3f307e332db8ba2885d3bcf647c646163634ad0fdf811417ae2bbb7",
+      "bytes": 236
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/recipes/attachment/frost_scope.json",
+      "sha256": "8b38882cd506b2fea4b67df02d045ee2017e4ab7b30c19c8eef341a6a82239e8",
+      "bytes": 230
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/recipes/attachment/parasite_muzzle.json",
+      "sha256": "14abcc61a8ab34c326d7dbab2c126ca4f01e1f4a2f6a6b60172d9573f4b39e4e",
+      "bytes": 235
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/recipes/attachment/ship_scope.json",
+      "sha256": "87098c7bf570d778bfd75d4e42215adea0b04742e6c201bd93f766f85a9dbba1",
+      "bytes": 229
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/recipes/attachment/shockwave_magazine.json",
+      "sha256": "68d0d8ad65ac51db3b2e4451b7f05c94baa880c5db7c9f98d4683d6d361019c3",
+      "bytes": 244
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/recipes/attachment/ultimate_upgrade_stone.json",
+      "sha256": "1f9555c5ac7d7aabfe248d7dbb7ce242bda1e190364cc97e333ad5219e6674dd",
+      "bytes": 277
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/recipes/gun/parasitic_sniper.json",
+      "sha256": "278b5b66544bef76f93158016b3600f9084aaa3586ea7c0690ae92f059cee6b3",
+      "bytes": 245
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/recipes/gun/parasitic_sniper1.json",
+      "sha256": "f5ac0ae8738d4ee271fad883c1fe3d35691ca3fec612d7df31ffda45d7dc40b9",
+      "bytes": 376
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/recipes/gun/parasitic_sniper2.json",
+      "sha256": "dd723241c568655b6986fdc684f33ac087b4f050e62b7eb7deae5bdadf2aa42d",
+      "bytes": 377
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/recipes/parasite_fragment.json",
+      "sha256": "bd72ee4cd4c4b67160bfe0fa7aa68b7d62889a1aca3235675e1d1d590d2090e9",
+      "bytes": 288
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/tacz_tags/attachments/allow_attachments/parasitic_sniper.json",
+      "sha256": "e8adaf66f9bcdbfa9e37da4a5ce9f69793b3ebf67230e33b75ff86ffb706cebb",
+      "bytes": 157
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/tacz_tags/attachments/allow_attachments/parasitic_sniper1.json",
+      "sha256": "e8adaf66f9bcdbfa9e37da4a5ce9f69793b3ebf67230e33b75ff86ffb706cebb",
+      "bytes": 157
+    },
+    {
+      "path": "mods/resources/data/ssjjparasite2/tacz_tags/attachments/allow_attachments/parasitic_sniper2.json",
+      "sha256": "e3c375f6c7f26ecf61e88c8867e52538e3db26b1ce676c31ed0ee463bdbedaad",
+      "bytes": 229
+    },
+    {
+      "path": "mods/resources/data/tacz/recipe_filters/default.json",
+      "sha256": "2a79a26cd5145495c6fe2035182446b8441abf0942664011528bf15c5e2e5bbd",
+      "bytes": 124
+    },
+    {
       "path": "mods/resources/META-INF/coremods.json",
-      "sha256": "e7155d57f014b213ffdf6e3389f68fbba9633aec6352d3fc8f99009d477ce141",
-      "bytes": 906
+      "sha256": "a1335e976e781649b480b93a2b0463749e5d6169af1deb9cafb13229cf496390",
+      "bytes": 963
     },
     {
       "path": "mods/resources/META-INF/licenses/ssjj_dark/LICENSE",
@@ -430,8 +969,8 @@
     },
     {
       "path": "mods/resources/META-INF/mods.toml",
-      "sha256": "479cb0e5d65f5a7cf8fab6b0e34ab9c309312423c2caf0d2166164bd3858894b",
-      "bytes": 1426
+      "sha256": "95a4cd485cf655a0f13144d624a7531b712ec0e5518ffee042a2f1c03b022c30",
+      "bytes": 816
     },
     {
       "path": "mods/resources/pack.mcmeta",
@@ -439,9 +978,14 @@
       "bytes": 88
     },
     {
+      "path": "mods/resources/ssjj_zeus_shock.mixins.json",
+      "sha256": "8d6d8b290c167687569c358f6a94c4c65767ae957a57e70b4bd7c7ec2a0cac5f",
+      "bytes": 189
+    },
+    {
       "path": "mods/source-manifest.json",
-      "sha256": "e41e5996940550c36dc455279a21d2f97eac24cbbb6e2be41be59177bf00c9fc",
-      "bytes": 355901
+      "sha256": "439b4344a0a02a9ed92ac7f3a9028f8f4a423046d2846c4ffb8035449e3f6344",
+      "bytes": 424158
     },
     {
       "path": "mods/src/cn/eyejudgment/FragmentItems.java",
@@ -472,6 +1016,11 @@
       "path": "mods/src/cn/fusionarsenal/client/ClothSettingsScreen.java",
       "sha256": "b028cab3ce24b79cf4f60553a5be44b2dbe939fc959aacb7dbecffda6b029188",
       "bytes": 7858
+    },
+    {
+      "path": "mods/src/cn/fusionarsenal/compat/TaCZClientCompat.java",
+      "sha256": "745b88fb15e4e557abc36e206e062516dee1c460462b657c1925ef996b981d55",
+      "bytes": 11174
     },
     {
       "path": "mods/src/cn/fusionarsenal/config/ArsenalConfig.java",
@@ -535,8 +1084,13 @@
     },
     {
       "path": "mods/src/cn/fusionarsenal/modules/BuiltinModules.java",
-      "sha256": "26b8e99b0d0249669002fa179621693786daaf6cb2a8bf868567c052d15f6b3a",
-      "bytes": 433
+      "sha256": "c1647e6b99afa41a29189c63effdebfe0ac57ed317bdabd76a85c535af6a278d",
+      "bytes": 469
+    },
+    {
+      "path": "mods/src/cn/fusionarsenal/modules/DarkCrystalModule.java",
+      "sha256": "96a9e7457c42614ddb9c917b0687dcbd2887150473e2bac30393ecc18567b600",
+      "bytes": 518
     },
     {
       "path": "mods/src/cn/fusionarsenal/modules/JudgmentModule.java",
@@ -1364,6 +1918,11 @@
       "bytes": 6679
     },
     {
+      "path": "mods/src/cn/ssjjcompat/AttributeOwnerCompat.java",
+      "sha256": "5f7f511a55c5de2dd13402bbd7afb335e37ca0e4fa21a6c650654d022258871b",
+      "bytes": 2129
+    },
+    {
       "path": "mods/src/cn/ssjjcompat/client/ParticleFrames.java",
       "sha256": "fe03fec20c77859d3a07b1d677dc2168781b70ce96485b420a0f22a71b76becf",
       "bytes": 873
@@ -1375,8 +1934,8 @@
     },
     {
       "path": "mods/src/cn/ssjjcompat/DescriptionLines.java",
-      "sha256": "1cb0475ea6be47768a3550dd2e1a96164e9875c6cd8444b7741dfbf7234b10d1",
-      "bytes": 983
+      "sha256": "0d3f25a9e39a4717dd74a9f723eadcb9aacfcf693d66ded1325b40cfcf47246a",
+      "bytes": 1167
     },
     {
       "path": "mods/src/cn/ssjjcompat/ItemPresentationCompat.java",
@@ -1399,14 +1958,19 @@
       "bytes": 1046
     },
     {
-      "path": "mods/src/cn/ssjjcompat/TaCZSounds.java",
-      "sha256": "fb9b5d77f4c0299ff7da4e76720b0adf034a35bd141e3dbd3ff0b56c3ee5d217",
-      "bytes": 2013
+      "path": "mods/src/cn/ssjjcompat/SkinTailOrder.java",
+      "sha256": "f609baaefcb4b6dbbba4854ddbfd328fa00bf81e0334f598a31ba30ca581476a",
+      "bytes": 876
     },
     {
       "path": "mods/src/cn/ssjjcompat/WeaponAssetWarmup.java",
       "sha256": "2038b4d356566ae4b779de94e1fb885841868b4ffeb12863b54cecab1e10c93f",
       "bytes": 2103
+    },
+    {
+      "path": "mods/src/cn/ssjjcompat/ZeusAttachmentBonuses.java",
+      "sha256": "eecb68a148d8e7e8b3999889156decd7277377018e7f0ecf3631ef1bf7a1f45d",
+      "bytes": 2130
     },
     {
       "path": "mods/src/cn/ssjjdimension/client/DimensionActivationEffects.java",
@@ -1425,8 +1989,8 @@
     },
     {
       "path": "mods/src/cn/ssjjdimension/client/DimensionCloakRender.java",
-      "sha256": "ae42493e09faf6437f596c72e9a4925245ad70bdb655aa48d2bb8981d2da32e0",
-      "bytes": 3047
+      "sha256": "4bb63a92b69822d8303a3748aeedf47bf1dd5b2bb2cddac9a39f4d30b05d78a8",
+      "bytes": 3624
     },
     {
       "path": "mods/src/cn/ssjjdimension/client/DimensionDecoyClient.java",
@@ -1500,13 +2064,13 @@
     },
     {
       "path": "mods/src/cn/ssjjdimension/client/DimensionParticleEffects.java",
-      "sha256": "a95d7b1fa4b55e218ef95dcffe0a0b65ab3aa54fcf82c1cb722a019e5c90b675",
-      "bytes": 5591
+      "sha256": "70f758195f69bf583caf5360c89638fac7f7240f85764a7f4b7c02d86327c390",
+      "bytes": 5829
     },
     {
       "path": "mods/src/cn/ssjjdimension/client/DimensionParticles.java",
-      "sha256": "f40d81bfe556e23f07fd086166a8a779e3c79411f186334ae609511d7b67e910",
-      "bytes": 8954
+      "sha256": "2afb7b8c38719ead80e356f83e595f5ac965b117fae9eb208cbe834bd790052d",
+      "bytes": 9364
     },
     {
       "path": "mods/src/cn/ssjjdimension/client/DimensionScopeAttachmentRenderer.java",
@@ -1784,6 +2348,146 @@
       "bytes": 9860
     },
     {
+      "path": "mods/src/cn/ssjjzeus/client/ZeusAdventClient.java",
+      "sha256": "05ed85c5cc4e35aef5598e20b1d2da0eb5e675567428daa07db36ccb14809a22",
+      "bytes": 14177
+    },
+    {
+      "path": "mods/src/cn/ssjjzeus/client/ZeusAdventKeys.java",
+      "sha256": "14a4b4e6d234143abe16f580097f2dde0d5c6329f55910b3623a2b1282bee726",
+      "bytes": 7106
+    },
+    {
+      "path": "mods/src/cn/ssjjzeus/client/ZeusAdventStockRenderer.java",
+      "sha256": "c6750290c959af6ac345a9f606d61fbdfc35dab045b3b6144363aa39b7172bb3",
+      "bytes": 3548
+    },
+    {
+      "path": "mods/src/cn/ssjjzeus/client/ZeusEnergyHud.java",
+      "sha256": "dd2d6fe8bd816cd329d5ee3087ff7301bbf3b587494d45c329833de5b159993d",
+      "bytes": 180
+    },
+    {
+      "path": "mods/src/cn/ssjjzeus/client/ZeusEnergyMagazineRenderer.java",
+      "sha256": "d1821bf45e1332ee39dcbeee031cafd409883e9fd77d5fc66396b38a8c53ed49",
+      "bytes": 3480
+    },
+    {
+      "path": "mods/src/cn/ssjjzeus/client/ZeusEntityEffectRenderer.java",
+      "sha256": "ebf7bfd78277f646625917081c23a7743e8f156c5f3c375ce54d35ff99a9d053",
+      "bytes": 2007
+    },
+    {
+      "path": "mods/src/cn/ssjjzeus/client/ZeusFocusClient.java",
+      "sha256": "545dc5017d23c3df317734baafc52268d90d39c0733ecda3c0a3f2ba1be2aff4",
+      "bytes": 4994
+    },
+    {
+      "path": "mods/src/cn/ssjjzeus/client/ZeusMeshRenderer.java",
+      "sha256": "c9da86316a6e35de8568b5f56d69066c245b8d24efa3a920284cb2be63153314",
+      "bytes": 12534
+    },
+    {
+      "path": "mods/src/cn/ssjjzeus/client/ZeusNativeHands.java",
+      "sha256": "6470e2850515f8923f63811e29720bc924bbc42a0c411eddfb7a13e59cb62ef0",
+      "bytes": 6259
+    },
+    {
+      "path": "mods/src/cn/ssjjzeus/client/ZeusPhantomWeapon.java",
+      "sha256": "4334a98777af2bb4e39356d3a14fc1f1ea1bb3191bc62f85475276e540ef325d",
+      "bytes": 9134
+    },
+    {
+      "path": "mods/src/cn/ssjjzeus/client/ZeusShockClient.java",
+      "sha256": "3522bbe3d2cc8ffec652495628ae955538ef69253fec7024d71bec23befc67de",
+      "bytes": 6437
+    },
+    {
+      "path": "mods/src/cn/ssjjzeus/client/ZeusShockGripRenderer.java",
+      "sha256": "ad8aea9d579f9314cb2e00d9a3092ec14fcdb7e640a54f6dab0422894ca3779b",
+      "bytes": 3516
+    },
+    {
+      "path": "mods/src/cn/ssjjzeus/client/ZeusThunderAttachmentRenderer.java",
+      "sha256": "b8d02ce6527b3dbbdaf4c4993716e845afebac292d2d5c61483ea193937d0ff4",
+      "bytes": 3599
+    },
+    {
+      "path": "mods/src/cn/ssjjzeus/client/ZeusThunderClient.java",
+      "sha256": "9c21bc2392c155f8663a2257f290954f4cde30fd9e0735e797fa86d17896dcb0",
+      "bytes": 14562
+    },
+    {
+      "path": "mods/src/cn/ssjjzeus/mixin/ZeusBaseShockMixin.java",
+      "sha256": "0027829bbfe94d158348e5eb063321cb47865240d46fa948551e130b38bebc62",
+      "bytes": 1195
+    },
+    {
+      "path": "mods/src/cn/ssjjzeus/ZeusAdvent.java",
+      "sha256": "01764e1c6b3085397d3262ef1ffd69c49753f3a7f999ece248f5754a8184fdae",
+      "bytes": 17789
+    },
+    {
+      "path": "mods/src/cn/ssjjzeus/ZeusAdventNetwork.java",
+      "sha256": "42422f5ef7076b1d0cf1c5a81f54aea83aafdfba360fd1ff00dd54f8c5888523",
+      "bytes": 9390
+    },
+    {
+      "path": "mods/src/cn/ssjjzeus/ZeusAdventRules.java",
+      "sha256": "c1657a89ba571da71c8f0ada8fa5b33c8e3b8d1d9b564f08f990c90af598df7a",
+      "bytes": 2579
+    },
+    {
+      "path": "mods/src/cn/ssjjzeus/ZeusAim.java",
+      "sha256": "6ec4800e19f1fb4ffce3c2afe4c3ba994dd37eccdc3ac4ed29a64cf0cfa72729",
+      "bytes": 8785
+    },
+    {
+      "path": "mods/src/cn/ssjjzeus/ZeusConfig.java",
+      "sha256": "d7685e52737fae4703e4c79275d64fdf98e11b02d51e94bf5fb5421012a439a9",
+      "bytes": 7092
+    },
+    {
+      "path": "mods/src/cn/ssjjzeus/ZeusEnergy.java",
+      "sha256": "71fda880a1b5eea4afce66eb69648e218b0cbe2f7c72d61a88cc37a0f4d37506",
+      "bytes": 6211
+    },
+    {
+      "path": "mods/src/cn/ssjjzeus/ZeusFragment.java",
+      "sha256": "cb0408e32fc1195de4be56dd8968812eb9c39d5eacf43e239b8dcf160b83fcec",
+      "bytes": 1203
+    },
+    {
+      "path": "mods/src/cn/ssjjzeus/ZeusNativeStats.java",
+      "sha256": "38b6982474c517beb1eea20576a9a7f105df6d0b9ed0edae5df388620ddeb8cf",
+      "bytes": 368
+    },
+    {
+      "path": "mods/src/cn/ssjjzeus/ZeusReloadProtection.java",
+      "sha256": "c3aac6f0dddce68ebc7c4571532b941d9f93f34d6ea97cc3ff14d0ac6ad7aa1d",
+      "bytes": 1623
+    },
+    {
+      "path": "mods/src/cn/ssjjzeus/ZeusScopes.java",
+      "sha256": "737232f3b6c0c1d92d8a146e702177335d12c16b8a42591dd05487d5ea6b5b4e",
+      "bytes": 3110
+    },
+    {
+      "path": "mods/src/cn/ssjjzeus/ZeusShock.java",
+      "sha256": "ba935082f50ef2ee9d170525ec46f6f27d6892a99170613268c68f68e4e87d30",
+      "bytes": 5312
+    },
+    {
+      "path": "mods/src/cn/ssjjzeus/ZeusThunder.java",
+      "sha256": "99c47fbda9bcff4f9cbcae342c1471635c551c2f73f96395856a61849ebe6c1d",
+      "bytes": 19077
+    },
+    {
+      "path": "mods/src/cn/ssjjzeus/ZeusThunderNetwork.java",
+      "sha256": "4b67f1fc7d77eb7ec150c629c505b7f62e98a443fae0147941658089d0e375b1",
+      "bytes": 6006
+    },
+    {
       "path": "mods/src/ssjj/dark/api/DarkBladeAttackEvent.java",
       "sha256": "d82a61569d2df11029d9b63275645e194914ffdbf1a1fd80d0dae7fdfea73143",
       "bytes": 2668
@@ -1815,8 +2519,8 @@
     },
     {
       "path": "mods/src/ssjj/dark/DarkClientBootstrap.java",
-      "sha256": "0a00cefee293753ede0adff32adcef685a46b2c184526ed617358f52c1dcbbd9",
-      "bytes": 782
+      "sha256": "7b0cfadcea6fba7cb18242cb38dfd9ea4c02c9b85bd8ce52656ae3382ce9574f",
+      "bytes": 752
     },
     {
       "path": "mods/src/ssjj/dark/DarkClientState.java",
@@ -1835,8 +2539,8 @@
     },
     {
       "path": "mods/src/ssjj/dark/DarkCrystalMod.java",
-      "sha256": "d3e83c82e0d95c17233b58d83ec56c0eb16b8400e074b513650d9c0061a269e1",
-      "bytes": 1276
+      "sha256": "fe02973f912ee2e38bb5c58f9095f19004de5aba3e033b71feed51f14860ef46",
+      "bytes": 1309
     },
     {
       "path": "mods/src/ssjj/dark/DarkGunEvents.java",
@@ -1922,16 +2626,6 @@
       "path": "mods/tools/FreshRuntimeLinks.java",
       "sha256": "765c283bf4511e3655aa8d764aef78f9df44e18b6dc9c1ea87c0f6faf36c374f",
       "bytes": 10017
-    },
-    {
-      "path": "mods/tools/resource-generation/README.md",
-      "sha256": "ba62e05eff2fc0c9462e9d9e25239d8bb5d7c7dbfb7f7488d849dd39c7f32acf",
-      "bytes": 1728
-    },
-    {
-      "path": "mods/tools/resource-generation/source-manifest.json",
-      "sha256": "f94d27290c1363ee2f56448a241e417d3e6cc43c74683ee21b85edc2d6b617c8",
-      "bytes": 30696
     },
     {
       "path": "mods/tools/resource-generation/work/darkcrystal_body_rebuild_20261107/scripts/build_skin_resources.py",
@@ -2154,18 +2848,308 @@
       "bytes": 5168
     },
     {
+      "path": "mods/tools/zeus-production/apply_hud_icons.py",
+      "sha256": "907810f2f6bea653422d461e0f7c1a36fa37a9ef5421a99da9b11ce35ca99a8d",
+      "bytes": 1111
+    },
+    {
+      "path": "mods/tools/zeus-production/apply_reference.py",
+      "sha256": "be8185a5f27137381ed660220faa7d8e0a42a486a175ecbd9393de4377bc9b46",
+      "bytes": 2062
+    },
+    {
+      "path": "mods/tools/zeus-production/bind_galaxy_wing_gap.py",
+      "sha256": "343159dd4dc8889361a87971b1fec92465529fc5742af4a225501c293cb2b0f1",
+      "bytes": 1623
+    },
+    {
+      "path": "mods/tools/zeus-production/build_attachments.py",
+      "sha256": "833c9270bf2d647e0f90bb3550d9ea2cc23c0bda97d7c3a315f2ff05beb94da3",
+      "bytes": 3796
+    },
+    {
+      "path": "mods/tools/zeus-production/build_body_fx.py",
+      "sha256": "c985b5b18cb3ede02bd7d1933a1e90da17bd21f2fc0bcb4e6c9a9ad9f8f48a73",
+      "bytes": 2962
+    },
+    {
+      "path": "mods/tools/zeus-production/build_catalog.py",
+      "sha256": "abc613b0261ab67e1d2db887eb3cf249e5c267754813df4478a13616f450d72d",
+      "bytes": 2444
+    },
+    {
+      "path": "mods/tools/zeus-production/build_config_patches.py",
+      "sha256": "5ae931922fd763816d910dda1f38066c82bc5cd0e2b556e024c220861e750d6b",
+      "bytes": 2426
+    },
+    {
+      "path": "mods/tools/zeus-production/build_feather_surface.py",
+      "sha256": "3621c2dd303ada5d16fd704c8bd936ddb75ce70a200e86dd7aaf804d1c3549d4",
+      "bytes": 6288
+    },
+    {
+      "path": "mods/tools/zeus-production/build_feather_surface_inputs.py",
+      "sha256": "160154e936201389c703bfd9496fa78ccac29ac9fa2ce724d242685dd47c96c2",
+      "bytes": 3301
+    },
+    {
+      "path": "mods/tools/zeus-production/build_fragment_icon.py",
+      "sha256": "16ee7a74ef4403266cc078b431f11a4eedf36cc248ce6c676c77c129b81fb9a5",
+      "bytes": 2067
+    },
+    {
+      "path": "mods/tools/zeus-production/build_galaxy_wing_gap.py",
+      "sha256": "15d2f1b7b93d617881bc2b9a4706b435f04346ffcbbbed73b0ae0001a5c8f752",
+      "bytes": 4560
+    },
+    {
+      "path": "mods/tools/zeus-production/build_grip_phase_constraints.py",
+      "sha256": "6cb9f6ccc153462c485a8002821eec0c048f875b5c6d094cc4984ef654350221",
+      "bytes": 8065
+    },
+    {
+      "path": "mods/tools/zeus-production/build_rear_surface.py",
+      "sha256": "e6afcaddfa0ee1f890465978c46f17abb721906b9e262192175be828a17e7791",
+      "bytes": 5954
+    },
+    {
+      "path": "mods/tools/zeus-production/build_runtime.py",
+      "sha256": "20e413a2e53634648f1e36fc18d122a71289d35738f84173a792263b523d7c65",
+      "bytes": 3182
+    },
+    {
+      "path": "mods/tools/zeus-production/build_surface_particles.py",
+      "sha256": "a90973ce537a73b89ecf58655509f25c38eaa07343279f261fc1bf4a125eef63",
+      "bytes": 10278
+    },
+    {
+      "path": "mods/tools/zeus-production/build_tail_rings.py",
+      "sha256": "cc64d8fad873531fbe7cc284733fcfd4937934d88a28e026a2908d1ba2c0901e",
+      "bytes": 6893
+    },
+    {
+      "path": "mods/tools/zeus-production/build_tail_surface.py",
+      "sha256": "08b39443629ca03109fb5c4bebde49dca7099c29c6ebf90b07343d2c06014749",
+      "bytes": 7489
+    },
+    {
+      "path": "mods/tools/zeus-production/disable_ads_zoom.py",
+      "sha256": "bd269578af1c95d242a499a8f4034bb1121abc28a401f93f5987d2b65e963419",
+      "bytes": 1909
+    },
+    {
+      "path": "mods/tools/zeus-production/finalize_body_fx.py",
+      "sha256": "9fc0874ae0009af79e3d3b620210a8df2e48b85d99eb8d0fe7e77b40ace809ff",
+      "bytes": 5314
+    },
+    {
+      "path": "mods/tools/zeus-production/finalize_feather_surface.py",
+      "sha256": "2581c3713c77282d3a53b1f50a6ff636ee4d66fc3aa63fc063feab86e510bfec",
+      "bytes": 9582
+    },
+    {
+      "path": "mods/tools/zeus-production/finalize_tail_effects.py",
+      "sha256": "117e4ab625595f9fa352ebf2519c13be6ce720954992ab6f199e8973979b636d",
+      "bytes": 7532
+    },
+    {
+      "path": "mods/tools/zeus-production/fit_reference.py",
+      "sha256": "65f10ef374e6dfe99408b6466822955ef7827bb7aab27491e916ee889e4d9846",
+      "bytes": 14795
+    },
+    {
+      "path": "mods/tools/zeus-production/fit_view.py",
+      "sha256": "242a282233c7d84dfa941dd01cb96bd0bdd445a70f27d8c12c40e761f4e63958",
+      "bytes": 4902
+    },
+    {
+      "path": "mods/tools/zeus-production/fix_galaxy_body.py",
+      "sha256": "29029d65f9f4ff7747cd67c9efc41cf2eac258a61ccbc91f7ca70dc9d6972875",
+      "bytes": 6570
+    },
+    {
+      "path": "mods/tools/zeus-production/fix_thirdperson.py",
+      "sha256": "34686f324e3c4a289b08a6c249e7f6f689f0de7a5d947b0311b20dfcaa531606",
+      "bytes": 2411
+    },
+    {
+      "path": "mods/tools/zeus-production/import_body_fx.py",
+      "sha256": "2918ed5a28cc414cef3e1a24abcc47960745c1fa83a01e654d125fde637d5b7f",
+      "bytes": 12294
+    },
+    {
+      "path": "mods/tools/zeus-production/import_family_body_fx.py",
+      "sha256": "0710a109d53c2e2836bd448bbda7b02f53a7f6f49cc2d988eba739dd9af11a89",
+      "bytes": 14147
+    },
+    {
+      "path": "mods/tools/zeus-production/import_family_resources.py",
+      "sha256": "485d79c10c1afa39b2f50a0a8e040265bfd43bed54bcee09129151bb467f90fe",
+      "bytes": 11838
+    },
+    {
+      "path": "mods/tools/zeus-production/import_skin_fx.py",
+      "sha256": "137669724692479662fff6593e8ac2656ddd37081f0d8da734a20a767737a734",
+      "bytes": 14929
+    },
+    {
+      "path": "mods/tools/zeus-production/import_skin_sources.py",
+      "sha256": "99b848647fb7e49a80aa5c0c288f4bc64e08842b2f0dfc787c993b87d07adf20",
+      "bytes": 8204
+    },
+    {
+      "path": "mods/tools/zeus-production/integrate_workbench.py",
+      "sha256": "1e5821935eea95378215505ccf1729d1bd17b25d02c8a51dbbcf8c32b62f0d6f",
+      "bytes": 4965
+    },
+    {
+      "path": "mods/tools/zeus-production/match_zeus_audio.py",
+      "sha256": "413e086c61bb5c6f6acdb0f75ef5288f9655cbbf0c5e0d05fe1a87a8ddcbe8a6",
+      "bytes": 2164
+    },
+    {
+      "path": "mods/tools/zeus-production/merge_body_motion.py",
+      "sha256": "6ccb3a1e3246c8e918604d93fd17dae0013e14f2d51128166b5666e9139ad902",
+      "bytes": 2279
+    },
+    {
+      "path": "mods/tools/zeus-production/merge_ring_resources.py",
+      "sha256": "1059e86ecb2f332f983bc670d17685a3a77d10cde07f3bfed5925efcda5472b0",
+      "bytes": 4229
+    },
+    {
+      "path": "mods/tools/zeus-production/prepare.py",
+      "sha256": "b335c50f8dec8dc464b57d6712a5f91f1f310efe0d2ac4c3f24f7a9e18514746",
+      "bytes": 3379
+    },
+    {
+      "path": "mods/tools/zeus-production/prepare_advent_animation.py",
+      "sha256": "4536f149042c9459585552726218f59f8849eb729be2dc4acf59931b364e2770",
+      "bytes": 6434
+    },
+    {
+      "path": "mods/tools/zeus-production/prepare_advent_fx.py",
+      "sha256": "c451983e6cd416d49cdeb61fb93655d438bba2839cef3f2e3fe3a6330e209c1f",
+      "bytes": 4540
+    },
+    {
+      "path": "mods/tools/zeus-production/prepare_advent_resources.py",
+      "sha256": "6882a76a357ea1c1b44e097636593aec39f8db547c68cfd3fffc35a0e3cc26d5",
+      "bytes": 10238
+    },
+    {
+      "path": "mods/tools/zeus-production/prepare_ammo.py",
+      "sha256": "c85220b4f1e52c68ef7d324a2bb72dc4269338fc2c793d4c3aa07a8ddc6b7309",
+      "bytes": 10857
+    },
+    {
+      "path": "mods/tools/zeus-production/prepare_attachment_attributes.py",
+      "sha256": "a464e82d23774744d77165a8858a24aa82a1e6e964cd9bcf28c6ff0771f8a216",
+      "bytes": 2416
+    },
+    {
+      "path": "mods/tools/zeus-production/prepare_descriptions.py",
+      "sha256": "72cc6a494a93f0a86609115676f538466c2dc3093e6c519ff157a463ed7540bb",
+      "bytes": 2571
+    },
+    {
+      "path": "mods/tools/zeus-production/prepare_focus_animation.py",
+      "sha256": "4b6fbaa1404ad39d0e03c05ef01df40abaefaaaac7609a08a74bc2bd75765558",
+      "bytes": 172
+    },
+    {
+      "path": "mods/tools/zeus-production/prepare_focus_hud.py",
+      "sha256": "eb25fe4c402cf2bd4be22fe311d3ae4f4ab0bf61ca4f6788c8c1429b20325bff",
+      "bytes": 2991
+    },
+    {
+      "path": "mods/tools/zeus-production/prepare_focus_visual.py",
+      "sha256": "2865a9dc0b9a1994afcb3d3c5858b8d5a0d8306a700142d14b46c69df90bf1c9",
+      "bytes": 1756
+    },
+    {
+      "path": "mods/tools/zeus-production/prepare_linked_hud.py",
+      "sha256": "efb64cd1ad54f388475a80887d1498da718b61055d428b9ac33cbf69575e99fd",
+      "bytes": 3240
+    },
+    {
+      "path": "mods/tools/zeus-production/prepare_linked_impact.py",
+      "sha256": "d9ba5ac5fc1e3e365d2513e7b4f408ee24fc8734ee2e3f58f9465d3d9ef517ac",
+      "bytes": 2443
+    },
+    {
+      "path": "mods/tools/zeus-production/prepare_magazine.py",
+      "sha256": "54e42bb5d94a6ea87280ad368b32f1f38f41e1a762a1e79cab01ad7a9619f790",
+      "bytes": 10842
+    },
+    {
+      "path": "mods/tools/zeus-production/prepare_muzzle.py",
+      "sha256": "be73cd096494146d162e53f5ba0c4d23e4386dcc73c20f22cc94ce4ef63d8337",
+      "bytes": 9954
+    },
+    {
+      "path": "mods/tools/zeus-production/prepare_shock_fx.py",
+      "sha256": "65294bffc9d1df655d8e8933cc4f5500a0672399b03a163dfaa02b4df14d3776",
+      "bytes": 2415
+    },
+    {
+      "path": "mods/tools/zeus-production/prepare_shock_grip.py",
+      "sha256": "8ce18040ec8f08019e26248156e131aa64a10303cfab5e94aab41b9574df3711",
+      "bytes": 10658
+    },
+    {
+      "path": "mods/tools/zeus-production/prepare_source_fx.py",
+      "sha256": "2d16027f8222d85cf281dc1c702f4df2f1f3177f2f616b44e0c9b1f32254d56e",
+      "bytes": 14670
+    },
+    {
+      "path": "mods/tools/zeus-production/prepare_tracking_animation.py",
+      "sha256": "08c8f4d37d5842e21c0bfef27336aedfc0d7e78b31230d9f71ae03a6678c8137",
+      "bytes": 10718
+    },
+    {
+      "path": "mods/tools/zeus-production/refresh_thirdperson_sound_bindings.py",
+      "sha256": "b396a73f7b26a027f1fdc8aceb5c2f38cbb414a8884e4b6ece99ceb7e1bbedc5",
+      "bytes": 3092
+    },
+    {
+      "path": "mods/tools/zeus-production/render_grip_targets.py",
+      "sha256": "179e57770e9bb43330d11b24b7810701184abbb1e4049b2a656778107adc602a",
+      "bytes": 3546
+    },
+    {
+      "path": "mods/tools/zeus-production/render_hud_icons.py",
+      "sha256": "05468fa8232e70491a28a8d12768a09369134f004f29506aaa4145da6a51b53c",
+      "bytes": 5772
+    },
+    {
+      "path": "mods/tools/zeus-production/render_icons.py",
+      "sha256": "43f8d19c182e49b74594b23181fc21bf751798bc653798d5a359eae00489e6d7",
+      "bytes": 5892
+    },
+    {
+      "path": "mods/tools/zeus-production/scale_thirdperson.py",
+      "sha256": "b8de5f8398ebaa11b2de5b10b8f005ee5c2682315db826b9461023eb532f2fe7",
+      "bytes": 4732
+    },
+    {
+      "path": "mods/tools/zeus-production/source_import.py",
+      "sha256": "d1d836bbd35ee706b22c86675e0db33ce6499452794771f029ee3aa7ef583a41",
+      "bytes": 23703
+    },
+    {
       "path": "README.md",
-      "sha256": "cd8dbcf3e0c6f3659fcdac2f6b055abdc631f8eede47504447a800a427f4a142",
-      "bytes": 3334
+      "sha256": "76e2dd893bba2435146af820a77e5a7ea2aa92327b82e52a51f1a9705759d6ea",
+      "bytes": 3026
     },
     {
       "path": "runtime-manifest.json",
-      "sha256": "35a4b5eaeb90387dc082d742a599bb904d9fe3b14cb3a0914f3c4950c77fa1cb",
-      "bytes": 11277
+      "sha256": "9db38d4f5866008bf4039d6f5f3621bb980c4e21b83fc96d28b9ba6bf17c3340",
+      "bytes": 11866
     },
     {
       "path": "SHA256SUMS",
-      "sha256": "451f2dce59a29110762e0378bcc0a58b6cefc52240464c328a88f9ce418e81bd",
+      "sha256": "ef41d7a04dedc171edca81c53a8c35e0df61e64b9bb099d5f6e47545e80d852e",
       "bytes": 272
     },
     {
@@ -2175,18 +3159,18 @@
     },
     {
       "path": "tacz/assets/eye_judgment_arsenal/config/screen.json",
-      "sha256": "ab3ade1de2febf7bf253de781e3116caf1fe9ef14bd4d02bc8ff64d39d9c756f",
-      "bytes": 35542
+      "sha256": "f2049df4fc7cd545ff933e05343d25cee74e8db70d4e0167d72fa2f19bfd3c1f",
+      "bytes": 81766
     },
     {
       "path": "tacz/assets/eye_judgment_arsenal/lang/en_us.json",
-      "sha256": "36604c02ab49f375b80f23add54f0b77f68c68652051b7bddea9e1acd60e80e1",
-      "bytes": 953
+      "sha256": "81e59a96949ae97745ee56c0eeceb340289fdb7175dead50ddfa7e3d13509ab5",
+      "bytes": 1100
     },
     {
       "path": "tacz/assets/eye_judgment_arsenal/lang/zh_cn.json",
-      "sha256": "2034317d88c4a74bdb17e5027f3a9529566be87c5fba5e254c672ac01a55412e",
-      "bytes": 921
+      "sha256": "3715037778bd543de6273978e5fb6d20be87ae6e69094b243ca8bbf1bc8014c5",
+      "bytes": 1068
     },
     {
       "path": "tacz/assets/eye_judgment_arsenal/models/item/dimension_star_fragment.json",
@@ -2197,6 +3181,11 @@
       "path": "tacz/assets/eye_judgment_arsenal/models/item/parasite_fragment.json",
       "sha256": "15c975b9f5fc6fde96a28e689f669558d1d4f746613fe0a45282665a1581c755",
       "bytes": 105
+    },
+    {
+      "path": "tacz/assets/eye_judgment_arsenal/models/item/zeus_hand_fragment.json",
+      "sha256": "cf10df7419497877f4eab6dec096a96eb987980ce1c52cd27068ccef0dcca244",
+      "bytes": 131
     },
     {
       "path": "tacz/assets/eyeofpunishment/animations/notdistinguish.animation.json",
@@ -2365,8 +3354,8 @@
     },
     {
       "path": "tacz/assets/eyeofpunishment/gunpack_info.json",
-      "sha256": "3e38e29c1cc2b009a6223a825aeaa20e93c9154ff13b2e99b4600499b427f4eb",
-      "bytes": 201
+      "sha256": "1d05c367e13777e7188a5a23d65ddb2b6d59811d19eb20f63ca33a1b6abda927",
+      "bytes": 235
     },
     {
       "path": "tacz/assets/eyeofpunishment/lang/en_us.json",
@@ -2580,8 +3569,8 @@
     },
     {
       "path": "tacz/assets/judgfire/gunpack_info.json",
-      "sha256": "a1935146538714c945e068934ca5598aa61009fa0fc8bb1647e1a983600a27fa",
-      "bytes": 136
+      "sha256": "01d58633be01f6b54aaef8cd179f9a8bd5e7abe99b0ffa5923ed5604eaca93fb",
+      "bytes": 166
     },
     {
       "path": "tacz/assets/judgfire/lang/en_us.json",
@@ -2810,8 +3799,8 @@
     },
     {
       "path": "tacz/assets/ssjj_dark/gunpack_info.json",
-      "sha256": "1f5402c9c7a982e958d1b31bc2e7df01128fb24241be9642c3c4b7339d32c2c3",
-      "bytes": 277
+      "sha256": "729e92692d4d1711f25a1d97a37e923335877fcca321928f5e3f2a20b754e343",
+      "bytes": 333
     },
     {
       "path": "tacz/assets/ssjj_dark/lang/en_us.json",
@@ -3045,8 +4034,8 @@
     },
     {
       "path": "tacz/assets/ssjj_dimension/gunpack_info.json",
-      "sha256": "b44431a325ebe1b102d1528d72d27432d1df9eae9b65263a08fd283941aa7503",
-      "bytes": 190
+      "sha256": "63bff959e0f10ac618b7701441c266a10c486e87c089672da0f1a4db578cf3bc",
+      "bytes": 224
     },
     {
       "path": "tacz/assets/ssjj_dimension/lang/en_us.json",
@@ -3105,8 +4094,8 @@
     },
     {
       "path": "tacz/assets/ssjj_workbench/gunpack_info.json",
-      "sha256": "0b4fc3d9a1c4ff3285c9a198d100aa3d9073e0a9d9933f1e746967c0a08ddd6f",
-      "bytes": 202
+      "sha256": "c9599efbb73cc6409d0f1a4c15c465700804c1aca18d21caa1b371d5f4cb1953",
+      "bytes": 236
     },
     {
       "path": "tacz/assets/ssjj_workbench/lang/en_us.json",
@@ -3117,6 +4106,191 @@
       "path": "tacz/assets/ssjj_workbench/lang/zh_cn.json",
       "sha256": "41db8282a2b51888d9c310187018534b9875db89ab3945cdf51f2a5774e7e5f9",
       "bytes": 1215
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/advent/source_layout.json",
+      "sha256": "430538e61d742d68151ac7f5752fc723e8d43158ba3431acf2006ec74384085a",
+      "bytes": 756
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/animations/hand_of_zeuss.animation.json",
+      "sha256": "e537c314fb0d41bcc4e5b203ab3c8941e847a06f6fef0b76b5f3307f23dbd3a6",
+      "bytes": 4101665
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/animations/hand_of_zeuss1.animation.json",
+      "sha256": "9f8978be88979b5bf8ca30ecc1089c6fd37bf7c77c7a29bb295b456163146ffe",
+      "bytes": 4101668
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/animations/hand_of_zeuss2.animation.json",
+      "sha256": "350afab08080eb7f2a5d80e776409b8b32e107fa39e342d136d833fae645eea4",
+      "bytes": 4305976
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/display/ammo/zeus_thunder_display.json",
+      "sha256": "ae33e4a0fc94229ca95daadde8a9df0302b1b37c66f074211d39381e792a50ac",
+      "bytes": 516
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/display/attachments/galaxy_scope_display.json",
+      "sha256": "045be7611b7db0c14b8c2492a453800d3f843e1a1cc41a965713974ab7b2f277",
+      "bytes": 312
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/display/attachments/lava_scope_display.json",
+      "sha256": "d86cd77d834b3260a02af0656b9cc69f2b85188a86422c69e004e35e6a2d8f4f",
+      "bytes": 306
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/display/attachments/thunder_advent_stock_display.json",
+      "sha256": "023c264af79fc1c56b7d7d773edf245ea0f893919feb7958fe7642ce3818aa2c",
+      "bytes": 224
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/display/attachments/thunder_burst_display.json",
+      "sha256": "f659005319a93831672bfa7c722574216951131dbf405a438f688d6d5abb0243",
+      "bytes": 210
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/display/attachments/thunder_energy_mag_display.json",
+      "sha256": "4f9097c7f60d2a5e1b9f0897e42efe03936d1a0cd89cc80f87cf2e68ac28075d",
+      "bytes": 220
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/display/attachments/thunder_shock_grip_display.json",
+      "sha256": "cb130128817d3ef1114eb8a540131fa0ba12ec573b96960cd5307ad8366a7304",
+      "bytes": 220
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/display/guns/hand_of_zeuss1_display.json",
+      "sha256": "9ed11ce241968aa124a71b17e02b28bd3f473630328714703b4229e72070e55e",
+      "bytes": 1163
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/display/guns/hand_of_zeuss1_galaxy_display.json",
+      "sha256": "008644693193d4abe97885758667bc8e7db239f5ac2d9d04713df39234cfe808",
+      "bytes": 1183
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/display/guns/hand_of_zeuss1_lava_display.json",
+      "sha256": "744081bec92b2a6b6a8dbccec0568ed5f15df4a0873e66d12b1c18473a95e1e2",
+      "bytes": 1177
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/display/guns/hand_of_zeuss2_display.json",
+      "sha256": "7295beac40b50063c42005d1e85068fe9040262049aeed5adba129e205b7afc1",
+      "bytes": 1163
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/display/guns/hand_of_zeuss2_galaxy_display.json",
+      "sha256": "350b423449a98d046e7c53bc4a1aa6583b65d805f392db30be28e66ce6ecc2c7",
+      "bytes": 1183
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/display/guns/hand_of_zeuss2_lava_display.json",
+      "sha256": "fe884aab7de90bfc6728a9e1141985d47ae445528d77b2cf05d1555c1c0bfb12",
+      "bytes": 1177
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/display/guns/hand_of_zeuss_display.json",
+      "sha256": "ab5c61a6eb2bf4c70fd20c45050681e2cb0c4c83ded15114305d552a3bf87e46",
+      "bytes": 1153
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/display/guns/hand_of_zeuss_galaxy_display.json",
+      "sha256": "3e07dd68a5043f45b29cc0eb2c18a8325335c94fff6dc44b482cdc25a10e7381",
+      "bytes": 1174
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/display/guns/hand_of_zeuss_lava_display.json",
+      "sha256": "dea2d577588b626aaf7baafc52b098a6e3ef663dd5fdf9c1c84694325577f4b4",
+      "bytes": 1168
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/geo_models/attachment/galaxy_scope_geo.json",
+      "sha256": "f0e3b40beb270fbd28950501d92d9e4833136ce8fd6c3896439a76ccf2906494",
+      "bytes": 897
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/geo_models/attachment/lava_scope_geo.json",
+      "sha256": "40a2bd7ab958b693fa3ad0c18fed808d473520b3ff30bab237110d02571209da",
+      "bytes": 895
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/geo_models/attachment/thunder_advent_stock_geo.json",
+      "sha256": "336b919f8ed2d6e6f8179cd6ce83741248b22b074ed3794b9a79772459bc2cd7",
+      "bytes": 726
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/geo_models/attachment/thunder_burst_geo.json",
+      "sha256": "870dd92b4bf8746b1fce85649af4b8dc46d057cb29b107950be415d9d96f219e",
+      "bytes": 719
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/geo_models/attachment/thunder_energy_mag_geo.json",
+      "sha256": "faf9774700a08e0f35896d4f7469502e9d4e6cf776ffa703144ef154618dd75a",
+      "bytes": 724
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/geo_models/attachment/thunder_shock_grip_geo.json",
+      "sha256": "9bdf9e3e89d5bd7998e6a2bae2f9ffd602784f5062faf4260e7411077130bddb",
+      "bytes": 724
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/geo_models/gun/hand_of_zeuss1_geo.json",
+      "sha256": "712b534c2b9d37dea9b34a419351039a2acfca2ca7f867636abad04412ed9527",
+      "bytes": 4628
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/geo_models/gun/hand_of_zeuss2_geo.json",
+      "sha256": "e7fe495720bc9af03ba716f233b7e56a2d5a231c1e32920e1fb805c6839c502c",
+      "bytes": 4628
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/geo_models/gun/hand_of_zeuss_geo.json",
+      "sha256": "81636bc484893c79825ac6e0649547442af0b4c16beb9412a76a3daa473c083a",
+      "bytes": 4627
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/gunpack_info.json",
+      "sha256": "e5112057079715bb1b90d32cb1cd49148fb354388920e300b280ea79387b9544",
+      "bytes": 219
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/lang/en_us.json",
+      "sha256": "1b5f90bfdb4fa6714349be70fea024e7ab8f3377654f2ff3810bbea7ea462812",
+      "bytes": 3270
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/lang/zh_cn.json",
+      "sha256": "e698928667b8474f7111c0d0bbf56f27122c6b55bc3bdbf246da4b8639d7256a",
+      "bytes": 3250
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/scripts/hand_of_zeuss2_state_machine.lua",
+      "sha256": "492d0197f180fd61f5df9dbc66eac52db22d8cca825c1850fffafd8cc24b9d6e",
+      "bytes": 2398
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/sounds.json",
+      "sha256": "8c3c26c5241c9ac5f20501aaab55ccfc77fc16278b55145a1574de8432da2c81",
+      "bytes": 858
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/view_calibration.json",
+      "sha256": "d1be356af077249c55e6543a06cf2e8703f554ca285a789823e8a360c24fe231",
+      "bytes": 4576
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/view_calibration_hand_of_zeuss.json",
+      "sha256": "d1be356af077249c55e6543a06cf2e8703f554ca285a789823e8a360c24fe231",
+      "bytes": 4576
+    },
+    {
+      "path": "tacz/assets/ssjj_zeus/view_calibration_hand_of_zeuss1.json",
+      "sha256": "d1be356af077249c55e6543a06cf2e8703f554ca285a789823e8a360c24fe231",
+      "bytes": 4576
     },
     {
       "path": "tacz/assets/ssjjparasite2/animations/parasitic_sniper2.animation.json",
@@ -3245,8 +4419,8 @@
     },
     {
       "path": "tacz/assets/ssjjparasite2/gunpack_info.json",
-      "sha256": "4607c44cb63e060650f8ed7bb98f30c1da811f7fba9ba817702051b2b169c828",
-      "bytes": 199
+      "sha256": "eef69ebca7f64301bd90c0c037410068ef7e15c4dd383fee2238edac99b9c1cb",
+      "bytes": 233
     },
     {
       "path": "tacz/assets/ssjjparasite2/lang/en_us.json",
@@ -3295,8 +4469,8 @@
     },
     {
       "path": "tacz/assets/ssjjrpg/gunpack_info.json",
-      "sha256": "0b4fc3d9a1c4ff3285c9a198d100aa3d9073e0a9d9933f1e746967c0a08ddd6f",
-      "bytes": 202
+      "sha256": "c9599efbb73cc6409d0f1a4c15c465700804c1aca18d21caa1b371d5f4cb1953",
+      "bytes": 236
     },
     {
       "path": "tacz/assets/ssjjrpg/item_presentation.json",
@@ -3320,8 +4494,8 @@
     },
     {
       "path": "tacz/coremods/dimension_cloak.js",
-      "sha256": "c8f4c1337f888edac80b4ca1fcd4e77483190dacfc9e4fdcd3fccef85ed64d2a",
-      "bytes": 2656
+      "sha256": "76a10b455466535ac9f5ebf58497ac7e2a9633ce1c8e51fb01ffd0368ef84817",
+      "bytes": 6224
     },
     {
       "path": "tacz/coremods/dimension_config.js",
@@ -4105,8 +5279,173 @@
     },
     {
       "path": "tacz/data/ssjj_workbench/recipe_filters/rongguang.json",
-      "sha256": "732b04dc49d09f1cea8829431ebeb25963c8cca1d2b8bb5055e88851d967842f",
-      "bytes": 103
+      "sha256": "51844674e5f7ca8db51d4bd9b713b369c8fe38ec7f9fb53e4afb490cc2d1c229",
+      "bytes": 143
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/data/attachments/galaxy_scope_data.json",
+      "sha256": "7c7eda71b414e3fde44886e507417b5ef9225f23408f3a7ceaedd36867e7dbc4",
+      "bytes": 21
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/data/attachments/lava_scope_data.json",
+      "sha256": "7c7eda71b414e3fde44886e507417b5ef9225f23408f3a7ceaedd36867e7dbc4",
+      "bytes": 21
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/data/attachments/thunder_advent_stock_data.json",
+      "sha256": "7c7eda71b414e3fde44886e507417b5ef9225f23408f3a7ceaedd36867e7dbc4",
+      "bytes": 21
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/data/attachments/thunder_burst_data.json",
+      "sha256": "7c7eda71b414e3fde44886e507417b5ef9225f23408f3a7ceaedd36867e7dbc4",
+      "bytes": 21
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/data/attachments/thunder_energy_mag_data.json",
+      "sha256": "8bb06813cf2e6074bcd871336cb72d05e9592485a40f9465fef9b33907158f0a",
+      "bytes": 49
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/data/attachments/thunder_shock_grip_data.json",
+      "sha256": "7c7eda71b414e3fde44886e507417b5ef9225f23408f3a7ceaedd36867e7dbc4",
+      "bytes": 21
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/data/guns/hand_of_zeuss1_data.json",
+      "sha256": "b06a0d360938fc3a56a142693290030b3c8559393588ecb4b5b4f41393578694",
+      "bytes": 2295
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/data/guns/hand_of_zeuss2_data.json",
+      "sha256": "3cc468916d2c233ba486cde3a94c554e9bfc0eeb099daf5ca86db024b23331a5",
+      "bytes": 2343
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/data/guns/hand_of_zeuss_data.json",
+      "sha256": "08933464b4472a4b79151240a78f97f685ef4e22a7bb10041b57420735e43584",
+      "bytes": 2295
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/index/ammo/zeus_thunder.json",
+      "sha256": "ee40a7e5092da699087917d9293b823c048b73289c685a56f3ec2f2868e30b5e",
+      "bytes": 187
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/index/attachments/galaxy_scope.json",
+      "sha256": "f1b08b482955e41607a006d775c95c76e962fd834d0877adb3bc4c4a15d35f73",
+      "bytes": 240
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/index/attachments/lava_scope.json",
+      "sha256": "d483f4f34e49e089626ddb950e192c8179f967c4353bfd3d114e76db31028b7a",
+      "bytes": 232
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/index/attachments/thunder_advent_stock.json",
+      "sha256": "0f1bd57f59cfa4becd6dadcd0ee24091d897c231462e89e0252b59b08fb59786",
+      "bytes": 272
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/index/attachments/thunder_burst.json",
+      "sha256": "9f8a7ea50aba3f1cc71dd08a35ff915eb00d532ac7240f8eeac605f8c3c83c26",
+      "bytes": 245
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/index/attachments/thunder_energy_mag.json",
+      "sha256": "b0466c65b2e5a3e6f3ff0d4fb4515f59d225271f33bd87bc6a51a98351658c73",
+      "bytes": 271
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/index/attachments/thunder_shock_grip.json",
+      "sha256": "40e1fbf58f8b508ce402e93b199a8ae58b045a6cc7903e3e0280f794bff26326",
+      "bytes": 263
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/index/guns/hand_of_zeuss.json",
+      "sha256": "e26a8f38bcc9dd099ba013c3a11b976d857597a531bfa0696e35fbfcfa51b781",
+      "bytes": 232
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/index/guns/hand_of_zeuss1.json",
+      "sha256": "5457ef832efe7dd684076df39ca83f0cc84c6cdd4f1fd7ddd1e226149a8d9df1",
+      "bytes": 236
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/index/guns/hand_of_zeuss2.json",
+      "sha256": "021867bba7695cf49d9770b81f17e27fd626c33e273fe3445c8298cfa0777fb8",
+      "bytes": 236
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/recipes/ammo/zeus_thunder.json",
+      "sha256": "651e9ce2117dde2da0b76ba901a595edcf93142ab927e92780346c3af47228c1",
+      "bytes": 509
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/recipes/attachment/galaxy_scope.json",
+      "sha256": "ab8b359e56b5e74e205095d6ad47eabe6862e49823fda14326372bef98df0a2e",
+      "bytes": 332
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/recipes/attachment/lava_scope.json",
+      "sha256": "f3bd7bb5ba225e7ac6ea27b0fd5308d3defd400b007e3e8d0f0b72c0faed5f2b",
+      "bytes": 330
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/recipes/attachment/thunder_advent_stock.json",
+      "sha256": "96bf3beb0437462b086937ef916e345b09b7c00ebed12d359b7ce806e79c39c7",
+      "bytes": 623
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/recipes/attachment/thunder_burst.json",
+      "sha256": "103357f31ba06d911c0d60cfb7709c2f3d9cd9111b56251f46cfb64fdf569a13",
+      "bytes": 614
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/recipes/attachment/thunder_energy_mag.json",
+      "sha256": "d0b0fcdb6f1d899be77e484e40449be0580cf5a9eb01925242589474caadedcb",
+      "bytes": 626
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/recipes/attachment/thunder_shock_grip.json",
+      "sha256": "c146cf8fcdf78c3acce5675cf24e13475f76ea46281914b98267199005b840b5",
+      "bytes": 620
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/recipes/gun/hand_of_zeuss.json",
+      "sha256": "9d49518cb5849f2fab46b73ba632d869d9d3c6c50d5a73c4f62d64b22d9d02aa",
+      "bytes": 350
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/recipes/gun/hand_of_zeuss1.json",
+      "sha256": "3d812f2cf5dd7c86178c5e645f815a092a4d1cb803243a0157a6b47d8589eb3f",
+      "bytes": 568
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/recipes/gun/hand_of_zeuss2.json",
+      "sha256": "29bf7df27884eaaae298780f83b34c9100efce1715ed730f2b6b040c59843057",
+      "bytes": 569
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/recipes/zeus_hand_fragment.json",
+      "sha256": "195a1832a7df1930acffb386462a52d8786117e6d60cbd308b8833123f05da0b",
+      "bytes": 459
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/tacz_tags/attachments/allow_attachments/hand_of_zeuss.json",
+      "sha256": "413bd1f40c0b5eef6da274800c29b79b85fb436d560bd05e2577e30589767d9d",
+      "bytes": 61
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/tacz_tags/attachments/allow_attachments/hand_of_zeuss1.json",
+      "sha256": "f199e73a0af00e5682355ac8489e93e32c95fb875f0c43525b0be13fc412af51",
+      "bytes": 91
+    },
+    {
+      "path": "tacz/data/ssjj_zeus/tacz_tags/attachments/allow_attachments/hand_of_zeuss2.json",
+      "sha256": "da7634906104feae0535c3db7ef08175b22be869b7f53499c733c187d6eed4a8",
+      "bytes": 198
     },
     {
       "path": "tacz/data/ssjjparasite2/data/attachments/destruction_stock_data.json",
@@ -4285,39 +5624,28 @@
     },
     {
       "path": "tacz/data/tacz/recipe_filters/default.json",
-      "sha256": "0d3de85faa3f08210229a24d77b3839184179f511ec287ed805b90f2a638e3f7",
-      "bytes": 88
+      "sha256": "2a79a26cd5145495c6fe2035182446b8441abf0942664011528bf15c5e2e5bbd",
+      "bytes": 124
     },
     {
       "path": "tacz/gunpack.meta.json",
-      "sha256": "91706687858e5e2116444c93f542140ebc15aa58b1e186510821193399c8742a",
-      "bytes": 184
+      "sha256": "15075eccfc6f8dfc57fec5a574d4b8d98b46858e39a355c0c0ce073ff59c06d3",
+      "bytes": 207
     },
     {
       "path": "tacz/README.md",
-      "sha256": "a5ada3a7b936c7f2479d78cf3344a3ad67f8ca7e15a1a4211c1c69fa82979400",
-      "bytes": 936
+      "sha256": "58104f4f3f1e0b6a83748db3aa705892c94ef0bd1667f12b2498ac94d0a6cea1",
+      "bytes": 591
     },
     {
       "path": "tacz/source-manifest.json",
-      "sha256": "b02a43551f298722ae9208f67d6edde14faaabf466160275439df88c19b5b7cc",
-      "bytes": 204815
+      "sha256": "c3ea715c5a010b9f47fd40dc3684bca76c966bbc784b4496a3841298ea2e7d7e",
+      "bytes": 204120
     },
     {
       "path": "THIRD_PARTY_LICENSES.md",
       "sha256": "09aae699024782ed6ec1f35c700a71c811c26888f2c4e06424ea09b4aed58450",
       "bytes": 887
     }
-  ],
-  "java_source_evidence": {
-    "current_top_level_classes": 294,
-    "authored_source_name_coverage": 294,
-    "source_evidence_counts": {
-      "class_name_only_unverified_methods": 240,
-      "recorded_emitted_outer_class_matches_current": 45,
-      "recorded_emitted_outer_class_precedes_known_ASM": 9
-    }
-  },
-  "runtime_package_report": "runtime-manifest.json",
-  "build_boundary": "Authored historical snapshots + incremental sources + known ASM chain; not a complete independently rebuildable project. No full rebuild or live gameplay test."
+  ]
 }

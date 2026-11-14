@@ -1,0 +1,47 @@
+{
+  "model": "ssjj_zeus:gun/hand_of_zeuss1_geo",
+  "texture": "ssjj_zeus:gun/uv/hand_of_zeuss_lava",
+  "hud": "ssjj_zeus:gun/hud/hand_of_zeuss1_lava_model",
+  "slot": "ssjj_zeus:gun/slot/hand_of_zeuss1_lava",
+  "animation": "ssjj_zeus:hand_of_zeuss1",
+  "state_machine": "ssjj_zeus:hand_of_zeuss2_state_machine",
+  "use_default_animation": "rifle",
+  "third_person_animation": "default",
+  "enable_transparency": false,
+  "show_crosshair": true,
+  "iron_zoom": 1.0,
+  "transform": {
+    "scale": {
+      "thirdperson": [
+        1.25,
+        1.25,
+        1.25
+      ],
+      "ground": [
+        0.6,
+        0.6,
+        0.6
+      ],
+      "fixed": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  "sounds": {
+    "draw": "ssjj_zeus:hand_of_zeuss1/draw",
+    "shoot": "ssjj_zeus:hand_of_zeuss1/shoot",
+    "shoot_3p": "ssjj_zeus:hand_of_zeuss1/shoot_3p",
+    "reload_empty": "ssjj_zeus:hand_of_zeuss1/reload",
+    "reload_tactical": "ssjj_zeus:hand_of_zeuss1/reload"
+  },
+  "preload_sounds": [
+    "draw",
+    "shoot",
+    "shoot_3p",
+    "reload_empty",
+    "reload_tactical"
+  ],
+  "zoom_model_fov": 46.85953210698013
+}

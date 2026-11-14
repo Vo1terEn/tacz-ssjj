@@ -1,0 +1,7 @@
+{
+  "model": "ssjj_zeus:attachment/thunder_advent_stock_geo",
+  "texture": "ssjj_zeus:gun/uv/hand_of_zeuss2",
+  "slot": "ssjj_zeus:attachment/slot/thunder_advent_stock",
+  "show_muzzle": true,
+  "show_mount": false
+}

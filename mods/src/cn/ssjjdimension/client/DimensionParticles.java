@@ -16,9 +16,19 @@ public final class DimensionParticles {
     public static void validate(Data data) {
         if(data==null || data.schema!=1 || !cn.ssjjdimension.DimensionScopes.family(net.minecraft.resources.ResourceLocation.tryParse(data.gun)) || !"weapon_particle_effect".equals(data.bone)
             || data.emitters==null || data.emitters.length>32)throw new IllegalArgumentException("Invalid Dimension source particle schema");
+        validateEmitters(data,"ssjj_dimension:textures/effects/");
+    }
+    /** Explicit owner scope for the same shared LUT format, with no cross-gun fallback. */
+    public static void validate(Data data,String gun,String bone,String texturePrefix) {
+        if(data==null || data.schema!=1 || gun==null || !gun.equals(data.gun) || bone==null || !bone.equals(data.bone)
+            || texturePrefix==null || texturePrefix.isBlank() || !texturePrefix.endsWith("/")
+            || data.emitters==null || data.emitters.length>32)throw new IllegalArgumentException("Invalid scoped source particle schema");
+        validateEmitters(data,texturePrefix);
+    }
+    private static void validateEmitters(Data data,String texturePrefix) {
         int total=0;
         for(Emitter e:data.emitters) {
-            if(e==null || e.name==null || e.texture==null || !e.texture.startsWith("ssjj_dimension:textures/effects/")
+            if(e==null || e.name==null || e.texture==null || !e.texture.startsWith(texturePrefix)
                 || !("billboard".equals(e.mode)||"mesh".equals(e.mode)) || !("alpha".equals(e.render)||"additive".equals(e.render))
                 || !Float.isFinite(e.duration) || e.duration<=0 || e.duration>60 || e.particles==null || e.particles.length>1024)
                 throw new IllegalArgumentException("Invalid source emitter");
@@ -55,12 +65,7 @@ public final class DimensionParticles {
         for(int[] face:mesh.triangles){if(face.length!=3)throw new IllegalArgumentException("Invalid source face");for(int i:face)if(i<0||i>=mesh.positions.length)throw new IllegalArgumentException("Source face outside vertex buffer");}
     }
     public static float[] state(Particle particle,float normalizedLife) {
-        float position=Math.max(0,Math.min(1,normalizedLife))*(particle.frames.length-1);
-        int i=(int)position,j=Math.min(i+1,particle.frames.length-1);float f=position-i;
-        float[] a=particle.frames[i],b=particle.frames[j],out=new float[18];
-        for(int k=0;k<18;k++)out[k]=a[k]+(b[k]-a[k])*f;
-        Quaternionf q=new Quaternionf(a[6],a[7],a[8],a[9]).normalize().slerp(new Quaternionf(b[6],b[7],b[8],b[9]).normalize(),f).normalize();
-        out[6]=q.x;out[7]=q.y;out[8]=q.z;out[9]=q.w;return out;
+        return cn.ssjjcompat.client.ParticleFrames.sample(particle.frames,normalizedLife);
     }
     public static List<Batch> sample(Data data,float seconds,Vector3f cameraRight,Vector3f cameraUp) {
         return sample(data,seconds,cameraRight,cameraUp,null);

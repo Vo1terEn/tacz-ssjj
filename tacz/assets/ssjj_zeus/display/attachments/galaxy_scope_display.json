@@ -1,0 +1,16 @@
+{
+  "model": "ssjj_zeus:attachment/galaxy_scope_geo",
+  "texture": "ssjj_zeus:attachment/slot/galaxy_scope",
+  "slot": "ssjj_zeus:attachment/slot/galaxy_scope",
+  "scope": false,
+  "zoom": [
+    1.0
+  ],
+  "views": [
+    1
+  ],
+  "views_fov": [
+    46.85953210698013
+  ],
+  "show_mount": false
+}

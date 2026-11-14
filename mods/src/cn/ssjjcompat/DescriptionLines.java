@@ -5,7 +5,7 @@ import java.util.List;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
-/** Adjust only the description bound; TaCZ and GunsmithLib retain the call itself. */
+/** Extend the existing full-description bound without removing the native subList call. */
 public final class DescriptionLines {
     private DescriptionLines() {}
 
@@ -18,7 +18,10 @@ public final class DescriptionLines {
     public static int upperBoundForId(List<?> lines, int from, int to, String gunId) {
         if ("ssjjparasite2:parasitic_sniper".equals(gunId)
                 || "ssjjparasite2:parasitic_sniper1".equals(gunId)
-                || "ssjjparasite2:parasitic_sniper2".equals(gunId)) {
+                || "ssjjparasite2:parasitic_sniper2".equals(gunId)
+                || "ssjj_zeus:hand_of_zeuss".equals(gunId)
+                || "ssjj_zeus:hand_of_zeuss1".equals(gunId)
+                || "ssjj_zeus:hand_of_zeuss2".equals(gunId)) {
             return lines.size();
         }
         return to;
