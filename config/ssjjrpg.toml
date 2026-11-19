@@ -183,7 +183,7 @@
 [combat]
 	#能量穿透超过目标抗性时是否额外增伤；默认关闭。仍可抵消抗性，保留抗性减伤。
 	penetration_damage_bonus = false
-	#是否开启能量抗性穿透无视减伤；预留配置，当前暂不生效
+	#能量抗性穿透无视护甲；默认开启。穿透达到500时无视100%的护甲与附魔减伤，低于500时按穿透/500比例无视；保留抗性药水与伤害吸收。
 	penetration_ignore_damage_reduction = true
 	#【1. 裁决左键激光】
 	#裁决左键激光的基础伤害，再乘fire中对应阶段的伤害倍率。
@@ -201,7 +201,7 @@
 	#每1000点总能量强度增加的伤害比例；0.01=1%。最终倍率为1+总能量强度/1000×此值。
 	#Range: 0.0 ~ 100.0
 	strength_damage_per_1000 = 0.01
-	#【4. 创造强化石：常驻属性与预留开关】
+	#【4. 创造强化石：常驻属性与高级直伤】
 	#合法安装创造强化石并持枪时增加的能量强度；按通用能量强度系数增加伤害。
 	#Range: 0.0 ~ 1.0E12
 	creative_stone_strength = 100000.0
@@ -211,7 +211,7 @@
 	#合法安装创造强化石并持枪时增加的能量抗性穿透。
 	#Range: 0.0 ~ 1.0E12
 	creative_stone_penetration = 10000.0
-	#创造强化石增强攻击预留开关：true开启，false关闭。具体增强攻击功能尚未实现，本选项当前不改变攻击行为。
+	#创造强化石高级直伤：true开启，false关闭。仅作用于合法安装创造强化石的本模组武器及关联技能，按能量强度增伤，绕过限伤、减伤、受击取消和无敌帧；通用探测可识别的私有血池及回血镜像，保留正常死亡、掉落、经验和击杀归属。功能内置主模组，无需额外组件或JVM参数。关闭后停止新的高级直伤，已开始的死亡结算继续完成。
 	creative_stone_enhanced_attack = true
 	#【5. 红莲爆破弹匣：技能期间额外属性】
 	#合法安装红莲爆破弹匣并开启技能后，额外增加的能量抗性。
@@ -514,3 +514,343 @@ dimension_energy_strength = 300.0
 	#每件非瞄准镜宙斯之手专属配件增加的能量强度
 	#允许范围：0 ～ 1e+06
 	attachment_energy_strength = 250.0
+
+#聚能装甲：服务端权威配置，修改后重启游戏或服务器。20tick=1秒，1000能量单位=100%。
+[hyper]
+	#壹、贰阶普通射击使用原有往返射线；关闭后恢复枪包原生弹丸。
+	ray_enabled = true
+	#允许壹、贰阶使用V聚能弹；关闭后技能无法激活。
+	charge_enabled = true
+	#允许壹、贰阶使用G蓄能、红蓝球及切回引爆。
+	core_enabled = true
+	#二阶持枪计时及双向切枪增伤。
+	overload_enabled = true
+	#关闭后该专属配件的技能增强与能量属性不生效；安装权限和外观不改变。
+	muzzle_enabled = true
+	#关闭后该专属配件的技能增强与能量属性不生效；安装权限和外观不改变。
+	grip_enabled = true
+	#关闭后该专属配件的技能增强与能量属性不生效；安装权限和外观不改变。
+	stock_enabled = true
+	#关闭后该专属配件的技能增强与能量属性不生效；安装权限和外观不改变。
+	magazine_enabled = true
+	#每件有效枪口、握把、枪托、弹匣的能量抗性穿透；不含瞄准镜与激光槽。
+	#允许范围：0 ～ 1e+06
+	accessory_penetration = 250.0
+	#每件有效枪口、握把、枪托、弹匣的能量抗性。
+	#允许范围：0 ～ 1e+06
+	accessory_resistance = 200.0
+	#每件有效枪口、握把、枪托、弹匣的能量强度。
+	#允许范围：0 ～ 1e+06
+	accessory_strength = 400.0
+	#每个目标首次成功聚能弹引爆的基础伤害，仍应用原有战斗属性。
+	#允许范围：0 ～ 1e+06
+	charge_base_damage = 40.0
+	#每次成功引爆累积的额外增伤比例，0.4代表首次伤害的40%。
+	#允许范围：0 ～ 100
+	charge_increment = 0.4
+	#相对首次伤害的额外增伤上限，2代表额外200%。
+	#允许范围：0 ～ 100
+	charge_increment_cap = 2.0
+	#终极、融合、创造石的聚能弹额外增伤步长，0.8代表80%。
+	#允许范围：0 ～ 100
+	ultimate_increment = 0.8
+	#终极、融合、创造石聚能弹的额外增伤上限，4代表额外400%。
+	#允许范围：0 ～ 100
+	ultimate_increment_cap = 4.0
+	#单位tick，20tick=1秒；允许20至320tick。
+	#允许范围：20 ～ 320
+	charge_duration_ticks = 200
+	#安装有效聚能增幅握把时的技能持续时间，单位tick。
+	#允许范围：20 ～ 320
+	grip_charge_duration_ticks = 320
+	#允许同一聚能弹技能生成第二次扩散火环。
+	charge_second_pulse_enabled = true
+	#激活后经过多少tick生成第二次火环；自动限制在技能结束前。
+	#允许范围：15 ～ 319
+	charge_second_pulse_ticks = 100
+	#安装有效握把后的第二次火环时间，自动限制在技能结束前。
+	#允许范围：15 ～ 319
+	grip_second_pulse_ticks = 160
+	#壹阶技能同时保留的标记数量，最终上限40。
+	#允许范围：1 ～ 40
+	charge_tier1_mark_cap = 10
+	#贰阶技能同时保留的标记数量，最终上限40。
+	#允许范围：1 ～ 40
+	charge_tier2_mark_cap = 20
+	#有效握把对聚能弹标记上限的倍率，最终不超过40。
+	#允许范围：1 ～ 40
+	grip_mark_multiplier = 2.0
+	#壹阶扩散火环最大半径，单位格，最终不超过128。
+	#允许范围：1 ～ 128
+	charge_tier1_radius = 32.0
+	#贰阶扩散火环最大半径，单位格，最终不超过128。
+	#允许范围：1 ～ 128
+	charge_tier2_radius = 64.0
+	#有效握把对扩散火环半径的倍率，最终不超过128格。
+	#允许范围：1 ～ 128
+	grip_radius_multiplier = 2.0
+	#一次成功伤害批次消耗的能量单位，1000为满能量；空枪仍免费。
+	#允许范围：0 ～ 1000
+	charge_cost = 100
+	#引爆已有五层减速目标时额外消耗的能量单位。
+	#允许范围：0 ～ 1000
+	charge_root_cost = 50
+	#技能结束后每tick恢复的能量单位，允许5至1000。
+	#允许范围：5 ～ 1000
+	charge_recovery_per_tick = 5
+	#每次成功引爆后的减速持续tick；0关闭减速。
+	#允许范围：0 ～ 320
+	charge_slow_ticks = 100
+	#五层减速后移动禁锢持续tick；0关闭禁锢。
+	#允许范围：0 ～ 320
+	charge_root_ticks = 20
+	#G成功引爆批次后的冷却时间，20tick=1秒。
+	#允许范围：0 ～ 72000
+	core_cooldown_ticks = 300
+	#同时存在的红球与蓝球总数量，最多15。
+	#允许范围：1 ～ 15
+	core_max_orbs = 15
+	#累计实际伤害充能上限，允许1至1000。
+	#允许范围：1 ～ 1000
+	core_blue_capacity = 200.0
+	#累计实际伤害充能上限，允许1至1000。
+	#允许范围：1 ～ 1000
+	core_red_capacity = 400.0
+	#累计实际伤害充能上限，允许1至1000。
+	#允许范围：1 ～ 1000
+	stock_blue_capacity = 500.0
+	#累计实际伤害充能上限，允许1至1000。
+	#允许范围：1 ～ 1000
+	stock_red_capacity = 1000.0
+	#1000为满能量，默认50即5%；按实际成功引爆球逐个回复。
+	#允许范围：0 ～ 1000
+	core_refund_energy = 50
+	#有效枪托每球回复的能量单位，默认100即10%。
+	#允许范围：0 ～ 1000
+	stock_refund_energy = 100
+	#带球目标从视野外造成伤害时，消耗该目标球的充能抵消伤害。
+	core_shield_enabled = true
+	#手持时间每满一秒的充能增量；25代表2.5%。
+	#允许范围：0 ～ 10000
+	overload_step_permille = 25
+	#切换至其他武器后增伤上限；100代表10%。
+	#允许范围：0 ～ 10000
+	overload_a_cap_permille = 100
+	#切回聚能装甲后的增伤上限；150代表15%。
+	#允许范围：0 ～ 10000
+	overload_b_cap_permille = 150
+	#切换后增伤持续tick，20tick=1秒。
+	#允许范围：1 ～ 72000
+	overload_duration_ticks = 200
+	#有效专属弹匣同时乘算过载每秒增量和A/B上限。
+	#允许范围：1 ～ 100
+	magazine_overload_multiplier = 2.0
+	#仅影响二阶聚能装甲激光槽的这类强化效果；其他武器原有效果保留。
+	ultimate_stone_enabled = true
+	#仅影响二阶聚能装甲激光槽的这类强化效果；其他武器原有效果保留。
+	ability_stone_enabled = true
+	#仅影响二阶聚能装甲激光槽的这类强化效果；其他武器原有效果保留。
+	fusion_stone_enabled = true
+	#仅影响二阶聚能装甲激光槽的这类强化效果；其他武器原有效果保留。
+	creative_stone_enabled = true
+	#终极、融合、创造石的聚能核心实际伤害充能倍率；不改变球容量。
+	#允许范围：1 ～ 100
+	ultimate_core_charge_multiplier = 2.0
+	#允许异能、融合、创造石引爆视野外标记目标，仍检查场景遮挡。
+	ability_outside_view_enabled = true
+	#异能、融合、创造石每成功引爆一球减少的G冷却tick，20tick=1秒。
+	#允许范围：0 ～ 72000
+	ability_core_cooldown_reduction_ticks = 40
+	#累计往返飞行多少格增加一倍基础伤害；伤害倍率受下面上限限制。
+	#允许范围：0.1 ～ 1024
+	ray_damage_distance = 64.0
+	#不含其他战斗属性的最大射线距离增伤总倍率。
+	#允许范围：1 ～ 100
+	ray_damage_multiplier_cap = 2.0
+	#安装有效聚能导流枪口后的射线距离增伤总倍率上限。
+	#允许范围：1 ～ 100
+	muzzle_ray_damage_multiplier_cap = 3.0
+	#射线命中目标眩晕tick，20tick=1秒；0关闭眩晕。
+	#允许范围：0 ～ 200
+	ray_stun_ticks = 10
+	#有效枪口每程每次命中回复的子弹数量，不超过原弹容量。
+	#允许范围：0 ～ 100
+	muzzle_refund_per_hit = 1
+
+#阿瑞斯套装：YSM外观切换；以服务端配置为准，修改后重启游戏或服务器。
+[ares]
+	#默认开启；关闭后，完整阿瑞斯装备或对应饰品不替换YSM模型，已自动切换的外观恢复原选择，装备属性不变。
+	change_ysm_model = true
+
+
+[dark_crystal]
+# 一阶龙印斩单个龙之势基础伤害；范围0～1000000。
+dragon_tier1_damage = 15.0
+# 二阶龙印斩单个龙之势基础伤害；范围0～1000000。
+dragon_tier2_damage = 20.0
+# 绝·怒意每层额外伤害比例，0.05为5%；范围0～10。
+wrath_damage_per_layer = 0.05
+# 二阶绝·怒意每层减伤比例，0.02为2%；范围0～1，最终减伤上限100%。
+wrath_reduction_per_layer = 0.02
+# 合法水晶刀刃对同把武器怒意伤害及减伤的倍率；范围0～100。
+crystal_blade_multiplier = 2.0
+# 普通力量解放消耗当前生命的比例；范围0～1，保留最低正生命值，终极仍锁定1点。
+liberation_health_cost_fraction = 0.70
+# 中心爆发基础伤害；范围0～1000000，0关闭伤害。
+liberation_blast_damage = 30.0
+# 中心爆发及起手击退判定半径（格）；范围0～64。
+liberation_blast_radius = 6.0
+# 技能期间额外移速比例，0.20为20%；范围0～10。
+liberation_speed_bonus = 0.20
+# 技能期间龙之势伤害倍率；范围0～100。
+liberation_dragon_multiplier = 2.0
+# 技能期间怒意减伤倍率；范围0～100，最终减伤上限100%。
+liberation_wrath_reduction_multiplier = 2.0
+# 普通护盾上限相对最大生命值的倍率；范围0～100。
+shield_capacity_multiplier = 2.0
+# 合法水晶核心护盾上限相对最大生命值的倍率；范围0～100。
+core_shield_capacity_multiplier = 4.0
+# 普通实际消耗生命转为初始护盾的倍率；范围0～100，受上限限制。
+sacrifice_shield_multiplier = 2.0
+# 合法水晶核心实际消耗生命转为初始护盾的倍率；范围0～100，受上限限制。
+core_sacrifice_shield_multiplier = 4.0
+# 终极固定额外伤害比例，0.99为99%，创造之石共用；范围0～100。
+ultimate_wrath_bonus = 0.99
+# 终极自然结束恢复到最大生命的比例；范围0～1，0不执行结束回血。
+ending_health_fraction = 0.30
+
+
+[ares.accessories.conquest_will.normal]
+# 盔甲栏和功能饰品栏每件提供的伤害加成百分数，20 代表 +20%。
+# Range: 0 ~ 10000
+damage_bonus_percent = 20
+# 放在对应原版盔甲栏时的护甲值。
+# Range: 0 ~ 30
+armor = 7
+# 放在对应原版盔甲栏时的护甲韧性。
+# Range: 0.0 ~ 20.0
+armor_toughness = 5.0
+# 征战意志提供的能量抗性穿透。
+# Range: 0.0 ~ 1.0E12
+energy_penetration = 1000.0
+# 装备征战意志时，战争狂怒结束后的冷却秒数。
+# Range: 0 ~ 3600
+rage_cooldown_seconds = 20
+
+
+[ares.accessories.conquest_will.absolute]
+# 盔甲栏和功能饰品栏每件提供的伤害加成百分数，20 代表 +20%。
+# Range: 0 ~ 10000
+damage_bonus_percent = 40
+# 放在对应原版盔甲栏时的护甲值。
+# Range: 0 ~ 30
+armor = 7
+# 放在对应原版盔甲栏时的护甲韧性。
+# Range: 0.0 ~ 20.0
+armor_toughness = 5.0
+# 征战意志提供的能量抗性穿透。
+# Range: 0.0 ~ 1.0E12
+energy_penetration = 2350.0
+# 装备征战意志时，战争狂怒结束后的冷却秒数。
+# Range: 0 ~ 3600
+rage_cooldown_seconds = 20
+
+
+[ares.accessories.extinction_resolve.normal]
+# 盔甲栏和功能饰品栏每件提供的伤害加成百分数，20 代表 +20%。
+# Range: 0 ~ 10000
+damage_bonus_percent = 20
+# 放在对应原版盔甲栏时的护甲值。
+# Range: 0 ~ 30
+armor = 8
+# 放在对应原版盔甲栏时的护甲韧性。
+# Range: 0.0 ~ 20.0
+armor_toughness = 5.0
+# 灭世决意提供的能量抗性。
+# Range: 0.0 ~ 1.0E12
+energy_resistance = 1000.0
+# 肩炮两轮追踪导弹之间的间隔秒数。
+# Range: 1 ~ 3600
+missile_interval_seconds = 10
+# 每发追踪导弹的固定伤害部分。
+# Range: 0.0 ~ 1000000.0
+missile_base_damage = 10.0
+# 每发追踪导弹按目标最大生命值结算的百分数，5 代表 5%。
+# Range: 0.0 ~ 100.0
+missile_max_health_percent = 5.0
+
+
+[ares.accessories.extinction_resolve.absolute]
+# 盔甲栏和功能饰品栏每件提供的伤害加成百分数，20 代表 +20%。
+# Range: 0 ~ 10000
+damage_bonus_percent = 40
+# 放在对应原版盔甲栏时的护甲值。
+# Range: 0 ~ 30
+armor = 8
+# 放在对应原版盔甲栏时的护甲韧性。
+# Range: 0.0 ~ 20.0
+armor_toughness = 5.0
+# 灭世决意提供的能量抗性。
+# Range: 0.0 ~ 1.0E12
+energy_resistance = 2350.0
+# 肩炮两轮追踪导弹之间的间隔秒数。
+# Range: 1 ~ 3600
+missile_interval_seconds = 10
+# 每发追踪导弹的固定伤害部分。
+# Range: 0.0 ~ 1000000.0
+missile_base_damage = 10.0
+# 每发追踪导弹按目标最大生命值结算的百分数，5 代表 5%。
+# Range: 0.0 ~ 100.0
+missile_max_health_percent = 5.0
+
+
+[ares.accessories.ruin_wings.normal]
+# 盔甲栏和功能饰品栏每件提供的伤害加成百分数，20 代表 +20%。
+# Range: 0 ~ 10000
+damage_bonus_percent = 20
+# 放在对应原版盔甲栏时的护甲值。
+# Range: 0 ~ 30
+armor = 8
+# 放在对应原版盔甲栏时的护甲韧性。
+# Range: 0.0 ~ 20.0
+armor_toughness = 5.0
+# 每件破败之翼的移速加成百分数，20 代表 +20%。
+# Range: 0.0 ~ 1000.0
+movement_speed_percent = 20.0
+# 每件破败之翼的普通伤害减伤百分数，20 代表降低 20%。
+# Range: 0.0 ~ 100.0
+damage_reduction_percent = 20.0
+# 破败之翼是否提供鞘翅飞行。
+elytra_flight = true
+# 破败之翼提供的能量抗性。
+# Range: 0.0 ~ 1.0E12
+energy_resistance = 0.0
+# 破败之翼提供的能量抗性穿透。
+# Range: 0.0 ~ 1.0E12
+energy_penetration = 0.0
+
+
+[ares.accessories.ruin_wings.absolute]
+# 盔甲栏和功能饰品栏每件提供的伤害加成百分数，20 代表 +20%。
+# Range: 0 ~ 10000
+damage_bonus_percent = 40
+# 放在对应原版盔甲栏时的护甲值。
+# Range: 0 ~ 30
+armor = 8
+# 放在对应原版盔甲栏时的护甲韧性。
+# Range: 0.0 ~ 20.0
+armor_toughness = 5.0
+# 每件破败之翼的移速加成百分数，20 代表 +20%。
+# Range: 0.0 ~ 1000.0
+movement_speed_percent = 20.0
+# 每件破败之翼的普通伤害减伤百分数，20 代表降低 20%。
+# Range: 0.0 ~ 100.0
+damage_reduction_percent = 20.0
+# 破败之翼是否提供鞘翅飞行。
+elytra_flight = true
+# 破败之翼提供的能量抗性。
+# Range: 0.0 ~ 1.0E12
+energy_resistance = 350.0
+# 破败之翼提供的能量抗性穿透。
+# Range: 0.0 ~ 1.0E12
+energy_penetration = 350.0

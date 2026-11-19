@@ -97,10 +97,10 @@ public final class ArsenalConfig {
  // 3. 能量强度：通用伤害加成
  add(values,defaults,"combat.strength_damage_per_1000",b.comment("【3. 能量强度：通用伤害加成】","每1000点总能量强度增加的伤害比例；0.01=1%。最终倍率为1+总能量强度/1000×此值。").defineInRange("combat.strength_damage_per_1000",0.01d,0d,100d),0.01d);
  // 4. 创造强化石：常驻属性与预留开关
- add(values,defaults,"combat.creative_stone_strength",b.comment("【4. 创造强化石：常驻属性与预留开关】","合法安装创造强化石并持枪时增加的能量强度；按通用能量强度系数增加伤害。").defineInRange("combat.creative_stone_strength",100000.0d,0d,1000000000000.0d),100000.0d);
+ add(values,defaults,"combat.creative_stone_strength",b.comment("【4. 创造强化石：常驻属性与高级直伤】","合法安装创造强化石并持枪时增加的能量强度；按通用能量强度系数增加伤害。").defineInRange("combat.creative_stone_strength",100000.0d,0d,1000000000000.0d),100000.0d);
  add(values,defaults,"combat.creative_stone_resistance",b.comment("合法安装创造强化石并持枪时增加的能量抗性。").defineInRange("combat.creative_stone_resistance",10000.0d,0d,1000000000000.0d),10000.0d);
  add(values,defaults,"combat.creative_stone_penetration",b.comment("合法安装创造强化石并持枪时增加的能量抗性穿透。").defineInRange("combat.creative_stone_penetration",10000.0d,0d,1000000000000.0d),10000.0d);
- add(values,defaults,"combat.creative_stone_enhanced_attack",b.comment("创造强化石增强攻击预留开关：true开启，false关闭。具体增强攻击功能尚未实现，本选项当前不改变攻击行为。").define("combat.creative_stone_enhanced_attack",true),true);
+ add(values,defaults,"combat.creative_stone_enhanced_attack",b.comment("创造强化石高级直伤：true开启，false关闭。仅作用于合法安装创造强化石的本模组武器及关联技能，按能量强度增伤，绕过限伤、减伤、受击取消和无敌帧；通用探测可识别的私有血池及回血镜像，保留正常死亡、掉落、经验和击杀归属。功能内置主模组，无需额外组件或JVM参数。关闭后停止新的高级直伤，已开始的死亡结算继续完成。").define("combat.creative_stone_enhanced_attack",true),true);
  // 5. 红莲爆破弹匣：技能期间额外属性
  add(values,defaults,"combat.burst_resistance",b.comment("【5. 红莲爆破弹匣：技能期间额外属性】","合法安装红莲爆破弹匣并开启技能后，额外增加的能量抗性。").defineInRange("combat.burst_resistance",500.0d,0d,1000000000000.0d),500.0d);
  add(values,defaults,"combat.burst_penetration",b.comment("合法安装红莲爆破弹匣并开启技能后，额外增加的能量抗性穿透。").defineInRange("combat.burst_penetration",500.0d,0d,1000000000000.0d),500.0d);
@@ -132,6 +132,7 @@ public final class ArsenalConfig {
  add(values,defaults,"parasite.shockwave_radius",b.comment("未安装专属弹匣时，贰阶巨炮冲击波路径的作用半径（格）。").defineInRange("parasite.shockwave_radius",1d,.1d,16d),1d);
  add(values,defaults,"parasite.magazine_shockwave_radius",b.comment("合法安装专属弹匣时，贰阶巨炮冲击波路径的作用半径（格）。").defineInRange("parasite.magazine_shockwave_radius",3d,.1d,16d),3d);
  add(values,defaults,"parasite.attraction_enabled",b.comment("巨炮冲击波吸引开关；true吸引目标到中轴，false仅造成原有冲击波伤害。").define("parasite.attraction_enabled",true),true);
+ cn.ssjjares.ysm.AresAppearanceConfig.define(values,b,defaults);
  VALUES=Collections.unmodifiableMap(values);DEFAULTS=Collections.unmodifiableMap(defaults);SPEC=b.build();}
  private static void add(Map<String,ForgeConfigSpec.ConfigValue<?>> values,Map<String,Object> defaults,String key,ForgeConfigSpec.ConfigValue<?> option,Object value){values.put(key,option);defaults.put(key,value);}
  private ArsenalConfig(){}

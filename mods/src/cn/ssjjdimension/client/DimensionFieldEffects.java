@@ -29,7 +29,9 @@ public final class DimensionFieldEffects {
     private static final List<Impact> IMPACTS=new ArrayList<>();
     private static final Map<String,DimensionFieldGeometry.Data> DATA=new HashMap<>();
     private static net.minecraft.client.multiplayer.ClientLevel lastLevel;
-    public static final int MAX_FIELDS=128,MAX_IMPACTS=64,FIELD_TICKS=144000;
+    public static final int MAX_FIELDS=128,MAX_IMPACTS=32,FIELD_TICKS=144000;
+    public static final int VISIBLE_FIELDS=12,VISIBLE_IMPACTS=16,TRIANGLE_BUDGET=32768;
+    private static final net.minecraft.client.renderer.MultiBufferSource.BufferSource EFFECT_BUFFERS=DimensionSkillBatcher.buffers();
     private DimensionFieldEffects() {}
 
     @Mod.EventBusSubscriber(modid="eye_judgment_arsenal",value=Dist.CLIENT,bus=Mod.EventBusSubscriber.Bus.MOD)
@@ -84,37 +86,38 @@ public final class DimensionFieldEffects {
     @SubscribeEvent public static void renderDimensionFieldEffects(RenderLevelStageEvent event) {
         if(event.getStage()!=RenderLevelStageEvent.Stage.AFTER_PARTICLES)return;world();
         if(lastLevel==null||DATA.isEmpty()||(FIELDS.isEmpty()&&IMPACTS.isEmpty()))return;
-        var camera=event.getCamera().getPosition();var buffers=Minecraft.getInstance().renderBuffers().bufferSource();
+        var camera=event.getCamera().getPosition();var samples=new DimensionSkillSamples();var batcher=new DimensionSkillBatcher(TRIANGLE_BUDGET*3/4);var impactBatcher=new DimensionSkillBatcher(TRIANGLE_BUDGET/4);
         var right=event.getCamera().rotation().transform(new Vector3f(1,0,0));
         var up=event.getCamera().rotation().transform(new Vector3f(0,1,0));
-        for(var field:FIELDS.values()) {
+        var fields=new ArrayList<>(FIELDS.values());fields.sort(Comparator.comparingDouble(f->camera.distanceToSqr(f.message.center())));
+        int visible=0;
+        for(var field:fields) {
             var message=field.message;if(camera.distanceToSqr(message.center())>Math.pow(Math.max(96,cn.ssjjdimension.DimensionFieldRules.range()+message.radius()),2))continue;
+            if(visible++>=VISIBLE_FIELDS)break;
             float seconds=(lastLevel.getGameTime()-field.start+event.getPartialTick())/20f;
             if(seconds<0||seconds>=message.totalTicks()/20f)continue;
-            draw(DATA.get(cn.ssjjdimension.DimensionVisualScope.profile(message.tier(),field.skin)+"_field"),seconds,message.center(),message.radius(),event.getPoseStack(),camera,right,up,buffers);
+            draw(DATA.get(cn.ssjjdimension.DimensionVisualScope.profile(message.tier(),field.skin)+"_field"),seconds,message.center(),message.radius(),event.getPoseStack(),camera,right,up,batcher,samples);
         }
-        for(var impact:IMPACTS) {
+        var impacts=new ArrayList<>(IMPACTS);impacts.sort(Comparator.comparingDouble(i->camera.distanceToSqr(i.message.center())));
+        visible=0;
+        for(var impact:impacts) {
             var message=impact.message;if(camera.distanceToSqr(message.center())>Math.pow(Math.max(96,cn.ssjjdimension.DimensionFieldRules.range()+message.radius()),2))continue;
+            if(visible++>=VISIBLE_IMPACTS)break;
             float seconds=(lastLevel.getGameTime()-impact.start+event.getPartialTick())/20f;
-            draw(DATA.get(cn.ssjjdimension.DimensionVisualScope.profile(message.tier(),impact.skin)+"_impact"),seconds,message.center(),message.radius(),event.getPoseStack(),camera,right,up,buffers);
+            draw(DATA.get(cn.ssjjdimension.DimensionVisualScope.profile(message.tier(),impact.skin)+"_impact"),seconds,message.center(),message.radius(),event.getPoseStack(),camera,right,up,impactBatcher,samples);
         }
+        batcher.flush(EFFECT_BUFFERS);impactBatcher.flush(EFFECT_BUFFERS);samples.clear();
     }
-    private static void draw(DimensionFieldGeometry.Data data,float seconds,Vec3 center,float radius,PoseStack pose,Vec3 camera,Vector3f right,Vector3f up,net.minecraft.client.renderer.MultiBufferSource.BufferSource buffers) {
-        if(data==null)return;
-        pose.pushPose();pose.translate(center.x-camera.x,center.y-camera.y+.012,center.z-camera.z);
-        var groups=new LinkedHashMap<String,List<DimensionFieldGeometry.Batch>>();
-        for(var batch:DimensionFieldGeometry.sample(data,seconds,right,up,radius))groups.computeIfAbsent(batch.texture()+"|"+batch.additive(),key->new ArrayList<>()).add(batch);
-        for(var entries:groups.values()) {
-            var first=entries.get(0);var type=DimensionMarkRenderType.of(new ResourceLocation(first.texture()),first.additive());var out=buffers.getBuffer(type);
-            for(var batch:entries) {
-                var mesh=batch.mesh();var color=batch.color();var uv=batch.uv();
-                for(var face:mesh.triangles)for(int corner=0;corner<4;corner++) {
-                    int index=face[Math.min(corner,2)];var point=mesh.positions[index];var tex=mesh.uv[index];
-                    out.vertex(pose.last().pose(),point[0],point[1],point[2]).color(color[0],color[1],color[2],color[3]).uv(tex[0]*uv[0]+uv[2],tex[1]*uv[1]-uv[3]).overlayCoords(0).uv2(15728880).normal(pose.last().normal(),0,1,0).endVertex();
-                }
-            }
-            buffers.endBatch(type);
-        }
-        pose.popPose();
+    private static void draw(DimensionFieldGeometry.Data data,float seconds,Vec3 center,float radius,PoseStack pose,Vec3 camera,Vector3f right,Vector3f up,DimensionSkillBatcher batcher,DimensionSkillSamples samples) {
+        if(data==null||!batcher.hasBudget())return;
+        pose.pushPose();
+        try {
+            pose.translate(center.x-camera.x,center.y-camera.y+.012,center.z-camera.z);
+            var matrix=new org.joml.Matrix4f(pose.last().pose());var normal=new org.joml.Matrix3f(pose.last().normal());
+            var frames=samples.get(data,seconds,radius,()->DimensionFieldGeometry.sample(data,seconds,right,up,radius));
+            batcher.beginObject();
+            for(var b:frames){var mesh=b.mesh();batcher.add(b.texture(),b.additive(),mesh.positions,mesh.uv,mesh.triangles,b.color(),b.uv(),matrix,normal,1,false);}
+            batcher.endObject();
+        } finally {pose.popPose();}
     }
 }

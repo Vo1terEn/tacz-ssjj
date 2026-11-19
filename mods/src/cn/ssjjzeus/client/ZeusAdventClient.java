@@ -41,6 +41,18 @@ public final class ZeusAdventClient {
     private static ClientLevel level;
     private static int clock;
     private static int pendingCast=-1,castDeadline;
+    // Native mesh baking is independent of owner/skin. Poses are applied just
+    // before each sequential draw; never share a live player's animated model.
+    private static PlayerModel<AbstractClientPlayer> wideModel,slimModel;
+    private static PlayerModel<AbstractClientPlayer> model(boolean slim) {
+        var cached=slim?slimModel:wideModel;
+        if(cached==null) {
+            cached=new PlayerModel<>(PlayerModel.createMesh(CubeDeformation.NONE,slim).getRoot().bake(64,64),slim);
+            cached.young=false;cached.crouching=false;
+            if(slim)slimModel=cached;else wideModel=cached;
+        }
+        return cached;
+    }
     private static final class Visual {
         ZeusAdventNetwork.Ghost packet;
         final ResourceLocation skin;
@@ -54,14 +66,13 @@ public final class ZeusAdventClient {
             profile=ZeusThunder.profile(packet.weapon(),ZeusEnergy.GUN);
             boolean slim=player==null?"slim".equals(DefaultPlayerSkin.getSkinModelName(packet.owner())):"slim".equals(player.getModelName());
             skin=player==null?DefaultPlayerSkin.getDefaultSkin(packet.owner()):player.getSkinTextureLocation();
-            model=new PlayerModel<>(PlayerModel.createMesh(CubeDeformation.NONE,slim).getRoot().bake(64,64),slim);
-            model.young=false;model.crouching=false;
+            model=model(slim);
         }
     }
     private ZeusAdventClient() {}
     private static void world() {
         var current=Minecraft.getInstance().level;
-        if(current!=level){GHOSTS.clear();STATUS.clear();STATUS_AT.clear();clock=0;pendingCast=-1;ZeusPhantomWeapon.clear();level=current;}
+        if(current!=level){GHOSTS.clear();STATUS.clear();STATUS_AT.clear();clock=0;pendingCast=-1;wideModel=slimModel=null;ZeusPhantomWeapon.clear();level=current;}
     }
     public static void ghost(ZeusAdventNetwork.Ghost packet) {
         world();if(packet==null||!packet.valid())return;
@@ -181,11 +192,12 @@ public final class ZeusAdventClient {
         PoseStack pose=event.getPoseStack();
         // The stationary source gun is uploaded once. No complete item renderer,
         // attachment traversal, Java gun-vertex loop or gun-particle sampling per phantom.
-        for(Visual visual:sorted) {
+        ZeusPhantomWeapon.beginBatch();
+        try {for(Visual visual:sorted) {
             pose(visual);worldPose(pose,visual,camera);
             visual.model.translateToHand(HumanoidArm.RIGHT,pose);pose.mulPose(Axis.XP.rotationDegrees(-90));pose.mulPose(Axis.YP.rotationDegrees(180));pose.translate(.0625,.125,-.625);
             ZeusPhantomWeapon.draw(pose,visual.profile);pose.popPose();
-        }
+        }} finally {ZeusPhantomWeapon.endBatch();}
         Set<RenderType> skinTypes=new LinkedHashSet<>();
         for(Visual visual:sorted) {
             pose(visual);worldPose(pose,visual,camera);float alpha=Math.min(1,(visual.packet.remainingTicks()-(clock-visual.updated))/8f);

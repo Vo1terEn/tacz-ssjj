@@ -163,10 +163,11 @@ public final class ZeusAdvent {
             return point.distanceToSqr(origin)<=ZeusAdventRules.range()*ZeusAdventRules.range()
                 &&p.level.clip(new ClipContext(origin,point,ClipContext.Block.COLLIDER,ClipContext.Fluid.NONE,owner)).getType()==HitResult.Type.MISS?focus:null;
         }
-        Vec3 origin=p.muzzle();Map<UUID,Entity> candidates=new HashMap<>();
+        Vec3 origin=p.muzzle();
         if(p.tracked!=null&&autoTarget(owner,p.tracked)&&p.tracked.level()==p.level&&!p.tracked.isRemoved()
             &&p.tracked.getBoundingBox().getCenter().distanceToSqr(origin)<=ZeusAdventRules.range()*ZeusAdventRules.range()
             &&p.level.clip(new ClipContext(origin,p.tracked.getBoundingBox().getCenter(),ClipContext.Block.COLLIDER,ClipContext.Fluid.NONE,owner)).getType()==HitResult.Type.MISS)return p.tracked;
+        Map<UUID,Entity> candidates=new HashMap<>();
         for(Entity part:p.level.getEntities(owner,new AABB(origin,origin).inflate(ZeusAdventRules.range()),e->autoTarget(owner,e))){
             Entity core=ZeusThunder.core(part);Vec3 point=part.getBoundingBox().getCenter();
             if(point.distanceToSqr(origin)>ZeusAdventRules.range()*ZeusAdventRules.range())continue;

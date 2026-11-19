@@ -1,6 +1,9 @@
 {
   "blacklist": [
-    "^(eyeofpunishment|judgfire|ssjj_dark|ssjj_dimension|ssjjparasite2):.*$",
-    "^ssjj_zeus:.*$"
+    "^(eyeofpunishment|judgfire|ssjj_dimension|ssjjparasite2):.*$",
+    "^ssjj_zeus:.*$",
+    "^ssjj_hyper:.*$",
+    "^ssjj_ares:.*$",
+    "^ssjj_dark:.*$"
   ]
 }

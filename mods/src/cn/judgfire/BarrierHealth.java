@@ -1,5 +1,8 @@
 package cn.judgfire;
 
+import cn.ssjjdark.DarkLiberation;
+import cn.ssjjdimension.DimensionEnergyGrowth;
+import cn.ssjjparasite2.client.ParasiteDestructionDamage;
 import java.lang.ref.WeakReference;
 import java.util.ArrayDeque;
 import java.util.Collections;
@@ -23,8 +26,9 @@ public final class BarrierHealth {
       Collections.synchronizedMap(new WeakHashMap<>());
   private static final ThreadLocal<ArrayDeque<Hit>> HITS = new ThreadLocal<>();
   private static final ThreadLocal<ArrayDeque<Write>> WRITES = new ThreadLocal<>();
-  private static final ThreadLocal<ArrayDeque<WeakReference<LivingEntity>>> RESTORES =
-      new ThreadLocal<>();
+  private static final ThreadLocal<ArrayDeque<Restore>> RESTORES = new ThreadLocal<>();
+
+  private record Restore(LivingEntity target, Hit hit) {}
 
   private static final class State {
     final WeakReference<LivingEntity> owner;
@@ -42,7 +46,7 @@ public final class BarrierHealth {
     final WeakReference<LivingEntity> target;
     final WeakReference<DamageSource> source;
     final double penetration, resistance, strengthMultiplier;
-    boolean energyApplied;
+    boolean energyApplied, defenseDeferred;
     Hit(WeakReference<LivingEntity> target, WeakReference<DamageSource> source,
         double penetration, double resistance, double strengthMultiplier) {
       this.target=target; this.source=source; this.penetration=penetration;
@@ -75,8 +79,11 @@ public final class BarrierHealth {
 
   private static double difference(LivingEntity target, DamageSource source, boolean event) {
     Hit current = hit(target);
-    if (current != null && (source == null || current.source.get() == source))
-      return !event&&current.energyApplied?0:current.penetration - current.resistance;
+    if (current != null && (source == null || current.source.get() == source)) {
+      double difference = current.penetration - current.resistance;
+      if (event || !current.energyApplied) return difference;
+      return current.defenseDeferred ? Math.min(0, difference) : 0;
+    }
     Write write = write(target);
     if (source == null && write != null) return write.difference;
     double penetration =
@@ -107,10 +114,24 @@ public final class BarrierHealth {
         ?EnergyScaling.strengthMultiplier(EnergyAttributes.strength(living)):BarrierOffset.strengthMultiplier();
   }
 
-  /** Compatibility name: an ordinary fallback has applied the ENTIRE energy multiplier. */
-  static void strengthApplied(LivingEntity target, DamageSource source) {
+  static boolean defenseAtCommit(LivingEntity target, DamageSource source) {
+    Hit current = hit(target);
+    State state = state(target);
+    return current != null && current.source.get() == source && state != null && !state.busy
+        && server(target) && !restoring(target);
+  }
+
+  /** Record which portion the event handled, so the final commit can still protect the receiver. */
+  static void energyApplied(LivingEntity target, DamageSource source, boolean defenseDeferred) {
     Hit current=hit(target);
-    if(current!=null&&current.source.get()==source)current.energyApplied=true;
+    if (current != null && current.source.get() == source) {
+      current.energyApplied = true;
+      current.defenseDeferred = defenseDeferred;
+    }
+  }
+
+  static void strengthApplied(LivingEntity target, DamageSource source) {
+    energyApplied(target, source, false);
   }
 
   private static final class Write {
@@ -120,7 +141,9 @@ public final class BarrierHealth {
     boolean consumed;
     boolean healing;
     boolean resolved;
+    boolean tracked;
     boolean override;
+    float before;
     float adjustedRequest;
     CommitPermit permit;
 
@@ -137,6 +160,14 @@ public final class BarrierHealth {
     var stack = WRITES.get();
     if (stack != null) for (var entry : stack) if (entry.target.get() == target) return entry;
     return null;
+  }
+
+  /** Apply the defensive side to an attack that bypasses the normal hurt path. */
+  public static float defendDirect(LivingEntity target, DamageSource source, float damage, boolean fixed) {
+    if (!server(target) || !Float.isFinite(damage) || damage <= 0) return damage;
+    double difference = fixed || source instanceof ParasiteDestructionDamage
+        ? -EnergyAttributes.resistance(target) : eventDifference(target, source);
+    return difference < 0 ? (float) (damage * EnergyScaling.multiplier(difference)) : damage;
   }
 
   @SuppressWarnings("unchecked")
@@ -170,7 +201,10 @@ public final class BarrierHealth {
 
   private static boolean restoring(LivingEntity target) {
     var stack = RESTORES.get();
-    if (stack != null) for (var entry : stack) if (entry.get() == target) return true;
+    if (stack != null) {
+      Hit current = hit(target);
+      for (var entry : stack) if (entry.target == target && entry.hit == current) return true;
+    }
     return false;
   }
 
@@ -181,7 +215,7 @@ public final class BarrierHealth {
     state.busy = true;
     try {
       Hit current=hit(target);
-      return (current==null||!current.energyApplied)
+      return (current==null||!current.energyApplied||current.defenseDeferred)
           && (resistance(target)>0 || offsetMultiplier(target)>1);
     } finally {
       state.busy = false;
@@ -197,34 +231,40 @@ public final class BarrierHealth {
   }
 
   private static void enter(LivingEntity target, DamageSource source, boolean delegation) {
-    var stack = HITS.get();
-    if (stack == null) HITS.set(stack = new ArrayDeque<>());
-    Hit current = hit(target);
-    // hurt -> actuallyHurt is delegation of the same operation, not a new attribute read.
-    if (delegation && current != null && current.source.get() == source) {
-      stack.push(current);
-    } else {
-      double penetration =
-          source != null && source.getEntity() instanceof LivingEntity living
-              ? EnergyAttributes.penetration(living)
-              : 0;
-      double resistance = EnergyAttributes.resistance(target);
-      double strengthMultiplier=source!=null&&source.getEntity() instanceof LivingEntity living
-          ?EnergyScaling.strengthMultiplier(EnergyAttributes.strength(living)):1;
-      stack.push(
-          new Hit(
-              new WeakReference<>(target), new WeakReference<>(source), penetration, resistance, strengthMultiplier));
+    DimensionEnergyGrowth.enter(target, source, delegation);
+    try {
+      enterSnapshot(target, source, delegation);
+    } catch (RuntimeException | Error failure) {
+      DimensionEnergyGrowth.exit();
+      throw failure;
     }
   }
 
+  private static void enterSnapshot(LivingEntity target, DamageSource source, boolean delegation) {
+    Hit current = hit(target);
+    // hurt -> actuallyHurt is delegation of the same operation, not a new attribute read.
+    if (!delegation || current == null || current.source.get() != source) {
+      LivingEntity owner = source != null && source.getEntity() instanceof LivingEntity living
+          && !(source instanceof ParasiteDestructionDamage) ? living : null;
+      double penetration = owner == null ? 0 : EnergyAttributes.penetration(owner);
+      double strengthMultiplier = owner == null ? 1 : EnergyScaling.strengthMultiplier(EnergyAttributes.strength(owner));
+      current = new Hit(new WeakReference<>(target), new WeakReference<>(source), penetration,
+          EnergyAttributes.resistance(target), strengthMultiplier);
+    }
+    var stack = HITS.get();
+    if (stack == null) HITS.set(stack = new ArrayDeque<>());
+    stack.push(current);
+  }
+
   public static void exitDamage() {
-    pop(HITS);
+    try { DimensionEnergyGrowth.exit(); }
+    finally { pop(HITS); }
   }
 
   public static void beginRestore(LivingEntity target) {
     var stack = RESTORES.get();
     if (stack == null) RESTORES.set(stack = new ArrayDeque<>());
-    stack.push(new WeakReference<>(target));
+    stack.push(new Restore(target, hit(target)));
   }
 
   public static void endRestore() {
@@ -250,12 +290,16 @@ public final class BarrierHealth {
 
   private static float beginHealth(LivingEntity target, float requested, boolean override) {
     Write parent=write(target);
-    if(!override&&parent!=null&&parent.override
+    if(!override&&parent!=null&&parent.override&&!parent.consumed
         &&(Float.floatToIntBits(requested)==Float.floatToIntBits(parent.adjustedRequest)
           ||Float.floatToIntBits(requested)==Float.floatToIntBits(parent.expected))){
-      Write delegated=new Write(target,parent.expected,parent.resistance,parent.difference,parent.strengthMultiplier);
-      delegated.healing=parent.healing;delegated.adjustedRequest=requested;
-      var stack=WRITES.get();stack.push(delegated);
+      parent.consumed = true;
+      Write delegated = new Write(target, parent.expected, parent.resistance, parent.difference, parent.strengthMultiplier);
+      delegated.healing = parent.healing;
+      delegated.adjustedRequest = requested;
+      delegated.before = parent.before;
+      delegated.tracked = parent.tracked;
+      WRITES.get().push(delegated);
       return requested;
     }
     State state = state(target);
@@ -263,12 +307,13 @@ public final class BarrierHealth {
     double difference = difference(target, null);
     float adjusted = requested;
     float before = requested;
-    if (state != null && !state.busy) {
+    boolean tracked = state != null && !state.busy;
+    if (tracked) {
       // This read also reconciles a preceding direct field edit.
       float old = target.getEntityData().get(healthKey);
+      before = old;
       if (server(target) && !restoring(target) && defers(target))
         old = BarrierOffset.cap(target, old);
-      before = old;
       state.busy = true;
       try {
         adjusted = adjust(target, old, requested,override);
@@ -282,6 +327,8 @@ public final class BarrierHealth {
         new Write(
             target, Math.max(0, Math.min(target.getMaxHealth(), adjusted)), resistance, difference, strengthMultiplier(target,null));
     write.healing = Float.isFinite(requested) && requested > before && before > 0;
+    write.before = before;
+    write.tracked = tracked;
     write.override=override;write.adjustedRequest=adjusted;
     stack.push(write);
     return adjusted;
@@ -293,13 +340,39 @@ public final class BarrierHealth {
 
   /** Exact precomputed native-pool commit, not a general immunity scope. */
   static void beginResolved(LivingEntity target, float expected) {
-    float before = target.getEntityData().get(healthKey);
+    beginResolved(target, target.getEntityData().get(healthKey), expected);
+  }
+
+  private static void beginResolved(LivingEntity target, float before, float expected) {
     Write write = new Write(target, expected, resistance(target), difference(target, null), strengthMultiplier(target,null));
     write.permit = CommitPermit.open(target, before, expected);
     write.resolved = true;
     var stack = WRITES.get();
     if (stack == null) WRITES.set(stack = new ArrayDeque<>());
     stack.push(write);
+  }
+
+  /** Permit only the already-defended vanilla pool write during a proven-pool transaction. */
+  public static void commitResolved(LivingEntity target, float expected, Runnable action) {
+    var data = target.getEntityData();
+    if (healthKey == null || !data.hasItem(healthKey)) {
+      action.run();
+      return;
+    }
+    float before = data.get(healthKey);
+    if (!Float.isFinite(before) || before < expected) {
+      action.run();
+      return;
+    }
+    beginResolved(target, before, expected);
+    try { action.run(); }
+    finally { endHealth(); }
+  }
+
+  static void mirrored(LivingEntity target, Object item, float value) {
+    registerData(target, healthKey, item);
+    State state = ITEMS.get(item);
+    if (state != null && state.owner.get() == target) state.observed = value;
   }
 
   public static void endHealth() {
@@ -326,21 +399,22 @@ public final class BarrierHealth {
   }
 
   private static float adjust(LivingEntity target, float old, float requested, boolean unbounded) {
-    if (!server(target)
-        || restoring(target)
-        || !(old > 0)
-        || !Float.isFinite(old)
-        || requested >= old) return requested;
-    double resistance = resistance(target);
-    if (!(resistance > 0) && offsetMultiplier(target)<=1) return requested;
-    old = BarrierOffset.cap(target, old);
-    if (!(old > 0) || !Float.isFinite(old) || requested >= old) return requested;
-    if (Float.isNaN(requested)) return old;
-    double multiplier = offsetMultiplier(target);
-    // Infinite raw damage remains lethal for any positive multiplier; never manufacture NaN.
-    if (multiplier == 0) return old;
-    double result=old-((double)old-requested)*multiplier;
-    return (float)(unbounded?result:Math.max(0,result));
+    boolean restore = restoring(target);
+    float result = requested;
+    if (server(target) && !restore && old > 0 && Float.isFinite(old) && !(requested >= old)) {
+      double multiplier = offsetMultiplier(target);
+      if (resistance(target) > 0 || multiplier > 1) {
+        old = BarrierOffset.cap(target, old);
+        if (old > 0 && Float.isFinite(old) && !(requested >= old)) {
+          if (Float.isNaN(requested) || multiplier == 0) result = old;
+          else {
+            double reduced = old - ((double) old - requested) * multiplier;
+            result = (float) (unbounded ? reduced : Math.max(0, reduced));
+          }
+        }
+      }
+    }
+    return DarkLiberation.healthBoundary(target, old, result, restore);
   }
 
   public static double offsetMultiplier(LivingEntity target) {
@@ -351,34 +425,16 @@ public final class BarrierHealth {
 
   /** Covers direct and reflective setter calls, including writes that skip setHealth. */
   public static Object dataHealth(Object item, Object requested) {
+    if (!(requested instanceof Float value)
+        || !(item instanceof SynchedEntityData.DataItem<?> data) || data.getAccessor() != healthKey) return requested;
     State state = ITEMS.get(item);
-    if (state == null || !(requested instanceof Float value) || state.busy) return requested;
+    if (state == null || state.busy) return requested;
     LivingEntity target = state.owner.get();
     if (target == null) return requested;
     state.busy = true;
     try {
       float baseline = state.observed;
-      var writes = WRITES.get();
-      if (writes != null)
-        for (var write : writes) {
-          if (write.target.get() != target) continue;
-          if (write.healing) {
-            break;
-          }
-          if (write.resolved) {
-            if (CommitPermit.consume(target, baseline, value)) {
-              baseline = value;
-              write.consumed = true;
-            }
-            break;
-          }
-          // Only the already adjusted portion is exempt. Later injected extra loss is reduced too.
-          if (!write.consumed) {
-            baseline = write.expected;
-            write.consumed = true;
-          }
-          break;
-        }
+      if (consume(target, baseline, value)) baseline = value;
       float result = adjust(target, baseline, value);
       state.observed = result;
       return result;
@@ -389,9 +445,10 @@ public final class BarrierHealth {
 
   /** Reconcile an unobserved raw field write at the next standard read and mark it for sync. */
   public static Object readData(Object item, Object raw) {
+    if (!(raw instanceof Float value)
+        || !(item instanceof SynchedEntityData.DataItem<?> data) || data.getAccessor() != healthKey) return raw;
     State state = ITEMS.get(item);
     if (state == null
-        || !(raw instanceof Float value)
         || state.busy
         || Float.floatToIntBits(value) == Float.floatToIntBits(state.observed)) return raw;
     LivingEntity target = state.owner.get();
@@ -399,11 +456,7 @@ public final class BarrierHealth {
     state.busy = true;
     try {
       float baseline = state.observed;
-      Write write = write(target);
-      if (write != null && write.resolved && CommitPermit.consume(target, baseline, value)) {
-        baseline = write.expected;
-        write.consumed = true;
-      }
+      if (consume(target, baseline, value)) baseline = value;
       float result = adjust(target, baseline, value);
       state.observed = result;
       if (Float.floatToIntBits(result) != Float.floatToIntBits(value))
@@ -412,6 +465,16 @@ public final class BarrierHealth {
     } finally {
       state.busy = false;
     }
+  }
+
+  private static boolean consume(LivingEntity target, float before, float value) {
+    var stack = WRITES.get();
+    Write write = stack == null ? null : stack.peek();
+    if (write == null || write.target.get() != target || write.consumed || write.healing) return false;
+    write.consumed = true;
+    if (write.resolved) return CommitPermit.consume(target, before, value);
+    return write.tracked && Float.floatToIntBits(write.before) == Float.floatToIntBits(before)
+        && Float.floatToIntBits(write.expected) == Float.floatToIntBits(value);
   }
 
   /** Ignore a changed getter result when the protected vanilla pool is still authoritative. */

@@ -1,0 +1,25 @@
+{
+  "type": "tacz:gun_smith_table_crafting",
+  "materials": [
+    {
+      "item": {
+        "item": "ssjj_ares:golden_charm_stone"
+      },
+      "count": 5
+    },
+    {
+      "item": {
+        "item": "ssjj_ares:ruin_wings"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "type": "custom",
+    "group": "ssjj_workbench:armor",
+    "item": {
+      "item": "ssjj_ares:ruin_wings_absolute",
+      "count": 1
+    }
+  }
+}

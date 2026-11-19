@@ -1,0 +1,7 @@
+{
+  "model": "ssjj_dark:attachment/dark_ultimate_stone_empty_geo",
+  "texture": "ssjj_dark:attachment/slot/ultimate_upgrade_stone",
+  "slot": "ssjj_dark:attachment/slot/ultimate_upgrade_stone",
+  "show_muzzle": true,
+  "show_mount": false
+}

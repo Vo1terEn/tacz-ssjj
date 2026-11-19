@@ -1,1 +1,27 @@
-{"item.ssjj_dark.darkdiamond":"黯水晶-绝","item.ssjj_dark.darkdiamond1":"黯水晶-绝·壹","item.ssjj_dark.darkdiamond2":"黯水晶-绝·贰","item.ssjj_dark.darkcrystal_fragment":"黯水晶碎片","gun.ssjj_dark.darkdiamond.name":"黯水晶","gun.ssjj_dark.darkdiamond.desc":"默认自动 / 左键轻斩 / 右键重斩 / 专属瞄具槽切换皮肤，拆卸恢复原貌","gun.ssjj_dark.darkdiamond1.name":"黯水晶·壹","gun.ssjj_dark.darkdiamond1.desc":"默认自动 / 左键轻斩 / 右键重斩 / 专属瞄具槽切换皮肤，拆卸恢复原貌","gun.ssjj_dark.darkdiamond2.name":"黯水晶·贰","gun.ssjj_dark.darkdiamond2.desc":"默认自动 / 左键轻斩 / 右键重斩 / 专属瞄具槽切换皮肤，拆卸恢复原貌 / V 黯晶变身","key.ssjj_dark.skill":"力量解放","key.categories.ssjj_dark":"黯水晶","attachment.ssjj_dark.skin_mix.name":"黯水晶 · 交融（换肤镜）","attachment.ssjj_dark.skin_mix.desc":"切换「交融」皮肤。","attachment.ssjj_dark.skin_nightguardian.name":"黯水晶 · 守夜人（换肤镜）","attachment.ssjj_dark.skin_nightguardian.desc":"切换「守夜人」皮肤。","attachment.ssjj_dark.skin_pure.name":"黯水晶 · 圣水晶（换肤镜）","attachment.ssjj_dark.skin_pure.desc":"切换「圣水晶」皮肤。","pack.ssjj_dark.name":"生死狙击RPG枪包","death.ssjj.parasite_shot.prefix":"【寄生侵蚀】","death.ssjj.parasite_shot":"%1$s 被 %2$s 的寄生者吞噬。","death.ssjj.parasite_destruction.prefix":"【毁灭爆发】","death.ssjj.parasite_destruction":"%1$s 被 %2$s 的寄生者引爆毁灭。","death.ssjj.dimension_shot.prefix":"【星界贯穿】","death.ssjj.dimension_shot":"%1$s 被 %2$s 的次元之星击穿。","death.ssjj.dimension_mark.prefix":"【次元崩解】","death.ssjj.dimension_mark":"%1$s 被 %2$s 的次元标记崩解。","death.ssjj.dimension_field.prefix":"【星域湮灭】","death.ssjj.dimension_field":"%1$s 被 %2$s 的次元领域湮灭。"}
+{
+  "ammo.ssjj_dark.shadow_core.desc": "黯水晶专用晶核。按装填键装入一枚后激活武器；攻击不消耗。",
+  "ammo.ssjj_dark.shadow_core.name": "黯影晶核",
+  "attachment.ssjj_dark.mix_scope.desc": "切换「混沌」外观。",
+  "attachment.ssjj_dark.mix_scope.name": "黯水晶 · 交融（皮肤瞄具）",
+  "attachment.ssjj_dark.nightguardian_scope.desc": "切换「夜卫」外观。",
+  "attachment.ssjj_dark.nightguardian_scope.name": "黯水晶 · 守夜人（皮肤瞄具）",
+  "attachment.ssjj_dark.pure_scope.desc": "切换「纯净」外观。",
+  "attachment.ssjj_dark.pure_scope.name": "黯水晶 · 圣水晶（皮肤瞄具）",
+  "gun.ssjj_dark.darkdiamond.desc": "“瞬光斩黯黮，昭明破晦夜”",
+  "gun.ssjj_dark.darkdiamond.name": "黯水晶",
+  "gun.ssjj_dark.darkdiamond1.desc": "“瞬光斩黯黮，昭明破晦夜”",
+  "gun.ssjj_dark.darkdiamond1.name": "黯水晶 · 壹",
+  "gun.ssjj_dark.darkdiamond2.desc": "“瞬光斩黯黮，昭明破晦夜”",
+  "gun.ssjj_dark.darkdiamond2.name": "黯水晶 · 贰",
+  "message.ssjj_dark.core_required": "请先按装填键安装黯影晶核",
+  "pack.ssjj_dark.desc": "黯水晶基础、一阶与二阶近战武器",
+  "pack.ssjj_dark.name": "生死狙击RPG枪包",
+  "attachment.ssjj_dark.crystal_blade.name": "水晶刀刃",
+  "attachment.ssjj_dark.crystal_blade.desc": "强化绝·怒意的增伤与减伤效果。 黯水晶主手持用时，每件 +300 能量抗性、能量抗性穿透和能量强度。",
+  "effect.ssjj_dark.absolute_wrath": "绝·怒意",
+  "attachment.ssjj_dark.crystal_core.name": "水晶核心",
+  "attachment.ssjj_dark.crystal_core.desc": "延长绝·力量解放的无敌时间，强化护盾。 黯水晶主手持用时，每件 +300 能量抗性、能量抗性穿透和能量强度。",
+  "key.ssjj_dark.liberation": "黯水晶：绝·力量解放",
+  "attachment.ssjj_dark.ultimate_upgrade_stone.name": "黯水晶 · 终极强化石",
+  "attachment.ssjj_dark.ultimate_upgrade_stone.desc": "以濒危生命强化怒意，由幻影代为施放力量解放。"
+}

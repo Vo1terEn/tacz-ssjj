@@ -1,8 +1,1 @@
-{
-  "name": "gun.ssjj_zeus.hand_of_zeuss2.name",
-  "display": "ssjj_zeus:hand_of_zeuss2_display",
-  "data": "ssjj_zeus:hand_of_zeuss2_data",
-  "type": "shotgun",
-  "sort": 150,
-  "tooltip": "gun.ssjj_zeus.hand_of_zeuss2.desc"
-}
+{"name":"gun.ssjj_zeus.hand_of_zeuss2.name","display":"ssjj_zeus:hand_of_zeuss2_display","data":"ssjj_zeus:hand_of_zeuss2_data","type":"shotgun","sort":150,"tooltip":"gun.ssjj_zeus.hand_of_zeuss2.desc"}

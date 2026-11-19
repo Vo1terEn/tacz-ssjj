@@ -3,6 +3,7 @@ package cn.ssjjzeus.client;
 import cn.ssjjzeus.ZeusAdventNetwork;
 import cn.ssjjzeus.ZeusEnergy;
 import cn.ssjjzeus.ZeusAdventRules;
+import cn.ssjjcompat.ArsenalKeyBindings;
 import com.mojang.blaze3d.platform.InputConstants;
 import com.tacz.guns.api.TimelessAPI;
 import com.tacz.guns.api.client.animation.ObjectAnimationRunner;
@@ -20,7 +21,7 @@ import org.lwjgl.glfw.GLFW;
 
 @Mod.EventBusSubscriber(modid="eye_judgment_arsenal",value=Dist.CLIENT)
 public final class ZeusAdventKeys {
-    private static final KeyMapping KEY=new KeyMapping("key.ssjj_zeus.advent",InputConstants.Type.KEYSYM,GLFW.GLFW_KEY_V,"key.categories.eyeofpunishment");
+    private static final KeyMapping KEY=ArsenalKeyBindings.create("key.ssjj_zeus.advent",InputConstants.Type.KEYSYM,GLFW.GLFW_KEY_V);
     private static final int CAST_TICKS=37; // ceil((55 source frames / 30 fps) * 20).
     private static final CastGate GATE=new CastGate();
     private static net.minecraft.client.multiplayer.ClientLevel level;
@@ -30,7 +31,7 @@ public final class ZeusAdventKeys {
     private static int castSlot=-1;
     private ZeusAdventKeys() {}
     @Mod.EventBusSubscriber(modid="eye_judgment_arsenal",value=Dist.CLIENT,bus=Mod.EventBusSubscriber.Bus.MOD)
-    public static final class Keys {@SubscribeEvent public static void register(RegisterKeyMappingsEvent event){event.register(KEY);}}
+    public static final class Keys {@SubscribeEvent public static void register(RegisterKeyMappingsEvent event){ArsenalKeyBindings.register(event,KEY);}}
     public static Component skillKeyLabel(){return KEY.getTranslatedKeyMessage();}
     /** Kept across slots and gun displays, so putting a gun away cannot reset V. */
     public static final class CastGate {

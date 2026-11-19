@@ -1,8 +1,1 @@
-{
-  "name": "attachment.ssjj_zeus.thunder_advent_stock.name",
-  "tooltip": "attachment.ssjj_zeus.thunder_advent_stock.desc",
-  "display": "ssjj_zeus:thunder_advent_stock_display",
-  "data": "ssjj_zeus:thunder_advent_stock_data",
-  "type": "stock",
-  "sort": 153
-}
+{"name":"attachment.ssjj_zeus.thunder_advent_stock.name","tooltip":"attachment.ssjj_zeus.thunder_advent_stock.desc","display":"ssjj_zeus:thunder_advent_stock_display","data":"ssjj_zeus:thunder_advent_stock_data","type":"stock","sort":153}

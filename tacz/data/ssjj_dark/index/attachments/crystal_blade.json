@@ -1,0 +1,8 @@
+{
+  "name": "attachment.ssjj_dark.crystal_blade.name",
+  "tooltip": "attachment.ssjj_dark.crystal_blade.desc",
+  "display": "ssjj_dark:crystal_blade_display",
+  "data": "ssjj_dark:crystal_blade_data",
+  "type": "muzzle",
+  "sort": 194
+}

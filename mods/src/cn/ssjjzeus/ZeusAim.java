@@ -100,18 +100,25 @@ public final class ZeusAim {
         if(result==null&&!target.onGround()&&!target.isNoGravity()&&!target.isInWater()&&target instanceof LivingEntity living) {
             double gravity=living.getAttribute(ForgeMod.ENTITY_GRAVITY.get())==null?.08:living.getAttributeValue(ForgeMod.ENTITY_GRAVITY.get());
             Vec3 delta=target.getDeltaMovement();double vy=finite(delta)?delta.y:measured.y;
-            List<Vec3> points=new ArrayList<>();points.add(center);Vec3 position=center;boolean landed=false;
+            Vec3 position=center;boolean landed=false;
             double feetOffset=center.y-target.getY();
-            for(int i=0;i<ZeusThunder.lifetime();i++) {
+            int lifetime=ZeusThunder.lifetime();double speed=ZeusThunder.speed();
+            for(int i=0;i<lifetime;i++) {
                 Vec3 next=position.add(measured.x,landed?0:vy,measured.z);
                 if(!landed&&vy<0) {
                     Vec3 feet=position.add(0,-feetOffset,0),end=next.add(0,-feetOffset,0);
                     var floor=level.clip(new ClipContext(feet,end,ClipContext.Block.COLLIDER,ClipContext.Fluid.NONE,target));
                     if(floor.getType()!=HitResult.Type.MISS){next=new Vec3(next.x,floor.getLocation().y+feetOffset,next.z);landed=true;}
                 }
-                points.add(next);position=next;vy=(vy-gravity)*.98;
+                // Same first valid segment as interceptSamples. The old path
+                // sampled the entire lifetime (including floor clips) before
+                // looking for an intercept that usually occurs much earlier.
+                if(!finite(position)||!finite(next)){result=null;break;}
+                Vec3 velocity=next.subtract(position);
+                double t=root(position.subtract(origin).subtract(velocity.scale(i)),velocity,speed,i,Math.min(i+1,lifetime));
+                if(Double.isFinite(t)){result=shot(origin,position.add(velocity.scale(t-i)),t,true);break;}
+                position=next;vy=(vy-gravity)*.98;
             }
-            result=interceptSamples(origin,points,ZeusThunder.speed(),ZeusThunder.lifetime());
         }
         if(result==null)result=intercept(origin,center,measured,ZeusThunder.speed(),ZeusThunder.lifetime());
         if(result==null)return null;

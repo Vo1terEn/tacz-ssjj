@@ -1,1 +1,8 @@
-{"name":"gun.ssjj_dark.darkdiamond2.name","tooltip":"gun.ssjj_dark.darkdiamond2.desc","display":"ssjj_dark:darkdiamond2_display","data":"ssjj_dark:darkdiamond2_data","type":"pistol","sort":24112}
+{
+  "name": "gun.ssjj_dark.darkdiamond2.name",
+  "display": "ssjj_dark:darkdiamond2_display",
+  "data": "ssjj_dark:darkdiamond2_data",
+  "type": "pistol",
+  "sort": 172,
+  "tooltip": "gun.ssjj_dark.darkdiamond2.desc"
+}

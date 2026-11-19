@@ -1,0 +1,16 @@
+{
+  "model": "ssjj_dark:attachment/mix_scope_geo",
+  "texture": "ssjj_dark:attachment/slot/mix_scope",
+  "slot": "ssjj_dark:attachment/slot/mix_scope",
+  "scope": false,
+  "zoom": [
+    1.0
+  ],
+  "views": [
+    1
+  ],
+  "views_fov": [
+    47.19314798388988
+  ],
+  "show_mount": false
+}

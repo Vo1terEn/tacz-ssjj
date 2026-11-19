@@ -29,7 +29,7 @@ public final class WeaponAssetWarmup {
         int count=0;
         for(var entry:displays.entrySet()) {
             String namespace=entry.getKey().getNamespace();
-            if(!namespace.equals("judgfire") && !namespace.equals("ssjj_dark"))continue;
+            if(!namespace.equals("judgfire"))continue;
             var display=entry.getValue();
             if(!seen.add(display) || display.getGunModel()==null)continue;
             // Native getters finish CPU preparation without starting or advancing an animation.

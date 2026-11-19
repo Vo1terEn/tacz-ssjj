@@ -1,0 +1,8 @@
+{
+  "name": "attachment.ssjj_dark.ultimate_upgrade_stone.name",
+  "tooltip": "attachment.ssjj_dark.ultimate_upgrade_stone.desc",
+  "display": "ssjj_dark:ultimate_upgrade_stone_display",
+  "data": "ssjj_dark:ultimate_upgrade_stone_data",
+  "type": "laser",
+  "sort": 196
+}

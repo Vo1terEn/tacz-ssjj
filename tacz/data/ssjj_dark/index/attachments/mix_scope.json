@@ -1,0 +1,8 @@
+{
+  "name": "attachment.ssjj_dark.mix_scope.name",
+  "display": "ssjj_dark:mix_scope_display",
+  "data": "ssjj_dark:mix_scope_data",
+  "type": "scope",
+  "sort": 191,
+  "tooltip": "attachment.ssjj_dark.mix_scope.desc"
+}

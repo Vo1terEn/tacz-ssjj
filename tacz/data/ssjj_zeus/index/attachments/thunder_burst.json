@@ -1,8 +1,1 @@
-{
-  "name": "attachment.ssjj_zeus.thunder_burst.name",
-  "tooltip": "attachment.ssjj_zeus.thunder_burst.desc",
-  "display": "ssjj_zeus:thunder_burst_display",
-  "data": "ssjj_zeus:thunder_burst_data",
-  "type": "muzzle",
-  "sort": 151
-}
+{"name":"attachment.ssjj_zeus.thunder_burst.name","tooltip":"attachment.ssjj_zeus.thunder_burst.desc","display":"ssjj_zeus:thunder_burst_display","data":"ssjj_zeus:thunder_burst_data","type":"muzzle","sort":151}

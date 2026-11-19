@@ -1,0 +1,8 @@
+{
+  "name": "attachment.ssjj_dark.nightguardian_scope.name",
+  "display": "ssjj_dark:nightguardian_scope_display",
+  "data": "ssjj_dark:nightguardian_scope_data",
+  "type": "scope",
+  "sort": 192,
+  "tooltip": "attachment.ssjj_dark.nightguardian_scope.desc"
+}

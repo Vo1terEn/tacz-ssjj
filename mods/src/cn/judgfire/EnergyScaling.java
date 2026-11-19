@@ -4,6 +4,7 @@ import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import cn.fusionarsenal.config.ArsenalConfig;
 
 /** Apply energy attributes to the ordinary final damage event, without another damage path. */
 @Mod.EventBusSubscriber(modid = "eye_judgment_arsenal")
@@ -13,13 +14,14 @@ public final class EnergyScaling {
   static double multiplier(double difference) {
     if (Double.isNaN(difference)) return 1;
     if (difference < 0) return 100 / (100 - difference);
+    if (!ArsenalConfig.bool("combat.penetration_damage_bonus")) return 1;
     double squared = difference * difference;
     return Double.isInfinite(squared) ? 2 : 1 + squared / (squared + 250000);
   }
 
   /** Extra damage is additive per thousand strength; malformed attributes stay neutral. */
   static double strengthMultiplier(double strength) {
-    double coefficient=cn.fusionarsenal.config.ArsenalConfig.number("combat.strength_damage_per_1000");
+    double coefficient=ArsenalConfig.number("combat.strength_damage_per_1000");
     if(!(strength>0)||!Double.isFinite(strength)||!(coefficient>0)||!Double.isFinite(coefficient))return 1;
     double value=1+(strength/1000)*coefficient;
     return Double.isFinite(value)?value:Double.MAX_VALUE;
@@ -35,9 +37,13 @@ public final class EnergyScaling {
         || event.getEntity().level().isClientSide
         || AttackBonuses.calculating(event)
 ) return;
-    double difference = BarrierHealth.eventDifference(event.getEntity(), event.getSource());
-    double scaled = amount * multiplier(difference) * BarrierHealth.eventStrengthMultiplier(event.getEntity(),event.getSource());
+    var target = event.getEntity();
+    var source = event.getSource();
+    boolean defendAtCommit = BarrierHealth.defenseAtCommit(target, source);
+    double difference = BarrierHealth.eventDifference(target, source);
+    double eventDifference = defendAtCommit ? Math.max(0, difference) : difference;
+    double scaled = amount * multiplier(eventDifference) * BarrierHealth.eventStrengthMultiplier(target, source);
     event.setAmount((float) Math.min(Float.MAX_VALUE, scaled));
-    BarrierHealth.strengthApplied(event.getEntity(),event.getSource());
+    BarrierHealth.energyApplied(target, source, defendAtCommit);
   }
 }

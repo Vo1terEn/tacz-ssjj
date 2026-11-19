@@ -1,0 +1,7 @@
+{
+  "model": "ssjj_dark:attachment/crystal_core_geo",
+  "texture": "ssjj_dark:attachment/crystal_core_original",
+  "slot": "ssjj_dark:attachment/slot/crystal_core",
+  "show_muzzle": true,
+  "show_mount": false
+}

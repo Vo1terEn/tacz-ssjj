@@ -1,0 +1,8 @@
+{
+  "name": "attachment.ssjj_dark.crystal_core.name",
+  "tooltip": "attachment.ssjj_dark.crystal_core.desc",
+  "display": "ssjj_dark:crystal_core_display",
+  "data": "ssjj_dark:crystal_core_data",
+  "type": "stock",
+  "sort": 195
+}

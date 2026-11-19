@@ -1,7 +1,1 @@
-{
-  "model": "ssjj_zeus:attachment/thunder_energy_mag_geo",
-  "texture": "ssjj_zeus:gun/uv/hand_of_zeuss2",
-  "slot": "ssjj_zeus:attachment/slot/thunder_energy_mag",
-  "show_muzzle": true,
-  "show_mount": false
-}
+{"model":"ssjj_zeus:attachment/thunder_energy_mag_geo","texture":"ssjj_zeus:gun/uv/hand_of_zeuss2","slot":"ssjj_zeus:attachment/slot/thunder_energy_mag","show_muzzle":true,"show_mount":false}

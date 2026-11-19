@@ -1,0 +1,4 @@
+Ares mesh/texture and Wooduan ANM supplied or cached locally with user authorization. Generic male humanoid source clips are skeleton-compatible; no Ares-exclusive original runtime routing is claimed.
+Original locomotion: playeranim/manct; third-person rifle/pistol: playeranimdynamic/manct, center blend 4 for the 3x3 aim grid.
+YSM 2.6.5 builtin/default uncommon action and tool fallbacks: original metadata CC0.
+World body/first-person surface rendering uses shared-vertex four-weight client skinning. Native GUI geometry is the unchanged authored rest surface; no default-arm repose.

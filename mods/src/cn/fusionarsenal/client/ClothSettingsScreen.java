@@ -11,10 +11,11 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.AlertScreen;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 
 /** New builders and drafts for every opening; nothing is written by cancel or by editing a field. */
 public final class ClothSettingsScreen {
-    private static final String SCHEMA="/assets/eye_judgment_arsenal/config/screen.json";
+    private static final ResourceLocation SCHEMA=new ResourceLocation("eye_judgment_arsenal","config/screen.json");
     private ClothSettingsScreen() {}
 
     public static Screen create(Screen parent) {
@@ -117,8 +118,9 @@ public final class ClothSettingsScreen {
         catch (IllegalArgumentException failure) {return Optional.of(Component.literal("请输入允许范围内的有效数值。"));}
     }
     private static JsonObject schema() {
-        try (var stream=ClothSettingsScreen.class.getResourceAsStream(SCHEMA)) {
-            if (stream==null) throw new IllegalStateException("缺少配置界面说明文件。");
+        try (var stream=Minecraft.getInstance().getResourceManager().getResource(SCHEMA)
+                .orElseThrow(() -> new IllegalStateException("缺少配置界面说明文件。请检查配套枪包是否已加载。"))
+                .open()) {
             return JsonParser.parseReader(new InputStreamReader(stream,StandardCharsets.UTF_8)).getAsJsonObject();
         } catch (IOException failure) {throw new IllegalStateException("读取配置界面失败。",failure);}
     }

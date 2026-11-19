@@ -1,4 +1,5 @@
 package cn.ssjjparasite2.client;
+import cn.ssjjcompat.ArsenalKeyBindings;
 import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.tacz.guns.api.TimelessAPI;
@@ -18,12 +19,12 @@ import org.lwjgl.glfw.GLFW;
 
 @Mod.EventBusSubscriber(modid="eye_judgment_arsenal",value=Dist.CLIENT)
 public final class ParasiteCannonClient {
- private static final KeyMapping KEY=new KeyMapping("key.ssjjparasite2.cannon",InputConstants.Type.KEYSYM,GLFW.GLFW_KEY_V,"key.categories.eyeofpunishment");
+ private static final KeyMapping KEY=ArsenalKeyBindings.create("key.ssjjparasite2.cannon",InputConstants.Type.KEYSYM,GLFW.GLFW_KEY_V);
  private static ParasiteCannon.State state;
  private static net.minecraft.client.multiplayer.ClientLevel level;
  private static long start,requestAt=-100;
  @Mod.EventBusSubscriber(modid="eye_judgment_arsenal",value=Dist.CLIENT,bus=Mod.EventBusSubscriber.Bus.MOD)
- public static final class Registration {@SubscribeEvent public static void register(RegisterKeyMappingsEvent e){e.register(KEY);}}
+ public static final class Registration {@SubscribeEvent public static void register(RegisterKeyMappingsEvent e){ArsenalKeyBindings.register(e,KEY);}}
  public static boolean busy(){var mc=Minecraft.getInstance();return state!=null&&state.remaining()>0&&mc.level==level&&mc.player!=null&&mc.player.getInventory().selected==state.slot()&&ParasiteCannon.eligible(mc.player.getMainHandItem());}
  public static boolean blocks(net.minecraft.world.entity.LivingEntity entity){return entity!=null&&entity==Minecraft.getInstance().player&&busy();}
  @SubscribeEvent public static void key(InputEvent.Key e){

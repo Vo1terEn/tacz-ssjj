@@ -1,6 +1,7 @@
 package cn.ssjjdimension.client;
 
 import cn.ssjjdimension.DimensionFieldNetwork;
+import cn.ssjjcompat.ArsenalKeyBindings;
 import com.mojang.blaze3d.platform.InputConstants;
 import com.tacz.guns.api.TimelessAPI;
 import com.tacz.guns.api.item.IGun;
@@ -22,7 +23,7 @@ import org.lwjgl.glfw.GLFW;
 /** V requests the server skill; high-energy mouse input replaces normal fire. */
 @Mod.EventBusSubscriber(modid="eye_judgment_arsenal",value=Dist.CLIENT)
 public final class DimensionFieldClient {
-    private static final KeyMapping KEY=new KeyMapping("key.ssjj_dimension.field",InputConstants.Type.KEYSYM,GLFW.GLFW_KEY_V,"key.categories.eyeofpunishment");
+    private static final KeyMapping KEY=ArsenalKeyBindings.create("key.ssjj_dimension.field",InputConstants.Type.KEYSYM,GLFW.GLFW_KEY_V);
     private static net.minecraft.client.multiplayer.ClientLevel level;
     private static DimensionFieldNetwork.Status status;
     private static long received,lastCast=-100,lastActivate=-100;
@@ -32,7 +33,7 @@ public final class DimensionFieldClient {
     private DimensionFieldClient() {}
     @Mod.EventBusSubscriber(modid="eye_judgment_arsenal",value=Dist.CLIENT,bus=Mod.EventBusSubscriber.Bus.MOD)
     public static final class Keys {
-        @SubscribeEvent public static void registerDimensionFieldKey(RegisterKeyMappingsEvent e){e.register(KEY);}
+        @SubscribeEvent public static void registerDimensionFieldKey(RegisterKeyMappingsEvent e){ArsenalKeyBindings.register(e,KEY);}
     }
     public static int tier(ItemStack stack){
         var gun=stack==null||stack.isEmpty()?null:IGun.getIGunOrNull(stack);if(gun==null)return 0;

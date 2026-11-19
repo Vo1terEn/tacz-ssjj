@@ -11,7 +11,6 @@ public final class NativeMeshRenderCompat {
     private static final Set<String> GUNS = Set.of(
         "eyeofpunishment:notdistinguish_base", "eyeofpunishment:notdistinguish_tier1", "eyeofpunishment:notdistinguish",
         "judgfire:judgment_flame_base", "judgfire:judgment_flame_tier1", "judgfire:judgment_flame",
-        "ssjj_dark:darkdiamond", "ssjj_dark:darkdiamond1", "ssjj_dark:darkdiamond2",
         "ssjj_dimension:dimension_star", "ssjj_dimension:dimension_star1", "ssjj_dimension:dimension_star2",
         "ssjjparasite2:parasitic_sniper", "ssjjparasite2:parasitic_sniper1", "ssjjparasite2:parasitic_sniper2"
     );

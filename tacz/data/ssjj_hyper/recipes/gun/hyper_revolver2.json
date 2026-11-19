@@ -1,0 +1,1 @@
+{"type":"tacz:gun_smith_table_crafting","materials":[{"item":{"item":"eye_judgment_arsenal:hyper_revolver_fragment"},"count":840},{"item":{"type":"forge:partial_nbt","item":"tacz:modern_kinetic_gun","nbt":{"GunId":"ssjj_hyper:hyper_revolver1"}},"count":1}],"result":{"type":"gun","id":"ssjj_hyper:hyper_revolver2","count":1,"group":"ssjj_workbench:weapons","ammo_count":0}}

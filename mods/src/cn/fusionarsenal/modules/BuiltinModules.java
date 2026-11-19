@@ -8,7 +8,6 @@ public final class BuiltinModules {
     public static ModuleRegistry create() {
         return new ModuleRegistry()
                 .register(new JudgmentModule())
-                .register(new PunishmentModule())
-                .register(new DarkCrystalModule());
+                .register(new PunishmentModule());
     }
 }

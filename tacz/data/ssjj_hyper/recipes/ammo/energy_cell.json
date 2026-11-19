@@ -1,0 +1,1 @@
+{"type":"tacz:gun_smith_table_crafting","materials":[{"item":{"item":"minecraft:copper_ingot"},"count":1},{"item":{"item":"minecraft:redstone"},"count":1},{"item":{"item":"minecraft:amethyst_shard"},"count":1}],"result":{"type":"ammo","id":"ssjj_hyper:energy_cell","count":30,"group":"ssjj_workbench:ammo"}}

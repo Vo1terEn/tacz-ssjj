@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "S A",
+    "NGN",
+    "R R"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:netherite_sword"
+    },
+    "A": {
+      "item": "minecraft:netherite_axe"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "G": {
+      "item": "ssjj_ares:golden_charm_stone"
+    },
+    "R": {
+      "item": "minecraft:redstone_block"
+    }
+  },
+  "result": {
+    "item": "ssjj_ares:extinction_resolve",
+    "count": 1
+  }
+}

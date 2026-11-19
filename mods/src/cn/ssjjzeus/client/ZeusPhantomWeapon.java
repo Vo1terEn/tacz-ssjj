@@ -17,6 +17,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.ShaderInstance;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.*;
@@ -40,6 +41,9 @@ public final class ZeusPhantomWeapon {
     private static volatile VertexBuffer buffer;
     private static boolean fallbackAttempted,missingShaderReported;
     private static final Map<String,RenderType> materials=new HashMap<>();
+    private static boolean batching;
+    private static RenderType batchType;
+    private static ShaderInstance batchShader;
     private ZeusPhantomWeapon() {}
     @Mod.EventBusSubscriber(modid="eye_judgment_arsenal",value=Dist.CLIENT,bus=Mod.EventBusSubscriber.Bus.MOD)
     public static final class Resources {
@@ -74,7 +78,7 @@ public final class ZeusPhantomWeapon {
     /** Render-thread lifetime: detach references now and close the old GPU object on its owner thread. */
     public static void clear() {
         VertexBuffer previous=buffer;buffer=null;
-        Runnable release=()->{if(previous!=null)previous.close();materials.clear();};
+        Runnable release=()->{endBatch();if(previous!=null)previous.close();materials.clear();};
         if(RenderSystem.isOnRenderThread())release.run();else RenderSystem.recordRenderCall(release::run);
     }
     public static int bake(ZeusMeshRenderer.Geometry mesh,BedrockModelPOJO geometry,List<ObjectAnimation> clips,TransformScale scale,VertexConsumer out) {
@@ -82,11 +86,7 @@ public final class ZeusPhantomWeapon {
         var controller=new AnimationController(clips,model);controller.runAnimation(0,"static_idle",ObjectAnimation.PlayType.LOOP,0);
         controller.getAnimation(0).pause();controller.getAnimation(0).setProgressNs(0);model.cleanAnimationTransform();controller.update();
         PoseStack item=new PoseStack();item.translate(-.5,-.5,-.5);
-        // The installed 1.2 implementation is newer than the compile-time named
-        // TaCZ API. Resolve it once during baking, never on the render hot path.
-        try {Class.forName("com.tacz.guns.client.renderer.item.GunItemTransforms").getMethod("apply",ItemDisplayContext.class,TransformScale.class,BedrockGunModel.class,PoseStack.class)
-                .invoke(null,ItemDisplayContext.THIRD_PERSON_RIGHT_HAND,scale,model,item);}
-        catch(ReflectiveOperationException failure){throw new IllegalStateException("Missing native phantom third-person transform",failure);}
+        cn.ssjjcompat.NativeGunItemTransforms.apply(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND,scale,model,item);
         int vertices=0;
         for(var part:mesh.parts) {
             var node=model.getNode(part.bone);if(node==null)throw new IllegalArgumentException("Missing phantom source joint "+part.bone);
@@ -100,6 +100,32 @@ public final class ZeusPhantomWeapon {
      * both the event pose and the global camera/model-view matrix. */
     public static Matrix4f modelView(PoseStack pose) {
         return new Matrix4f(RenderSystem.getModelViewMatrix()).mul(pose.last().pose());
+    }
+    /** Retain native shader/material state across adjacent identical profiles.
+     * Draw order, vertex count, textures and every per-phantom matrix stay intact. */
+    public static void beginBatch() {RenderSystem.assertOnRenderThread();endBatch();batching=true;}
+    public static void endBatch() {
+        if(batchShader!=null)batchShader.clear();
+        if(batchType!=null){VertexBuffer.unbind();batchType.clearRenderState();}
+        batchShader=null;batchType=null;batching=false;
+    }
+    /** The NEW_ENTITY/QUADS uniforms from native VertexBuffer._drawWithShader.
+     * Only ModelViewMat changes between adjacent instances of the same material. */
+    private static void prepare(ShaderInstance shader,Matrix4f view) {
+        for(int i=0;i<12;i++)shader.setSampler("Sampler"+i,RenderSystem.getShaderTexture(i));
+        if(shader.MODEL_VIEW_MATRIX!=null)shader.MODEL_VIEW_MATRIX.set(view);
+        if(shader.PROJECTION_MATRIX!=null)shader.PROJECTION_MATRIX.set(RenderSystem.getProjectionMatrix());
+        if(shader.INVERSE_VIEW_ROTATION_MATRIX!=null)shader.INVERSE_VIEW_ROTATION_MATRIX.set(RenderSystem.getInverseViewRotationMatrix());
+        if(shader.COLOR_MODULATOR!=null)shader.COLOR_MODULATOR.set(RenderSystem.getShaderColor());
+        if(shader.GLINT_ALPHA!=null)shader.GLINT_ALPHA.set(RenderSystem.getShaderGlintAlpha());
+        if(shader.FOG_START!=null)shader.FOG_START.set(RenderSystem.getShaderFogStart());
+        if(shader.FOG_END!=null)shader.FOG_END.set(RenderSystem.getShaderFogEnd());
+        if(shader.FOG_COLOR!=null)shader.FOG_COLOR.set(RenderSystem.getShaderFogColor());
+        if(shader.FOG_SHAPE!=null)shader.FOG_SHAPE.set(RenderSystem.getShaderFogShape().getIndex());
+        if(shader.TEXTURE_MATRIX!=null)shader.TEXTURE_MATRIX.set(RenderSystem.getTextureMatrix());
+        if(shader.GAME_TIME!=null)shader.GAME_TIME.set(RenderSystem.getShaderGameTime());
+        if(shader.SCREEN_SIZE!=null){var window=Minecraft.getInstance().getWindow();shader.SCREEN_SIZE.set((float)window.getWidth(),(float)window.getHeight());}
+        RenderSystem.setupShaderLights(shader);shader.apply();
     }
     public static void draw(PoseStack pose,String profile) {
         RenderSystem.assertOnRenderThread();var source=assets;
@@ -117,6 +143,23 @@ public final class ZeusPhantomWeapon {
             LogUtils.getLogger().info("ZEUS_PHANTOM uploaded cached original gun: {} vertices",vertices);
         }
         var textures=source.textures();RenderType type=materials.computeIfAbsent(profile,key->RenderType.entityTranslucentEmissive(textures.getOrDefault(key,textures.get("hand_of_zeuss2"))));
+        if(batching) {
+            var view=modelView(pose);
+            if(batchType!=type) {
+                endBatch();batching=true;type.setupRenderState();batchType=type;
+                batchShader=RenderSystem.getShader();
+                if(batchShader==null){endBatch();batching=true;return;}
+                // A shaderpack ShaderInstance subclass can compute additional
+                // per-object uniforms in apply(). Keep its native per-draw path.
+                if(batchShader.getClass()!=ShaderInstance.class) {
+                    endBatch();try{draw(pose,profile);}finally{batching=true;}return;
+                }
+                buffer.bind();prepare(batchShader,view);
+            } else if(batchShader.MODEL_VIEW_MATRIX!=null) {
+                batchShader.MODEL_VIEW_MATRIX.set(view);batchShader.MODEL_VIEW_MATRIX.upload();
+            }
+            buffer.draw();return;
+        }
         type.setupRenderState();
         try {
             var shader=RenderSystem.getShader();

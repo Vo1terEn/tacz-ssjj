@@ -32,7 +32,9 @@ public final class DimensionMarkEffects {
     private static final List<Burst> BURSTS=new ArrayList<>();
     private static final Map<String,DimensionMarkGeometry.Data> DATA=new HashMap<>();
     private static net.minecraft.client.multiplayer.ClientLevel lastLevel;
-    public static final int MAX_TARGETS=128,MAX_BURSTS=128,STALE_TICKS=70;
+    public static final int MAX_TARGETS=128,MAX_BURSTS=48,STALE_TICKS=70;
+    public static final int VISIBLE_TARGETS=24,VISIBLE_BURSTS=24,TRIANGLE_BUDGET=49152;
+    private static final net.minecraft.client.renderer.MultiBufferSource.BufferSource EFFECT_BUFFERS=DimensionSkillBatcher.buffers();
     private DimensionMarkEffects() {}
     @Mod.EventBusSubscriber(modid="eye_judgment_arsenal",value=Dist.CLIENT,bus=Mod.EventBusSubscriber.Bus.MOD)
     public static final class Resources {
@@ -62,6 +64,8 @@ public final class DimensionMarkEffects {
         if(!(entity instanceof LivingEntity)||!entity.getUUID().equals(message.uuid()))return;
         long now=level.getGameTime();
         if(message.burst()) {
+            // Packets repeated for the same target/server tick describe the same visual event.
+            for(var burst:BURSTS)if(burst.message.uuid().equals(message.uuid())&&burst.message.tick()==message.tick())return;
             if(BURSTS.size()>=MAX_BURSTS)BURSTS.remove(0);BURSTS.add(new Burst(message,now));return;
         }
         var old=MARKS.get(message.uuid());if(old!=null&&old.message.tick()>message.tick())return;
@@ -93,52 +97,55 @@ public final class DimensionMarkEffects {
     @SubscribeEvent public static void renderDimensionTargetEffects(RenderLevelStageEvent e) {
         if(e.getStage()!=RenderLevelStageEvent.Stage.AFTER_PARTICLES)return;world();
         if(lastLevel==null||DATA.isEmpty()||(MARKS.isEmpty()&&BURSTS.isEmpty()))return;
-        var mc=Minecraft.getInstance();var camera=e.getCamera().getPosition();var buffers=mc.renderBuffers().bufferSource();
+        var camera=e.getCamera().getPosition();var samples=new DimensionSkillSamples();
+        var batcher=new DimensionSkillBatcher(TRIANGLE_BUDGET*2/3);
+        var burstBatcher=new DimensionSkillBatcher(TRIANGLE_BUDGET/3);
         var right=e.getCamera().rotation().transform(new Vector3f(1,0,0));
         var up=e.getCamera().rotation().transform(new Vector3f(0,1,0));
-        for(var mark:MARKS.values()) {
-            var t=target(mark.message);if(t==null||camera.distanceToSqr(t.position())>80*80)continue;
+        // A bounded visible list is selected nearest-first, independently of server gameplay state.
+        var marks=new ArrayList<>(MARKS.values());marks.removeIf(m->target(m.message)==null);
+        marks.sort(Comparator.comparingDouble(m->camera.distanceToSqr(target(m.message).position())));
+        int visible=0;
+        for(var mark:marks) {
+            var t=target(mark.message);double distance=camera.distanceToSqr(t.position());
+            if(distance>80*80||visible++>=VISIBLE_TARGETS)break;
             float seconds=(lastLevel.getGameTime()-mark.start+e.getPartialTick())/20f+1.25f;
             Vec3 center=anchor(t,e.getPartialTick(),camera);
             for(int i=0;i<mark.message.count();i++) {
                 var d=DATA.get(mark.message.layers().get(i)+"_mark");if(d==null)continue;
-                // One source effect per stack in a compact ring on the body's visible surface.
                 double angle=2*Math.PI*i/5-Math.PI*.5,radius=mark.message.count()==1?0:.24;
                 Vec3 p=center.add(right.x*Math.cos(angle)*radius+up.x*Math.sin(angle)*radius,right.y*Math.cos(angle)*radius+up.y*Math.sin(angle)*radius,right.z*Math.cos(angle)*radius+up.z*Math.sin(angle)*radius);
-                draw(d,seconds+i*.081f,p,.46f,e.getPoseStack(),e.getCamera().rotation(),camera,buffers);
+                // Layer placement remains distinct; identical profiles share the exact animated mesh.
+                draw(d,seconds,p,.46f,e.getPoseStack(),e.getCamera().rotation(),camera,batcher,samples);
             }
         }
-        for(var burst:BURSTS) {
-            var t=target(burst.message);if(t==null||camera.distanceToSqr(t.position())>80*80)continue;
+        var bursts=new ArrayList<>(BURSTS);bursts.removeIf(b->target(b.message)==null);
+        bursts.sort(Comparator.comparingDouble(b->camera.distanceToSqr(target(b.message).position())));
+        visible=0;
+        for(var burst:bursts) {
+            var t=target(burst.message);double distance=camera.distanceToSqr(t.position());
+            if(distance>80*80||visible++>=VISIBLE_BURSTS)break;
             float seconds=(lastLevel.getGameTime()-burst.start+e.getPartialTick())/20f;
             Vec3 center=anchor(t,e.getPartialTick(),camera);
             for(int i=0;i<burst.message.count();i++) {
                 var d=DATA.get(burst.message.layers().get(i)+"_burst");if(d==null)continue;
                 double angle=2*Math.PI*i/5-Math.PI*.5,radius=burst.message.count()==1?0:.24;
                 Vec3 p=center.add(right.x*Math.cos(angle)*radius+up.x*Math.sin(angle)*radius,right.y*Math.cos(angle)*radius+up.y*Math.sin(angle)*radius,right.z*Math.cos(angle)*radius+up.z*Math.sin(angle)*radius);
-                draw(d,seconds,p,.45f,e.getPoseStack(),e.getCamera().rotation(),camera,buffers);
+                draw(d,seconds,p,.45f,e.getPoseStack(),e.getCamera().rotation(),camera,burstBatcher,samples);
             }
         }
+        batcher.flush(EFFECT_BUFFERS);burstBatcher.flush(EFFECT_BUFFERS);samples.clear();
     }
-    private static void draw(DimensionMarkGeometry.Data data,float seconds,Vec3 anchor,float scale,PoseStack pose,org.joml.Quaternionf facing,Vec3 camera,net.minecraft.client.renderer.MultiBufferSource.BufferSource buffers) {
-        pose.pushPose();pose.translate(anchor.x-camera.x,anchor.y-camera.y,anchor.z-camera.z);pose.mulPose(facing);pose.scale(scale,scale,scale);
-        var groups=new LinkedHashMap<String,List<DimensionMarkGeometry.Batch>>();
-        for(var b:DimensionMarkGeometry.sample(data,seconds,new Vector3f(1,0,0),new Vector3f(0,1,0)))groups.computeIfAbsent(b.texture()+"|"+b.additive(),key->new ArrayList<>()).add(b);
-        for(var entries:groups.values()) {
-            var first=entries.get(0);var type=DimensionMarkRenderType.of(new ResourceLocation(first.texture()),first.additive());
-            var out=buffers.getBuffer(type);
-            for(var batch:entries) {
-                var mesh=batch.mesh();var c=batch.color();var uv=batch.uv();
-                for(var face:mesh.triangles)for(int corner=0;corner<4;corner++) {
-                    int index=face[Math.min(corner,2)];var p=mesh.positions[index];var tex=mesh.uv[index];
-                    // The persistent mark is a chest-surface projection: retain source XY/UV,
-                    // compress its local depth so source emitters cannot sink inside the mob.
-                    float depth=data.loop?p[2]*.05f:p[2];
-                    out.vertex(pose.last().pose(),p[0],p[1],depth).color(c[0],c[1],c[2],c[3]).uv(tex[0]*uv[0]+uv[2],tex[1]*uv[1]-uv[3]).overlayCoords(0).uv2(15728880).normal(pose.last().normal(),0,0,1).endVertex();
-                }
-            }
-            buffers.endBatch(type);
-        }
-        pose.popPose();
+    private static void draw(DimensionMarkGeometry.Data data,float seconds,Vec3 anchor,float scale,PoseStack pose,org.joml.Quaternionf facing,Vec3 camera,DimensionSkillBatcher batcher,DimensionSkillSamples samples) {
+        if(!batcher.hasBudget())return;
+        pose.pushPose();
+        try {
+            pose.translate(anchor.x-camera.x,anchor.y-camera.y,anchor.z-camera.z);pose.mulPose(facing);pose.scale(scale,scale,scale);
+            var matrix=new org.joml.Matrix4f(pose.last().pose());var normal=new org.joml.Matrix3f(pose.last().normal());
+            var frames=samples.get(data,seconds,1,()->DimensionMarkGeometry.sample(data,seconds,new Vector3f(1,0,0),new Vector3f(0,1,0)));
+            batcher.beginObject();
+            for(var b:frames){var mesh=b.mesh();batcher.add(b.texture(),b.additive(),mesh.positions,mesh.uv,mesh.triangles,b.color(),b.uv(),matrix,normal,data.loop?.05f:1,true);}
+            batcher.endObject();
+        } finally {pose.popPose();}
     }
 }

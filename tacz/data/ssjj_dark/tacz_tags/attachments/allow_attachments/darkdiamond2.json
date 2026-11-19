@@ -1,1 +1,9 @@
-["ssjj_dark:skin_mix","ssjj_dark:skin_nightguardian","ssjj_dark:skin_pure"]
+[
+  "ssjj_dark:pure_scope",
+  "ssjj_dark:mix_scope",
+  "ssjj_dark:nightguardian_scope",
+  "ssjj_dark:crystal_blade",
+  "ssjj_dark:crystal_core",
+  "ssjj_dark:ultimate_upgrade_stone",
+  "ssjjrpg:creative_upgrade_stone"
+]

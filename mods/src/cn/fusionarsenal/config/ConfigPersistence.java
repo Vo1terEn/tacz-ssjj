@@ -73,14 +73,20 @@ public final class ConfigPersistence {
  private static LinkedHashMap<String,Object> readValues(byte[] raw)throws IOException{
   String text=new String(raw,StandardCharsets.UTF_8);if(text.startsWith("\ufeff"))text=text.substring(1);
   var parsed=new TomlParser().parse(text);var found=new HashMap<String,Object>();
-  for(var section:parsed.valueMap().entrySet()){
-   if(!(section.getValue() instanceof UnmodifiableConfig table))throw new IOException("配置节结构不正确："+section.getKey());
-   for(var entry:table.valueMap().entrySet()){
-    String key=section.getKey()+"."+entry.getKey();found.put(key,ArsenalConfig.checked(key,entry.getValue()));
-   }
-  }
+  collectValues(parsed,"",found);
   if(!found.keySet().equals(ArsenalConfig.defaults().keySet()))throw new IOException("配置项不完整，请先检查磁盘中的全局配置。");
   var result=new LinkedHashMap<String,Object>();for(String key:ArsenalConfig.defaults().keySet())result.put(key,found.get(key));return result;
+ }
+ private static void collectValues(UnmodifiableConfig table,String prefix,Map<String,Object> found)throws IOException{
+  for(var entry:table.valueMap().entrySet()){
+   String key=prefix.isEmpty()?entry.getKey():prefix+"."+entry.getKey();
+   if(entry.getValue() instanceof UnmodifiableConfig child){
+    collectValues(child,key,found);
+   }else{
+    if(found.containsKey(key))throw new IOException("配置项重复。 "+key);
+    found.put(key,ArsenalConfig.checked(key,entry.getValue()));
+   }
+  }
  }
  private static void replace(Path source,Path destination)throws IOException{
   try{Files.move(source,destination,StandardCopyOption.ATOMIC_MOVE,StandardCopyOption.REPLACE_EXISTING);}

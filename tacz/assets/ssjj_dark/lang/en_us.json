@@ -1,1 +1,27 @@
-{"item.ssjj_dark.darkdiamond":"黯水晶-绝","item.ssjj_dark.darkdiamond1":"黯水晶-绝·壹","item.ssjj_dark.darkdiamond2":"黯水晶-绝·贰","item.ssjj_dark.darkcrystal_fragment":"Dark Crystal Fragment","gun.ssjj_dark.darkdiamond.name":"Dark Crystal","gun.ssjj_dark.darkdiamond.desc":"AUTO by default / Left: light slash / Right: heavy slash / Cosmetic scope selects skin; remove to restore default","gun.ssjj_dark.darkdiamond1.name":"Dark Crystal I","gun.ssjj_dark.darkdiamond1.desc":"AUTO by default / Left: light slash / Right: heavy slash / Cosmetic scope selects skin; remove to restore default","gun.ssjj_dark.darkdiamond2.name":"Dark Crystal II","gun.ssjj_dark.darkdiamond2.desc":"AUTO by default / Left: light slash / Right: heavy slash / Cosmetic scope selects skin; remove to restore default / V: Dark Crystal transformation","key.ssjj_dark.skill":"Power Release","key.categories.ssjj_dark":"Dark Crystal","attachment.ssjj_dark.skin_mix.name":"Dark Crystal · Fusion (Skin Scope)","attachment.ssjj_dark.skin_mix.desc":"Mix skin.","attachment.ssjj_dark.skin_nightguardian.name":"Dark Crystal · Night Watcher (Skin Scope)","attachment.ssjj_dark.skin_nightguardian.desc":"Night Guardian skin.","attachment.ssjj_dark.skin_pure.name":"Dark Crystal · Holy Crystal (Skin Scope)","attachment.ssjj_dark.skin_pure.desc":"Pure Crystal skin.","pack.ssjj_dark.name":"生死狙击RPG枪包","death.ssjj.parasite_shot.prefix":"[Parasite] ","death.ssjj.parasite_shot":"%1$s was consumed by %2$s's Parasite.","death.ssjj.parasite_destruction.prefix":"[Destruction] ","death.ssjj.parasite_destruction":"%1$s was destroyed by %2$s's Parasite.","death.ssjj.dimension_shot.prefix":"[Star Piercer] ","death.ssjj.dimension_shot":"%1$s was pierced by %2$s's Dimension Star.","death.ssjj.dimension_mark.prefix":"[Dimension Collapse] ","death.ssjj.dimension_mark":"%1$s was collapsed by %2$s's dimension marks.","death.ssjj.dimension_field.prefix":"[Astral Annihilation] ","death.ssjj.dimension_field":"%1$s was annihilated by %2$s's dimension field."}
+{
+  "ammo.ssjj_dark.shadow_core.desc": "Dark Crystal power core. Reload one core to activate the weapon; attacks do not consume it.",
+  "ammo.ssjj_dark.shadow_core.name": "Shadow Crystal Core",
+  "attachment.ssjj_dark.mix_scope.desc": "Switch to the Chaos appearance.",
+  "attachment.ssjj_dark.mix_scope.name": "Dark Crystal - Confluence (Cosmetic Scope)",
+  "attachment.ssjj_dark.nightguardian_scope.desc": "Switch to the Night Guardian appearance.",
+  "attachment.ssjj_dark.nightguardian_scope.name": "Dark Crystal - Night Guardian (Cosmetic Scope)",
+  "attachment.ssjj_dark.pure_scope.desc": "Switch to the Pure appearance.",
+  "attachment.ssjj_dark.pure_scope.name": "Dark Crystal - Holy Crystal (Cosmetic Scope)",
+  "gun.ssjj_dark.darkdiamond.desc": "“瞬光斩黯黮，昭明破晦夜”",
+  "gun.ssjj_dark.darkdiamond.name": "Dark Crystal",
+  "gun.ssjj_dark.darkdiamond1.desc": "“瞬光斩黯黮，昭明破晦夜”",
+  "gun.ssjj_dark.darkdiamond1.name": "Dark Crystal · I",
+  "gun.ssjj_dark.darkdiamond2.desc": "“瞬光斩黯黮，昭明破晦夜”",
+  "gun.ssjj_dark.darkdiamond2.name": "Dark Crystal · II",
+  "message.ssjj_dark.core_required": "Reload a Shadow Crystal Core to activate this weapon.",
+  "pack.ssjj_dark.desc": "Dark Crystal base, tier I and tier II melee weapons",
+  "pack.ssjj_dark.name": "生死狙击RPG枪包",
+  "attachment.ssjj_dark.crystal_blade.name": "Crystal Blade",
+  "attachment.ssjj_dark.crystal_blade.desc": "Strengthens Absolute Wrath damage and damage reduction. Grants +300 energy resistance, energy penetration, and energy strength while Dark Crystal is held in the main hand.",
+  "effect.ssjj_dark.absolute_wrath": "Absolute Wrath",
+  "attachment.ssjj_dark.crystal_core.name": "Crystal Core",
+  "attachment.ssjj_dark.crystal_core.desc": "Extends Absolute Liberation invulnerability and strengthens its shield. Grants +300 energy resistance, energy penetration, and energy strength while Dark Crystal is held in the main hand.",
+  "key.ssjj_dark.liberation": "Dark Crystal: Absolute Liberation",
+  "attachment.ssjj_dark.ultimate_upgrade_stone.name": "Dark Crystal · Ultimate Upgrade Stone",
+  "attachment.ssjj_dark.ultimate_upgrade_stone.desc": "Empowers Wrath at critical health and lets a phantom perform Absolute Liberation."
+}

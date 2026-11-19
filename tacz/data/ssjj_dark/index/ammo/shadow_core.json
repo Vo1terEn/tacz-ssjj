@@ -1,0 +1,7 @@
+{
+  "name": "ammo.ssjj_dark.shadow_core.name",
+  "tooltip": "ammo.ssjj_dark.shadow_core.desc",
+  "display": "ssjj_dark:shadow_core_display",
+  "stack_size": 64,
+  "sort": 113
+}

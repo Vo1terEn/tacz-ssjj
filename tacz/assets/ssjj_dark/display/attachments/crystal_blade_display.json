@@ -1,0 +1,7 @@
+{
+  "model": "ssjj_dark:attachment/crystal_blade_geo",
+  "texture": "ssjj_dark:attachment/crystal_blade_original",
+  "slot": "ssjj_dark:attachment/slot/crystal_blade",
+  "show_muzzle": true,
+  "show_mount": false
+}

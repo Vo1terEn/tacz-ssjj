@@ -1,0 +1,1 @@
+{"model":"ssjj_hyper:ammo/energy_cell_geo","texture":"ssjj_hyper:ammo/uv/energy_cell","slot":"ssjj_hyper:ammo/slot/energy_cell","shell":{"model":"tacz:shell/357mag_shell","texture":"tacz:shell/357mag_shell"},"tracer_color":"#63DCFF","transform":{"scale":{"thirdperson":[0.4,0.4,0.4],"ground":[0.4,0.4,0.4],"fixed":[0.75,0.75,0.75]}}}

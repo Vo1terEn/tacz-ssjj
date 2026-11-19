@@ -60,6 +60,7 @@ public final class ZeusThunderClient {
         @SubscribeEvent public static void registerZeusThunderResources(RegisterClientReloadListenersEvent event) {event.registerReloadListener((ResourceManagerReloadListener)ZeusThunderClient::read);}
     }
     public static void read(ResourceManager resources) {
+        ZeusParticleMeshes.clear();
         // The native gun-model resource reload also runs after TaCZ mounts its
         // gunpacks. Keep target effects on the same proven resource lifecycle.
         ZeusFocusClient.read(resources);ZeusShockClient.read(resources);
@@ -181,7 +182,18 @@ public final class ZeusThunderClient {
         }
         pose.pushPose();pose.translate(center.x-camera.x,center.y-camera.y,center.z-camera.z);pose.mulPose(rotation);
         if(chain)pose.scale(1,1,(float)v.effect.velocity().length());else if(v.effect.type()==1)pose.scale((float)v.effect.size(),(float)v.effect.size(),(float)v.effect.size());
-        for(var batch:DimensionParticles.sample(a.data,age/20,right,up)) {
+        if(ZeusParticleMeshes.ready(a.data)) {
+            // Preserve authored emitter order, alpha ordering and pending
+            // billboard geometry before an immediate static-mesh draw.
+            for(var emitter:a.data.emitters) {
+                if("mesh".equals(emitter.mode)){Drawing.BUFFERS.endBatch();ZeusParticleMeshes.draw(emitter,age/20,pose);}
+                else batches(DimensionParticles.sample(ZeusParticleMeshes.single(a.data,emitter),age/20,right,up),pose);
+            }
+        } else batches(DimensionParticles.sample(a.data,age/20,right,up),pose);
+        pose.popPose();
+    }
+    private static void batches(List<DimensionParticles.Batch> batches,PoseStack pose) {
+        for(var batch:batches) {
             var type=DimensionEffectRenderType.of(new ResourceLocation(batch.texture()),"additive".equals(batch.render()));var out=Drawing.BUFFERS.getBuffer(type);var mesh=batch.mesh();float[] c=batch.color(),uvST=batch.uvST();
             for(int[] face:mesh.triangles)for(int corner=0;corner<4;corner++) {
                 int i=face[Math.min(corner,2)];float[] p=mesh.positions[i],uv=mesh.uv[i];
@@ -189,6 +201,5 @@ public final class ZeusThunderClient {
                     .uv(uv[0]*uvST[0]+uvST[2],uv[1]*uvST[1]-uvST[3]).overlayCoords(0).uv2(15728880).normal(pose.last().normal(),0,0,1).endVertex();
             }
         }
-        pose.popPose();
     }
 }

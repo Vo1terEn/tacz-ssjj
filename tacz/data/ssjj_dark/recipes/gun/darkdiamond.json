@@ -1,0 +1,18 @@
+{
+  "type": "tacz:gun_smith_table_crafting",
+  "materials": [
+    {
+      "item": {
+        "item": "eye_judgment_arsenal:darkcrystal_fragment"
+      },
+      "count": 840
+    }
+  ],
+  "result": {
+    "type": "gun",
+    "id": "ssjj_dark:darkdiamond",
+    "count": 1,
+    "group": "ssjj_workbench:weapons",
+    "ammo_count": 0
+  }
+}

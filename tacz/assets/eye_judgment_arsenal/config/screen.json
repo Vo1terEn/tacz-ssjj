@@ -849,9 +849,9 @@
               "min": null,
               "max": null,
               "tooltip": [
-                "是否开启能量抗性穿透无视减伤；预留配置，当前暂不生效"
+                "能量抗性穿透无视护甲；默认开启。穿透达到500时无视100%的护甲与附魔减伤，低于500时按穿透/500比例无视；保留抗性药水与伤害吸收。"
               ],
-              "label": "是否开启能量抗性穿透无视减伤"
+              "label": "能量抗性穿透无视护甲"
             }
           ]
         }
@@ -2188,6 +2188,1421 @@
                 "每件非瞄准镜宙斯之手专属配件增加的能量强度"
               ],
               "label": "每件非瞄准镜宙斯之手专属配件增加的能量强度"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "聚能装甲",
+      "groups": [
+        {
+          "title": "技能与配件",
+          "entries": [
+            {
+              "key": "hyper.ray_enabled",
+              "type": "boolean",
+              "default": true,
+              "min": null,
+              "max": null,
+              "label": "聚能射线开关",
+              "tooltip": [
+                "壹、贰阶普通射击使用原有往返射线；关闭后恢复枪包原生弹丸。"
+              ]
+            },
+            {
+              "key": "hyper.charge_enabled",
+              "type": "boolean",
+              "default": true,
+              "min": null,
+              "max": null,
+              "label": "V聚能弹开关",
+              "tooltip": [
+                "允许壹、贰阶使用V聚能弹；关闭后技能无法激活。"
+              ]
+            },
+            {
+              "key": "hyper.core_enabled",
+              "type": "boolean",
+              "default": true,
+              "min": null,
+              "max": null,
+              "label": "G聚能核心开关",
+              "tooltip": [
+                "允许壹、贰阶使用G蓄能、红蓝球及切回引爆。"
+              ]
+            },
+            {
+              "key": "hyper.overload_enabled",
+              "type": "boolean",
+              "default": true,
+              "min": null,
+              "max": null,
+              "label": "聚能过载开关",
+              "tooltip": [
+                "二阶持枪计时及双向切枪增伤。"
+              ]
+            },
+            {
+              "key": "hyper.muzzle_enabled",
+              "type": "boolean",
+              "default": true,
+              "min": null,
+              "max": null,
+              "label": "聚能导流枪口功能开关",
+              "tooltip": [
+                "关闭后该专属配件的技能增强与能量属性不生效；安装权限和外观不改变。"
+              ]
+            },
+            {
+              "key": "hyper.grip_enabled",
+              "type": "boolean",
+              "default": true,
+              "min": null,
+              "max": null,
+              "label": "聚能增幅握把功能开关",
+              "tooltip": [
+                "关闭后该专属配件的技能增强与能量属性不生效；安装权限和外观不改变。"
+              ]
+            },
+            {
+              "key": "hyper.stock_enabled",
+              "type": "boolean",
+              "default": true,
+              "min": null,
+              "max": null,
+              "label": "聚能膛线枪托功能开关",
+              "tooltip": [
+                "关闭后该专属配件的技能增强与能量属性不生效；安装权限和外观不改变。"
+              ]
+            },
+            {
+              "key": "hyper.magazine_enabled",
+              "type": "boolean",
+              "default": true,
+              "min": null,
+              "max": null,
+              "label": "聚能过载弹匣功能开关",
+              "tooltip": [
+                "关闭后该专属配件的技能增强与能量属性不生效；安装权限和外观不改变。"
+              ]
+            },
+            {
+              "key": "hyper.accessory_penetration",
+              "type": "double",
+              "default": 250.0,
+              "min": 0,
+              "max": 1000000,
+              "label": "每件专属配件能量穿透",
+              "tooltip": [
+                "每件有效枪口、握把、枪托、弹匣的能量抗性穿透；不含瞄准镜与激光槽。"
+              ]
+            },
+            {
+              "key": "hyper.accessory_resistance",
+              "type": "double",
+              "default": 200.0,
+              "min": 0,
+              "max": 1000000,
+              "label": "每件专属配件能量抗性",
+              "tooltip": [
+                "每件有效枪口、握把、枪托、弹匣的能量抗性。"
+              ]
+            },
+            {
+              "key": "hyper.accessory_strength",
+              "type": "double",
+              "default": 400.0,
+              "min": 0,
+              "max": 1000000,
+              "label": "每件专属配件能量强度",
+              "tooltip": [
+                "每件有效枪口、握把、枪托、弹匣的能量强度。"
+              ]
+            },
+            {
+              "key": "hyper.charge_base_damage",
+              "type": "double",
+              "default": 40.0,
+              "min": 0,
+              "max": 1000000,
+              "label": "聚能弹首次伤害",
+              "tooltip": [
+                "每个目标首次成功聚能弹引爆的基础伤害，仍应用原有战斗属性。"
+              ]
+            },
+            {
+              "key": "hyper.charge_increment",
+              "type": "double",
+              "default": 0.4,
+              "min": 0,
+              "max": 100,
+              "label": "聚能弹每次额外增伤",
+              "tooltip": [
+                "每次成功引爆累积的额外增伤比例，0.4代表首次伤害的40%。"
+              ]
+            },
+            {
+              "key": "hyper.charge_increment_cap",
+              "type": "double",
+              "default": 2.0,
+              "min": 0,
+              "max": 100,
+              "label": "聚能弹额外增伤上限",
+              "tooltip": [
+                "相对首次伤害的额外增伤上限，2代表额外200%。"
+              ]
+            },
+            {
+              "key": "hyper.ultimate_increment",
+              "type": "double",
+              "default": 0.8,
+              "min": 0,
+              "max": 100,
+              "label": "终极强化每次额外增伤",
+              "tooltip": [
+                "终极、融合、创造石的聚能弹额外增伤步长，0.8代表80%。"
+              ]
+            },
+            {
+              "key": "hyper.ultimate_increment_cap",
+              "type": "double",
+              "default": 4.0,
+              "min": 0,
+              "max": 100,
+              "label": "终极强化额外增伤上限",
+              "tooltip": [
+                "终极、融合、创造石聚能弹的额外增伤上限，4代表额外400%。"
+              ]
+            },
+            {
+              "key": "hyper.charge_duration_ticks",
+              "type": "int",
+              "default": 200,
+              "min": 20,
+              "max": 320,
+              "label": "聚能弹持续时间",
+              "tooltip": [
+                "单位tick，20tick=1秒；允许20至320tick。"
+              ]
+            },
+            {
+              "key": "hyper.grip_charge_duration_ticks",
+              "type": "int",
+              "default": 320,
+              "min": 20,
+              "max": 320,
+              "label": "握把聚能弹持续时间",
+              "tooltip": [
+                "安装有效聚能增幅握把时的技能持续时间，单位tick。"
+              ]
+            },
+            {
+              "key": "hyper.charge_second_pulse_enabled",
+              "type": "boolean",
+              "default": true,
+              "min": null,
+              "max": null,
+              "label": "聚能弹二次火环开关",
+              "tooltip": [
+                "允许同一聚能弹技能生成第二次扩散火环。"
+              ]
+            },
+            {
+              "key": "hyper.charge_second_pulse_ticks",
+              "type": "int",
+              "default": 100,
+              "min": 15,
+              "max": 319,
+              "label": "聚能弹二次火环时间",
+              "tooltip": [
+                "激活后经过多少tick生成第二次火环；自动限制在技能结束前。"
+              ]
+            },
+            {
+              "key": "hyper.grip_second_pulse_ticks",
+              "type": "int",
+              "default": 160,
+              "min": 15,
+              "max": 319,
+              "label": "握把二次火环时间",
+              "tooltip": [
+                "安装有效握把后的第二次火环时间，自动限制在技能结束前。"
+              ]
+            },
+            {
+              "key": "hyper.charge_tier1_mark_cap",
+              "type": "int",
+              "default": 10,
+              "min": 1,
+              "max": 40,
+              "label": "壹阶聚能弹标记上限",
+              "tooltip": [
+                "壹阶技能同时保留的标记数量，最终上限40。"
+              ]
+            },
+            {
+              "key": "hyper.charge_tier2_mark_cap",
+              "type": "int",
+              "default": 20,
+              "min": 1,
+              "max": 40,
+              "label": "贰阶聚能弹标记上限",
+              "tooltip": [
+                "贰阶技能同时保留的标记数量，最终上限40。"
+              ]
+            },
+            {
+              "key": "hyper.grip_mark_multiplier",
+              "type": "double",
+              "default": 2.0,
+              "min": 1,
+              "max": 40,
+              "label": "握把标记数量倍率",
+              "tooltip": [
+                "有效握把对聚能弹标记上限的倍率，最终不超过40。"
+              ]
+            },
+            {
+              "key": "hyper.charge_tier1_radius",
+              "type": "double",
+              "default": 32.0,
+              "min": 1,
+              "max": 128,
+              "label": "壹阶聚能弹火环半径",
+              "tooltip": [
+                "壹阶扩散火环最大半径，单位格，最终不超过128。"
+              ]
+            },
+            {
+              "key": "hyper.charge_tier2_radius",
+              "type": "double",
+              "default": 64.0,
+              "min": 1,
+              "max": 128,
+              "label": "贰阶聚能弹火环半径",
+              "tooltip": [
+                "贰阶扩散火环最大半径，单位格，最终不超过128。"
+              ]
+            },
+            {
+              "key": "hyper.grip_radius_multiplier",
+              "type": "double",
+              "default": 2.0,
+              "min": 1,
+              "max": 128,
+              "label": "握把火环半径倍率",
+              "tooltip": [
+                "有效握把对扩散火环半径的倍率，最终不超过128格。"
+              ]
+            },
+            {
+              "key": "hyper.charge_cost",
+              "type": "int",
+              "default": 100,
+              "min": 0,
+              "max": 1000,
+              "label": "聚能弹开火能量消耗",
+              "tooltip": [
+                "一次成功伤害批次消耗的能量单位，1000为满能量；空枪仍免费。"
+              ]
+            },
+            {
+              "key": "hyper.charge_root_cost",
+              "type": "int",
+              "default": 50,
+              "min": 0,
+              "max": 1000,
+              "label": "聚能弹禁锢额外能量消耗",
+              "tooltip": [
+                "引爆已有五层减速目标时额外消耗的能量单位。"
+              ]
+            },
+            {
+              "key": "hyper.charge_recovery_per_tick",
+              "type": "int",
+              "default": 5,
+              "min": 5,
+              "max": 1000,
+              "label": "聚能弹每tick恢复能量",
+              "tooltip": [
+                "技能结束后每tick恢复的能量单位，允许5至1000。"
+              ]
+            },
+            {
+              "key": "hyper.charge_slow_ticks",
+              "type": "int",
+              "default": 100,
+              "min": 0,
+              "max": 320,
+              "label": "聚能弹减速持续时间",
+              "tooltip": [
+                "每次成功引爆后的减速持续tick；0关闭减速。"
+              ]
+            },
+            {
+              "key": "hyper.charge_root_ticks",
+              "type": "int",
+              "default": 20,
+              "min": 0,
+              "max": 320,
+              "label": "聚能弹禁锢持续时间",
+              "tooltip": [
+                "五层减速后移动禁锢持续tick；0关闭禁锢。"
+              ]
+            },
+            {
+              "key": "hyper.core_cooldown_ticks",
+              "type": "int",
+              "default": 300,
+              "min": 0,
+              "max": 72000,
+              "label": "聚能核心引爆后冷却",
+              "tooltip": [
+                "G成功引爆批次后的冷却时间，20tick=1秒。"
+              ]
+            },
+            {
+              "key": "hyper.core_max_orbs",
+              "type": "int",
+              "default": 15,
+              "min": 1,
+              "max": 15,
+              "label": "聚能核心红蓝球总上限",
+              "tooltip": [
+                "同时存在的红球与蓝球总数量，最多15。"
+              ]
+            },
+            {
+              "key": "hyper.core_blue_capacity",
+              "type": "double",
+              "default": 200.0,
+              "min": 1,
+              "max": 1000,
+              "label": "普通蓝球充能上限",
+              "tooltip": [
+                "累计实际伤害充能上限，允许1至1000。"
+              ]
+            },
+            {
+              "key": "hyper.core_red_capacity",
+              "type": "double",
+              "default": 400.0,
+              "min": 1,
+              "max": 1000,
+              "label": "普通红球充能上限",
+              "tooltip": [
+                "累计实际伤害充能上限，允许1至1000。"
+              ]
+            },
+            {
+              "key": "hyper.stock_blue_capacity",
+              "type": "double",
+              "default": 500.0,
+              "min": 1,
+              "max": 1000,
+              "label": "枪托蓝球充能上限",
+              "tooltip": [
+                "累计实际伤害充能上限，允许1至1000。"
+              ]
+            },
+            {
+              "key": "hyper.stock_red_capacity",
+              "type": "double",
+              "default": 1000.0,
+              "min": 1,
+              "max": 1000,
+              "label": "枪托红球充能上限",
+              "tooltip": [
+                "累计实际伤害充能上限，允许1至1000。"
+              ]
+            },
+            {
+              "key": "hyper.core_refund_energy",
+              "type": "int",
+              "default": 50,
+              "min": 0,
+              "max": 1000,
+              "label": "普通每球引爆回复能量",
+              "tooltip": [
+                "1000为满能量，默认50即5%；按实际成功引爆球逐个回复。"
+              ]
+            },
+            {
+              "key": "hyper.stock_refund_energy",
+              "type": "int",
+              "default": 100,
+              "min": 0,
+              "max": 1000,
+              "label": "枪托每球引爆回复能量",
+              "tooltip": [
+                "有效枪托每球回复的能量单位，默认100即10%。"
+              ]
+            },
+            {
+              "key": "hyper.core_shield_enabled",
+              "type": "boolean",
+              "default": true,
+              "min": null,
+              "max": null,
+              "label": "球充能抵消视野外伤害",
+              "tooltip": [
+                "带球目标从视野外造成伤害时，消耗该目标球的充能抵消伤害。"
+              ]
+            },
+            {
+              "key": "hyper.overload_step_permille",
+              "type": "int",
+              "default": 25,
+              "min": 0,
+              "max": 10000,
+              "label": "过载每秒增伤千分数",
+              "tooltip": [
+                "手持时间每满一秒的充能增量；25代表2.5%。"
+              ]
+            },
+            {
+              "key": "hyper.overload_a_cap_permille",
+              "type": "int",
+              "default": 100,
+              "min": 0,
+              "max": 10000,
+              "label": "过载A上限千分数",
+              "tooltip": [
+                "切换至其他武器后增伤上限；100代表10%。"
+              ]
+            },
+            {
+              "key": "hyper.overload_b_cap_permille",
+              "type": "int",
+              "default": 150,
+              "min": 0,
+              "max": 10000,
+              "label": "过载B上限千分数",
+              "tooltip": [
+                "切回聚能装甲后的增伤上限；150代表15%。"
+              ]
+            },
+            {
+              "key": "hyper.overload_duration_ticks",
+              "type": "int",
+              "default": 200,
+              "min": 1,
+              "max": 72000,
+              "label": "过载激活后持续时间",
+              "tooltip": [
+                "切换后增伤持续tick，20tick=1秒。"
+              ]
+            },
+            {
+              "key": "hyper.magazine_overload_multiplier",
+              "type": "double",
+              "default": 2.0,
+              "min": 1,
+              "max": 100,
+              "label": "弹匣过载增速与上限倍率",
+              "tooltip": [
+                "有效专属弹匣同时乘算过载每秒增量和A/B上限。"
+              ]
+            },
+            {
+              "key": "hyper.ultimate_stone_enabled",
+              "type": "boolean",
+              "default": true,
+              "min": null,
+              "max": null,
+              "label": "终极强化石开关",
+              "tooltip": [
+                "仅影响二阶聚能装甲激光槽的这类强化效果；其他武器原有效果保留。"
+              ]
+            },
+            {
+              "key": "hyper.ability_stone_enabled",
+              "type": "boolean",
+              "default": true,
+              "min": null,
+              "max": null,
+              "label": "异能强化石开关",
+              "tooltip": [
+                "仅影响二阶聚能装甲激光槽的这类强化效果；其他武器原有效果保留。"
+              ]
+            },
+            {
+              "key": "hyper.fusion_stone_enabled",
+              "type": "boolean",
+              "default": true,
+              "min": null,
+              "max": null,
+              "label": "融合强化石开关",
+              "tooltip": [
+                "仅影响二阶聚能装甲激光槽的这类强化效果；其他武器原有效果保留。"
+              ]
+            },
+            {
+              "key": "hyper.creative_stone_enabled",
+              "type": "boolean",
+              "default": true,
+              "min": null,
+              "max": null,
+              "label": "创造石聚能专属效果开关",
+              "tooltip": [
+                "仅影响二阶聚能装甲激光槽的这类强化效果；其他武器原有效果保留。"
+              ]
+            },
+            {
+              "key": "hyper.ultimate_core_charge_multiplier",
+              "type": "double",
+              "default": 2.0,
+              "min": 1,
+              "max": 100,
+              "label": "终极强化球充能效率倍率",
+              "tooltip": [
+                "终极、融合、创造石的聚能核心实际伤害充能倍率；不改变球容量。"
+              ]
+            },
+            {
+              "key": "hyper.ability_outside_view_enabled",
+              "type": "boolean",
+              "default": true,
+              "min": null,
+              "max": null,
+              "label": "异能强化视野外聚能弹开关",
+              "tooltip": [
+                "允许异能、融合、创造石引爆视野外标记目标，仍检查场景遮挡。"
+              ]
+            },
+            {
+              "key": "hyper.ability_core_cooldown_reduction_ticks",
+              "type": "int",
+              "default": 40,
+              "min": 0,
+              "max": 72000,
+              "label": "异能强化每球减少G冷却",
+              "tooltip": [
+                "异能、融合、创造石每成功引爆一球减少的G冷却tick，20tick=1秒。"
+              ]
+            },
+            {
+              "key": "hyper.ray_damage_distance",
+              "type": "double",
+              "default": 64.0,
+              "min": 0.1,
+              "max": 1024,
+              "label": "射线每增加一倍伤害所需距离",
+              "tooltip": [
+                "累计往返飞行多少格增加一倍基础伤害；伤害倍率受下面上限限制。"
+              ]
+            },
+            {
+              "key": "hyper.ray_damage_multiplier_cap",
+              "type": "double",
+              "default": 2.0,
+              "min": 1,
+              "max": 100,
+              "label": "普通射线总伤害倍率上限",
+              "tooltip": [
+                "不含其他战斗属性的最大射线距离增伤总倍率。"
+              ]
+            },
+            {
+              "key": "hyper.muzzle_ray_damage_multiplier_cap",
+              "type": "double",
+              "default": 3.0,
+              "min": 1,
+              "max": 100,
+              "label": "枪口射线总伤害倍率上限",
+              "tooltip": [
+                "安装有效聚能导流枪口后的射线距离增伤总倍率上限。"
+              ]
+            },
+            {
+              "key": "hyper.ray_stun_ticks",
+              "type": "int",
+              "default": 10,
+              "min": 0,
+              "max": 200,
+              "label": "射线命中眩晕时间",
+              "tooltip": [
+                "射线命中目标眩晕tick，20tick=1秒；0关闭眩晕。"
+              ]
+            },
+            {
+              "key": "hyper.muzzle_refund_per_hit",
+              "type": "int",
+              "default": 1,
+              "min": 0,
+              "max": 100,
+              "label": "枪口每程命中回复子弹",
+              "tooltip": [
+                "有效枪口每程每次命中回复的子弹数量，不超过原弹容量。"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "阿瑞斯",
+      "groups": [
+        {
+          "title": "套装模型外观",
+          "entries": [
+            {
+              "key": "ares.change_ysm_model",
+              "type": "boolean",
+              "default": true,
+              "min": null,
+              "max": null,
+              "label": "套装自动改变YSM模型",
+              "tooltip": [
+                "开启时，完整灭世/绝套装及对应饰品自动切换到对应YSM模型。",
+                "关闭后恢复原模型选择，装备属性保持不变。",
+                "以服务端配置为准；修改后重启游戏或服务器。"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "征战意志（普通）",
+          "entries": [
+            {
+              "key": "ares.accessories.conquest_will.normal.damage_bonus_percent",
+              "type": "int",
+              "default": 20,
+              "min": 0,
+              "max": 10000,
+              "label": "伤害加成（%）",
+              "tooltip": [
+                "盔甲栏和功能饰品栏每件提供的伤害加成，20 代表 +20%。",
+                "对应配置项 ares.accessories.conquest_will.normal.damage_bonus_percent"
+              ]
+            },
+            {
+              "key": "ares.accessories.conquest_will.normal.armor",
+              "type": "int",
+              "default": 7,
+              "min": 0,
+              "max": 30,
+              "label": "护甲值",
+              "tooltip": [
+                "装备在对应的原版盔甲栏时生效。",
+                "对应配置项 ares.accessories.conquest_will.normal.armor"
+              ]
+            },
+            {
+              "key": "ares.accessories.conquest_will.normal.armor_toughness",
+              "type": "double",
+              "default": 5.0,
+              "min": 0,
+              "max": 20,
+              "label": "护甲韧性",
+              "tooltip": [
+                "装备在对应的原版盔甲栏时生效。",
+                "对应配置项 ares.accessories.conquest_will.normal.armor_toughness"
+              ]
+            },
+            {
+              "key": "ares.accessories.conquest_will.normal.energy_penetration",
+              "type": "double",
+              "default": 1000.0,
+              "min": 0,
+              "max": 1000000000000,
+              "label": "能量抗性穿透",
+              "tooltip": [
+                "每件挂饰提供的能量抗性穿透。",
+                "对应配置项 ares.accessories.conquest_will.normal.energy_penetration"
+              ]
+            },
+            {
+              "key": "ares.accessories.conquest_will.normal.rage_cooldown_seconds",
+              "type": "int",
+              "default": 20,
+              "min": 0,
+              "max": 3600,
+              "label": "战争狂怒冷却（秒）",
+              "tooltip": [
+                "穿戴征战意志时，战争狂怒结束后的冷却时间。",
+                "对应配置项 ares.accessories.conquest_will.normal.rage_cooldown_seconds"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "征战意志（进阶）",
+          "entries": [
+            {
+              "key": "ares.accessories.conquest_will.absolute.damage_bonus_percent",
+              "type": "int",
+              "default": 40,
+              "min": 0,
+              "max": 10000,
+              "label": "伤害加成（%）",
+              "tooltip": [
+                "盔甲栏和功能饰品栏每件提供的伤害加成，20 代表 +20%。",
+                "对应配置项 ares.accessories.conquest_will.absolute.damage_bonus_percent"
+              ]
+            },
+            {
+              "key": "ares.accessories.conquest_will.absolute.armor",
+              "type": "int",
+              "default": 7,
+              "min": 0,
+              "max": 30,
+              "label": "护甲值",
+              "tooltip": [
+                "装备在对应的原版盔甲栏时生效。",
+                "对应配置项 ares.accessories.conquest_will.absolute.armor"
+              ]
+            },
+            {
+              "key": "ares.accessories.conquest_will.absolute.armor_toughness",
+              "type": "double",
+              "default": 5.0,
+              "min": 0,
+              "max": 20,
+              "label": "护甲韧性",
+              "tooltip": [
+                "装备在对应的原版盔甲栏时生效。",
+                "对应配置项 ares.accessories.conquest_will.absolute.armor_toughness"
+              ]
+            },
+            {
+              "key": "ares.accessories.conquest_will.absolute.energy_penetration",
+              "type": "double",
+              "default": 2350.0,
+              "min": 0,
+              "max": 1000000000000,
+              "label": "能量抗性穿透",
+              "tooltip": [
+                "每件挂饰提供的能量抗性穿透。",
+                "对应配置项 ares.accessories.conquest_will.absolute.energy_penetration"
+              ]
+            },
+            {
+              "key": "ares.accessories.conquest_will.absolute.rage_cooldown_seconds",
+              "type": "int",
+              "default": 20,
+              "min": 0,
+              "max": 3600,
+              "label": "战争狂怒冷却（秒）",
+              "tooltip": [
+                "穿戴征战意志时，战争狂怒结束后的冷却时间。",
+                "对应配置项 ares.accessories.conquest_will.absolute.rage_cooldown_seconds"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "灭世决意（普通）",
+          "entries": [
+            {
+              "key": "ares.accessories.extinction_resolve.normal.damage_bonus_percent",
+              "type": "int",
+              "default": 20,
+              "min": 0,
+              "max": 10000,
+              "label": "伤害加成（%）",
+              "tooltip": [
+                "盔甲栏和功能饰品栏每件提供的伤害加成，20 代表 +20%。",
+                "对应配置项 ares.accessories.extinction_resolve.normal.damage_bonus_percent"
+              ]
+            },
+            {
+              "key": "ares.accessories.extinction_resolve.normal.armor",
+              "type": "int",
+              "default": 8,
+              "min": 0,
+              "max": 30,
+              "label": "护甲值",
+              "tooltip": [
+                "装备在对应的原版盔甲栏时生效。",
+                "对应配置项 ares.accessories.extinction_resolve.normal.armor"
+              ]
+            },
+            {
+              "key": "ares.accessories.extinction_resolve.normal.armor_toughness",
+              "type": "double",
+              "default": 5.0,
+              "min": 0,
+              "max": 20,
+              "label": "护甲韧性",
+              "tooltip": [
+                "装备在对应的原版盔甲栏时生效。",
+                "对应配置项 ares.accessories.extinction_resolve.normal.armor_toughness"
+              ]
+            },
+            {
+              "key": "ares.accessories.extinction_resolve.normal.energy_resistance",
+              "type": "double",
+              "default": 1000.0,
+              "min": 0,
+              "max": 1000000000000,
+              "label": "能量抗性",
+              "tooltip": [
+                "每件挂饰提供的能量抗性。",
+                "对应配置项 ares.accessories.extinction_resolve.normal.energy_resistance"
+              ]
+            },
+            {
+              "key": "ares.accessories.extinction_resolve.normal.missile_interval_seconds",
+              "type": "int",
+              "default": 10,
+              "min": 1,
+              "max": 3600,
+              "label": "肩炮发射间隔（秒）",
+              "tooltip": [
+                "肩炮两轮追踪导弹之间的间隔。",
+                "对应配置项 ares.accessories.extinction_resolve.normal.missile_interval_seconds"
+              ]
+            },
+            {
+              "key": "ares.accessories.extinction_resolve.normal.missile_base_damage",
+              "type": "double",
+              "default": 10.0,
+              "min": 0,
+              "max": 1000000,
+              "label": "每发导弹固定伤害",
+              "tooltip": [
+                "每发追踪导弹伤害中的固定部分。",
+                "对应配置项 ares.accessories.extinction_resolve.normal.missile_base_damage"
+              ]
+            },
+            {
+              "key": "ares.accessories.extinction_resolve.normal.missile_max_health_percent",
+              "type": "double",
+              "default": 5.0,
+              "min": 0,
+              "max": 100,
+              "label": "每发导弹最大生命值伤害（%）",
+              "tooltip": [
+                "按目标最大生命值计算，5 代表 5%。",
+                "对应配置项 ares.accessories.extinction_resolve.normal.missile_max_health_percent"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "灭世决意（进阶）",
+          "entries": [
+            {
+              "key": "ares.accessories.extinction_resolve.absolute.damage_bonus_percent",
+              "type": "int",
+              "default": 40,
+              "min": 0,
+              "max": 10000,
+              "label": "伤害加成（%）",
+              "tooltip": [
+                "盔甲栏和功能饰品栏每件提供的伤害加成，20 代表 +20%。",
+                "对应配置项 ares.accessories.extinction_resolve.absolute.damage_bonus_percent"
+              ]
+            },
+            {
+              "key": "ares.accessories.extinction_resolve.absolute.armor",
+              "type": "int",
+              "default": 8,
+              "min": 0,
+              "max": 30,
+              "label": "护甲值",
+              "tooltip": [
+                "装备在对应的原版盔甲栏时生效。",
+                "对应配置项 ares.accessories.extinction_resolve.absolute.armor"
+              ]
+            },
+            {
+              "key": "ares.accessories.extinction_resolve.absolute.armor_toughness",
+              "type": "double",
+              "default": 5.0,
+              "min": 0,
+              "max": 20,
+              "label": "护甲韧性",
+              "tooltip": [
+                "装备在对应的原版盔甲栏时生效。",
+                "对应配置项 ares.accessories.extinction_resolve.absolute.armor_toughness"
+              ]
+            },
+            {
+              "key": "ares.accessories.extinction_resolve.absolute.energy_resistance",
+              "type": "double",
+              "default": 2350.0,
+              "min": 0,
+              "max": 1000000000000,
+              "label": "能量抗性",
+              "tooltip": [
+                "每件挂饰提供的能量抗性。",
+                "对应配置项 ares.accessories.extinction_resolve.absolute.energy_resistance"
+              ]
+            },
+            {
+              "key": "ares.accessories.extinction_resolve.absolute.missile_interval_seconds",
+              "type": "int",
+              "default": 10,
+              "min": 1,
+              "max": 3600,
+              "label": "肩炮发射间隔（秒）",
+              "tooltip": [
+                "肩炮两轮追踪导弹之间的间隔。",
+                "对应配置项 ares.accessories.extinction_resolve.absolute.missile_interval_seconds"
+              ]
+            },
+            {
+              "key": "ares.accessories.extinction_resolve.absolute.missile_base_damage",
+              "type": "double",
+              "default": 10.0,
+              "min": 0,
+              "max": 1000000,
+              "label": "每发导弹固定伤害",
+              "tooltip": [
+                "每发追踪导弹伤害中的固定部分。",
+                "对应配置项 ares.accessories.extinction_resolve.absolute.missile_base_damage"
+              ]
+            },
+            {
+              "key": "ares.accessories.extinction_resolve.absolute.missile_max_health_percent",
+              "type": "double",
+              "default": 5.0,
+              "min": 0,
+              "max": 100,
+              "label": "每发导弹最大生命值伤害（%）",
+              "tooltip": [
+                "按目标最大生命值计算，5 代表 5%。",
+                "对应配置项 ares.accessories.extinction_resolve.absolute.missile_max_health_percent"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "破败之翼（普通）",
+          "entries": [
+            {
+              "key": "ares.accessories.ruin_wings.normal.damage_bonus_percent",
+              "type": "int",
+              "default": 20,
+              "min": 0,
+              "max": 10000,
+              "label": "伤害加成（%）",
+              "tooltip": [
+                "盔甲栏和功能饰品栏每件提供的伤害加成，20 代表 +20%。",
+                "对应配置项 ares.accessories.ruin_wings.normal.damage_bonus_percent"
+              ]
+            },
+            {
+              "key": "ares.accessories.ruin_wings.normal.armor",
+              "type": "int",
+              "default": 8,
+              "min": 0,
+              "max": 30,
+              "label": "护甲值",
+              "tooltip": [
+                "装备在对应的原版盔甲栏时生效。",
+                "对应配置项 ares.accessories.ruin_wings.normal.armor"
+              ]
+            },
+            {
+              "key": "ares.accessories.ruin_wings.normal.armor_toughness",
+              "type": "double",
+              "default": 5.0,
+              "min": 0,
+              "max": 20,
+              "label": "护甲韧性",
+              "tooltip": [
+                "装备在对应的原版盔甲栏时生效。",
+                "对应配置项 ares.accessories.ruin_wings.normal.armor_toughness"
+              ]
+            },
+            {
+              "key": "ares.accessories.ruin_wings.normal.movement_speed_percent",
+              "type": "double",
+              "default": 20.0,
+              "min": 0,
+              "max": 1000,
+              "label": "移速加成（%）",
+              "tooltip": [
+                "每件破败之翼提供的移速加成，20 代表 +20%。",
+                "对应配置项 ares.accessories.ruin_wings.normal.movement_speed_percent"
+              ]
+            },
+            {
+              "key": "ares.accessories.ruin_wings.normal.damage_reduction_percent",
+              "type": "double",
+              "default": 20.0,
+              "min": 0,
+              "max": 100,
+              "label": "普通伤害减免（%）",
+              "tooltip": [
+                "每件破败之翼提供的普通伤害减免，20 代表减少 20%。",
+                "对应配置项 ares.accessories.ruin_wings.normal.damage_reduction_percent"
+              ]
+            },
+            {
+              "key": "ares.accessories.ruin_wings.normal.elytra_flight",
+              "type": "boolean",
+              "default": true,
+              "min": null,
+              "max": null,
+              "label": "鞘翅飞行",
+              "tooltip": [
+                "允许对应的破败之翼提供原版鞘翅飞行。",
+                "对应配置项 ares.accessories.ruin_wings.normal.elytra_flight"
+              ]
+            },
+            {
+              "key": "ares.accessories.ruin_wings.normal.energy_resistance",
+              "type": "double",
+              "default": 0.0,
+              "min": 0,
+              "max": 1000000000000,
+              "label": "能量抗性",
+              "tooltip": [
+                "每件挂饰提供的能量抗性。",
+                "对应配置项 ares.accessories.ruin_wings.normal.energy_resistance"
+              ]
+            },
+            {
+              "key": "ares.accessories.ruin_wings.normal.energy_penetration",
+              "type": "double",
+              "default": 0.0,
+              "min": 0,
+              "max": 1000000000000,
+              "label": "能量抗性穿透",
+              "tooltip": [
+                "每件挂饰提供的能量抗性穿透。",
+                "对应配置项 ares.accessories.ruin_wings.normal.energy_penetration"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "破败之翼（进阶）",
+          "entries": [
+            {
+              "key": "ares.accessories.ruin_wings.absolute.damage_bonus_percent",
+              "type": "int",
+              "default": 40,
+              "min": 0,
+              "max": 10000,
+              "label": "伤害加成（%）",
+              "tooltip": [
+                "盔甲栏和功能饰品栏每件提供的伤害加成，20 代表 +20%。",
+                "对应配置项 ares.accessories.ruin_wings.absolute.damage_bonus_percent"
+              ]
+            },
+            {
+              "key": "ares.accessories.ruin_wings.absolute.armor",
+              "type": "int",
+              "default": 8,
+              "min": 0,
+              "max": 30,
+              "label": "护甲值",
+              "tooltip": [
+                "装备在对应的原版盔甲栏时生效。",
+                "对应配置项 ares.accessories.ruin_wings.absolute.armor"
+              ]
+            },
+            {
+              "key": "ares.accessories.ruin_wings.absolute.armor_toughness",
+              "type": "double",
+              "default": 5.0,
+              "min": 0,
+              "max": 20,
+              "label": "护甲韧性",
+              "tooltip": [
+                "装备在对应的原版盔甲栏时生效。",
+                "对应配置项 ares.accessories.ruin_wings.absolute.armor_toughness"
+              ]
+            },
+            {
+              "key": "ares.accessories.ruin_wings.absolute.movement_speed_percent",
+              "type": "double",
+              "default": 20.0,
+              "min": 0,
+              "max": 1000,
+              "label": "移速加成（%）",
+              "tooltip": [
+                "每件破败之翼提供的移速加成，20 代表 +20%。",
+                "对应配置项 ares.accessories.ruin_wings.absolute.movement_speed_percent"
+              ]
+            },
+            {
+              "key": "ares.accessories.ruin_wings.absolute.damage_reduction_percent",
+              "type": "double",
+              "default": 20.0,
+              "min": 0,
+              "max": 100,
+              "label": "普通伤害减免（%）",
+              "tooltip": [
+                "每件破败之翼提供的普通伤害减免，20 代表减少 20%。",
+                "对应配置项 ares.accessories.ruin_wings.absolute.damage_reduction_percent"
+              ]
+            },
+            {
+              "key": "ares.accessories.ruin_wings.absolute.elytra_flight",
+              "type": "boolean",
+              "default": true,
+              "min": null,
+              "max": null,
+              "label": "鞘翅飞行",
+              "tooltip": [
+                "允许对应的破败之翼提供原版鞘翅飞行。",
+                "对应配置项 ares.accessories.ruin_wings.absolute.elytra_flight"
+              ]
+            },
+            {
+              "key": "ares.accessories.ruin_wings.absolute.energy_resistance",
+              "type": "double",
+              "default": 350.0,
+              "min": 0,
+              "max": 1000000000000,
+              "label": "能量抗性",
+              "tooltip": [
+                "每件挂饰提供的能量抗性。",
+                "对应配置项 ares.accessories.ruin_wings.absolute.energy_resistance"
+              ]
+            },
+            {
+              "key": "ares.accessories.ruin_wings.absolute.energy_penetration",
+              "type": "double",
+              "default": 350.0,
+              "min": 0,
+              "max": 1000000000000,
+              "label": "能量抗性穿透",
+              "tooltip": [
+                "每件挂饰提供的能量抗性穿透。",
+                "对应配置项 ares.accessories.ruin_wings.absolute.energy_penetration"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "黯水晶",
+      "groups": [
+        {
+          "title": "龙印斩",
+          "entries": [
+            {
+              "key": "dark_crystal.dragon_tier1_damage",
+              "type": "double",
+              "default": 15.0,
+              "min": 0,
+              "max": 1000000,
+              "label": "一阶龙之势伤害",
+              "tooltip": [
+                "每个龙之势的基础伤害，0 表示无伤害。",
+                "对应配置项 dark_crystal.dragon_tier1_damage"
+              ]
+            },
+            {
+              "key": "dark_crystal.dragon_tier2_damage",
+              "type": "double",
+              "default": 20.0,
+              "min": 0,
+              "max": 1000000,
+              "label": "二阶龙之势伤害",
+              "tooltip": [
+                "每个龙之势的基础伤害，0 表示无伤害。",
+                "对应配置项 dark_crystal.dragon_tier2_damage"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "绝·怒意与水晶刀刃",
+          "entries": [
+            {
+              "key": "dark_crystal.wrath_damage_per_layer",
+              "type": "double",
+              "default": 0.05,
+              "min": 0,
+              "max": 10,
+              "label": "每层怒意增伤比例",
+              "tooltip": [
+                "0.05 表示每层增加 5%。",
+                "对应配置项 dark_crystal.wrath_damage_per_layer"
+              ]
+            },
+            {
+              "key": "dark_crystal.wrath_reduction_per_layer",
+              "type": "double",
+              "default": 0.02,
+              "min": 0,
+              "max": 1,
+              "label": "二阶每层怒意减伤比例",
+              "tooltip": [
+                "0.02 表示每层减少 2%，最终减伤最多 100%。",
+                "对应配置项 dark_crystal.wrath_reduction_per_layer"
+              ]
+            },
+            {
+              "key": "dark_crystal.crystal_blade_multiplier",
+              "type": "double",
+              "default": 2.0,
+              "min": 0,
+              "max": 100,
+              "label": "水晶刀刃怒意倍率",
+              "tooltip": [
+                "作用于同一把武器的每层怒意增伤与减伤。",
+                "对应配置项 dark_crystal.crystal_blade_multiplier"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "绝·力量解放",
+          "entries": [
+            {
+              "key": "dark_crystal.liberation_health_cost_fraction",
+              "type": "double",
+              "default": 0.7,
+              "min": 0,
+              "max": 1,
+              "label": "普通解放耗血比例",
+              "tooltip": [
+                "按当前生命值计算，0.70 表示消耗 70%，终极固定锁定 1 点生命。",
+                "对应配置项 dark_crystal.liberation_health_cost_fraction"
+              ]
+            },
+            {
+              "key": "dark_crystal.liberation_blast_damage",
+              "type": "double",
+              "default": 30.0,
+              "min": 0,
+              "max": 1000000,
+              "label": "中心爆发基础伤害",
+              "tooltip": [
+                "0 表示关闭中心爆发伤害。",
+                "对应配置项 dark_crystal.liberation_blast_damage"
+              ]
+            },
+            {
+              "key": "dark_crystal.liberation_blast_radius",
+              "type": "double",
+              "default": 6.0,
+              "min": 0,
+              "max": 64,
+              "label": "爆发判定半径（格）",
+              "tooltip": [
+                "用于起手击退及中心爆发。",
+                "对应配置项 dark_crystal.liberation_blast_radius"
+              ]
+            },
+            {
+              "key": "dark_crystal.liberation_speed_bonus",
+              "type": "double",
+              "default": 0.2,
+              "min": 0,
+              "max": 10,
+              "label": "解放移速加成比例",
+              "tooltip": [
+                "0.20 表示增加 20%。",
+                "对应配置项 dark_crystal.liberation_speed_bonus"
+              ]
+            },
+            {
+              "key": "dark_crystal.liberation_dragon_multiplier",
+              "type": "double",
+              "default": 2.0,
+              "min": 0,
+              "max": 100,
+              "label": "解放时龙之势伤害倍率",
+              "tooltip": [
+                "作用于力量解放期间的龙之势。",
+                "对应配置项 dark_crystal.liberation_dragon_multiplier"
+              ]
+            },
+            {
+              "key": "dark_crystal.liberation_wrath_reduction_multiplier",
+              "type": "double",
+              "default": 2.0,
+              "min": 0,
+              "max": 100,
+              "label": "解放时怒意减伤倍率",
+              "tooltip": [
+                "最终减伤最多 100%。",
+                "对应配置项 dark_crystal.liberation_wrath_reduction_multiplier"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "解放护盾与水晶核心",
+          "entries": [
+            {
+              "key": "dark_crystal.shield_capacity_multiplier",
+              "type": "double",
+              "default": 2.0,
+              "min": 0,
+              "max": 100,
+              "label": "普通护盾上限倍率",
+              "tooltip": [
+                "未安装水晶核心时，护盾上限按最大生命值乘此倍率。",
+                "对应配置项 dark_crystal.shield_capacity_multiplier"
+              ]
+            },
+            {
+              "key": "dark_crystal.core_shield_capacity_multiplier",
+              "type": "double",
+              "default": 4.0,
+              "min": 0,
+              "max": 100,
+              "label": "水晶核心护盾上限倍率",
+              "tooltip": [
+                "安装水晶核心时，护盾上限按最大生命值乘此倍率。",
+                "对应配置项 dark_crystal.core_shield_capacity_multiplier"
+              ]
+            },
+            {
+              "key": "dark_crystal.sacrifice_shield_multiplier",
+              "type": "double",
+              "default": 2.0,
+              "min": 0,
+              "max": 100,
+              "label": "普通耗血转护盾倍率",
+              "tooltip": [
+                "实际消耗生命值乘此倍率后转为初始护盾，受护盾上限限制。",
+                "对应配置项 dark_crystal.sacrifice_shield_multiplier"
+              ]
+            },
+            {
+              "key": "dark_crystal.core_sacrifice_shield_multiplier",
+              "type": "double",
+              "default": 4.0,
+              "min": 0,
+              "max": 100,
+              "label": "水晶核心耗血转护盾倍率",
+              "tooltip": [
+                "安装水晶核心时，实际消耗生命值乘此倍率后转为初始护盾。",
+                "对应配置项 dark_crystal.core_sacrifice_shield_multiplier"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "终极",
+          "entries": [
+            {
+              "key": "dark_crystal.ultimate_wrath_bonus",
+              "type": "double",
+              "default": 0.99,
+              "min": 0,
+              "max": 100,
+              "label": "终极固定增伤比例",
+              "tooltip": [
+                "0.99 表示增加 99%，创造之石的固定伤害也使用此值。",
+                "对应配置项 dark_crystal.ultimate_wrath_bonus"
+              ]
+            },
+            {
+              "key": "dark_crystal.ending_health_fraction",
+              "type": "double",
+              "default": 0.3,
+              "min": 0,
+              "max": 1,
+              "label": "终极结束回血比例",
+              "tooltip": [
+                "终极自然结束时恢复到最大生命值的指定比例，0 表示关闭回血。",
+                "对应配置项 dark_crystal.ending_health_fraction"
+              ]
             }
           ]
         }

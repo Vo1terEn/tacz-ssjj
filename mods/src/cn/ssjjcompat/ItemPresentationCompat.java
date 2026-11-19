@@ -28,7 +28,7 @@ import java.util.*;
 
 /** Context-only presentation bridge. In-gun attachments and native held gun renderers never enter here. */
 public final class ItemPresentationCompat {
-    private static final Set<String> NAMESPACES=Set.of("eyeofpunishment","judgfire","ssjj_dark","ssjj_dimension","ssjjparasite2","ssjjrpg","eye_judgment_arsenal","ssjj_workbench");
+    private static final Set<String> NAMESPACES=Set.of("eyeofpunishment","judgfire","ssjj_dimension","ssjjparasite2","ssjjrpg","eye_judgment_arsenal","ssjj_workbench");
     private static final ThreadLocal<Boolean> WORKBENCH=ThreadLocal.withInitial(()->false);
     private static final ThreadLocal<Boolean> REENTER=ThreadLocal.withInitial(()->false);
     private static ResourceManager lastResources;

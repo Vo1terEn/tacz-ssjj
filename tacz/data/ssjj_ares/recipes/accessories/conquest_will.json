@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "RGR",
+    "RHR",
+    "NNN"
+  ],
+  "key": {
+    "R": {
+      "item": "minecraft:redstone_block"
+    },
+    "G": {
+      "item": "ssjj_ares:golden_charm_stone"
+    },
+    "H": {
+      "item": "minecraft:netherite_helmet"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "result": {
+    "item": "ssjj_ares:conquest_will",
+    "count": 1
+  }
+}

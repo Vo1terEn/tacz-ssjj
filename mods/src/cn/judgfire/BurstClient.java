@@ -1,5 +1,6 @@
 package cn.judgfire;
 
+import cn.ssjjcompat.ArsenalKeyBindings;
 import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.blaze3d.vertex.*;
 import com.mojang.math.Axis;
@@ -24,12 +25,11 @@ import org.lwjgl.glfw.GLFW;
 @Mod.EventBusSubscriber(modid = JudgmentFlame.MODID, value = Dist.CLIENT)
 public final class BurstClient {
   public static final KeyMapping KEY =
-      new KeyMapping(
+      ArsenalKeyBindings.create(
           "key.judgfire.burst",
           KeyConflictContext.IN_GAME,
           InputConstants.Type.KEYSYM,
-          GLFW.GLFW_KEY_R,
-          "key.categories.judgfire");
+          GLFW.GLFW_KEY_V);
 
   @Mod.EventBusSubscriber(
       modid = JudgmentFlame.MODID,
@@ -37,8 +37,8 @@ public final class BurstClient {
       bus = Mod.EventBusSubscriber.Bus.MOD)
   public static final class Keys {
     @SubscribeEvent
-    public static void register(RegisterKeyMappingsEvent event) {
-      event.register(KEY);
+    public static void registerBurstKeys(RegisterKeyMappingsEvent event) {
+      ArsenalKeyBindings.register(event,KEY);
     }
   }
 

@@ -1,0 +1,8 @@
+{
+  "name": "attachment.ssjj_dark.pure_scope.name",
+  "display": "ssjj_dark:pure_scope_display",
+  "data": "ssjj_dark:pure_scope_data",
+  "type": "scope",
+  "sort": 190,
+  "tooltip": "attachment.ssjj_dark.pure_scope.desc"
+}

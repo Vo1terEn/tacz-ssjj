@@ -264,23 +264,26 @@ public final class SkinWorldFlames {
       uu.set(velocity).normalize();Vector3f look=new Vector3f(right).cross(up);rr.set(uu).cross(look);if(rr.lengthSquared()<1e-10)rr.set(right);else rr.normalize();
     }
     Quaternionf rotation=new Quaternionf().rotateY(s.euler[1]).rotateX(s.euler[0]).rotateZ(s.euler[2]);
-    float[][] points=new float[vertices.length][];
+    float[][] points=new float[vertices.length][],mappedUV=new float[vertices.length][];
+    Vector3f p=new Vector3f();
     for(int i=0;i<vertices.length;i++){
-      Vector3f p=new Vector3f(vertices[i]).mul(s.size[0],s.size[1],s.size[2]).rotate(rotation);
+      p.set(vertices[i]).mul(s.size[0],s.size[1],s.size[2]).rotate(rotation);
       if(billboard){
         float height=p.y;if(!l.customParticle&&l.renderMode==1)height*=max(1,l.lengthScale);
-        p=new Vector3f(center).fma(p.x*axisScale[0],rr).fma(height*axisScale[1],uu);
+        float width=p.x*axisScale[0];p.set(center).fma(width,rr).fma(height*axisScale[1],uu);
       }else{
         p.add(s.center[0],s.center[1],s.center[2]);world.transformPosition(p);p.z=-p.z;if(place!=null)p.rotate(place);
         if(flight!=null&&(l.customParticle?l.sourceIsWorldParticle==1:l.simulationSpace==1)){Vec3 delta=flight.point(birth).subtract(flight.point(time));p.add((float)delta.x,(float)delta.y,(float)delta.z);}
       }points[i]=new float[]{p.x,p.y,p.z};
     }
-    ArrayList<float[]> vv=new ArrayList<>(),tt=new ArrayList<>(),cc=new ArrayList<>();
+    int count=java.lang.Math.multiplyExact(faces.length,4),at=0;
+    float[][] vv=new float[count][],tt=new float[count][],cc=new float[count][];
     for(int[] face:faces)for(int j=0;j<4;j++){
-      int i=face[min(j,face.length-1)];vv.add(points[i]);tt.add(new float[]{uv[i][0]*s.uv[0]+s.uv[2],uv[i][1]*s.uv[1]+s.uv[3]});
-      cc.add(!l.customParticle&&l.vertexColorsUsedByShader&&l.vertexColors!=null?l.vertexColors[i]:WHITE);
+      int i=face[min(j,face.length-1)];vv[at]=points[i];
+      if(mappedUV[i]==null)mappedUV[i]=new float[]{uv[i][0]*s.uv[0]+s.uv[2],uv[i][1]*s.uv[1]+s.uv[3]};
+      tt[at]=mappedUV[i];cc[at]=!l.customParticle&&l.vertexColorsUsedByShader&&l.vertexColors!=null?l.vertexColors[i]:WHITE;at++;
     }
-    result.add(new Mesh(l.material,vv.toArray(float[][]::new),tt.toArray(float[][]::new),cc.toArray(float[][]::new),s.color,s.custom,l.name));
+    result.add(new Mesh(l.material,vv,tt,cc,s.color,s.custom,l.name));
   }
   private static List<Birth> births(Layer l,double time,boolean continuous){
     if(runtimeBirths!=null&&!l.staticMesh){if(l.max<=0)return List.of();return runtimeBirths.computeIfAbsent(l,k->new BirthState()).sample(l,time);}

@@ -1,0 +1,29 @@
+{
+  "type": "tacz:gun_smith_table_crafting",
+  "materials": [
+    {
+      "item": {
+        "item": "eye_judgment_arsenal:darkcrystal_fragment"
+      },
+      "count": 1
+    },
+    {
+      "item": {
+        "item": "minecraft:amethyst_shard"
+      },
+      "count": 1
+    },
+    {
+      "item": {
+        "item": "minecraft:obsidian"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "type": "ammo",
+    "id": "ssjj_dark:shadow_core",
+    "count": 1,
+    "group": "ssjj_workbench:ammo"
+  }
+}
