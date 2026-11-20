@@ -3,7 +3,7 @@ loaderVersion="[47,)"
 license="MIT (arsenal code); GPL-3.0 (retained third-party code); artwork retains original rights"
 [[mods]]
 modId="eye_judgment_arsenal"
-version="1.1.50"
+version="1.1.51"
 displayName="生死狙击RPG枪包"
 description='''生死狙击主题冒险武器与配件。'''
 [[dependencies.eye_judgment_arsenal]]

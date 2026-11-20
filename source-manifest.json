@@ -1,9 +1,9 @@
 {
-  "version": "1.1.50",
+  "version": "1.1.51",
   "manifests": {
-    "mods/source-manifest.json": "43371bd23947d668f7c2943d29a0fcf84814b62b14d344bc845d219430ad34a2",
-    "tacz/source-manifest.json": "a3409fadfc409b4f519547a25a0e985d90e3a128978cfa17d0e593d5dce8a7f9",
-    "runtime-manifest.json": "f53bde85d181e11daa8a31af51a75be485288ecffb838d472f145c567d83af30"
+    "mods/source-manifest.json": "6719e1f165bfbceadcd7cac90d673054addddbeb9eaa73c0f739ef9d55a62527",
+    "tacz/source-manifest.json": "0e8a8398bac4647b169ac35c6d067b8ab32779aa23e6eadcf8e9535590de5533",
+    "runtime-manifest.json": "bfc239618bf77ea8492b51383b67091c0f3cab17aaffb537e7495f801b0488b3"
   },
   "configuration": {
     "config/ssjjrpg.toml": "00fc2a96c97c9b978aa2cb3826a461b6ce4e880ab405a4e76a7e552fc0d93214",

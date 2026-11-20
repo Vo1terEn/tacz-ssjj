@@ -1,5 +1,5 @@
 {
-  "version": "1.1.50",
+  "version": "1.1.51",
   "files": {
     "assets/eye_judgment_arsenal/config/screen.json": {
       "sha256": "794d407a02c392699dde3f1edff161df226d0b82954327103e3a59ce6d5b06f2",
@@ -78,8 +78,8 @@
       "origin": "SSJJRPG-1.1.50-gunpack.zip!/assets/eyeofpunishment/display/guns/notdistinguish_timetravel_display.json"
     },
     "assets/eyeofpunishment/gunpack_info.json": {
-      "sha256": "730c074b74cc374ea1c488242a7573339ac4ca5f9fd7ebe6560c09bac2d14a58",
-      "origin": "SSJJRPG-1.1.50-gunpack.zip!/assets/eyeofpunishment/gunpack_info.json"
+      "sha256": "ab46ff99e3878d258a108449d84776026e3b8cc4b67aadba4f5daa99f6df0721",
+      "origin": "SSJJRPG-1.1.51-gunpack.zip!/assets/eyeofpunishment/gunpack_info.json"
     },
     "assets/eyeofpunishment/lang/en_us.json": {
       "sha256": "dc5caf82f40a86e6dd02838ad077b41ca3b1ee4a262f074cf60368a22add3a7a",
@@ -178,8 +178,8 @@
       "origin": "SSJJRPG-1.1.50-gunpack.zip!/assets/judgfire/display/guns/judgment_flame_tier1_display.json"
     },
     "assets/judgfire/gunpack_info.json": {
-      "sha256": "d61d1196eb6d1f089688fa77a12e9e4ad18ecae64dfde3a8cff2f120574c4aac",
-      "origin": "SSJJRPG-1.1.50-gunpack.zip!/assets/judgfire/gunpack_info.json"
+      "sha256": "f13289cf528326b2e1ceaa5cae9f266a10164a525171b401232af54ae80c6960",
+      "origin": "SSJJRPG-1.1.51-gunpack.zip!/assets/judgfire/gunpack_info.json"
     },
     "assets/judgfire/lang/en_us.json": {
       "sha256": "28a58d431c1e232b2a677dbfedb7bac23a57ab8cc08fba24260c0c113bcb2cee",
@@ -326,8 +326,8 @@
       "origin": "SSJJRPG-1.1.50-gunpack.zip!/assets/ssjj_dark/display/guns/darkdiamond_pure_display.json"
     },
     "assets/ssjj_dark/gunpack_info.json": {
-      "sha256": "5b7b398a8142ce315c13c8b0e204c404426e7a02bb8505a2dfc01b1d5f1542af",
-      "origin": "SSJJRPG-1.1.50-gunpack.zip!/assets/ssjj_dark/gunpack_info.json"
+      "sha256": "cb1ba0191aba3d9d318c7838f9ae56f2066a6a9730bd82a3c4a64560e65c5edb",
+      "origin": "SSJJRPG-1.1.51-gunpack.zip!/assets/ssjj_dark/gunpack_info.json"
     },
     "assets/ssjj_dark/lang/en_us.json": {
       "sha256": "94a4a0df6a0f51a548bde53d5e4af6e23b489213ac97ddf22d2fe1cb5c957e1d",
@@ -442,8 +442,8 @@
       "origin": "SSJJRPG-1.1.50-gunpack.zip!/assets/ssjj_dimension/display/guns/dimension_star_royal_display.json"
     },
     "assets/ssjj_dimension/gunpack_info.json": {
-      "sha256": "ca8f278886c25c8457442c4d278a0d861ead7088fa0544431e906be9777e3080",
-      "origin": "SSJJRPG-1.1.50-gunpack.zip!/assets/ssjj_dimension/gunpack_info.json"
+      "sha256": "3392b1445b5f6502313384df6295a0e753d1b4e8214a7766ed3f3ab32b4dc8f2",
+      "origin": "SSJJRPG-1.1.51-gunpack.zip!/assets/ssjj_dimension/gunpack_info.json"
     },
     "assets/ssjj_dimension/lang/en_us.json": {
       "sha256": "7178ee46f365c89662a6814a6916a34eae5415cecdfe01055daabe59219f52ce",
@@ -566,8 +566,8 @@
       "origin": "SSJJRPG-1.1.50-gunpack.zip!/assets/ssjj_hyper/display/guns/hyper_revolver_totem_display.json"
     },
     "assets/ssjj_hyper/gunpack_info.json": {
-      "sha256": "6dae6829d85b6a37b47eb4488facc350b215a806dad9f9e500df3bc852878f8b",
-      "origin": "SSJJRPG-1.1.50-gunpack.zip!/assets/ssjj_hyper/gunpack_info.json"
+      "sha256": "57035ac2fb8a8a97438d4e8599f54be893b379ff9fe22f34e18a32930f7b64d7",
+      "origin": "SSJJRPG-1.1.51-gunpack.zip!/assets/ssjj_hyper/gunpack_info.json"
     },
     "assets/ssjj_hyper/lang/en_us.json": {
       "sha256": "b17aab76c81c6ead18348d632054b9814f6cb037ae77f86a83c0dde5cb3c106b",
@@ -598,8 +598,8 @@
       "origin": "SSJJRPG-1.1.50-gunpack.zip!/assets/ssjj_workbench/display/blocks/rongguang.json"
     },
     "assets/ssjj_workbench/gunpack_info.json": {
-      "sha256": "d07d8f81f187290ed85bd1b8e0e68823ca675372a1538fa088e3e5728b45868d",
-      "origin": "SSJJRPG-1.1.50-gunpack.zip!/assets/ssjj_workbench/gunpack_info.json"
+      "sha256": "0ee209ba80fec6d21f2c5a81a531506516e6a9007de04f1013ea96da3479040e",
+      "origin": "SSJJRPG-1.1.51-gunpack.zip!/assets/ssjj_workbench/gunpack_info.json"
     },
     "assets/ssjj_workbench/lang/en_us.json": {
       "sha256": "28d54af73cede62addd1f1f4e563d77a7cd06c65116bf652e85c3791a2771654",
@@ -674,8 +674,8 @@
       "origin": "SSJJRPG-1.1.50-gunpack.zip!/assets/ssjj_zeus/display/guns/hand_of_zeuss_lava_display.json"
     },
     "assets/ssjj_zeus/gunpack_info.json": {
-      "sha256": "4714a4cfaa569f998af017b36d6b9403fb3cf3a5aa81f5c80de48d9391d35dbd",
-      "origin": "SSJJRPG-1.1.50-gunpack.zip!/assets/ssjj_zeus/gunpack_info.json"
+      "sha256": "1b0ad4810566038e341aef98fe7599101ac550ba5c0eb2c378a0a92f7385eafa",
+      "origin": "SSJJRPG-1.1.51-gunpack.zip!/assets/ssjj_zeus/gunpack_info.json"
     },
     "assets/ssjj_zeus/lang/en_us.json": {
       "sha256": "26e694a706c03b20a8818c3484e5ed6eef076a6a82be05a74a93a77b3bdc308c",
@@ -766,8 +766,8 @@
       "origin": "SSJJRPG-1.1.50-gunpack.zip!/assets/ssjjparasite2/display/guns/parasitic_sniper_ship_display.json"
     },
     "assets/ssjjparasite2/gunpack_info.json": {
-      "sha256": "bb6b515298f137b61fb3dcd0aaad0d14a69681c40ab5707cafdef8729c8b6140",
-      "origin": "SSJJRPG-1.1.50-gunpack.zip!/assets/ssjjparasite2/gunpack_info.json"
+      "sha256": "ab07f15198db6bf0b15c0bf9bc7f60462923beb654fdbd2ec1f2deebbf0ee2c5",
+      "origin": "SSJJRPG-1.1.51-gunpack.zip!/assets/ssjjparasite2/gunpack_info.json"
     },
     "assets/ssjjparasite2/lang/en_us.json": {
       "sha256": "6f0b386ef4863aa50898b2524f7da0a10aa78bdc6eb76b71562f9bf2b149171c",
@@ -794,8 +794,8 @@
       "origin": "SSJJRPG-1.1.50-gunpack.zip!/assets/ssjjrpg/display/attachments/creative_upgrade_stone_display.json"
     },
     "assets/ssjjrpg/gunpack_info.json": {
-      "sha256": "d07d8f81f187290ed85bd1b8e0e68823ca675372a1538fa088e3e5728b45868d",
-      "origin": "SSJJRPG-1.1.50-gunpack.zip!/assets/ssjjrpg/gunpack_info.json"
+      "sha256": "0ee209ba80fec6d21f2c5a81a531506516e6a9007de04f1013ea96da3479040e",
+      "origin": "SSJJRPG-1.1.51-gunpack.zip!/assets/ssjjrpg/gunpack_info.json"
     },
     "assets/ssjjrpg/lang/en_us.json": {
       "sha256": "27e6372f1d79f84924e7a39e88e2ee799eb7b54fddd13b68e99316923ad0b4e5",
@@ -2050,8 +2050,8 @@
       "origin": "SSJJRPG-1.1.50-gunpack.zip!/data/tacz/recipe_filters/default.json"
     },
     "gunpack.meta.json": {
-      "sha256": "a3e419f177dc7dd3a18ad0206fda1be1be4613005fdad4a24fa62a94a0160c17",
-      "origin": "SSJJRPG-1.1.50-gunpack.zip!/gunpack.meta.json"
+      "sha256": "984a31c0cd925084a5ae97c2dbcfc091699b2d4977244f193994426d196d4f2e",
+      "origin": "SSJJRPG-1.1.51-gunpack.zip!/gunpack.meta.json"
     }
   },
   "runtime_text_resources_in_release_archive": {

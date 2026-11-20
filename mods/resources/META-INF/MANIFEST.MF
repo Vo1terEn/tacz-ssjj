@@ -1,4 +1,4 @@
 Manifest-Version: 1.0
-Implementation-Version: 1.1.50
+Implementation-Version: 1.1.51
 MixinConfigs: ssjj_zeus_shock.mixins.json
 

@@ -1,5 +1,5 @@
 {
-  "version": "1.1.50",
+  "version": "1.1.51",
   "files": {
     "patches/ares_accessory_config_20261119/PatchAresAccessoryConfig.java": {
       "sha256": "9cf8c8752bb859fc72d57e7af58034f30e563482ef1da1592b94d57849a58ad1",
@@ -66,8 +66,8 @@
       "origin": "交付/source/unified_kill_messages_20261119/tools/PatchKillMessages.java"
     },
     "resources/META-INF/MANIFEST.MF": {
-      "sha256": "bf0ee2af6d1f3f514c0181c0b95ee5165b5dcfbaa97a4cae2485c5e699ff5a5c",
-      "origin": "SSJJRPG-1.1.50.jar!/META-INF/MANIFEST.MF"
+      "sha256": "5601457d2ada090a1a91c38dc5ea607fd989de454fc223a9ebe8064e0b04e3b6",
+      "origin": "SSJJRPG-1.1.51.jar!/META-INF/MANIFEST.MF"
     },
     "resources/META-INF/coremods.json": {
       "sha256": "d5a4bf6bb4fecd227271727bb4f554d11b1b6e2bf54f79089bf4426e969e756a",
@@ -78,8 +78,8 @@
       "origin": "SSJJRPG-1.1.50.jar!/META-INF/licenses/GPL-3.0/LICENSE"
     },
     "resources/META-INF/mods.toml": {
-      "sha256": "7413f950e73f61dca3f7e720f2d46181697ffef39366c2f90a83095693a04134",
-      "origin": "SSJJRPG-1.1.50.jar!/META-INF/mods.toml"
+      "sha256": "85b7b4d5f1b7eae96cb227c6affe81011264cc3de00808fc6803f0da9a5da5da",
+      "origin": "SSJJRPG-1.1.51.jar!/META-INF/mods.toml"
     },
     "resources/META-INF/services/cpw.mods.modlauncher.api.ITransformationService": {
       "sha256": "80a744e569296eb53d6d7a8ed6ffb211fe79da8e631e8ba3c8ea70b715321bf3",
@@ -110,8 +110,8 @@
       "origin": "SSJJRPG-1.1.50.jar!/coremods/cosmetic_skin.js"
     },
     "resources/coremods/creative_damage.js": {
-      "sha256": "a29db945e46f16bc37bd36962aa9ede5101ffae3e2d378c7d756cdab56495abc",
-      "origin": "SSJJRPG-1.1.50.jar!/coremods/creative_damage.js"
+      "sha256": "a3bc91ecc5f7d927e93d75caa5d8f03658df0deccbf08b9aa45163926f846d01",
+      "origin": "SSJJRPG-1.1.51.jar!/coremods/creative_damage.js"
     },
     "resources/coremods/creative_targets.js": {
       "sha256": "43d3cdbdb74cc6f611e30a3f5ec5b4cdc2334e8857bd1781327b24c6fa00cdcd",
@@ -193,10 +193,10 @@
       }
     },
     "src/cn/fusionarsenal/CreativeDamage.java": {
-      "sha256": "7766cc2ad1e5325d6f791cc8841cff81b382c969210d3fd119ca78a2f176150e",
+      "sha256": "d80d4b1af16f299af8ec44fe334a14341fa959816c5bd51f7cd32fc82b358d91",
       "origin": {
-        "path": "交付/source/ruin_wings_defense_20261119/src/cn/fusionarsenal/CreativeDamage.java",
-        "runtime_class_sha256": "50266051720aebe41a077e95af97aa56ba149b39647beb1c081637afdfe303ce"
+        "path": "mods/src/cn/fusionarsenal/CreativeDamage.java",
+        "runtime_class_sha256": "50e5c1af22b38a72ec6bfcf423862755ef2fdaea3c9671d951c95c2fc27ce7c1"
       }
     },
     "src/cn/fusionarsenal/CreativeHealthDiagnostics.java": {

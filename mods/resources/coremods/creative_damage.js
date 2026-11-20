@@ -15,6 +15,8 @@ var CD_ENTITY = 'Lnet/minecraft/world/entity/Entity;';
 var CD_SOURCE = 'Lnet/minecraft/world/damagesource/DamageSource;';
 var CD_BULLET = 'Lcom/tacz/guns/entity/EntityKineticBullet;';
 var CD_MULTIPART = 'com/tacz/guns/entity/EntityKineticBullet$MaybeMultipartEntity';
+var CD_EVENT = 'Lnet/minecraftforge/eventbus/api/Event;';
+var CD_GUN_HURT_PRE = 'com/tacz/guns/api/event/common/EntityHurtByGunEvent$Pre';
 
 function cdCall(name, desc) {
     return new CD_Call(CD_O.INVOKESTATIC, CD_HOOK, name, desc, false);
@@ -106,6 +108,7 @@ function cdBullet(node) {
         if (method.name === 'onHitEntity' && method.desc ===
             '(Lcom/tacz/guns/util/TacHitResult;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;)V') {
             impacts++;
+            var awaitingPrePost = false;
             for each (var insn in method.instructions.toArray()) {
                 if (insn.getOpcode() === CD_O.INSTANCEOF && insn.desc === 'com/tacz/guns/api/entity/ITargetEntity') {
                     var filter = new CD_List();
@@ -115,14 +118,26 @@ function cdBullet(node) {
                     method.instructions.insert(insn, filter);
                     custom++;
                 }
-                if (insn.getOpcode() === CD_O.INVOKEINTERFACE && insn.owner === 'net/minecraftforge/eventbus/api/IEventBus' &&
-                    insn.name === 'post' && insn.desc === '(Lnet/minecraftforge/eventbus/api/Event;)Z') {
-                    method.instructions.set(insn, cdCall('post',
-                        '(Lnet/minecraftforge/eventbus/api/IEventBus;Lnet/minecraftforge/eventbus/api/Event;)Z'));
+                if (insn.getOpcode() === CD_O.INVOKESPECIAL && insn.owner === CD_GUN_HURT_PRE && insn.name === '<init>')
+                    awaitingPrePost = true;
+                if (awaitingPrePost && insn.getOpcode() === CD_O.INVOKEINTERFACE &&
+                    insn.owner === 'net/minecraftforge/eventbus/api/IEventBus' &&
+                    insn.name === 'post' && insn.desc === '(' + CD_EVENT + ')Z') {
+                    // Leave the native invocation available to Mixin redirects. Save
+                    // [original amount, event] under the receiver and argument it consumes.
+                    var snapshot = new CD_List();
+                    snapshot.add(new CD_Insn(CD_O.DUP));
+                    snapshot.add(cdCall('snapshotPreDamage', '(' + CD_EVENT + ')F'));
+                    snapshot.add(new CD_Insn(CD_O.DUP_X2));
+                    snapshot.add(new CD_Insn(CD_O.POP));
+                    snapshot.add(new CD_Insn(CD_O.DUP_X1));
+                    method.instructions.insertBefore(insn, snapshot);
+                    method.instructions.insert(insn, cdCall('finishPreDamage', '(F' + CD_EVENT + 'Z)Z'));
+                    awaitingPrePost = false;
                     posts++;
                 }
             }
-            method.maxStack += 1;
+            method.maxStack += 2;
         }
         if (method.name === 'tacAttackEntity' && method.desc ===
             '(L' + CD_MULTIPART + ';FLorg/apache/commons/lang3/tuple/Pair;)V') {
@@ -144,7 +159,7 @@ function cdBullet(node) {
         }
     }
     // 1.1.5, 1.1.8-hotfix2 and 1.2.0 all have these native entry points.
-    if (captures < 1 || impacts !== 1 || attacks !== 1 || posts < 1 || custom !== 1)
+    if (captures < 1 || impacts !== 1 || attacks !== 1 || posts !== 1 || custom !== 1)
         throw new Error('Creative damage: unsupported TaCZ layout (' + captures + '/' + impacts + '/' + attacks + '/' + posts + '/' + custom + ')');
     return node;
 }

@@ -83,17 +83,23 @@ public final class CreativeDamage {
 
     /** Let every listener run, then remove cancellation/capping only for this captured shot. */
     public static boolean post(IEventBus bus, Event event) {
+        float original = snapshotPreDamage(event);
+        return finishPreDamage(original, event, bus.post(event));
+    }
+
+    public static float snapshotPreDamage(Event event) {
         if (!(event instanceof EntityHurtByGunEvent.Pre pre)
-            || !(pre.getBullet() instanceof EntityKineticBullet bullet) || !bulletEligible(bullet)) return bus.post(event);
-        float original = pre.getBaseAmount();
-        boolean canceled = bus.post(event);
-        if (Float.isFinite(original) && original > 0) {
-            float modified = pre.getBaseAmount();
-            pre.setBaseAmount(Float.isFinite(modified) ? Math.max(original, modified) : original);
-            pre.setCanceled(false);
-            return false;
-        }
-        return canceled;
+            || !(pre.getBullet() instanceof EntityKineticBullet bullet) || !bulletEligible(bullet)) return Float.NaN;
+        return pre.getBaseAmount();
+    }
+
+    public static boolean finishPreDamage(float original, Event event, boolean canceled) {
+        if (!Float.isFinite(original) || original <= 0) return canceled;
+        EntityHurtByGunEvent.Pre pre = (EntityHurtByGunEvent.Pre) event;
+        float modified = pre.getBaseAmount();
+        pre.setBaseAmount(Float.isFinite(modified) ? Math.max(original, modified) : original);
+        pre.setCanceled(false);
+        return false;
     }
 
     public static boolean bullet(EntityKineticBullet bullet, Entity part, float amount, DamageSource source) {

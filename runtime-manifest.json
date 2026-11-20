@@ -1,26 +1,27 @@
 {
-  "version": "1.1.50",
-  "release": "https://github.com/Vo1terEn/tacz-ssjj/releases/tag/v1.1.50",
+  "version": "1.1.51",
+  "release": "https://github.com/Vo1terEn/tacz-ssjj/releases/tag/v1.1.51",
   "minecraft": "1.20.1",
   "source_delivery": {
-    "version": "1.1.47-ares-config1",
+    "version": "1.1.50",
+    "release": "https://github.com/Vo1terEn/tacz-ssjj/releases/tag/v1.1.50",
     "sha256": {
-      "mod": "fd7c5faedd0b6c3b07ad1203daf3eba5d8b98a3e142f4e9eceafd9547b6bc548",
-      "pack": "54d4f3472cbf9801f9e9d961fb14cd8df55c3ab7f202c55e12f4308cd3e332d4"
+      "mod": "094c6d017591b1f3744d87994a2ee1c00731fe2f6104240419c9c0b1978a64ec",
+      "pack": "a2c2d3a0098ea57538427a129e4f4d2d15f0f899d2cf44ac0e9b883034fa58f8"
     }
   },
   "assets": {
-    "SSJJRPG-1.1.50.jar": {
-      "sha256": "094c6d017591b1f3744d87994a2ee1c00731fe2f6104240419c9c0b1978a64ec",
-      "bytes": 12153487
+    "SSJJRPG-1.1.51.jar": {
+      "sha256": "cf04917667d2274df77e884cccbf20b9d6128695a2768082e22f8b7cdd54ef93",
+      "bytes": 12153808
     },
-    "SSJJRPG-1.1.50-gunpack.zip": {
-      "sha256": "a2c2d3a0098ea57538427a129e4f4d2d15f0f899d2cf44ac0e9b883034fa58f8",
-      "bytes": 220834249
+    "SSJJRPG-1.1.51-gunpack.zip": {
+      "sha256": "b7e4d2ed7a43944671d12006ee63e511ce5702658fc43760f8b9da39f4b0624e",
+      "bytes": 220834247
     },
-    "SSJJRPG-1.1.50-MC1.20.1.zip": {
-      "sha256": "090fce0f680afc957d6b54addc668ccfd1f1cbc25cbd7cdc7645fa92ce88cd36",
-      "bytes": 231718186
+    "SSJJRPG-1.1.51-MC1.20.1.zip": {
+      "sha256": "526ffea5be225a8c80bebff6656232f2e4b8555373c49fac4c79b0a77e6f7373",
+      "bytes": 231718489
     }
   },
   "versioned_metadata": {
@@ -44,23 +45,16 @@
   "pack_documentation": {
     "replaced": [
       "README.md"
+    ]
+  },
+  "public_package_verification": "ZIP CRC and SHA-256 checked. Overlay limited to the compiled creative damage hooks, coremod and versioned metadata and documentation.",
+  "compatibility_validation": {
+    "issue": "https://github.com/Vo1terEn/tacz-ssjj/issues/5",
+    "tacz": [
+      "1.2.0",
+      "1.1.8-hotfix2",
+      "1.1.5"
     ],
-    "removed": [
-      "README_zh_CN.md"
-    ]
-  },
-  "config_screen_validation": {
-    "scope": "Isolated Forge run of the local source pair before applying public version metadata",
-    "forge": "47.4.28",
-    "tacz": "1.2.0",
-    "cloth_config": "11.1.136",
-    "visible_options": 294,
-    "checks": [
-      "registered Forge screen opens",
-      "defaults and ranges match",
-      "Cloth values save to TOML and reload into the screen",
-      "other TOML values preserved"
-    ]
-  },
-  "public_package_verification": "ZIP CRC and SHA-256 checked. All Java class bytes and configuration UI data match the tested delivery."
+    "scope": "Actual TaCZ bytecode, production coremod and simulated invocation redirect. The full reported modpack was not launched."
+  }
 }
