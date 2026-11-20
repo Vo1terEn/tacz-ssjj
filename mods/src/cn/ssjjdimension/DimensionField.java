@@ -7,6 +7,7 @@ import com.tacz.guns.api.event.common.GunShootEvent;
 import com.tacz.guns.api.item.IGun;
 import com.tacz.guns.entity.EntityKineticBullet;
 import java.util.*;
+import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -103,9 +104,9 @@ public final class DimensionField {
         if(!bound(player,s)||!DimensionFieldRules.canCast(s.timing(),now)
             ||!(player.level() instanceof ServerLevel level))return;
         Vec3 center=aim(player,level);
-        if(!DimensionFieldRules.finite(center)||!level.hasChunkAt(net.minecraft.core.BlockPos.containing(center)))return;
+        if(center==null)return;
         String skin=DimensionVisualScope.skin(player.getMainHandItem());var equipment=DimensionAttachments.capture(player.getMainHandItem());
-        var area=new Area(UUID.randomUUID(),player.getUUID(),ground(level,player,center),
+        var area=new Area(UUID.randomUUID(),player.getUUID(),center,
             equipment.radius(s.tier()),s.tier(),now+equipment.duration(),skin,equipment.duration(),equipment);
         SESSIONS.put(player.getUUID(),s.timing(DimensionFieldRules.cast(s.timing(),now)));
         blast(level,area,player);
@@ -141,17 +142,26 @@ public final class DimensionField {
         DimensionFieldNetwork.impact(level,area.owner(),area.center(),area.radius(),area.tier(),area.tier()==2,area.skin());
         level.playSound(null,area.center().x,area.center().y,area.center().z,net.minecraft.sounds.SoundEvent.createFixedRangeEvent(new ResourceLocation("ssjj_dimension","field_impact"),96),net.minecraft.sounds.SoundSource.PLAYERS,1,1);
     }
-    /** Uses server eye/view vectors only; no client-selected position can bypass blockers. */
+    /** Resolve the field center from the server view, keeping entity impacts at their hit height. */
     private static Vec3 aim(ServerPlayer player,ServerLevel level) {
         Vec3 start=player.getEyePosition(),end=start.add(player.getViewVector(1).scale(DimensionFieldRules.range()));
         var wall=level.clip(new ClipContext(start,end,ClipContext.Block.COLLIDER,ClipContext.Fluid.NONE,player));
         if(wall.getType()!=HitResult.Type.MISS)end=wall.getLocation();
-        Vec3 result=end;double nearest=start.distanceToSqr(end);
+        Vec3 entityHit=null;
+        double nearest=start.distanceToSqr(end);
         for(var e:level.getEntities(player,new AABB(start,end).inflate(1),candidate->candidate.isAlive()&&!candidate.isSpectator()&&candidate.isPickable())) {
-            var box=e.getBoundingBox().inflate(.1);var hit=box.contains(start)?Optional.of(start):box.clip(start,end);
-            if(hit.isPresent()) {double distance=start.distanceToSqr(hit.get());if(distance<nearest){result=hit.get();nearest=distance;}}
+            var box=e.getBoundingBox();
+            Vec3 hit=box.contains(start)?start:box.clip(start,end).orElse(null);
+            if(hit==null)continue;
+            double distance=start.distanceToSqr(hit);
+            if(distance<nearest){
+                entityHit=hit;
+                nearest=distance;
+            }
         }
-        return result;
+        Vec3 center=entityHit==null?end:entityHit;
+        if(!DimensionFieldRules.finite(center)||!level.hasChunkAt(BlockPos.containing(center)))return null;
+        return entityHit==null?ground(level,player,center):center;
     }
     private static Vec3 ground(ServerLevel level,ServerPlayer owner,Vec3 hit) {
         var bottom=new Vec3(hit.x,Math.min(hit.y-.1,level.getMinBuildHeight()),hit.z);

@@ -164,6 +164,25 @@ public final class DarkLiberationClient {
         graphics.pose().pushPose();graphics.pose().translate(89,46,0);graphics.pose().scale(fit,1.2f,1);
         graphics.drawString(mc.font,key,0,0,0x15def1,false);graphics.pose().popPose();
     }
+    private static void shieldBar(GuiGraphics graphics,DarkLiberationNetwork.Status status){
+        int left=76,top=10,width=125,height=17;
+        int pixels=DarkLiberationHudModel.shieldPixels(status.shield(),status.shieldCapacity(),width);
+        if(pixels==0)return;
+        int end=left+pixels;
+        graphics.fillGradient(left,top,end,top+height,0xff55c0ff,0xff207cce);
+        graphics.fill(left,top,end,top+1,0xff9ee1ff);
+        graphics.fill(left,top+height-1,end,top+height,0xff2c98dc);
+
+        var font=Minecraft.getInstance().font;
+        String label=DarkLiberationHudModel.shieldLabel(status.shield());
+        float labelScale=Math.min(1.5f,(width-6f)/Math.max(1,font.width(label)));
+        var pose=graphics.pose();
+        pose.pushPose();
+        pose.translate(left+width/2f,top+height/2f,0);
+        pose.scale(labelScale,labelScale,1);
+        graphics.drawCenteredString(font,label,0,-4,0xfff6fcff);
+        pose.popPose();
+    }
     @SubscribeEvent public static void hud(RenderGuiEvent.Post event){
         world();var mc=Minecraft.getInstance();
         if(mc.player==null||level==null||mc.options.hideGui||mc.screen!=null||!mc.player.isAlive()||mc.player.isSpectator()||DarkWrath.tier(mc.player.getMainHandItem())!=2)return;
@@ -174,6 +193,7 @@ public final class DarkLiberationClient {
         sourceCard(graphics,ui(DarkLiberationHudModel.texture(state)),state.active()>0);
         int pixels=Math.round(125*DarkLiberationHudModel.progress(state));
         if(pixels>0)graphics.blit(ui(state.active()>0?"skill_progress_active":"skill_progress"),76,60,0,0,pixels,7,125,7);
+        if(snapshot!=null&&state.active()>0)shieldBar(graphics,snapshot);
         RenderSystem.setShaderColor(1,1,1,1);RenderSystem.disableBlend();graphics.pose().popPose();
     }
 }

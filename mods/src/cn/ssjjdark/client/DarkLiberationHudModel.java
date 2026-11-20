@@ -1,6 +1,8 @@
 package cn.ssjjdark.client;
 
 import cn.ssjjdark.DarkLiberationRules;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 /** Shared source-pixel layout and authoritative-snapshot countdown arithmetic. */
 public final class DarkLiberationHudModel {
@@ -32,6 +34,15 @@ public final class DarkLiberationHudModel {
     }
     public static String texture(Remaining state){
         return state.active()>0?"skill_active":state.cooldown()>0?"skill_cooldown":"skill_ready";
+    }
+    static int shieldPixels(float shield,float capacity,int width){
+        if(!(shield>0)||!(capacity>0)||width<=0)return 0;
+        return Math.max(1,(int)Math.round(width*Math.min(1,(double)shield/capacity)));
+    }
+    static String shieldLabel(float shield){
+        var value=new BigDecimal(Float.toString(shield));
+        var rounded=value.setScale(2,RoundingMode.HALF_UP).stripTrailingZeros();
+        return rounded.signum()==0?value.stripTrailingZeros().toString():rounded.toPlainString();
     }
     public static int seconds(int ticks){return Math.max(0,(ticks+19)/20);}
 }

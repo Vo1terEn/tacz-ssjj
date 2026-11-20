@@ -1,0 +1,12 @@
+{
+  "type": "tacz:gun_smith_table_crafting",
+  "materials": [
+    {"item": {"item": "minecraft:netherite_ingot"}, "count": 1},
+    {"item": {"item": "minecraft:gold_ingot"}, "count": 1}
+  ],
+  "result": {
+    "type": "custom",
+    "group": "ssjj_workbench:fragments",
+    "item": {"item": "ssjj_ares:golden_charm_stone", "count": 1}
+  }
+}

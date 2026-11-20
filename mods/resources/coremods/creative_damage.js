@@ -17,6 +17,8 @@ var CD_BULLET = 'Lcom/tacz/guns/entity/EntityKineticBullet;';
 var CD_MULTIPART = 'com/tacz/guns/entity/EntityKineticBullet$MaybeMultipartEntity';
 var CD_EVENT = 'Lnet/minecraftforge/eventbus/api/Event;';
 var CD_GUN_HURT_PRE = 'com/tacz/guns/api/event/common/EntityHurtByGunEvent$Pre';
+var CD_TARGET = 'com/tacz/guns/api/entity/ITargetEntity';
+var CD_TARGET_HIT = '(' + CD_ENTITY + 'Lnet/minecraft/world/phys/EntityHitResult;' + CD_SOURCE + 'F)V';
 
 function cdCall(name, desc) {
     return new CD_Call(CD_O.INVOKESTATIC, CD_HOOK, name, desc, false);
@@ -78,7 +80,7 @@ function cdLiving(node) {
 
 function cdBullet(node) {
     if (cdAlready(node)) return node;
-    var captures = 0, impacts = 0, attacks = 0, posts = 0, custom = 0;
+    var captures = 0, impacts = 0, attacks = 0, posts = 0, custom = 0, callbacks = 0;
     for each (var method in node.methods) {
         if ((method.name === 'shoot' || method.name === 'shootFromRotation') &&
             method.desc.endsWith(')V') && (method.access & CD_O.ACC_STATIC) === 0) {
@@ -110,13 +112,19 @@ function cdBullet(node) {
             impacts++;
             var awaitingPrePost = false;
             for each (var insn in method.instructions.toArray()) {
-                if (insn.getOpcode() === CD_O.INSTANCEOF && insn.desc === 'com/tacz/guns/api/entity/ITargetEntity') {
+                if (insn.getOpcode() === CD_O.INSTANCEOF && insn.desc === CD_TARGET) {
                     var filter = new CD_List();
                     method.instructions.insertBefore(insn, new CD_Insn(CD_O.DUP));
                     filter.add(new CD_Var(CD_O.ALOAD, 0));
                     filter.add(cdCall('filterCustom', '(' + CD_ENTITY + 'Z' + CD_BULLET + ')Z'));
                     method.instructions.insert(insn, filter);
                     custom++;
+                }
+                if (insn.getOpcode() === CD_O.INVOKEINTERFACE && insn.owner === CD_TARGET &&
+                    insn.name === 'onProjectileHit' && insn.desc === CD_TARGET_HIT) {
+                    method.instructions.set(insn, new CD_Call(CD_O.INVOKESTATIC, 'cn/ssjjdark/DarkWrath',
+                        'projectileTarget', '(L' + CD_TARGET + ';' + CD_TARGET_HIT.slice(1), false));
+                    callbacks++;
                 }
                 if (insn.getOpcode() === CD_O.INVOKESPECIAL && insn.owner === CD_GUN_HURT_PRE && insn.name === '<init>')
                     awaitingPrePost = true;
@@ -159,8 +167,8 @@ function cdBullet(node) {
         }
     }
     // 1.1.5, 1.1.8-hotfix2 and 1.2.0 all have these native entry points.
-    if (captures < 1 || impacts !== 1 || attacks !== 1 || posts !== 1 || custom !== 1)
-        throw new Error('Creative damage: unsupported TaCZ layout (' + captures + '/' + impacts + '/' + attacks + '/' + posts + '/' + custom + ')');
+    if (captures < 1 || impacts !== 1 || attacks !== 1 || posts !== 1 || custom !== 1 || callbacks !== 1)
+        throw new Error('Creative damage: unsupported TaCZ layout (' + captures + '/' + impacts + '/' + attacks + '/' + posts + '/' + custom + '/' + callbacks + ')');
     return node;
 }
 

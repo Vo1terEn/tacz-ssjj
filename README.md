@@ -1,21 +1,24 @@
-# [SSJJRPG] 生死狙击冒险枪包 1.1.51
+# [SSJJRPG] 生死狙击冒险枪包 1.1.52
 
 Minecraft 1.20.1，建议使用 Forge 47.4.28 和 TaCZ 1.2.0。游戏内配置界面使用可选的 Cloth Config 11.1.136 Forge 版。阿瑞斯整套外观可搭配 Yes Steve Model 2.6.5。联机时客户端和服务端需更新对应版本的主模组与枪包。
 
 ## 安装
 
-退出游戏，备份自定义配置和旧版组件。解压 `SSJJRPG-1.1.51-MC1.20.1.zip`，把其中的 `mods/SSJJRPG-1.1.51.jar` 和 `tacz/SSJJRPG-1.1.51-gunpack.zip` 放入实例对应目录，并移走本项目的旧版同类文件。枪包 ZIP 保持压缩。已有实例可继续使用自己的 `config/ssjjrpg.toml`。首次安装可使用随包提供的模板。
+退出游戏，备份自定义配置和旧版组件。解压 `SSJJRPG-1.1.52-MC1.20.1.zip`，把其中的 `mods/SSJJRPG-1.1.52.jar` 和 `tacz/SSJJRPG-1.1.52-gunpack.zip` 放入实例对应目录，并移走本项目的旧版同类文件。枪包 ZIP 保持压缩。已有实例可继续使用自己的 `config/ssjjrpg.toml`。首次安装可使用随包提供的模板。
 
 启动后从主菜单的「模组 → 生死狙击冒险枪包 → 配置」进入。加入远程服务器时，玩法数值由服务端管理。
 
 ## 这一版
 
-修复与 TaCZ Expands 联用时 `EntityKineticBullet` 命中事件的 Mixin 注入失败。创造强化石保留原有伤害结算。见 [#5](https://github.com/Vo1terEn/tacz-ssjj/issues/5)。
+- **次元之星**开启领域技能后，命中实体时在碰撞箱交点生成领域，可以悬空并伤害高空目标。方块会阻挡射线，未命中实体时沿用落地逻辑。
+- **宙斯之手**的普通幻影雷球与闪电链在 TaCZ 自定义目标回调中结算黯水晶增伤，转入普通受伤事件时只结算一次。
+- **黯水晶**在终极技能期间使用技能自身的固定增伤，结束后按当前血量恢复绝·怒意。符合条件的创造石直伤也结算对应加成。二阶技能条上方新增浅蓝色护盾条，按护盾上限比例填充，中央显示当前值，归零时隐藏。
+- **荣光号工作台**的碎片页新增黄金挂饰合成石。消耗 1 个下界合金锭和 1 个金锭，产出 1 个。
 
 ## 下载与验证
 
-安装包、配对文件与 SHA-256 校验值见 [GitHub Release](https://github.com/Vo1terEn/tacz-ssjj/releases/tag/v1.1.51)。仓库提供 [Java 与 ASM 增量](mods/README.md)、[枪包文本资源](tacz/README.md)和 [运行包来源与校验](runtime-manifest.json)。
+安装包、配对文件与 SHA-256 校验值见 [GitHub Release](https://github.com/Vo1terEn/tacz-ssjj/releases/tag/v1.1.52)。仓库提供 [Java 与 ASM 增量](mods/README.md)、[枪包文本资源](tacz/README.md)和 [运行包来源与校验](runtime-manifest.json)。
 
-对 TaCZ 1.2.0、1.1.8-hotfix2 和 1.1.5 的实际字节码运行了命中事件注入点回归检查。没有启动反馈者的完整整合包。 本版基于 1.1.50 的配对成品增量编译并重新打包。
+在 Forge 47.4.28 / TaCZ 1.2.0 的隔离世界核对了高空伤害、普通幻影增伤、21 个武器 ID 基础伤害的绝·怒意、工作台实际扣料与产出，以及护盾条的满盾、部分护盾和归零显示。 公开版从已验证的配对成品更新元数据并重新打包。
 
 源代码的授权及原素材权利见 [LICENSE](LICENSE) 和 [第三方许可](THIRD_PARTY_LICENSES.md)。

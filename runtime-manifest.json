@@ -1,27 +1,27 @@
 {
-  "version": "1.1.51",
-  "release": "https://github.com/Vo1terEn/tacz-ssjj/releases/tag/v1.1.51",
+  "version": "1.1.52",
+  "release": "https://github.com/Vo1terEn/tacz-ssjj/releases/tag/v1.1.52",
   "minecraft": "1.20.1",
   "source_delivery": {
-    "version": "1.1.50",
-    "release": "https://github.com/Vo1terEn/tacz-ssjj/releases/tag/v1.1.50",
+    "version": "1.1.51-shield1",
+    "public_baseline": "https://github.com/Vo1terEn/tacz-ssjj/releases/tag/v1.1.51",
     "sha256": {
-      "mod": "094c6d017591b1f3744d87994a2ee1c00731fe2f6104240419c9c0b1978a64ec",
-      "pack": "a2c2d3a0098ea57538427a129e4f4d2d15f0f899d2cf44ac0e9b883034fa58f8"
+      "mod": "385fe1edb0a7a077f43c7de5ed26337b1bc38734b8d1a4a0372befa2f82e9eed",
+      "pack": "cde8fa846fb9093673ab63b35a1e93c97ce5a77d487c80ba1d3532cc66a2c2bb"
     }
   },
   "assets": {
-    "SSJJRPG-1.1.51.jar": {
-      "sha256": "cf04917667d2274df77e884cccbf20b9d6128695a2768082e22f8b7cdd54ef93",
-      "bytes": 12153808
+    "SSJJRPG-1.1.52.jar": {
+      "sha256": "f05a3017081fcb849c47200a6dd4caa81b6d47dfdebd5027dae3530f4bdbd063",
+      "bytes": 12155100
     },
-    "SSJJRPG-1.1.51-gunpack.zip": {
-      "sha256": "b7e4d2ed7a43944671d12006ee63e511ce5702658fc43760f8b9da39f4b0624e",
-      "bytes": 220834247
+    "SSJJRPG-1.1.52-gunpack.zip": {
+      "sha256": "97e68fa72edceb9c51444f6989acb5970170d574670daed8b6a0cf091c92641d",
+      "bytes": 220834597
     },
-    "SSJJRPG-1.1.51-MC1.20.1.zip": {
-      "sha256": "526ffea5be225a8c80bebff6656232f2e4b8555373c49fac4c79b0a77e6f7373",
-      "bytes": 231718489
+    "SSJJRPG-1.1.52-MC1.20.1.zip": {
+      "sha256": "bca1d9878b8672bd3f021e5134dbf47d9efa2ab40b4d3a4b89dd234f25043968",
+      "bytes": 231719920
     }
   },
   "versioned_metadata": {
@@ -47,7 +47,7 @@
       "README.md"
     ]
   },
-  "public_package_verification": "ZIP CRC and SHA-256 checked. Overlay limited to the compiled creative damage hooks, coremod and versioned metadata and documentation.",
+  "public_package_verification": "ZIP CRC and SHA-256 checked. Runtime classes and gameplay resources match the local delivery.",
   "compatibility_validation": {
     "issue": "https://github.com/Vo1terEn/tacz-ssjj/issues/5",
     "tacz": [
@@ -55,6 +55,19 @@
       "1.1.8-hotfix2",
       "1.1.5"
     ],
-    "scope": "Actual TaCZ bytecode, production coremod and simulated invocation redirect. The full reported modpack was not launched."
+    "scope": "TaCZ bytecode regression for the production coremod with a simulated Mixin redirect."
+  },
+  "isolated_validation": {
+    "source": "1.1.51-shield1",
+    "minecraft": "1.20.1",
+    "forge": "47.4.28",
+    "tacz": "1.2.0",
+    "checks": [
+      "Dimension Star tier I and II airborne casts",
+      "Zeus phantom Wrath, custom target callback, and native forwarding",
+      "Wrath on 21 weapon IDs, ultimate state transitions, and creative settlement",
+      "Rongguang fragments-tab crafting and material consumption",
+      "Shield HUD full, partial, and zero via rendered status fixtures"
+    ]
   }
 }

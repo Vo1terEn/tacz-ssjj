@@ -1,5 +1,5 @@
 {
-  "version": "1.1.51",
+  "version": "1.1.52",
   "files": {
     "patches/ares_accessory_config_20261119/PatchAresAccessoryConfig.java": {
       "sha256": "9cf8c8752bb859fc72d57e7af58034f30e563482ef1da1592b94d57849a58ad1",
@@ -66,8 +66,8 @@
       "origin": "交付/source/unified_kill_messages_20261119/tools/PatchKillMessages.java"
     },
     "resources/META-INF/MANIFEST.MF": {
-      "sha256": "5601457d2ada090a1a91c38dc5ea607fd989de454fc223a9ebe8064e0b04e3b6",
-      "origin": "SSJJRPG-1.1.51.jar!/META-INF/MANIFEST.MF"
+      "sha256": "970c85586a3e4068fbbfdec54209df190bda5f1e4c8aacb5ee4a95cec07a78c4",
+      "origin": "SSJJRPG-1.1.52.jar!/META-INF/MANIFEST.MF"
     },
     "resources/META-INF/coremods.json": {
       "sha256": "d5a4bf6bb4fecd227271727bb4f554d11b1b6e2bf54f79089bf4426e969e756a",
@@ -78,8 +78,8 @@
       "origin": "SSJJRPG-1.1.50.jar!/META-INF/licenses/GPL-3.0/LICENSE"
     },
     "resources/META-INF/mods.toml": {
-      "sha256": "85b7b4d5f1b7eae96cb227c6affe81011264cc3de00808fc6803f0da9a5da5da",
-      "origin": "SSJJRPG-1.1.51.jar!/META-INF/mods.toml"
+      "sha256": "d6584a97e067473abeef95d812d3d4ae647f496b6df943283ed060f9658066b7",
+      "origin": "SSJJRPG-1.1.52.jar!/META-INF/mods.toml"
     },
     "resources/META-INF/services/cpw.mods.modlauncher.api.ITransformationService": {
       "sha256": "80a744e569296eb53d6d7a8ed6ffb211fe79da8e631e8ba3c8ea70b715321bf3",
@@ -110,8 +110,8 @@
       "origin": "SSJJRPG-1.1.50.jar!/coremods/cosmetic_skin.js"
     },
     "resources/coremods/creative_damage.js": {
-      "sha256": "a3bc91ecc5f7d927e93d75caa5d8f03658df0deccbf08b9aa45163926f846d01",
-      "origin": "SSJJRPG-1.1.51.jar!/coremods/creative_damage.js"
+      "sha256": "dd8602b9607cd46432eaac247fb9bebd31af88c40c783a909079672cf8ed01c9",
+      "origin": "SSJJRPG-1.1.52.jar!/coremods/creative_damage.js"
     },
     "resources/coremods/creative_targets.js": {
       "sha256": "43d3cdbdb74cc6f611e30a3f5ec5b4cdc2334e8857bd1781327b24c6fa00cdcd",
@@ -2167,17 +2167,17 @@
       }
     },
     "src/cn/ssjjdark/DarkUltimateDamage.java": {
-      "sha256": "187a572bedd3ae83a6df3c0c5b9a6fea249d2a79477439a7ad16cf0bdf6610f0",
+      "sha256": "4c539b3cf903567b1baf6c9a6c07dede0cce5c9014323e67da3bce1cc8c9c781",
       "origin": {
-        "path": "交付/source/dark_crystal_follow_ysm_20261119/src/cn/ssjjdark/DarkUltimateDamage.java",
-        "runtime_class_sha256": "53c22cb489d4cd9a5cbc8694deda646897fc92571b206f7bf126607f79734557"
+        "path": "mods/src/cn/ssjjdark/DarkUltimateDamage.java",
+        "runtime_class_sha256": "64e167f499d5a1ebda401c4e8f1a3bd067e2a9ef4daeaa9fa64411b1fb4af7d9"
       }
     },
     "src/cn/ssjjdark/DarkWrath.java": {
-      "sha256": "8a96d6708f0513352cc6b928c7e25ad42365ddc2d520a25e7ab1a3740db50b1c",
+      "sha256": "713dbae987aa7f78f500b20f42944fbd16efa0691fad8db18ac445d46babffd0",
       "origin": {
-        "path": "交付/source/dark_crystal_crouch_passive_20261119/src/cn/ssjjdark/DarkWrath.java",
-        "runtime_class_sha256": "b6a3acb1ee36f74c61f9c5e38594a4d5573126279ca1136719cce34aa2288f67"
+        "path": "mods/src/cn/ssjjdark/DarkWrath.java",
+        "runtime_class_sha256": "7ded151c2e391935e69e59e905c7ee5ca7d64ab20b7db4fd51004f6210b450f2"
       }
     },
     "src/cn/ssjjdark/DarkWrathRules.java": {
@@ -2223,10 +2223,10 @@
       }
     },
     "src/cn/ssjjdark/client/DarkLiberationClient.java": {
-      "sha256": "6255d1a27db7699c376fa9ab6fbd18f455186bae9c77d9a84c44269287d13567",
+      "sha256": "0f0f04ccc37dffe12c9bce4bc8d5b8857ca8724cdbf025812fa76c4b1a4546ee",
       "origin": {
-        "path": "交付/source/dark_crystal_skill_presentation_20261118/src/cn/ssjjdark/client/DarkLiberationClient.java",
-        "runtime_class_sha256": "bdfd0a4dfc3d62159cabedc876309632e17b44f0d2570dade930a9655dd448bc"
+        "path": "mods/src/cn/ssjjdark/client/DarkLiberationClient.java",
+        "runtime_class_sha256": "4d8c9f20d1c7c5f224026715bcd646cf9ccb4bebc9c283cd5a5a29eda74e5a63"
       }
     },
     "src/cn/ssjjdark/client/DarkLiberationHeldItem.java": {
@@ -2237,10 +2237,10 @@
       }
     },
     "src/cn/ssjjdark/client/DarkLiberationHudModel.java": {
-      "sha256": "6d5a1843c70a8836afdec886863a9b25c16126b6aff3f3475e9a51963caa776a",
+      "sha256": "e3239c9fd714e60aeeb16568ecddaf587e5b1a88fdbafabae7f5cfa533ec31c9",
       "origin": {
-        "path": "交付/source/dark_crystal_liberation_20261118/src/cn/ssjjdark/client/DarkLiberationHudModel.java",
-        "runtime_class_sha256": "bede44b1e0a564c1b656625349720b89ad90e5b5ec8ee24e8bcd55decbfd2f75"
+        "path": "mods/src/cn/ssjjdark/client/DarkLiberationHudModel.java",
+        "runtime_class_sha256": "aa8bd52770a3728eaea7c84a62f3889a30b14b7fa57caa11113168879dfed357"
       }
     },
     "src/cn/ssjjdark/client/DarkLiberationKeys.java": {
@@ -2384,10 +2384,10 @@
       }
     },
     "src/cn/ssjjdimension/DimensionField.java": {
-      "sha256": "103986ec0d9c44b5545c1a0dc6a297823b16f4f1aff554cd90dae974f06d885f",
+      "sha256": "9543668473c121208ad68539b73e6153756729a2bcc52ee4abf65689f06159e2",
       "origin": {
-        "path": "github/mods/src/cn/ssjjdimension/DimensionField.java",
-        "runtime_class_sha256": "e3aac031b0ff4fb7ca67cc12e3bd16c9708275b2cc718666a3fe55f8e47bc83d"
+        "path": "mods/src/cn/ssjjdimension/DimensionField.java",
+        "runtime_class_sha256": "70ccc3ade4990ac9f6b4f06a9fe2c8c3e57f2c1c06e4b5aa7ff56c5017e8bc10"
       }
     },
     "src/cn/ssjjdimension/DimensionFieldNetwork.java": {
@@ -3347,6 +3347,13 @@
       "origin": {
         "path": "github/mods/src/cn/ssjjzeus/mixin/ZeusBaseShockMixin.java",
         "runtime_class_sha256": "2423fa76b7275ac54f2c44f31958d52491fea8d18d2d2ce480a31c580682ab9d"
+      }
+    },
+    "patches/dimension_field_air_20261120/OverlayField.java": {
+      "sha256": "e76ab5e07f6aece383bc385ccaa9adfb290ddf1d66755dc8562fd33cf34105a6",
+      "origin": {
+        "path": "mods/patches/dimension_field_air_20261120/OverlayField.java",
+        "scope": "Retain existing ASM changes outside DimensionField.cast and DimensionField.aim"
       }
     }
   }

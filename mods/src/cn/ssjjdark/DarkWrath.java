@@ -1,6 +1,7 @@
 package cn.ssjjdark;
 
 import cn.ssjjparasite2.client.ParasiteDestructionDamage;
+import com.tacz.guns.api.entity.ITargetEntity;
 import com.tacz.guns.api.item.IGun;
 import com.tacz.guns.api.item.attachment.AttachmentType;
 import com.tacz.guns.util.AllowAttachmentTagMatcher;
@@ -15,6 +16,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.phys.EntityHitResult;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
@@ -31,6 +33,7 @@ public final class DarkWrath {
     /** Registry tombstone for saved pre20 potion instances; never grants or represents this passive. */
     @Deprecated public static final MobEffect EFFECT=new WrathEffect();
     public static final Snapshot NONE=new Snapshot(0,0,0);
+    private static final ThreadLocal<DamageSource> SCALED_CALLBACK = new ThreadLocal<>();
     public record Snapshot(int layers,double damageBonus,double damageReduction){
         public Snapshot {damageReduction=Double.isFinite(damageReduction)?Math.max(0,Math.min(1,damageReduction)):0;}
         public double damageMultiplier(){return 1+damageBonus;}
@@ -67,9 +70,10 @@ public final class DarkWrath {
     }
     public static Snapshot snapshot(ServerPlayer player){
         if(player==null||!player.isAlive()||player.isRemoved()||player.isSpectator())return NONE;
-        boolean ultimate=DarkLiberation.ultimateActive(player);
+        if(DarkLiberation.ultimateActive(player))
+            return new Snapshot(0,DarkCrystalConfig.number("ultimate_wrath_bonus"),0);
         int layers=DarkWrathRules.layers(player.getHealth(),player.getMaxHealth());
-        if(layers==0&&!ultimate)return NONE;
+        if(layers==0)return NONE;
         double damage=0,reduction=0;
         // Only the ordinary36 item slots and offhand. Nested bags and external containers do not qualify.
         for(var stack:player.getInventory().items){
@@ -84,7 +88,6 @@ public final class DarkWrath {
             damage=Math.max(damage,DarkWrathRules.damagePerLayer(tier,blade));
             reduction=Math.max(reduction,DarkWrathRules.reductionPerLayer(tier,blade));
         }
-        if(ultimate)return new Snapshot(Math.max(1,layers),DarkCrystalConfig.number("ultimate_wrath_bonus"),layers*reduction*DarkLiberation.wrathReductionMultiplier(player));
         return damage>0||reduction>0?new Snapshot(layers,layers*damage,layers*reduction*DarkLiberation.wrathReductionMultiplier(player)):NONE;
     }
     private static ServerPlayer attacker(DamageSource source){
@@ -97,14 +100,36 @@ public final class DarkWrath {
         }
         return null;
     }
+    private static double outgoingMultiplier(DamageSource source) {
+        if(source==null||source instanceof ParasiteDestructionDamage||source==SCALED_CALLBACK.get())return 1;
+        return snapshot(attacker(source)).damageMultiplier();
+    }
+    static float scaleOutgoing(DamageSource source,float amount) {
+        if(!(amount>0)||!Float.isFinite(amount))return amount;
+        return (float)Math.min(Float.MAX_VALUE,amount*outgoingMultiplier(source));
+    }
+    /** TaCZ custom targets may consume the projectile hit without publishing LivingHurtEvent. */
+    public static void projectileTarget(ITargetEntity target,Entity projectile,EntityHitResult hit,DamageSource source,float amount) {
+        float scaled=projectile.level().isClientSide?amount:scaleOutgoing(source,amount);
+        if(Float.compare(amount,scaled)==0){
+            target.onProjectileHit(projectile,hit,source,amount);
+            return;
+        }
+        var previous=SCALED_CALLBACK.get();
+        SCALED_CALLBACK.set(source);
+        try { target.onProjectileHit(projectile,hit,source,scaled); }
+        finally {
+            if(previous==null)SCALED_CALLBACK.remove();
+            else SCALED_CALLBACK.set(previous);
+        }
+    }
     /** Native hurts only: never amplify or defend a replay whose constituent losses were already settled. */
     @SubscribeEvent(priority=EventPriority.LOWEST)
     public static void hurt(LivingHurtEvent event){
         float amount=event.getAmount();var source=event.getSource();
         if(event.isCanceled()||event.getEntity().level().isClientSide||!(amount>0)||!Float.isFinite(amount)
             ||source==null||source instanceof ParasiteDestructionDamage)return;
-        double scaled=amount;var owner=attacker(source);
-        if(owner!=null)scaled*=snapshot(owner).damageMultiplier();
+        double scaled=amount*outgoingMultiplier(source);
         if(event.getEntity() instanceof ServerPlayer target)
             scaled*=snapshot(target).incomingMultiplier();
         event.setAmount((float)Math.max(0,Math.min(Float.MAX_VALUE,scaled)));
